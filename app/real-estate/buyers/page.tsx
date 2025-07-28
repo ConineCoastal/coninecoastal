@@ -8,22 +8,19 @@ export default function BuyersPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/home-buying-hero.png')",
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80')",
           }}
         ></div>
 
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/50"></div>
-
         <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-          <h1 className="text-5xl lg:text-6xl font-bold mb-6" style={{ fontFamily: "serif" }}>
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg" style={{ fontFamily: "serif" }}>
             Home Buying Made Smarter
           </h1>
-          <p className="text-2xl lg:text-3xl mb-12 leading-relaxed">
+          <p className="text-2xl lg:text-3xl mb-12 leading-relaxed drop-shadow-md">
             Why guess at renovation costs when you can know for certain?
           </p>
 
@@ -49,8 +46,8 @@ export default function BuyersPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <img
-                src="/buyer-advantage-construction.png"
-                alt="Construction expertise for home buyers"
+                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
+                alt="Construction expertise for home buyers - coastal home inspection"
                 className="rounded-lg shadow-lg"
               />
             </div>
@@ -133,6 +130,7 @@ export default function BuyersPage() {
                 icon: Search,
                 title: "Investment Property Evaluation",
                 desc: "Identify properties with the best potential for appreciation and rental income.",
+                color: "#FFCA05",
               },
               {
                 icon: Calculator,
@@ -158,7 +156,7 @@ export default function BuyersPage() {
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="flex justify-center mb-6">
-                    <div className="w-20 h-20 bg-[#229FD9]/10 rounded-full flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center">
                       <service.icon className="h-8 w-8 text-[#229FD9]" />
                     </div>
                   </div>

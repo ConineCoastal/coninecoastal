@@ -11,7 +11,7 @@ export default function AdditionsExtensions() {
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40 z-10" />
         <img
-          src="/placeholder.svg?height=800&width=1200&text=Home+Addition+and+Extension"
+          src="https://picsum.photos/1200/600"
           alt="Home addition and extension"
           className="absolute inset-0 object-cover"
         />
@@ -137,21 +137,35 @@ export default function AdditionsExtensions() {
                     icon: <Droplets className="h-6 w-6 text-amber-600" />,
                     title: "Moisture Protection",
                     description: "Advanced moisture barriers and ventilation systems prevent water damage and mold",
+                    features: [
+                      "Advanced moisture barriers",
+                      "Proper ventilation systems",
+                      "Water-resistant materials",
+                      "Mold-resistant treatments",
+                    ],
                   },
                   {
                     icon: <Wind className="h-6 w-6 text-amber-600" />,
                     title: "Hurricane Resistance",
                     description: "Impact-resistant materials and reinforced construction for storm protection",
+                    features: ["Impact-resistant windows", "Reinforced roofing", "Hurricane straps", "Storm shutters"],
                   },
                   {
                     icon: <Sun className="h-6 w-6 text-amber-600" />,
                     title: "UV Protection",
                     description: "Fade-resistant materials and finishes that maintain beauty in intense sunlight",
+                    features: ["UV-resistant siding", "Fade-resistant paints", "Window films", "Protective coatings"],
                   },
                   {
                     icon: <Home className="h-6 w-6 text-amber-600" />,
                     title: "Salt Air Resistance",
                     description: "Corrosion-resistant materials designed for coastal environments",
+                    features: [
+                      "Corrosion-resistant metals",
+                      "Salt-resistant coatings",
+                      "Marine-grade materials",
+                      "Protective sealants",
+                    ],
                   },
                 ].map((item, index) => (
                   <div key={index} className="flex items-start space-x-4">
@@ -172,7 +186,7 @@ export default function AdditionsExtensions() {
 
             <div className="relative">
               <img
-                src="/placeholder.svg?height=600&width=500&text=Weather-Resistant+Exterior+Renovation"
+                src="https://picsum.photos/500/600"
                 alt="Weather-resistant exterior renovation"
                 className="rounded-lg shadow-xl"
               />

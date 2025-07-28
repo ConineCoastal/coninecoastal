@@ -46,22 +46,19 @@ export default function SellersPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/home-selling-hero.png')",
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80')",
           }}
         ></div>
 
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/50"></div>
-
         <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-          <h1 className="text-5xl lg:text-6xl font-bold mb-6" style={{ fontFamily: "serif" }}>
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg" style={{ fontFamily: "serif" }}>
             Sell Smarter, Not Harder
           </h1>
-          <p className="text-2xl lg:text-3xl mb-12 leading-relaxed">
+          <p className="text-2xl lg:text-3xl mb-12 leading-relaxed drop-shadow-md">
             Maximize your profit with renovation insights others can't provide
           </p>
 
@@ -87,8 +84,8 @@ export default function SellersPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <img
-                src="/seller-advantage-renovations.png"
-                alt="Strategic home improvements for selling"
+                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
+                alt="Strategic home improvements for selling - coastal home staging"
                 className="rounded-lg shadow-lg"
               />
             </div>
@@ -416,23 +413,29 @@ export default function SellersPage() {
                     className="border-[#707070]/30 focus:border-[#229FD9]"
                   />
                   <div className="grid md:grid-cols-2 gap-4">
-                    <Input
-                      name="name"
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="border-[#707070]/30 focus:border-[#229FD9]"
-                    />
-                    <Input
-                      name="phone"
-                      type="tel"
-                      placeholder="Phone Number"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      required
-                      className="border-[#707070]/30 focus:border-[#229FD9]"
-                    />
+                    <div>
+                      <label className="block text-sm font-medium text-[#18457C] mb-1">Name *</label>
+                      <Input
+                        name="name"
+                        placeholder="Your Name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                        className="border-[#707070]/30 focus:border-[#229FD9]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-[#18457C] mb-1">Phone *</label>
+                      <Input
+                        name="phone"
+                        type="tel"
+                        placeholder="Phone Number"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        required
+                        className="border-[#707070]/30 focus:border-[#229FD9]"
+                      />
+                    </div>
                   </div>
                   <Input
                     name="email"

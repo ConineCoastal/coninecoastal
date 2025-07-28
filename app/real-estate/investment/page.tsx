@@ -46,7 +46,7 @@ export default function InvestmentServicesPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/investment-property-hero.png')",
+            backgroundImage: "url(https://picsum.photos/1920/1080)",
           }}
         ></div>
 
@@ -86,7 +86,7 @@ export default function InvestmentServicesPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <img
-                src="/investment-analysis-construction.png"
+                src="https://picsum.photos/400/300"
                 alt="Construction-informed investment analysis"
                 className="rounded-lg shadow-lg"
               />

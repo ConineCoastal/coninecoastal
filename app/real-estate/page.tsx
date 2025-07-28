@@ -84,7 +84,7 @@ export default function RealEstateServicesPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/coastal-hero-bg.png')",
+            backgroundImage: "url(https://picsum.photos/1920/1080)",
           }}
         ></div>
         <div className="absolute inset-0 bg-white/85"></div>
@@ -280,7 +280,7 @@ export default function RealEstateServicesPage() {
 
             <div className="relative">
               <img
-                src="/placeholder.svg?height=500&width=600&text=Market+Analysis+Dashboard"
+                src="https://picsum.photos/400/300"
                 alt="Market analysis dashboard"
                 className="rounded-lg shadow-xl"
               />
@@ -300,21 +300,37 @@ export default function RealEstateServicesPage() {
             <h2 className="text-4xl font-bold text-[#18457C] mb-6" style={{ fontFamily: "serif" }}>
               What Our Clients Say
             </h2>
-            <p className="text-xl text-[#707070] max-w-3xl mx-auto">
+            <p className="text-xl text-[#707070]">
               Real results from real clients who experienced the Conine Coastal difference
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+            {[
+              {
+                name: "Sarah Johnson",
+                service: "Real Estate & Renovation",
+                text: "Conine Coastal helped us find the perfect fixer-upper and then transformed it into our dream home. Their dual expertise saved us time and money!",
+              },
+              {
+                name: "Mike Rodriguez",
+                service: "Investment Property",
+                text: "Their construction knowledge helped me identify the best investment opportunities. They knew exactly what renovations would maximize my ROI.",
+              },
+              {
+                name: "Emily Chen",
+                service: "Kitchen Remodel",
+                text: "Professional, reliable, and the results exceeded our expectations. Our coastal kitchen is now the heart of our home.",
+              },
+            ].map((testimonial, index) => (
+              <Card key={index} className="bg-white">
                 <CardContent className="p-8">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="h-5 w-5 text-[#FFCA05] fill-current" />
                     ))}
                   </div>
-                  <p className="text-[#707070] mb-6 italic leading-relaxed">"{testimonial.text}"</p>
+                  <p className="text-[#707070] mb-4 italic">"{testimonial.text}"</p>
                   <div>
                     <p className="font-semibold text-[#18457C]">{testimonial.name}</p>
                     <p className="text-sm text-[#707070]">{testimonial.location}</p>

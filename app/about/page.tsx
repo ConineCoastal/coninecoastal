@@ -12,18 +12,21 @@ export default function AboutPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/coastal-hero-bg.png')",
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80')",
           }}
         ></div>
-        <div className="absolute inset-0 bg-white/80"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <h1 className="text-5xl lg:text-6xl font-bold text-[#18457C] mb-6" style={{ fontFamily: "serif" }}>
+              <h1
+                className="text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg"
+                style={{ fontFamily: "serif" }}
+              >
                 Meet David Conine
               </h1>
-              <p className="text-2xl lg:text-3xl text-[#707070] mb-8 leading-relaxed">
+              <p className="text-2xl lg:text-3xl text-white mb-8 leading-relaxed drop-shadow-md">
                 20 Years of Construction Excellence Meets Real Estate Expertise
               </p>
 
@@ -37,7 +40,7 @@ export default function AboutPage() {
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
                 <img
-                  src="/placeholder.svg?height=500&width=400&text=David+Conine+Professional+Photo"
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500&q=80"
                   alt="David Conine - Professional Headshot"
                   className="w-80 h-96 object-cover rounded-lg shadow-2xl"
                 />
@@ -91,7 +94,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            <Card className="border-2 border-[#229FD9]/20 hover:border-[#229FD9] transition-all duration-300 hover:shadow-lg">
+            <Card className="border-2 border-[#229FD9]/20 hover:border-[#229FD9] transition-all duration-300 hover:shadow-xl">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
                   <Target className="h-12 w-12 text-[#229FD9] mr-4" />
@@ -107,7 +110,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-[#F16622]/20 hover:border-[#F16622] transition-all duration-300 hover:shadow-lg">
+            <Card className="text-center border-2 border-[#F16622]/20 hover:border-[#F16622] transition-all duration-300 hover:shadow-xl">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
                   <Award className="h-12 w-12 text-[#F16622] mr-4" />
@@ -122,7 +125,7 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-[#FFCA05]/20 hover:border-[#FFCA05] transition-all duration-300 hover:shadow-lg">
+            <Card className="text-center border-2 border-[#FFCA05]/20 hover:border-[#FFCA05] transition-all duration-300 hover:shadow-xl">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
                   <Hammer className="h-12 w-12 text-[#FFCA05] mr-4" />

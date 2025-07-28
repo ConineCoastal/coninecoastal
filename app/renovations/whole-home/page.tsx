@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, Phone, Mail, MapPin, Users, Award, Home, Zap, Shield, TrendingUp } from "lucide-react"
+import { CheckCircle, Phone, Mail, Users, Award, Home, Zap, Shield, TrendingUp } from "lucide-react"
 
 export default function WholeHomeRenovations() {
   return (
@@ -11,7 +11,7 @@ export default function WholeHomeRenovations() {
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40 z-10" />
         <img
-          src="/placeholder.svg?height=800&width=1200&text=Whole+Home+Renovation+Transformation"
+          src="https://picsum.photos/1200/600"
           alt="Whole home renovation transformation"
           className="absolute inset-0 object-cover"
         />
@@ -141,10 +141,6 @@ export default function WholeHomeRenovations() {
               <Mail className="mr-2 h-5 w-5" />
               Request Assessment
             </Button>
-          </div>
-          <div className="mt-8 flex items-center justify-center text-gray-400">
-            <MapPin className="h-4 w-4 mr-2" />
-            <span>Serving the Greater Charleston Area</span>
           </div>
         </div>
       </section>

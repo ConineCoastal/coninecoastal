@@ -23,7 +23,8 @@ export default function CurrentListingsPage() {
       sqft: "1,850",
       type: "Single Family",
       status: "Active",
-      image: "/placeholder.svg?height=300&width=400&text=Oceanfront+Paradise",
+      image:
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
       description: "Stunning oceanfront home with panoramic water views and private beach access.",
       features: ["Ocean Views", "Private Beach", "Updated Kitchen", "Hardwood Floors"],
     },
@@ -37,7 +38,8 @@ export default function CurrentListingsPage() {
       sqft: "2,100",
       type: "Historic Home",
       status: "Active",
-      image: "/placeholder.svg?height=300&width=400&text=Historic+Downtown+Charm",
+      image:
+        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
       description: "Beautifully restored historic home in the heart of downtown St. Augustine.",
       features: ["Historic Character", "Downtown Location", "Original Details", "Garden Courtyard"],
     },
@@ -51,7 +53,8 @@ export default function CurrentListingsPage() {
       sqft: "2,400",
       type: "Contemporary",
       status: "Active",
-      image: "/placeholder.svg?height=300&width=400&text=Modern+Coastal+Living",
+      image:
+        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
       description: "Contemporary home with luxury finishes and resort-style amenities.",
       features: ["Modern Design", "Luxury Finishes", "Pool", "Open Concept"],
     },
@@ -65,7 +68,8 @@ export default function CurrentListingsPage() {
       sqft: "1,650",
       type: "Waterfront",
       status: "Active",
-      image: "/placeholder.svg?height=300&width=400&text=Waterfront+Retreat",
+      image:
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
       description: "Peaceful waterfront home with dock and stunning sunset views.",
       features: ["Private Dock", "Sunset Views", "Boat Access", "Screened Porch"],
     },
@@ -79,7 +83,8 @@ export default function CurrentListingsPage() {
       sqft: "2,200",
       type: "Single Family",
       status: "Active",
-      image: "/placeholder.svg?height=300&width=400&text=Family+Friendly+Neighborhood",
+      image:
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
       description: "Spacious family home in desirable neighborhood with top-rated schools.",
       features: ["Great Schools", "Large Yard", "Updated Kitchen", "Master Suite"],
     },
@@ -93,7 +98,8 @@ export default function CurrentListingsPage() {
       sqft: "1,200",
       type: "Investment",
       status: "Active",
-      image: "/placeholder.svg?height=300&width=400&text=Investment+Opportunity",
+      image:
+        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80",
       description: "Perfect rental property near the beach with strong rental history.",
       features: ["Rental Income", "Beach Proximity", "Low Maintenance", "Tenant in Place"],
     },

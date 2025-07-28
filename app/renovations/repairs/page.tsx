@@ -37,7 +37,7 @@ export default function HomeRepairsMaintenancePage() {
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40 z-10" />
         <img
-          src="/placeholder.svg?height=800&width=1200&text=Home+Repairs+and+Maintenance"
+          src="https://picsum.photos/1200/600"
           alt="Home repairs and maintenance"
           className="absolute inset-0 object-cover"
         />
@@ -131,7 +131,6 @@ export default function HomeRepairsMaintenancePage() {
             ].map((service, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <div className="mb-4">{service.icon}</div>
                   <h3 className="text-xl font-semibold text-slate-900 mb-3">{service.title}</h3>
                   <p className="text-gray-600 mb-4">{service.description}</p>
                   <ul className="space-y-2">
@@ -204,7 +203,7 @@ export default function HomeRepairsMaintenancePage() {
 
             <div className="relative">
               <img
-                src="/placeholder.svg?height=600&width=500&text=Professional+Home+Repair+Service"
+                src="https://picsum.photos/400/300"
                 alt="Professional home repair service"
                 className="rounded-lg shadow-xl"
               />
