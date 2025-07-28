@@ -103,9 +103,9 @@ export default function SellersChecklistClientPage() {
       <main className="mx-auto max-w-4xl px-6 py-20 space-y-16">
         <header className="space-y-4 text-center">
           <h1 className={`${font.variable} font-serif text-4xl sm:text-5xl text-[#18457C]`}>
-            Maximize Your Home’s Sale Value
+            Maximize Your Home's Sale Value
           </h1>
-          <p className="text-lg">David Conine’s construction expertise pinpoints the renovations that truly pay off.</p>
+          <p className="text-lg">David Conine's construction expertise pinpoints the renovations that truly pay off.</p>
           <Button asChild>
             <Link href="/files/sellers-checklist.pdf" target="_blank">
               Download Improvement Checklist
