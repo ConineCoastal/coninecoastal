@@ -17,28 +17,32 @@ export default function HomePage() {
               "url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80')",
           }}
         ></div>
+        <div className="absolute inset-0 bg-black/40"></div>
 
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
-          <Badge className="mb-6 bg-[#229FD9] text-white px-6 py-3 text-lg">
+          <Badge className="mb-6 bg-[#229FD9] text-white px-6 py-3 text-lg shadow-lg">
             Real Estate & Construction Excellence
           </Badge>
-          <h1 className="text-5xl lg:text-7xl font-bold text-white mb-8 drop-shadow-lg" style={{ fontFamily: "serif" }}>
+          <h1
+            className="text-5xl lg:text-7xl font-bold text-white mb-8 drop-shadow-2xl"
+            style={{ fontFamily: "serif" }}
+          >
             Where Real Estate Meets Construction Expertise
           </h1>
-          <p className="text-2xl lg:text-3xl text-white mb-8 leading-relaxed drop-shadow-md">
+          <p className="text-2xl lg:text-3xl text-white/95 mb-8 leading-relaxed drop-shadow-lg">
             The only service in Northeast Florida combining 20 years of construction experience with professional real
             estate expertise
           </p>
-          <p className="text-xl text-white mb-12 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
+          <p className="text-xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
             Whether you're buying, selling, or renovating, get the insider advantage that comes from understanding both
             markets and construction costs.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-[#229FD9] hover:bg-[#229FD9]/90 text-white px-10 py-4 text-xl shadow-lg">
+            <Button size="lg" className="bg-[#229FD9] hover:bg-[#229FD9]/90 text-white px-10 py-4 text-xl shadow-2xl">
               <Home className="mr-2 h-6 w-6" />
               Real Estate Services
             </Button>
-            <Button size="lg" className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-10 py-4 text-xl shadow-lg">
+            <Button size="lg" className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-10 py-4 text-xl shadow-2xl">
               <Hammer className="mr-2 h-6 w-6" />
               Renovation Services
             </Button>
