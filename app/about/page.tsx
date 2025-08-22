@@ -17,35 +17,25 @@ export default function AboutPage() {
           }}
         ></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <h1
-                className="text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg"
-                style={{ fontFamily: "serif" }}
-              >
-                Meet David Conine
-              </h1>
-              <p className="text-2xl lg:text-3xl text-white mb-8 leading-relaxed drop-shadow-md">
-                20 Years of Construction Excellence Meets Real Estate Expertise
-              </p>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
 
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
-                <Badge className="bg-[#229FD9] text-white px-4 py-2 text-sm">UNF Construction Management</Badge>
-                <Badge className="bg-[#F16622] text-white px-4 py-2 text-sm">Harvard Real Estate Certificate</Badge>
-                <Badge className="bg-[#18457C] text-white px-4 py-2 text-sm">FL Licensed Realtor & Contractor</Badge>
-              </div>
-            </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1
+              className="text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg"
+              style={{ fontFamily: "serif" }}
+            >
+              Meet David Conine
+            </h1>
+            <p className="text-2xl lg:text-3xl text-white mb-8 leading-relaxed drop-shadow-md">
+              20 Years of Construction Excellence Meets Real Estate Expertise
+            </p>
 
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500&q=80"
-                  alt="David Conine - Professional Headshot"
-                  className="w-80 h-96 object-cover rounded-lg shadow-2xl"
-                />
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-[#229FD9] to-[#18457C] rounded-full opacity-20"></div>
-              </div>
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <Badge className="bg-[#229FD9] text-white px-4 py-2 text-sm">UNF Construction Management</Badge>
+              <Badge className="bg-[#F16622] text-white px-4 py-2 text-sm">Harvard Real Estate Certificate</Badge>
+              <Badge className="bg-[#18457C] text-white px-4 py-2 text-sm">FL Licensed Realtor & Contractor</Badge>
             </div>
           </div>
         </div>
