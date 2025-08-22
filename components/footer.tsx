@@ -74,7 +74,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Renovation Services</h4>
+            <h4 className="font-semibold mb-4">Construction Services</h4>
             <ul className="space-y-2 text-white/80">
               <li>
                 <Link href="/renovations/kitchen" className="hover:text-white transition-colors">

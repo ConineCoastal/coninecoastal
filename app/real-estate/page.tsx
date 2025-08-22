@@ -51,7 +51,7 @@ export default function RealEstateServicesPage() {
       description: "Browse our handpicked selection of coastal properties with renovation potential.",
       icon: <MapPin className="h-12 w-12 text-[#18457C]" />,
       href: "/real-estate/listings",
-      features: ["Move-in ready homes", "Renovation opportunities", "Waterfront properties", "Investment properties"],
+      features: ["Move-in ready homes", "Construction opportunities", "Waterfront properties", "Investment properties"],
       color: "border-[#18457C]/20 hover:border-[#18457C]",
     },
   ]
@@ -84,29 +84,33 @@ export default function RealEstateServicesPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url(https://picsum.photos/1920/1080)",
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80')",
           }}
         ></div>
-        <div className="absolute inset-0 bg-white/85"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
 
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          <Badge className="mb-6 bg-[#229FD9] text-white px-6 py-3 text-lg">Real Estate Excellence</Badge>
-          <h1 className="text-5xl lg:text-7xl font-bold text-[#18457C] mb-8" style={{ fontFamily: "serif" }}>
+          <Badge className="mb-6 bg-[#229FD9] text-white px-6 py-3 text-lg shadow-lg">Real Estate Excellence</Badge>
+          <h1
+            className="text-5xl lg:text-7xl font-bold text-white mb-8 drop-shadow-2xl"
+            style={{ fontFamily: "serif" }}
+          >
             Real Estate Services
           </h1>
-          <p className="text-2xl lg:text-3xl text-[#707070] mb-8 leading-relaxed">
+          <p className="text-2xl lg:text-3xl text-white/95 mb-8 leading-relaxed drop-shadow-lg">
             Where 20 Years of Construction Expertise Meets Deep Market Knowledge
           </p>
-          <p className="text-xl text-[#707070] mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
             The only real estate service in Northeast Florida that combines professional construction experience with
             expert market analysis, giving you insights others simply can't provide.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-[#229FD9] hover:bg-[#229FD9]/90 text-white px-10 py-4 text-xl">
+            <Button size="lg" className="bg-[#229FD9] hover:bg-[#229FD9]/90 text-white px-10 py-4 text-xl shadow-2xl">
               <Home className="mr-2 h-6 w-6" />
               Find Your Home
             </Button>
-            <Button size="lg" className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-10 py-4 text-xl">
+            <Button size="lg" className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-10 py-4 text-xl shadow-2xl">
               <TrendingUp className="mr-2 h-6 w-6" />
               Sell Your Home
             </Button>
@@ -167,8 +171,8 @@ export default function RealEstateServicesPage() {
                   For Investors
                 </h3>
                 <p className="text-[#707070] leading-relaxed">
-                  Evaluate properties with confidence knowing you have both market analysis AND renovation expertise in
-                  one consultant. Calculate accurate profit potential before you make an offer.
+                  Evaluate properties with confidence knowing you have both market analysis AND construction expertise
+                  in one consultant. Calculate accurate profit potential before you make an offer.
                 </p>
               </CardContent>
             </Card>
@@ -254,7 +258,7 @@ export default function RealEstateServicesPage() {
                 <div className="flex items-start space-x-4">
                   <CheckCircle className="h-6 w-6 text-[#229FD9] mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-[#18457C] mb-2">Renovation Cost Analysis</h3>
+                    <h3 className="font-semibold text-[#18457C] mb-2">Construction Cost Analysis</h3>
                     <p className="text-[#707070]">
                       Real construction costs for popular home improvements and renovations
                     </p>
@@ -280,7 +284,7 @@ export default function RealEstateServicesPage() {
 
             <div className="relative">
               <img
-                src="https://picsum.photos/400/300"
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
                 alt="Market analysis dashboard"
                 className="rounded-lg shadow-xl"
               />
@@ -306,24 +310,8 @@ export default function RealEstateServicesPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Sarah Johnson",
-                service: "Real Estate & Renovation",
-                text: "Conine Coastal helped us find the perfect fixer-upper and then transformed it into our dream home. Their dual expertise saved us time and money!",
-              },
-              {
-                name: "Mike Rodriguez",
-                service: "Investment Property",
-                text: "Their construction knowledge helped me identify the best investment opportunities. They knew exactly what renovations would maximize my ROI.",
-              },
-              {
-                name: "Emily Chen",
-                service: "Kitchen Remodel",
-                text: "Professional, reliable, and the results exceeded our expectations. Our coastal kitchen is now the heart of our home.",
-              },
-            ].map((testimonial, index) => (
-              <Card key={index} className="bg-white">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="bg-white hover:shadow-lg transition-shadow">
                 <CardContent className="p-8">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (

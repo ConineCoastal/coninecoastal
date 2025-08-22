@@ -44,7 +44,7 @@ export default function HomePage() {
             </Button>
             <Button size="lg" className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-10 py-4 text-xl shadow-2xl">
               <Hammer className="mr-2 h-6 w-6" />
-              Renovation Services
+              Construction Services
             </Button>
           </div>
         </div>
@@ -152,17 +152,17 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            {/* Renovation Services */}
+            {/* Construction Services */}
             <Card className="border-2 border-[#F16622]/20 hover:border-[#F16622] transition-all duration-300 hover:shadow-xl">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
                   <Hammer className="h-12 w-12 text-[#F16622] mr-4" />
                   <h3 className="text-3xl font-bold text-[#18457C]" style={{ fontFamily: "serif" }}>
-                    Renovation Services
+                    Construction Services
                   </h3>
                 </div>
                 <p className="text-[#707070] mb-6 text-lg leading-relaxed">
-                  Complete renovation services designed to maximize both your enjoyment and your property's market
+                  Complete construction services designed to maximize both your enjoyment and your property's market
                   value.
                 </p>
 
@@ -182,7 +182,7 @@ export default function HomePage() {
 
                 <Link href="/renovations">
                   <Button className="w-full bg-[#F16622] hover:bg-[#F16622]/90 text-white py-3 text-lg">
-                    Explore Renovation Services
+                    Explore Construction Services
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
@@ -256,7 +256,7 @@ export default function HomePage() {
             {[
               {
                 name: "Sarah Johnson",
-                service: "Real Estate & Renovation",
+                service: "Real Estate & Construction",
                 text: "Conine Coastal helped us find the perfect fixer-upper and then transformed it into our dream home. Their dual expertise saved us time and money!",
                 rating: 5,
               },

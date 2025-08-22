@@ -17,7 +17,7 @@ import {
   ArrowRight,
 } from "lucide-react"
 
-export default function RenovationServicesPage() {
+export default function ConstructionServicesPage() {
   const services = [
     {
       title: "Kitchen Remodeling",
@@ -142,13 +142,13 @@ export default function RenovationServicesPage() {
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <Badge className="mb-6 bg-[#F16622] text-white px-6 py-3 text-lg">Construction Excellence</Badge>
           <h1 className="text-5xl lg:text-7xl font-bold text-[#18457C] mb-8" style={{ fontFamily: "serif" }}>
-            Renovation Services
+            Construction Services
           </h1>
           <p className="text-2xl lg:text-3xl text-[#707070] mb-8 leading-relaxed">
             Where 20 Years of Construction Expertise Meets Real Estate Market Knowledge
           </p>
           <p className="text-xl text-[#707070] mb-12 max-w-4xl mx-auto leading-relaxed">
-            The only renovation service in Northeast Florida that combines professional construction experience with
+            The only construction service in Northeast Florida that combines professional construction experience with
             deep real estate market analysis, ensuring every improvement maximizes your home's value.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -164,12 +164,12 @@ export default function RenovationServicesPage() {
         </div>
       </section>
 
-      {/* The Renovation Advantage */}
+      {/* The Construction Advantage */}
       <section className="py-20 bg-gradient-to-r from-[#F16622]/5 to-[#229FD9]/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#18457C] mb-6" style={{ fontFamily: "serif" }}>
-              The Conine Coastal Renovation Advantage
+              The Conine Coastal Construction Advantage
             </h2>
             <p className="text-2xl text-[#707070] max-w-4xl mx-auto leading-relaxed">
               What happens when you combine master construction skills with deep real estate market knowledge?
@@ -183,10 +183,10 @@ export default function RenovationServicesPage() {
                   <CheckCircle className="h-10 w-10 text-[#F16622]" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
-                  Value-Driven Renovations
+                  Value-Driven Construction
                 </h3>
                 <p className="text-[#707070] leading-relaxed">
-                  Every renovation decision is informed by market data. We know which improvements add real value and
+                  Every construction decision is informed by market data. We know which improvements add real value and
                   which ones don't, ensuring maximum return on your investment.
                 </p>
               </CardContent>
@@ -230,10 +230,10 @@ export default function RenovationServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#18457C] mb-6" style={{ fontFamily: "serif" }}>
-              Complete Renovation Services
+              Complete Construction Services
             </h2>
             <p className="text-xl text-[#707070] max-w-3xl mx-auto">
-              From kitchen remodels to whole-home transformations, we provide expert renovation services that enhance
+              From kitchen remodels to whole-home transformations, we provide expert construction services that enhance
               your lifestyle and maximize your investment.
             </p>
           </div>
@@ -287,8 +287,8 @@ export default function RenovationServicesPage() {
               Transformation Gallery
             </h2>
             <p className="text-xl text-[#707070] max-w-3xl mx-auto">
-              See how our renovations have transformed homes throughout Northeast Florida, creating stunning results and
-              lasting value.
+              See how our construction projects have transformed homes throughout Northeast Florida, creating stunning
+              results and lasting value.
             </p>
           </div>
 
@@ -343,7 +343,7 @@ export default function RenovationServicesPage() {
               What Our Clients Say
             </h2>
             <p className="text-xl text-[#707070] max-w-3xl mx-auto">
-              Real results from real clients who experienced the Conine Coastal renovation difference
+              Real results from real clients who experienced the Conine Coastal construction difference
             </p>
           </div>
 

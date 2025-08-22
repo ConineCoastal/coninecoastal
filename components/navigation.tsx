@@ -95,7 +95,7 @@ export default function Navigation() {
               </div>
             </div>
 
-            {/* Renovation Services Dropdown */}
+            {/* Construction Services Dropdown */}
             <div className="relative group">
               <Link
                 href="/renovations"
@@ -103,7 +103,7 @@ export default function Navigation() {
                   isActive("/renovations") ? "text-[#F16622]" : "text-[#18457C] hover:text-[#229FD9]"
                 }`}
               >
-                Renovation Services
+                Construction Services
                 <ChevronDown className="ml-1 h-4 w-4" />
               </Link>
               <div className="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
@@ -320,7 +320,7 @@ export default function Navigation() {
                 )}
               </div>
 
-              {/* Renovation Services - Mobile Dropdown */}
+              {/* Construction Services - Mobile Dropdown */}
               <div>
                 <Link
                   href="/renovations"
@@ -336,7 +336,7 @@ export default function Navigation() {
                     }
                   }}
                 >
-                  Renovation Services
+                  Construction Services
                   <button
                     onClick={(e) => {
                       e.preventDefault()
