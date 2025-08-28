@@ -8,6 +8,7 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [realEstateOpen, setRealEstateOpen] = useState(false)
   const [renovationOpen, setRenovationOpen] = useState(false)
+  const [investorOpen, setInvestorOpen] = useState(false)
   const [resourcesOpen, setResourcesOpen] = useState(false)
   const pathname = usePathname()
 
@@ -21,6 +22,7 @@ export default function Navigation() {
     setIsMenuOpen(false)
     setRealEstateOpen(false)
     setRenovationOpen(false)
+    setInvestorOpen(false)
     setResourcesOpen(false)
   }
 
@@ -38,7 +40,7 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Navigation Menu */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
             <Link
               href="/about"
               className={`font-serif font-medium transition-colors text-sm xl:text-base ${
@@ -74,22 +76,16 @@ export default function Navigation() {
                     For Sellers
                   </Link>
                   <Link
-                    href="/real-estate/investment"
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Investment Services
-                  </Link>
-                  <Link
                     href="/real-estate/listings"
                     className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Current Listings
                   </Link>
                   <Link
-                    href="/real-estate/market-reports"
+                    href="/real-estate/property-management"
                     className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
-                    Market Reports
+                    Property Management
                   </Link>
                 </div>
               </div>
@@ -143,6 +139,59 @@ export default function Navigation() {
                     className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Emergency Repairs
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Investor Services Dropdown */}
+            <div className="relative group">
+              <Link
+                href="/investor-services"
+                className={`font-serif font-medium flex items-center transition-colors text-sm xl:text-base ${
+                  isActive("/investor-services") ? "text-[#229FD9]" : "text-[#18457C] hover:text-[#229FD9]"
+                }`}
+              >
+                Investor Services
+                <ChevronDown className="ml-1 h-3 w-3 xl:h-4 xl:w-4" />
+              </Link>
+              <div className="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="py-2">
+                  <Link
+                    href="/investor-services/investment"
+                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                  >
+                    Investment Services
+                  </Link>
+                  <Link
+                    href="/investor-services/portfolio-management"
+                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                  >
+                    Portfolio Management
+                  </Link>
+                  <Link
+                    href="/investor-services/property-analysis"
+                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                  >
+                    Property Analysis
+                  </Link>
+                  <Link
+                    href="/investor-services/market-research"
+                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                  >
+                    Market Research
+                  </Link>
+                  <Link
+                    href="/investor-services/fix-and-flip"
+                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                  >
+                    Fix & Flip Services
+                  </Link>
+                  <Link
+                    href="/investor-services/rental-properties"
+                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                  >
+                    Rental Properties
                   </Link>
                 </div>
               </div>
@@ -268,6 +317,7 @@ export default function Navigation() {
                     } else {
                       setRealEstateOpen(true)
                       setRenovationOpen(false)
+                      setInvestorOpen(false)
                       setResourcesOpen(false)
                     }
                   }}
@@ -292,13 +342,6 @@ export default function Navigation() {
                       For Sellers
                     </Link>
                     <Link
-                      href="/real-estate/investment"
-                      onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Investment Services
-                    </Link>
-                    <Link
                       href="/real-estate/listings"
                       onClick={closeMenu}
                       className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
@@ -306,11 +349,11 @@ export default function Navigation() {
                       Current Listings
                     </Link>
                     <Link
-                      href="/real-estate/market-reports"
+                      href="/real-estate/property-management"
                       onClick={closeMenu}
                       className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
-                      Market Reports
+                      Property Management
                     </Link>
                   </div>
                 )}
@@ -330,6 +373,7 @@ export default function Navigation() {
                     } else {
                       setRenovationOpen(true)
                       setRealEstateOpen(false)
+                      setInvestorOpen(false)
                       setResourcesOpen(false)
                     }
                   }}
@@ -385,6 +429,76 @@ export default function Navigation() {
                 )}
               </div>
 
+              {/* Investor Services - Mobile Dropdown */}
+              <div>
+                <button
+                  className={`flex items-center justify-between w-full font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
+                    isActive("/investor-services")
+                      ? "text-[#229FD9] bg-blue-50"
+                      : "text-[#18457C] hover:text-[#229FD9] hover:bg-gray-50"
+                  }`}
+                  onClick={() => {
+                    if (investorOpen) {
+                      setInvestorOpen(false)
+                    } else {
+                      setInvestorOpen(true)
+                      setRealEstateOpen(false)
+                      setRenovationOpen(false)
+                      setResourcesOpen(false)
+                    }
+                  }}
+                >
+                  Investor Services
+                  <ChevronDown className={`h-4 w-4 transition-transform ${investorOpen ? "rotate-180" : ""}`} />
+                </button>
+                {investorOpen && (
+                  <div className="pl-4 mt-2 space-y-1">
+                    <Link
+                      href="/investor-services/investment"
+                      onClick={closeMenu}
+                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                    >
+                      Investment Services
+                    </Link>
+                    <Link
+                      href="/investor-services/portfolio-management"
+                      onClick={closeMenu}
+                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                    >
+                      Portfolio Management
+                    </Link>
+                    <Link
+                      href="/investor-services/property-analysis"
+                      onClick={closeMenu}
+                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                    >
+                      Property Analysis
+                    </Link>
+                    <Link
+                      href="/investor-services/market-research"
+                      onClick={closeMenu}
+                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                    >
+                      Market Research
+                    </Link>
+                    <Link
+                      href="/investor-services/fix-and-flip"
+                      onClick={closeMenu}
+                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                    >
+                      Fix & Flip Services
+                    </Link>
+                    <Link
+                      href="/investor-services/rental-properties"
+                      onClick={closeMenu}
+                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                    >
+                      Rental Properties
+                    </Link>
+                  </div>
+                )}
+              </div>
+
               {/* Resources - Mobile Dropdown */}
               <div>
                 <button
@@ -400,6 +514,7 @@ export default function Navigation() {
                       setResourcesOpen(true)
                       setRealEstateOpen(false)
                       setRenovationOpen(false)
+                      setInvestorOpen(false)
                     }
                   }}
                 >
