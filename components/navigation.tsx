@@ -176,22 +176,10 @@ export default function Navigation() {
                     Property Analysis
                   </Link>
                   <Link
-                    href="/investor-services/market-research"
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Market Research
-                  </Link>
-                  <Link
                     href="/investor-services/fix-and-flip"
                     className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Fix & Flip Services
-                  </Link>
-                  <Link
-                    href="/investor-services/rental-properties"
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Rental Properties
                   </Link>
                 </div>
               </div>
@@ -475,25 +463,11 @@ export default function Navigation() {
                       Property Analysis
                     </Link>
                     <Link
-                      href="/investor-services/market-research"
-                      onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Market Research
-                    </Link>
-                    <Link
                       href="/investor-services/fix-and-flip"
                       onClick={closeMenu}
                       className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Fix & Flip Services
-                    </Link>
-                    <Link
-                      href="/investor-services/rental-properties"
-                      onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Rental Properties
                     </Link>
                   </div>
                 )}
