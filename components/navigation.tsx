@@ -35,7 +35,7 @@ export default function Navigation() {
           {/* Logo Section */}
           <div className="flex items-center space-x-3">
             <Link href="/" onClick={closeMenu} className="flex items-center">
-              <img src="/conine-coastal-logo.png" alt="Conine Coastal Logo" className="h-10 sm:h-12 w-auto" />
+              <img src="/favicon.png" alt="Conine Coastal Logo" className="h-10 sm:h-12 w-auto" />
             </Link>
           </div>
 

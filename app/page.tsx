@@ -37,7 +37,7 @@ export default function HomePage() {
             Whether you're buying, selling, or renovating, get the insider advantage that comes from understanding both
             markets and construction costs.
           </p>
-          <div className="flex flex-col gap-4 sm:gap-6 justify-center max-w-lg mx-auto sm:max-w-none sm:flex-row">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto sm:max-w-none sm:flex-row">
             <Link href="/real-estate" className="w-full sm:w-auto">
               <Button
                 size="lg"
