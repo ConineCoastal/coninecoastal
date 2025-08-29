@@ -1,5 +1,7 @@
 import Link from "next/link"
-import { Phone, Mail, MapPin, Instagram, Facebook, Twitter } from "lucide-react"
+import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react"
+import { XLogo } from "./icons/x-logo"
+import { LinkedInLogo } from "./icons/linkedin-logo"
 
 export default function Footer() {
   return (
@@ -57,13 +59,22 @@ export default function Footer() {
                 <Facebook className="h-6 w-6" />
               </Link>
               <Link
-                href="https://www.twitter.com/coninecoastal"
+                href="https://www.x.com/coninecoastal"
                 className="text-white/60 hover:text-white transition-colors p-2 -m-2 touch-manipulation"
-                aria-label="Follow us on Twitter"
+                aria-label="Follow us on X"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Twitter className="h-6 w-6" />
+                <XLogo className="h-6 w-6" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/company/coninecoastal"
+                className="text-white/60 hover:text-white transition-colors p-2 -m-2 touch-manipulation"
+                aria-label="Follow us on LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedInLogo className="h-6 w-6" />
               </Link>
             </div>
           </div>
