@@ -23,10 +23,12 @@ export default function PrivacyPolicyClientPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16 overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">Privacy Policy</h1>
-          <p className="text-xl text-blue-100 text-center">Effective Date: September 3, 2025</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4 leading-tight tracking-normal">
+            Privacy Policy
+          </h1>
+          <p className="text-xl text-blue-100 text-center leading-relaxed">Effective Date: September 3, 2025</p>
         </div>
       </div>
 
