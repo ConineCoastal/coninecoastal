@@ -33,19 +33,34 @@ export default function ContactPage() {
         body: JSON.stringify({ ...formData, source: "contact" }),
       })
 
-      if (!response.ok) {
-        throw new Error("Failed to submit form")
+      let result: unknown
+      try {
+        result = await response.json()
+      } catch (parseError) {
+        console.warn("Unable to parse contact form response", parseError)
+      }
+
+      const responseBody =
+        typeof result === "object" && result !== null
+          ? (result as { success?: boolean; message?: string })
+          : undefined
+
+      if (!response.ok || responseBody?.success === false) {
+        const errorMessage = responseBody?.message ?? "Failed to submit form"
+        throw new Error(errorMessage)
       }
 
       setFormStatus("success")
-      setFormMessage("Thanks for reaching out! We'll be in touch soon.")
+      setFormMessage(responseBody?.message ?? "Thanks for reaching out! We'll be in touch soon.")
       setFormData({ name: "", email: "", phone: "", message: "" })
     } catch (error) {
       console.error("Contact form submission failed", error)
       setFormStatus("error")
-      setFormMessage(
-        "We couldn't send your message. Please try again or email us directly at info@coninecoastal.com."
-      )
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : "We couldn't send your message. Please try again or email us directly at info@coninecoastal.com."
+      setFormMessage(errorMessage)
     } finally {
       setIsSubmitting(false)
     }
