@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -229,11 +230,19 @@ export default function AboutPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-8 py-4 text-lg">
-              Schedule Consultation
+            <Button
+              asChild
+              size="lg"
+              className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-8 py-4 text-lg"
+            >
+              <Link href="/contact">Schedule Consultation</Link>
             </Button>
-            <Button size="lg" className="bg-white text-[#18457C] hover:bg-white/90 px-8 py-4 text-lg">
-              View Our Work
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-[#18457C] hover:bg-white/90 px-8 py-4 text-lg"
+            >
+              <Link href="/contact">View Our Work</Link>
             </Button>
           </div>
         </div>

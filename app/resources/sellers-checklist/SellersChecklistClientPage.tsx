@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, ListChecks, Lightbulb, Paintbrush, KeyRound, Camera, Home } from "lucide-react"
@@ -124,8 +125,12 @@ export default function SellersChecklistClientPage() {
           <p className="text-xl text-gray-300 mb-8">
             Let our experts guide you through the selling process with personalized advice and proven strategies.
           </p>
-          <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg">
-            Schedule Consultation
+          <Button
+            asChild
+            size="lg"
+            className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg"
+          >
+            <Link href="/contact">Schedule Consultation</Link>
           </Button>
         </div>
       </section>

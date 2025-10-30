@@ -381,9 +381,15 @@ export default function ConstructionServicesPage() {
             When disaster strikes, we're here to help. Storm damage, plumbing emergencies, electrical failures - we
             respond fast.
           </p>
-          <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg">
-            <Phone className="mr-2 h-5 w-5" />
-            Emergency: (555) 123-4911
+          <Button
+            asChild
+            size="lg"
+            className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg"
+          >
+            <Link href="/contact" className="flex items-center justify-center">
+              <Phone className="mr-2 h-5 w-5" />
+              Emergency Support
+            </Link>
           </Button>
         </div>
       </section>
@@ -399,13 +405,25 @@ export default function ConstructionServicesPage() {
             plan for your home and budget.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-8 py-4 text-lg">
-              <Phone className="mr-2 h-5 w-5" />
-              Call (555) 123-4567
+            <Button
+              asChild
+              size="lg"
+              className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-8 py-4 text-lg"
+            >
+              <Link href="/contact" className="flex items-center justify-center">
+                <Phone className="mr-2 h-5 w-5" />
+                Talk with Our Team
+              </Link>
             </Button>
-            <Button size="lg" className="bg-white text-[#18457C] hover:bg-white/90 px-8 py-4 text-lg">
-              <Mail className="mr-2 h-5 w-5" />
-              Free Consultation
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-[#18457C] hover:bg-white/90 px-8 py-4 text-lg"
+            >
+              <Link href="/contact" className="flex items-center justify-center">
+                <Mail className="mr-2 h-5 w-5" />
+                Free Consultation
+              </Link>
             </Button>
           </div>
         </div>

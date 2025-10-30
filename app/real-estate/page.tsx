@@ -37,7 +37,7 @@ export default function RealEstateServicesPage() {
       title: "Investment Services",
       description: "Smart investment strategies backed by accurate renovation cost analysis.",
       icon: <Calculator className="h-12 w-12 text-[#FFCA05]" />,
-      href: "/real-estate/investment",
+      href: "/investor-services/investment",
       features: [
         "Fix & flip opportunities",
         "Rental property evaluation",
@@ -106,13 +106,25 @@ export default function RealEstateServicesPage() {
             expert market analysis, giving you insights others simply can't provide.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-[#229FD9] hover:bg-[#229FD9]/90 text-white px-10 py-4 text-xl shadow-2xl">
-              <Home className="mr-2 h-6 w-6" />
-              Find Your Home
+            <Button
+              asChild
+              size="lg"
+              className="bg-[#229FD9] hover:bg-[#229FD9]/90 text-white px-10 py-4 text-xl shadow-2xl"
+            >
+              <Link href="/contact" className="flex items-center justify-center">
+                <Home className="mr-2 h-6 w-6" />
+                Find Your Home
+              </Link>
             </Button>
-            <Button size="lg" className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-10 py-4 text-xl shadow-2xl">
-              <TrendingUp className="mr-2 h-6 w-6" />
-              Sell Your Home
+            <Button
+              asChild
+              size="lg"
+              className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-10 py-4 text-xl shadow-2xl"
+            >
+              <Link href="/contact" className="flex items-center justify-center">
+                <TrendingUp className="mr-2 h-6 w-6" />
+                Sell Your Home
+              </Link>
             </Button>
           </div>
         </div>
@@ -341,13 +353,25 @@ export default function RealEstateServicesPage() {
             expertise work for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-8 py-4 text-lg">
-              <Phone className="mr-2 h-5 w-5" />
-              Call (555) 123-4567
+            <Button
+              asChild
+              size="lg"
+              className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-8 py-4 text-lg"
+            >
+              <Link href="/contact" className="flex items-center justify-center">
+                <Phone className="mr-2 h-5 w-5" />
+                Talk with Our Team
+              </Link>
             </Button>
-            <Button size="lg" className="bg-white text-[#18457C] hover:bg-white/90 px-8 py-4 text-lg">
-              <Mail className="mr-2 h-5 w-5" />
-              Schedule Consultation
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-[#18457C] hover:bg-white/90 px-8 py-4 text-lg"
+            >
+              <Link href="/contact" className="flex items-center justify-center">
+                <Mail className="mr-2 h-5 w-5" />
+                Schedule a Consultation
+              </Link>
             </Button>
           </div>
         </div>

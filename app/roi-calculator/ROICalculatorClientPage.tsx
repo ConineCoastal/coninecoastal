@@ -297,12 +297,12 @@ export default function ROICalculatorClientPage() {
             Get professional guidance from experts who understand both construction costs and market values.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:5551234567">
+            <Link href="/contact">
               <Button size="lg" className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-8 py-4 text-lg">
                 <Phone className="mr-2 h-5 w-5" />
-                Call (555) 123-4567
+                Talk with Our Team
               </Button>
-            </a>
+            </Link>
             <Link href="/contact">
               <Button
                 size="lg"
@@ -310,7 +310,7 @@ export default function ROICalculatorClientPage() {
                 className="border-white text-white hover:bg-white hover:text-[#18457C] px-8 py-4 text-lg bg-transparent"
               >
                 <Mail className="mr-2 h-5 w-5" />
-                Schedule Consultation
+                Schedule a Consultation
               </Button>
             </Link>
           </div>

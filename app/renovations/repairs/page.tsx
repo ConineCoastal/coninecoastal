@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import type React from "react"
 
@@ -51,17 +52,26 @@ export default function HomeRepairsMaintenancePage() {
             professional craftsmanship and reliable service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg">
-              <Phone className="mr-2 h-5 w-5" />
-              Call (555) 123-4567
+            <Button
+              asChild
+              size="lg"
+              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg"
+            >
+              <Link href="/contact" className="flex items-center justify-center">
+                <Phone className="mr-2 h-5 w-5" />
+                Talk with Our Team
+              </Link>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg bg-transparent"
             >
-              <AlertTriangle className="mr-2 h-5 w-5" />
-              Emergency: (555) 123-4911
+              <Link href="/contact" className="flex items-center justify-center">
+                <AlertTriangle className="mr-2 h-5 w-5" />
+                Request Emergency Help
+              </Link>
             </Button>
           </div>
         </div>
@@ -326,14 +336,15 @@ export default function HomeRepairsMaintenancePage() {
                     Request Service
                   </Button>
                   <Button
-                    type="button"
+                    asChild
                     size="lg"
                     variant="outline"
                     className="flex-1 border-red-600 text-red-600 hover:bg-red-600 hover:text-white py-4 text-lg font-semibold bg-transparent"
-                    onClick={() => window.open("tel:5551234911")}
                   >
-                    <AlertTriangle className="mr-2 h-5 w-5" />
-                    Emergency Call
+                    <Link href="/contact" className="flex items-center justify-center">
+                      <AlertTriangle className="mr-2 h-5 w-5" />
+                      Emergency Support
+                    </Link>
                   </Button>
                 </div>
               </form>
@@ -350,17 +361,26 @@ export default function HomeRepairsMaintenancePage() {
             Our experienced repair team is ready to help with all your home maintenance needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg">
-              <Phone className="mr-2 h-5 w-5" />
-              Call (555) 123-4567
+            <Button
+              asChild
+              size="lg"
+              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg"
+            >
+              <Link href="/contact" className="flex items-center justify-center">
+                <Phone className="mr-2 h-5 w-5" />
+                Talk with Our Team
+              </Link>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg bg-transparent"
             >
-              <Mail className="mr-2 h-5 w-5" />
-              Email Us
+              <Link href="/contact" className="flex items-center justify-center">
+                <Mail className="mr-2 h-5 w-5" />
+                Email Us
+              </Link>
             </Button>
           </div>
           <div className="mt-8 p-4 bg-red-900/30 rounded-lg border border-red-600/30">
@@ -369,8 +389,8 @@ export default function HomeRepairsMaintenancePage() {
               <span className="font-semibold">24/7 Emergency Service</span>
             </div>
             <p className="text-red-200">For urgent repairs that can't wait, call our emergency line:</p>
-            <a href="tel:5551234911" className="text-red-300 font-bold text-lg hover:text-red-100">
-              (555) 123-4911
+            <a href="tel:+19046241722" className="text-red-300 font-bold text-lg hover:text-red-100">
+              (904) 624-1722
             </a>
           </div>
         </div>

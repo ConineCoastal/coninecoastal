@@ -98,11 +98,14 @@ export default function BuyersGuideClientPage() {
               Download PDF Guide
             </Button>
             <Button
+              asChild
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-[#18457C] px-8 py-3 bg-transparent"
             >
-              <Phone className="mr-2 h-5 w-5" />
-              Schedule Consultation
+              <Link href="/contact" className="flex items-center justify-center">
+                <Phone className="mr-2 h-5 w-5" />
+                Schedule Consultation
+              </Link>
             </Button>
           </div>
         </div>

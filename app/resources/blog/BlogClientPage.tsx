@@ -19,7 +19,7 @@ const featuredPost = {
   href: "/resources/blog/q4-2024-market-trends",
 }
 
-const blogPosts = [
+const _blogPosts = [
   {
     title: "5 Kitchen Updates That Actually Add Value",
     excerpt:
@@ -88,6 +88,8 @@ const blogPosts = [
   },
 ]
 
+void _blogPosts
+
 const categories = [
   { name: "Market Analysis", count: 12, icon: <TrendingUp className="h-5 w-5" />, color: "bg-[#229FD9]" },
   { name: "Home Improvement", count: 18, icon: <Wrench className="h-5 w-5" />, color: "bg-[#F16622]" },
@@ -118,7 +120,10 @@ export default function BlogClientPage() {
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-r from-[#18457C] to-[#229FD9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{ fontFamily: font }}>
+          <h1
+            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            style={{ fontFamily: font.style.fontFamily }}
+          >
             Latest Insights & News
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
@@ -136,7 +141,10 @@ export default function BlogClientPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-[#F16622] text-white">Featured Article</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: font }}>
+            <h2
+              className="text-3xl md:text-4xl font-bold text-[#18457C] mb-4"
+              style={{ fontFamily: font.style.fontFamily }}
+            >
               Latest Featured Post
             </h2>
           </div>
@@ -154,7 +162,10 @@ export default function BlogClientPage() {
                 </div>
               </div>
               <CardContent className="p-8 lg:p-12 flex flex-col justify-center">
-                <h3 className="text-3xl font-bold text-[#18457C] mb-4" style={{ fontFamily: font }}>
+                <h3
+                  className="text-3xl font-bold text-[#18457C] mb-4"
+                  style={{ fontFamily: font.style.fontFamily }}
+                >
                   {featuredPost.title}
                 </h3>
                 <p className="text-[#707070] mb-6 text-lg leading-relaxed">{featuredPost.excerpt}</p>
@@ -187,7 +198,10 @@ export default function BlogClientPage() {
           <div className="flex flex-col lg:flex-row gap-12">
             {/* Main Content */}
             <div className="lg:w-2/3">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#18457C] mb-8" style={{ fontFamily: font }}>
+              <h2
+                className="text-3xl md:text-4xl font-bold text-[#18457C] mb-8"
+                style={{ fontFamily: font.style.fontFamily }}
+              >
                 Recent Articles
               </h2>
 
@@ -221,7 +235,10 @@ export default function BlogClientPage() {
                 {/* Categories */}
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-[#18457C] mb-6" style={{ fontFamily: font }}>
+                    <h3
+                      className="text-xl font-bold text-[#18457C] mb-6"
+                      style={{ fontFamily: font.style.fontFamily }}
+                    >
                       Categories
                     </h3>
                     <div className="space-y-3">
@@ -252,7 +269,10 @@ export default function BlogClientPage() {
                 {/* Newsletter Signup */}
                 <Card className="bg-gradient-to-r from-[#229FD9]/5 to-[#18457C]/5 border-2 border-[#229FD9]/20">
                   <CardContent className="p-6 text-center">
-                    <h3 className="text-xl font-bold text-[#18457C] mb-4" style={{ fontFamily: font }}>
+                    <h3
+                      className="text-xl font-bold text-[#18457C] mb-4"
+                      style={{ fontFamily: font.style.fontFamily }}
+                    >
                       Stay Updated
                     </h3>
                     <p className="text-[#707070] mb-6">
@@ -272,7 +292,10 @@ export default function BlogClientPage() {
                 {/* Featured Resources */}
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-[#18457C] mb-6" style={{ fontFamily: font }}>
+                    <h3
+                      className="text-xl font-bold text-[#18457C] mb-6"
+                      style={{ fontFamily: font.style.fontFamily }}
+                    >
                       Featured Resources
                     </h3>
                     <div className="space-y-4">
@@ -309,7 +332,10 @@ export default function BlogClientPage() {
       {/* CTA Section */}
       <section className="py-16 bg-[#18457C] text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: font }}>
+          <h2
+            className="text-3xl md:text-4xl font-bold mb-6"
+            style={{ fontFamily: font.style.fontFamily }}
+          >
             Get Expert Insights Delivered
           </h2>
           <p className="text-xl text-white/90 mb-8">

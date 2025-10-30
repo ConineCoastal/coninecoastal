@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -25,16 +26,25 @@ export default function EmergencyRepairs() {
             stressful situations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg">
-              <Phone className="mr-2 h-5 w-5" />
-              Call (555) 123-4911
+            <Button
+              asChild
+              size="lg"
+              className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg"
+            >
+              <Link href="/contact" className="flex items-center justify-center">
+                <Phone className="mr-2 h-5 w-5" />
+                Request Immediate Help
+              </Link>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg bg-transparent"
             >
-              Request Emergency Service
+              <Link href="/contact" className="flex items-center justify-center">
+                Request Emergency Service
+              </Link>
             </Button>
           </div>
         </div>
@@ -119,9 +129,15 @@ export default function EmergencyRepairs() {
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Emergency Repairs - Call Now!</h2>
           <p className="text-xl text-gray-300 mb-8">We're available 24/7 to handle your urgent home repair needs.</p>
-          <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg">
-            <Phone className="mr-2 h-5 w-5" />
-            (555) 123-4911
+          <Button
+            asChild
+            size="lg"
+            className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg"
+          >
+            <Link href="/contact" className="flex items-center justify-center">
+              <Phone className="mr-2 h-5 w-5" />
+              Contact Our Emergency Team
+            </Link>
           </Button>
         </div>
       </section>

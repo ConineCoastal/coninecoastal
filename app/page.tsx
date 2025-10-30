@@ -38,22 +38,22 @@ export default function HomePage() {
             markets and construction costs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto sm:max-w-none sm:flex-row">
-            <Link href="/real-estate" className="w-full sm:w-auto">
+            <Link href="/contact" className="w-full sm:w-auto">
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-[#229FD9] hover:bg-[#229FD9]/90 text-white px-8 sm:px-10 py-4 text-lg sm:text-xl shadow-2xl min-h-[56px] touch-manipulation"
               >
                 <Home className="mr-2 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" />
-                <span className="whitespace-nowrap">Real Estate Services</span>
+                <span className="whitespace-nowrap">Talk Real Estate</span>
               </Button>
             </Link>
-            <Link href="/renovations" className="w-full sm:w-auto">
+            <Link href="/contact" className="w-full sm:w-auto">
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-[#F16622] hover:bg-[#F16622]/90 text-white px-8 sm:px-10 py-4 text-lg sm:text-xl shadow-2xl min-h-[56px] touch-manipulation"
               >
                 <Hammer className="mr-2 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" />
-                <span className="whitespace-nowrap">Construction Services</span>
+                <span className="whitespace-nowrap">Plan Your Project</span>
               </Button>
             </Link>
           </div>
@@ -330,22 +330,22 @@ export default function HomePage() {
             expertise work for you.
           </p>
           <div className="flex flex-col gap-4 sm:gap-6 justify-center max-w-lg mx-auto sm:max-w-none sm:flex-row">
-            <a href="tel:5551234567" className="w-full sm:w-auto">
+            <Link href="/contact" className="w-full sm:w-auto">
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-[#F16622] hover:bg-[#F16622]/90 text-white px-6 sm:px-8 py-4 text-base sm:text-lg min-h-[56px] touch-manipulation"
               >
                 <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-                <span className="whitespace-nowrap">Call (555) 123-4567</span>
+                <span className="whitespace-nowrap">Talk with Our Team</span>
               </Button>
-            </a>
+            </Link>
             <Link href="/contact" className="w-full sm:w-auto">
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-white text-[#18457C] hover:bg-white/90 px-6 sm:px-8 py-4 text-base sm:text-lg min-h-[56px] touch-manipulation"
               >
                 <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-                <span className="whitespace-nowrap">Schedule Consultation</span>
+                <span className="whitespace-nowrap">Schedule a Consultation</span>
               </Button>
             </Link>
           </div>
