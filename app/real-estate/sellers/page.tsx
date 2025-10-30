@@ -25,7 +25,7 @@ export default function SellersPage() {
     // Handle form submission logic here
   }
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = event.target
     setFormData((prevState) => ({
       ...prevState,
@@ -507,8 +507,8 @@ export default function SellersPage() {
               <div className="bg-white/10 p-6 rounded-lg">
                 <h4 className="text-lg font-bold mb-2">Emergency Contact</h4>
                 <p className="text-white/80 text-sm mb-2">For urgent selling questions</p>
-                <a href="tel:5551234911" className="text-[#FFCA05] font-semibold">
-                  (555) 123-4911
+                <a href="tel:+19046241722" className="text-[#FFCA05] font-semibold">
+                  (904) 624-1722
                 </a>
               </div>
 
@@ -517,7 +517,7 @@ export default function SellersPage() {
                 <div className="space-y-2">
                   <p className="flex items-center">
                     <Phone className="h-5 w-5 mr-2 text-[#F16622]" />
-                    (555) 123-4567
+                    (904) 624-1722
                   </p>
                   <p className="flex items-center">
                     <MapPin className="h-5 w-5 mr-2 text-[#F16622]" />

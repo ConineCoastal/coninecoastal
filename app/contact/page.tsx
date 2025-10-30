@@ -14,14 +14,44 @@ export default function ContactPage() {
     phone: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">("idle")
+  const [formMessage, setFormMessage] = useState("")
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    // Handle form submission logic here
-    console.log("Form submitted:", formData)
+    setIsSubmitting(true)
+    setFormStatus("idle")
+    setFormMessage("")
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...formData, source: "contact" }),
+      })
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form")
+      }
+
+      setFormStatus("success")
+      setFormMessage("Thanks for reaching out! We'll be in touch soon.")
+      setFormData({ name: "", email: "", phone: "", message: "" })
+    } catch (error) {
+      console.error("Contact form submission failed", error)
+      setFormStatus("error")
+      setFormMessage(
+        "We couldn't send your message. Please try again or email us directly at info@coninecoastal.com."
+      )
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = event.target
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -49,14 +79,18 @@ export default function ContactPage() {
             Let's discuss your real estate and renovation needs. We're here to help.
           </p>
 
-          <Button size="lg" className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-10 py-4 text-xl shadow-lg">
-            Schedule Consultation
+          <Button
+            asChild
+            size="lg"
+            className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-10 py-4 text-xl shadow-lg"
+          >
+            <a href="#contact-form">Schedule Consultation</a>
           </Button>
         </div>
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" id="contact-form">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Contact Information */}
@@ -70,7 +104,9 @@ export default function ContactPage() {
                   <Phone className="h-6 w-6 text-[#F16622] mr-4" />
                   <div>
                     <p className="font-semibold text-[#18457C]">Phone</p>
-                    <p className="text-[#707070]">(555) 123-4567</p>
+                    <a href="tel:+19046241722" className="text-[#707070] hover:text-[#18457C] transition-colors">
+                      (904) 624-1722
+                    </a>
                   </div>
                 </div>
 
@@ -100,8 +136,11 @@ export default function ContactPage() {
                 </h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-[#18457C] mb-1">Name *</label>
+                    <label className="block text-sm font-medium text-[#18457C] mb-1" htmlFor="contact-name">
+                      Name *
+                    </label>
                     <Input
+                      id="contact-name"
                       type="text"
                       name="name"
                       value={formData.name}
@@ -112,8 +151,11 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-[#18457C] mb-1">Email *</label>
+                    <label className="block text-sm font-medium text-[#18457C] mb-1" htmlFor="contact-email">
+                      Email *
+                    </label>
                     <Input
+                      id="contact-email"
                       type="email"
                       name="email"
                       value={formData.email}
@@ -124,8 +166,11 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-[#18457C] mb-1">Phone *</label>
+                    <label className="block text-sm font-medium text-[#18457C] mb-1" htmlFor="contact-phone">
+                      Phone *
+                    </label>
                     <Input
+                      id="contact-phone"
                       type="tel"
                       name="phone"
                       value={formData.phone}
@@ -136,8 +181,11 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-[#18457C] mb-1">Message</label>
+                    <label className="block text-sm font-medium text-[#18457C] mb-1" htmlFor="contact-message">
+                      Message
+                    </label>
                     <Textarea
+                      id="contact-message"
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
@@ -146,9 +194,22 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-[#F16622] hover:bg-[#F16622]/90 text-white py-3">
-                    Send Message
+                  <Button
+                    type="submit"
+                    className="w-full bg-[#F16622] hover:bg-[#F16622]/90 text-white py-3"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
+                  {formStatus !== "idle" && (
+                    <p
+                      className={`text-sm ${
+                        formStatus === "success" ? "text-green-600" : "text-red-600"
+                      }`}
+                    >
+                      {formMessage}
+                    </p>
+                  )}
                 </form>
               </CardContent>
             </Card>

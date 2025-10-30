@@ -1,5 +1,6 @@
 "use client"
 import React from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -25,10 +26,47 @@ export default function InvestorServicesPage() {
     phone: "",
     investmentAmount: "",
   })
+  const [isSubmitting, setIsSubmitting] = React.useState(false)
+  const [formStatus, setFormStatus] = React.useState<"idle" | "success" | "error">("idle")
+  const [formMessage, setFormMessage] = React.useState("")
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    // Handle form submission logic here
+    setIsSubmitting(true)
+    setFormStatus("idle")
+    setFormMessage("")
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: `Estimated investment amount: $${formData.investmentAmount || "0"}`,
+          source: "investor-services",
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error("Unable to submit form")
+      }
+
+      setFormStatus("success")
+      setFormMessage("Thanks! We'll review your goals and reach out shortly.")
+      setFormData({ name: "", email: "", phone: "", investmentAmount: "" })
+    } catch (error) {
+      console.error("Investor contact submission failed", error)
+      setFormStatus("error")
+      setFormMessage(
+        "We couldn't process your request. Please try again or email us at info@coninecoastal.com."
+      )
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -65,10 +103,11 @@ export default function InvestorServicesPage() {
           </p>
 
           <Button
+            asChild
             size="lg"
             className="bg-[#FFCA05] hover:bg-[#FFCA05]/90 text-[#18457C] px-10 py-4 text-xl shadow-lg font-semibold"
           >
-            Calculate Your ROI
+            <Link href="/contact">Talk with Our Team</Link>
           </Button>
         </div>
       </section>
@@ -386,47 +425,87 @@ export default function InvestorServicesPage() {
             <Card className="bg-white">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-[#18457C] mb-6" style={{ fontFamily: "serif" }}>
-                  ROI Calculator
+                  Request a Portfolio Review
                 </h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <Input
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="border-[#707070]/30 focus:border-[#229FD9]"
-                  />
-                  <Input
-                    name="email"
-                    type="email"
-                    placeholder="Email Address"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="border-[#707070]/30 focus:border-[#229FD9]"
-                  />
-                  <Input
-                    name="phone"
-                    type="tel"
-                    placeholder="Phone Number"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    required
-                    className="border-[#707070]/30 focus:border-[#229FD9]"
-                  />
-                  <Input
-                    name="investmentAmount"
-                    type="number"
-                    placeholder="Investment Amount ($)"
-                    value={formData.investmentAmount}
-                    onChange={handleInputChange}
-                    required
-                    className="border-[#707070]/30 focus:border-[#229FD9]"
-                  />
-                  <Button type="submit" className="w-full bg-[#F16622] hover:bg-[#F16622]/90 text-white py-3">
-                    Calculate Your ROI
+                  <div>
+                    <label className="block text-sm font-medium text-[#18457C] mb-1" htmlFor="investor-name">
+                      Name *
+                    </label>
+                    <Input
+                      id="investor-name"
+                      name="name"
+                      placeholder="Your Name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      className="border-[#707070]/30 focus:border-[#229FD9]"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-[#18457C] mb-1" htmlFor="investor-email">
+                      Email *
+                    </label>
+                    <Input
+                      id="investor-email"
+                      name="email"
+                      type="email"
+                      placeholder="Email Address"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="border-[#707070]/30 focus:border-[#229FD9]"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-[#18457C] mb-1" htmlFor="investor-phone">
+                      Phone *
+                    </label>
+                    <Input
+                      id="investor-phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="Phone Number"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      required
+                      className="border-[#707070]/30 focus:border-[#229FD9]"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      className="block text-sm font-medium text-[#18457C] mb-1"
+                      htmlFor="investor-amount"
+                    >
+                      Target Investment Amount ($) *
+                    </label>
+                    <Input
+                      id="investor-amount"
+                      name="investmentAmount"
+                      type="number"
+                      placeholder="Investment Amount"
+                      value={formData.investmentAmount}
+                      onChange={handleInputChange}
+                      required
+                      className="border-[#707070]/30 focus:border-[#229FD9]"
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    className="w-full bg-[#F16622] hover:bg-[#F16622]/90 text-white py-3"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Submitting..." : "Contact Me"}
                   </Button>
+                  {formStatus !== "idle" && (
+                    <p
+                      className={`text-sm ${
+                        formStatus === "success" ? "text-green-600" : "text-red-600"
+                      }`}
+                    >
+                      {formMessage}
+                    </p>
+                  )}
                 </form>
               </CardContent>
             </Card>
@@ -441,8 +520,8 @@ export default function InvestorServicesPage() {
                     <Phone className="h-6 w-6 mr-4 text-[#F16622]" />
                     <div>
                       <p className="font-semibold">Phone</p>
-                      <a href="tel:5551234567" className="text-[#229FD9] hover:underline">
-                        (555) 123-4567
+                      <a href="tel:+19046241722" className="text-[#229FD9] hover:underline">
+                        (904) 624-1722
                       </a>
                     </div>
                   </div>
@@ -459,8 +538,11 @@ export default function InvestorServicesPage() {
               <div className="bg-white/10 p-6 rounded-lg">
                 <h4 className="text-lg font-bold mb-2">Investment Consultation</h4>
                 <p className="text-white/80 text-sm mb-2">Schedule a free portfolio review</p>
-                <Button className="bg-[#FFCA05] hover:bg-[#FFCA05]/90 text-[#18457C] font-semibold">
-                  Book Consultation
+                <Button
+                  asChild
+                  className="bg-[#FFCA05] hover:bg-[#FFCA05]/90 text-[#18457C] font-semibold"
+                >
+                  <Link href="/contact">Contact Us</Link>
                 </Button>
               </div>
             </div>
