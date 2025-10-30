@@ -12,17 +12,33 @@ const contactSchema = z.object({
   source: z.string().optional(),
 })
 
-const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "info@coninecoastal.com"
-const CONTACT_FROM_EMAIL = process.env.CONTACT_FROM_EMAIL ?? CONTACT_TO_EMAIL
-
 const smtpHost = process.env.SMTP_HOST
 const smtpPort = process.env.SMTP_PORT
 const smtpUser = process.env.SMTP_USER
 const smtpPass = process.env.SMTP_PASS
 const smtpSecure = (process.env.SMTP_SECURE ?? "false").toLowerCase() === "true"
 
-const transporter = smtpHost
-  ? nodemailer.createTransport({
+const gmailUser = process.env.GMAIL_SMTP_USER ?? process.env.GMAIL_EMAIL ?? smtpUser
+const gmailAppPassword = process.env.GMAIL_SMTP_APP_PASSWORD ?? process.env.GMAIL_APP_PASSWORD ?? smtpPass
+
+const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? gmailUser ?? "info@coninecoastal.com"
+const CONTACT_FROM_EMAIL = process.env.CONTACT_FROM_EMAIL ?? gmailUser ?? CONTACT_TO_EMAIL
+
+function createTransporter() {
+  if (gmailUser && gmailAppPassword) {
+    return nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: gmailUser,
+        pass: gmailAppPassword,
+      },
+    })
+  }
+
+  if (smtpHost) {
+    return nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort ? Number.parseInt(smtpPort, 10) : 587,
       secure: smtpSecure,
@@ -34,7 +50,15 @@ const transporter = smtpHost
             }
           : undefined,
     })
-  : nodemailer.createTransport({ jsonTransport: true })
+  }
+
+  console.warn(
+    "Contact form fallback: SMTP credentials not provided. Messages will be logged only. Configure GMAIL_SMTP_USER and GMAIL_SMTP_APP_PASSWORD for Gmail Workspace support."
+  )
+  return nodemailer.createTransport({ jsonTransport: true })
+}
+
+const transporter = createTransporter()
 
 export async function POST(request: Request) {
   try {
