@@ -198,7 +198,7 @@ ${data.message ?? "(No message provided)"}
           from: `${resendFromName} <${resendFromEmail}>`,
           to: recipients,
           ...(bccRecipients.length ? { bcc: bccRecipients } : {}),
-          reply_to: [data.email],
+          replyTo: [data.email],
           subject,
           html: htmlBody,
           text: textBody,
