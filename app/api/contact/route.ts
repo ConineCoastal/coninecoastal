@@ -19,9 +19,10 @@ const smtpPass = process.env.SMTP_PASS
 const smtpSecure = (process.env.SMTP_SECURE ?? "false").toLowerCase() === "true"
 
 const gmailUser = process.env.GMAIL_SMTP_USER ?? process.env.GMAIL_EMAIL ?? smtpUser
-const gmailAppPassword = process.env.GMAIL_SMTP_APP_PASSWORD ?? process.env.GMAIL_APP_PASSWORD ?? smtpPass
+const gmailAppPasswordRaw = process.env.GMAIL_SMTP_APP_PASSWORD ?? process.env.GMAIL_APP_PASSWORD ?? smtpPass
+const gmailAppPassword = gmailAppPasswordRaw?.replace(/\s+/g, "")
 
-const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? gmailUser ?? "info@coninecoastal.com"
+const CONTACT_TO_EMAIL = process.env.CONTACT_FORWARD_TO ?? process.env.CONTACT_TO_EMAIL ?? gmailUser ?? "info@coninecoastal.com"
 const CONTACT_FROM_EMAIL = process.env.CONTACT_FROM_EMAIL ?? gmailUser ?? CONTACT_TO_EMAIL
 
 function createTransporter() {
