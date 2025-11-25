@@ -10,14 +10,14 @@ export default function ExteriorRenovations() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40 z-10" />
         <Image
-          src="/placeholder.svg?height=800&width=1200"
+          src="https://images.unsplash.com/photo-1595222016771-1843541fa718?auto=format&fit=crop&w=2000&q=80"
           alt="Exterior home renovation"
           fill
           className="object-cover"
           priority
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40 z-10" />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-amber-600 hover:bg-amber-700 text-white">Exterior Renovation Specialists</Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">

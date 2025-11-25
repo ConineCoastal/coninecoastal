@@ -131,12 +131,12 @@ export default function ConstructionServicesPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/coastal-hero-bg.png')",
-          }}
-        ></div>
+        <img
+          src="https://images.unsplash.com/photo-1618832515490-e181c4794a45?auto=format&fit=crop&w=2000&q=80"
+          alt="Construction team transforming a home interior"
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+        />
         <div className="absolute inset-0 bg-white/85"></div>
 
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">

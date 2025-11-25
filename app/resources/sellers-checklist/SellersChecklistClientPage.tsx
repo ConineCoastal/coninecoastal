@@ -9,12 +9,13 @@ export default function SellersChecklistClientPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40 z-10" />
         <img
-          src="https://picsum.photos/1200/600"
-          alt="Home selling checklist"
+          src="https://images.unsplash.com/photo-1667450799167-09e7dd903e59?auto=format&fit=crop&w=2000&q=80"
+          alt="Beautifully staged living room prepared for sale"
           className="absolute inset-0 object-cover"
+          loading="lazy"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#18457C]/85 to-[#229FD9]/60 z-10" />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">The Ultimate Seller's Checklist</h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">

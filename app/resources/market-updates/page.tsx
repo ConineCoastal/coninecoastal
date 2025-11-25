@@ -17,9 +17,15 @@ export default function MarketUpdatesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#18457C] to-[#229FD9] text-white py-24">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-24 text-white">
+        <img
+          src="https://images.unsplash.com/photo-1717957566742-fd92d32e01d6?auto=format&fit=crop&w=2000&q=80"
+          alt="Financial analyst reviewing real estate market charts"
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#18457C]/90 via-[#18457C]/70 to-[#229FD9]/80" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">First Coast Market Intelligence</h1>
             <p className="text-xl md:text-2xl mb-8">
