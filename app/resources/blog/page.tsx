@@ -396,13 +396,13 @@ export default function BlogPage() {
             Get monthly market updates, renovation tips, and exclusive insights delivered to your inbox.
           </p>
           <div className="max-w-md mx-auto">
-            <div className="flex gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row">
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 rounded-lg text-[#18457C] placeholder-gray-400"
+                className="flex-1 w-full px-4 py-3 rounded-lg text-[#18457C] placeholder-gray-400"
               />
-              <Button size="lg" variant="secondary">
+              <Button size="lg" variant="secondary" className="w-full sm:w-auto">
                 Subscribe
               </Button>
             </div>

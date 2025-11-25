@@ -30,7 +30,7 @@ export default function ROICalculatorClientPage() {
   const totalROI = ((annualCashFlow + instantEquity) / (downPayment[0] + renovationCosts[0])) * 100
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-r from-[#18457C] to-[#229FD9] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -182,7 +182,7 @@ export default function ROICalculatorClientPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div className="text-center p-4 bg-blue-50 rounded-lg">
                       <div className="text-2xl font-bold text-[#229FD9]">{cashOnCashReturn.toFixed(1)}%</div>
                       <div className="text-sm text-gray-600">Cash-on-Cash Return</div>

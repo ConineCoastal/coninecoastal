@@ -122,7 +122,7 @@ export default function RenovationPlanningClientPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white">
       <Breadcrumb />
 
       <main className="mx-auto max-w-4xl px-6 py-20 space-y-16">

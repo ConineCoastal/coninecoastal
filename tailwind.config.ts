@@ -79,6 +79,12 @@ const config: Config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      fontSize: {
+        "4xl": ["clamp(2rem, 5vw, 2.5rem)", { lineHeight: "1.15" }],
+        "5xl": ["clamp(2.5rem, 6vw, 3.5rem)", { lineHeight: "1.1" }],
+        "6xl": ["clamp(3rem, 8vw, 4rem)", { lineHeight: "1.05" }],
+        "7xl": ["clamp(3.25rem, 9vw, 4.5rem)", { lineHeight: "1.05" }],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
