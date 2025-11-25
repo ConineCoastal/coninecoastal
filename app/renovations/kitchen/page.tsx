@@ -7,15 +7,12 @@ export default function KitchenRemodelingPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/coastal-kitchen-hero.png')",
-          }}
-        ></div>
-
-        {/* Dark overlay for better text readability */}
+        <img
+          src="https://images.unsplash.com/photo-1609280069678-ab9ef26a0b05?auto=format&fit=crop&w=2000&q=80"
+          alt="Modern coastal-inspired kitchen remodel"
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+        />
         <div className="absolute inset-0 bg-black/50"></div>
 
         <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">

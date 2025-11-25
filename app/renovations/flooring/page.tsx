@@ -10,12 +10,13 @@ export default function FlooringServices() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40 z-10" />
         <img
-          src="/placeholder.svg?height=800&width=1200&text=Premium+Flooring+Installation"
-          alt="Premium flooring installation"
+          src="https://images.unsplash.com/photo-1693948568453-a3564f179a84?auto=format&fit=crop&w=2000&q=80"
+          alt="Premium hardwood flooring installation"
           className="absolute inset-0 object-cover"
+          loading="lazy"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40 z-10" />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-amber-600 hover:bg-amber-700 text-white">Premium Flooring Solutions</Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">Transform Your Home From the Ground Up</h1>

@@ -160,8 +160,15 @@ export default function MarketUpdatesClientPage() {
       <Breadcrumb />
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-[#18457C] to-[#229FD9]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative overflow-hidden py-16 text-white">
+        <img
+          src="https://images.unsplash.com/photo-1717957566742-fd92d32e01d6?auto=format&fit=crop&w=2000&q=80"
+          alt="Detailed charts showing real estate performance"
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#18457C]/90 via-[#18457C]/70 to-[#229FD9]/80" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className={`${font.variable} font-serif text-4xl md:text-6xl font-bold text-white mb-6`}>
             First Coast Market Intelligence
           </h1>

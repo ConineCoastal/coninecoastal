@@ -80,18 +80,14 @@ export default function InvestorServicesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              "url(/placeholder.svg?height=1080&width=1920&query=luxury coastal rental property with palm trees and ocean view)",
-          }}
-        ></div>
-
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/50"></div>
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden text-white">
+        <img
+          src="https://images.unsplash.com/photo-1652878530627-cc6f063e3947?auto=format&fit=crop&w=2000&q=80"
+          alt="Investors reviewing coastal real estate opportunities"
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-black/55"></div>
 
         <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
           <h1 className="text-4xl lg:text-6xl font-bold mb-6" style={{ fontFamily: "serif" }}>

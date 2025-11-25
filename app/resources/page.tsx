@@ -15,9 +15,15 @@ export default function ResourcesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#18457C] to-[#229FD9] text-white py-24">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative overflow-hidden py-24 text-white">
+        <img
+          src="https://images.unsplash.com/photo-1709080381729-965c62ab0471?auto=format&fit=crop&w=2000&q=80"
+          alt="Advisor reviewing real estate resources and market data"
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#18457C]/90 via-[#18457C]/70 to-[#229FD9]/80" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Resources & Guides</h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
             Expert insights for smart real estate and renovation decisions on the First Coast

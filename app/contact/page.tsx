@@ -77,16 +77,16 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url(https://picsum.photos/1920/1080)",
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-black/50"></div>
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden text-white">
+        <img
+          src="https://images.unsplash.com/photo-1656646424501-06d57009b725?auto=format&fit=crop&w=2000&q=80"
+          alt="Client meeting with a real estate advisor"
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#18457C]/85 via-black/50 to-[#229FD9]/70"></div>
 
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-5xl lg:text-6xl font-bold mb-6" style={{ fontFamily: "serif" }}>
             Contact Us
           </h1>
