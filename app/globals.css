@@ -99,4 +99,8 @@
     @apply bg-background text-foreground antialiased min-h-screen;
     overflow-x: hidden;
   }
+  h1 {
+    text-wrap: balance;
+    word-spacing: 0.02em;
+  }
 }
