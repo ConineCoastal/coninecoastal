@@ -114,7 +114,7 @@ const posts = [
 
 export default function BlogClientPage() {
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white">
       <Breadcrumb />
 
       {/* Hero Section */}

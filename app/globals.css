@@ -78,6 +78,17 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  html {
+    @apply scroll-smooth;
+    scroll-padding-top: 4.5rem;
+  }
+
+  @media (min-width: 640px) {
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+  }
 }
 
 @layer base {
@@ -85,6 +96,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased min-h-screen;
+    overflow-x: hidden;
   }
 }

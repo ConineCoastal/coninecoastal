@@ -93,8 +93,11 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <Navigation />
-        <main>{children}</main>
-        <Footer />
+        <div className="flex min-h-screen flex-col">
+          <div className="h-16 sm:h-20" aria-hidden="true" />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   )
