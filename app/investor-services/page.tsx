@@ -87,8 +87,6 @@ export default function InvestorServicesPage() {
           className="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-black/55"></div>
-
         <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
           <h1 className="text-4xl lg:text-6xl font-bold mb-6" style={{ fontFamily: "serif" }}>
             Turn-Key Rental Property Solutions for Northeast Florida Investors

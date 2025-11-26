@@ -41,7 +41,6 @@ export default function PortfolioManagementPage() {
             backgroundImage: `url('/aerial-view-of-multiple-well-maintained-rental-pro.png')`,
           }}
         />
-        <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-shadow-lg">
             Multi-Property Investment Portfolio Management

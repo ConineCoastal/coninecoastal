@@ -22,7 +22,6 @@ export default function BuyersGuidePage() {
           className="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#18457C]/90 via-[#18457C]/70 to-[#229FD9]/80" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Complete Homebuyer's Guide</h1>

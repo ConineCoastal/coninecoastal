@@ -137,8 +137,6 @@ export default function ConstructionServicesPage() {
           className="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-white/85"></div>
-
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <Badge className="mb-6 bg-[#F16622] text-white px-6 py-3 text-lg">Construction Excellence</Badge>
           <h1 className="text-5xl lg:text-7xl font-bold text-[#18457C] mb-8" style={{ fontFamily: "serif" }}>
