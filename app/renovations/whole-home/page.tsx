@@ -16,7 +16,6 @@ export default function WholeHomeRenovations() {
           className="absolute inset-0 object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40 z-10" />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-amber-600 hover:bg-amber-700 text-white">Complete Home Transformation</Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">

@@ -17,10 +17,6 @@ export default function AboutPage() {
               "url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80')",
           }}
         ></div>
-
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
-
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1

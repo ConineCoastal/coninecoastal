@@ -147,8 +147,6 @@ export default function PropertyManagementPage() {
               "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80')",
           }}
         ></div>
-        <div className="absolute inset-0 bg-black/40"></div>
-
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
           <Badge className="mb-6 bg-[#229FD9] text-white px-6 py-3 text-lg shadow-lg">
             Property Management Services

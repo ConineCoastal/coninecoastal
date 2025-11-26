@@ -17,8 +17,6 @@ export default function HomePage() {
               "url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80')",
           }}
         ></div>
-        <div className="absolute inset-0 bg-black/40"></div>
-
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
           <Badge className="mb-4 bg-[#229FD9] text-white px-6 py-3 text-lg shadow-lg">
             Real Estate & Construction Excellence

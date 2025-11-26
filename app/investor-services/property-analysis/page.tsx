@@ -34,12 +34,11 @@ export default function PropertyAnalysisPage() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-24 lg:py-32">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: "url('/professional-analyzing-property-with-tablet-and-do.png')",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-800/70" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">

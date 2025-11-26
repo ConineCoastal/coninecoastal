@@ -84,8 +84,6 @@ export default function ContactPage() {
           className="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#18457C]/85 via-black/50 to-[#229FD9]/70"></div>
-
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-5xl lg:text-6xl font-bold mb-6" style={{ fontFamily: "serif" }}>
             Contact Us
