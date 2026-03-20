@@ -1,20 +1,24 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Phone, Mail, MapPin, Users, Award, TrendingUp, Layers, Palette, Shield } from "lucide-react"
+import Breadcrumb from "@/components/breadcrumb"
 
 export default function FlooringServices() {
   return (
     <div className="min-h-screen bg-white">
+      <Breadcrumb />
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1693948568453-a3564f179a84?auto=format&fit=crop&w=2000&q=80"
           alt="Premium hardwood flooring installation"
-          className="absolute inset-0 object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-amber-600 hover:bg-amber-700 text-white">Premium Flooring Solutions</Badge>
@@ -24,16 +28,19 @@ export default function FlooringServices() {
             value with premium materials and craftsmanship.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg">
-              <Phone className="mr-2 h-5 w-5" />
-              Get Free Estimate
+            <Button asChild size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg">
+              <Link href="/contact?service=flooring" className="flex items-center justify-center">
+                <Phone className="mr-2 h-5 w-5" />
+                Get Free Estimate
+              </Link>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg bg-transparent"
             >
-              Browse Materials
+              <Link href="/contact?service=flooring">Browse Materials</Link>
             </Button>
           </div>
         </div>
@@ -137,7 +144,7 @@ export default function FlooringServices() {
               size="lg"
               className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg"
             >
-              <Link href="/contact" className="flex items-center justify-center">
+              <Link href="/contact?service=flooring" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />
                 Talk with Our Team
               </Link>
@@ -148,7 +155,7 @@ export default function FlooringServices() {
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg bg-transparent"
             >
-              <Link href="/contact" className="flex items-center justify-center">
+              <Link href="/contact?service=flooring" className="flex items-center justify-center">
                 <Mail className="mr-2 h-5 w-5" />
                 Request Estimate
               </Link>

@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Calculator, TrendingUp, Phone, Mail, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function ROICalculatorClientPage() {
   const [purchasePrice, setPurchasePrice] = useState([500000])
@@ -33,14 +34,15 @@ export default function ROICalculatorClientPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-16 text-white">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1763565062965-16173b9ee752?auto=format&fit=crop&w=2000&q=80"
           alt="Investment advisor calculating property returns"
-          className="absolute inset-0 h-full w-full object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6" style={{ fontFamily: "serif" }}>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">
             Real Estate Investment ROI Calculator
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
@@ -54,14 +56,14 @@ export default function ROICalculatorClientPage() {
       </section>
 
       {/* Calculator Section */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Input Panel */}
             <Card className="h-fit">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Calculator className="h-6 w-6 text-[#229FD9]" />
+                  <Calculator className="h-6 w-6 text-coastal-blue" />
                   Investment Parameters
                 </CardTitle>
                 <CardDescription>Adjust the values below to calculate your potential returns</CardDescription>
@@ -80,7 +82,7 @@ export default function ROICalculatorClientPage() {
                     />
                     <div className="flex justify-between text-sm text-gray-500 mt-1">
                       <span>$200K</span>
-                      <span className="font-semibold text-[#18457C]">${purchasePrice[0].toLocaleString()}</span>
+                      <span className="font-semibold text-coastal-navy">${purchasePrice[0].toLocaleString()}</span>
                       <span>$1M</span>
                     </div>
                   </div>
@@ -99,7 +101,7 @@ export default function ROICalculatorClientPage() {
                     />
                     <div className="flex justify-between text-sm text-gray-500 mt-1">
                       <span>20%</span>
-                      <span className="font-semibold text-[#18457C]">${downPayment[0].toLocaleString()}</span>
+                      <span className="font-semibold text-coastal-navy">${downPayment[0].toLocaleString()}</span>
                       <span>50%</span>
                     </div>
                   </div>
@@ -118,7 +120,7 @@ export default function ROICalculatorClientPage() {
                     />
                     <div className="flex justify-between text-sm text-gray-500 mt-1">
                       <span>$0</span>
-                      <span className="font-semibold text-[#18457C]">${renovationCosts[0].toLocaleString()}</span>
+                      <span className="font-semibold text-coastal-navy">${renovationCosts[0].toLocaleString()}</span>
                       <span>$200K</span>
                     </div>
                   </div>
@@ -137,7 +139,7 @@ export default function ROICalculatorClientPage() {
                     />
                     <div className="flex justify-between text-sm text-gray-500 mt-1">
                       <span>$1,500</span>
-                      <span className="font-semibold text-[#18457C]">${monthlyRent[0].toLocaleString()}</span>
+                      <span className="font-semibold text-coastal-navy">${monthlyRent[0].toLocaleString()}</span>
                       <span>$8,000</span>
                     </div>
                   </div>
@@ -156,7 +158,7 @@ export default function ROICalculatorClientPage() {
                     />
                     <div className="flex justify-between text-sm text-gray-500 mt-1">
                       <span>$500</span>
-                      <span className="font-semibold text-[#18457C]">${monthlyExpenses[0].toLocaleString()}</span>
+                      <span className="font-semibold text-coastal-navy">${monthlyExpenses[0].toLocaleString()}</span>
                       <span>$3,000</span>
                     </div>
                   </div>
@@ -190,7 +192,7 @@ export default function ROICalculatorClientPage() {
                 <CardContent>
                   <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div className="text-center p-4 bg-blue-50 rounded-lg">
-                      <div className="text-2xl font-bold text-[#229FD9]">{cashOnCashReturn.toFixed(1)}%</div>
+                      <div className="text-2xl font-bold text-coastal-blue">{cashOnCashReturn.toFixed(1)}%</div>
                       <div className="text-sm text-gray-600">Cash-on-Cash Return</div>
                     </div>
                     <div className="text-center p-4 bg-green-50 rounded-lg">
@@ -223,7 +225,7 @@ export default function ROICalculatorClientPage() {
                     <Separator />
                     <div className="flex justify-between text-lg">
                       <span className="font-semibold">Total First-Year ROI:</span>
-                      <span className="font-bold text-[#18457C]">{totalROI.toFixed(1)}%</span>
+                      <span className="font-bold text-coastal-navy">{totalROI.toFixed(1)}%</span>
                     </div>
                   </div>
                 </CardContent>
@@ -271,17 +273,15 @@ export default function ROICalculatorClientPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex flex-col sm:flex-row gap-3">
-                    <Link href="/investor-services/property-analysis" className="flex-1">
-                      <Button className="w-full bg-[#229FD9] hover:bg-[#229FD9]/90">
+                    <Button asChild className="flex-1 bg-coastal-blue hover:bg-coastal-blue/90">
+                      <Link href="/investor-services/property-analysis" className="flex items-center justify-center">
                         Request Property Analysis
                         <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
-                    <Link href="/contact" className="flex-1">
-                      <Button variant="outline" className="w-full bg-transparent">
-                        Schedule Consultation
-                      </Button>
-                    </Link>
+                      </Link>
+                    </Button>
+                    <Button asChild variant="outline" className="flex-1 bg-transparent">
+                      <Link href="/contact">Schedule Consultation</Link>
+                    </Button>
                   </div>
                   <div className="text-center text-sm text-gray-600">
                     <p>Get accurate renovation estimates and market analysis</p>
@@ -294,31 +294,32 @@ export default function ROICalculatorClientPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#18457C] text-white">
+      <section className="py-16 bg-coastal-navy text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "serif" }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">
             Ready to Invest with Confidence?
           </h2>
           <p className="text-xl mb-8">
             Get professional guidance from experts who understand both construction costs and market values.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button size="lg" className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-8 py-4 text-lg">
+            <Button asChild size="lg" className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-4 text-lg">
+              <Link href="/contact" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />
                 Talk with Our Team
-              </Button>
-            </Link>
-            <Link href="/contact">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#18457C] px-8 py-4 text-lg bg-transparent"
-              >
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-coastal-navy px-8 py-4 text-lg bg-transparent"
+            >
+              <Link href="/contact" className="flex items-center justify-center">
                 <Mail className="mr-2 h-5 w-5" />
                 Schedule a Consultation
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

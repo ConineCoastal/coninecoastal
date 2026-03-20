@@ -1,20 +1,25 @@
 "use client"
+import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { DollarSign, Eye, Calculator } from "lucide-react"
+import Breadcrumb from "@/components/breadcrumb"
 
 export default function KitchenRemodelingPage() {
   return (
     <div className="min-h-screen bg-white">
+      <Breadcrumb />
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1609280069678-ab9ef26a0b05?auto=format&fit=crop&w=2000&q=80"
           alt="Modern coastal-inspired kitchen remodel"
-          className="absolute inset-0 h-full w-full object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-          <h1 className="text-5xl lg:text-6xl font-bold mb-6" style={{ fontFamily: "serif" }}>
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6 font-serif">
             Kitchen Remodeling
           </h1>
           <p className="text-2xl lg:text-3xl mb-8 leading-relaxed">Coastal-Inspired Kitchens That Add Value</p>
@@ -22,20 +27,20 @@ export default function KitchenRemodelingPage() {
             Transform your kitchen with designs that blend functionality, style, and maximum resale value
           </p>
 
-          <Button size="lg" className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-10 py-4 text-xl shadow-lg">
-            Get Free Kitchen Consultation
+          <Button asChild size="lg" className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-10 py-4 text-xl shadow-lg">
+            <Link href="/contact?service=kitchen-remodeling">Get Free Kitchen Consultation</Link>
           </Button>
         </div>
       </section>
 
       {/* Kitchen ROI Focus */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+            <h2 className="text-4xl font-bold text-coastal-navy mb-4 font-serif">
               Smart Kitchen Investments
             </h2>
-            <p className="text-xl text-[#707070] max-w-4xl mx-auto">
+            <p className="text-xl text-coastal-grey max-w-4xl mx-auto">
               Not all kitchen improvements are created equal. Our real estate expertise ensures every dollar spent adds
               maximum value to your home.
             </p>
@@ -43,21 +48,23 @@ export default function KitchenRemodelingPage() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <img
-                src="/kitchen-roi-analysis.png"
+              <Image
+                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80"
                 alt="Kitchen ROI analysis and value-driven design"
-                className="rounded-lg shadow-lg"
+                width={800}
+                height={600}
+                className="rounded-lg shadow-lg w-full"
               />
             </div>
 
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#229FD9]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Calculator className="h-6 w-6 text-[#229FD9]" />
+                <div className="w-12 h-12 bg-coastal-blue/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Calculator className="h-6 w-6 text-coastal-blue" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#18457C] mb-2">70-85% ROI Potential</h3>
-                  <p className="text-[#707070] leading-relaxed">
+                  <h3 className="text-xl font-semibold text-coastal-navy mb-2">70-85% ROI Potential</h3>
+                  <p className="text-coastal-grey leading-relaxed">
                     Well-planned kitchen remodels typically return 70-85% of investment. We focus on improvements that
                     maximize this return for your specific market.
                   </p>
@@ -65,12 +72,12 @@ export default function KitchenRemodelingPage() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#F16622]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <DollarSign className="h-6 w-6 text-[#F16622]" />
+                <div className="w-12 h-12 bg-coastal-orange/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <DollarSign className="h-6 w-6 text-coastal-orange" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#18457C] mb-2">Value-Driven Design Choices</h3>
-                  <p className="text-[#707070] leading-relaxed">
+                  <h3 className="text-xl font-semibold text-coastal-navy mb-2">Value-Driven Design Choices</h3>
+                  <p className="text-coastal-grey leading-relaxed">
                     Every design decision is informed by market data. We know which features coastal buyers prioritize
                     and which add the most value.
                   </p>
@@ -78,12 +85,12 @@ export default function KitchenRemodelingPage() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#FFCA05]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Eye className="h-6 w-6 text-[#FFCA05]" />
+                <div className="w-12 h-12 bg-coastal-yellow/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Eye className="h-6 w-6 text-coastal-yellow" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#18457C] mb-2">Buyer-Preferred Features</h3>
-                  <p className="text-[#707070] leading-relaxed">
+                  <h3 className="text-xl font-semibold text-coastal-navy mb-2">Buyer-Preferred Features</h3>
+                  <p className="text-coastal-grey leading-relaxed">
                     We incorporate elements that coastal homebuyers actively seek: open layouts, natural materials, and
                     durable finishes that handle salt air.
                   </p>
@@ -95,9 +102,9 @@ export default function KitchenRemodelingPage() {
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-20 bg-[#18457C]">
+      <section className="py-16 bg-coastal-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6" style={{ fontFamily: "serif" }}>
+          <h2 className="text-4xl font-bold text-white mb-6 font-serif">
             Ready to Get Started?
           </h2>
           <p className="text-xl text-white/90">

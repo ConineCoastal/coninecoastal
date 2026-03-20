@@ -12,16 +12,16 @@ export default function PrivacyPolicyPage() {
     <div className="min-h-screen bg-white py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <header className="space-y-4 text-center">
-          <h1 className="text-4xl font-bold text-[#18457C]" style={{ fontFamily: "serif" }}>
+          <h1 className="text-4xl font-bold text-coastal-navy font-serif">
             Privacy Policy
           </h1>
-          <p className="text-lg text-[#707070]">
+          <p className="text-lg text-coastal-grey">
             Effective Date: October 30, 2025
           </p>
         </header>
 
         <section className="space-y-3">
-          <h2 className="text-2xl font-semibold text-[#18457C]">1. Information We Collect</h2>
+          <h2 className="text-2xl font-semibold text-coastal-navy">1. Information We Collect</h2>
           <p className="text-[#505050]">
             We collect personal information that you provide directly to us, including your name, email address, phone
             number, property preferences, and project details. We also gather usage data related to how you interact with
@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-2xl font-semibold text-[#18457C]">2. How We Use Your Information</h2>
+          <h2 className="text-2xl font-semibold text-coastal-navy">2. How We Use Your Information</h2>
           <p className="text-[#505050]">
             Your information enables us to respond to inquiries, prepare market and renovation analyses, manage projects,
             and keep you informed about services that may be relevant to your goals. We do not sell your personal
@@ -39,7 +39,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-2xl font-semibold text-[#18457C]">3. Sharing and Security</h2>
+          <h2 className="text-2xl font-semibold text-coastal-navy">3. Sharing and Security</h2>
           <p className="text-[#505050]">
             We share data only with trusted partners who assist in delivering our services—such as inspectors, lenders, or
             contractors—and only when necessary. Industry-standard safeguards protect your information, and we limit
@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-2xl font-semibold text-[#18457C]">4. Your Choices</h2>
+          <h2 className="text-2xl font-semibold text-coastal-navy">4. Your Choices</h2>
           <p className="text-[#505050]">
             You may request updates or deletion of your personal data, opt out of marketing communications, or ask for a
             summary of what we store. Contact us using the information below to submit a request.
@@ -56,18 +56,18 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-2xl font-semibold text-[#18457C]">5. Contact Us</h2>
+          <h2 className="text-2xl font-semibold text-coastal-navy">5. Contact Us</h2>
           <p className="text-[#505050]">
             If you have questions about this policy or how we handle your data, reach out to our team at
-            <a href="mailto:info@coninecoastal.com" className="text-[#229FD9] hover:underline ml-1">
+            <a href="mailto:info@coninecoastal.com" className="text-coastal-blue hover:underline ml-1">
               info@coninecoastal.com
             </a>
             or call
-            <a href="tel:+19046241722" className="text-[#229FD9] hover:underline ml-1">
+            <a href="tel:+19046241722" className="text-coastal-blue hover:underline ml-1">
               (904) 624-1722
             </a>
             . For additional assistance, you can also
-            <Link href="/contact" className="text-[#229FD9] hover:underline ml-1">
+            <Link href="/contact" className="text-coastal-blue hover:underline ml-1">
               contact us online
             </Link>
             .

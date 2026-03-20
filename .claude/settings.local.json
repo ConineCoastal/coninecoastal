@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r href=/renovations/whole-home C:/Users/david/Documents/coninecoastal/ --include=*.tsx)",
+      "Bash(grep -r \"TODO\\\\|FIXME\\\\|BUG\\\\|HACK\" C:/Users/david/Documents/coninecoastal/app --include=*.tsx --include=*.ts)",
+      "Bash(grep -r \"any\\\\|@ts-ignore\" C:/Users/david/Documents/coninecoastal/app --include=*.tsx --include=*.ts)",
+      "Bash(grep -r \"breadcrumb\\\\|Breadcrumb\" C:/Users/david/Documents/coninecoastal/app --include=*.tsx)",
+      "Bash(grep -r import.*from.*pages C:/Users/david/Documents/coninecoastal/app --include=*.tsx)",
+      "Bash(grep -r loading=lazy C:/Users/david/Documents/coninecoastal/app --include=*.tsx)",
+      "Bash(grep -r \"placeholder\\\\.svg\\\\|placeholder\\\\.\" C:/Users/david/Documents/coninecoastal/app --include=*.tsx)",
+      "Bash(pnpm next:*)"
+    ]
+  }
+}

@@ -1,11 +1,11 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, User, ArrowRight, TrendingUp, Home, Wrench, DollarSign } from "lucide-react"
 import Breadcrumb from "@/components/breadcrumb"
-import { font } from "@/styles/fonts" // Declare the font variable
 
 const featuredPost = {
   title: "First Coast Market Trends - Q4 2024",
@@ -15,7 +15,7 @@ const featuredPost = {
   date: "December 15, 2024",
   category: "Market Analysis",
   readTime: "8 min read",
-  image: "/placeholder.svg?height=400&width=600",
+  image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80",
   href: "/resources/blog/q4-2024-market-trends",
 }
 
@@ -28,7 +28,7 @@ const _blogPosts = [
     date: "December 10, 2024",
     category: "Home Improvement",
     readTime: "6 min read",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=400&q=80",
     href: "/resources/blog/kitchen-updates-roi",
   },
   {
@@ -39,7 +39,7 @@ const _blogPosts = [
     date: "December 5, 2024",
     category: "Buying Tips",
     readTime: "5 min read",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=400&q=80",
     href: "/resources/blog/amelia-island-buying-timing",
   },
   {
@@ -50,7 +50,7 @@ const _blogPosts = [
     date: "November 28, 2024",
     category: "Home Maintenance",
     readTime: "7 min read",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80",
     href: "/resources/blog/hurricane-preparation-coastal-homes",
   },
   {
@@ -61,7 +61,7 @@ const _blogPosts = [
     date: "November 20, 2024",
     category: "Investment",
     readTime: "9 min read",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80",
     href: "/resources/blog/st-augustine-investment-opportunities",
   },
   {
@@ -72,7 +72,7 @@ const _blogPosts = [
     date: "November 15, 2024",
     category: "Home Improvement",
     readTime: "6 min read",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=400&q=80",
     href: "/resources/blog/bathroom-renovation-roi",
   },
   {
@@ -83,7 +83,7 @@ const _blogPosts = [
     date: "November 8, 2024",
     category: "Market Analysis",
     readTime: "5 min read",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80",
     href: "/resources/blog/jacksonville-beach-condo-market",
   },
 ]
@@ -91,11 +91,11 @@ const _blogPosts = [
 void _blogPosts
 
 const categories = [
-  { name: "Market Analysis", count: 12, icon: <TrendingUp className="h-5 w-5" />, color: "bg-[#229FD9]" },
-  { name: "Home Improvement", count: 18, icon: <Wrench className="h-5 w-5" />, color: "bg-[#F16622]" },
-  { name: "Buying Tips", count: 15, icon: <Home className="h-5 w-5" />, color: "bg-[#18457C]" },
-  { name: "Investment", count: 8, icon: <DollarSign className="h-5 w-5" />, color: "bg-[#FFCA05]" },
-  { name: "Home Maintenance", count: 10, icon: <Wrench className="h-5 w-5" />, color: "bg-[#707070]" },
+  { name: "Market Analysis", count: 12, icon: <TrendingUp className="h-5 w-5" />, color: "bg-coastal-blue" },
+  { name: "Home Improvement", count: 18, icon: <Wrench className="h-5 w-5" />, color: "bg-coastal-orange" },
+  { name: "Buying Tips", count: 15, icon: <Home className="h-5 w-5" />, color: "bg-coastal-navy" },
+  { name: "Investment", count: 8, icon: <DollarSign className="h-5 w-5" />, color: "bg-coastal-yellow" },
+  { name: "Home Maintenance", count: 10, icon: <Wrench className="h-5 w-5" />, color: "bg-coastal-grey" },
 ]
 
 const posts = [
@@ -119,16 +119,16 @@ export default function BlogClientPage() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden py-16 text-white">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1583777456855-d44bfb9066cf?auto=format&fit=crop&w=2000&q=80"
           alt="Real estate expert drafting a blog post on a laptop"
-          className="absolute inset-0 h-full w-full object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
-            style={{ fontFamily: font.style.fontFamily }}
+            className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif"
           >
             Latest Insights & News
           </h1>
@@ -146,10 +146,9 @@ export default function BlogClientPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-[#F16622] text-white">Featured Article</Badge>
+            <Badge className="mb-4 bg-coastal-orange text-white">Featured Article</Badge>
             <h2
-              className="text-3xl md:text-4xl font-bold text-[#18457C] mb-4"
-              style={{ fontFamily: font.style.fontFamily }}
+              className="text-3xl md:text-4xl font-bold text-coastal-navy mb-4 font-serif"
             >
               Latest Featured Post
             </h2>
@@ -158,24 +157,25 @@ export default function BlogClientPage() {
           <Card className="overflow-hidden hover:shadow-xl transition-shadow">
             <div className="grid lg:grid-cols-2 gap-0">
               <div className="relative h-64 lg:h-auto">
-                <img
+                <Image
                   src={featuredPost.image || "/placeholder.svg"}
                   alt={featuredPost.title}
+                  width={600}
+                  height={400}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-4 left-4">
-                  <Badge className="bg-[#229FD9] text-white">{featuredPost.category}</Badge>
+                  <Badge className="bg-coastal-blue text-white">{featuredPost.category}</Badge>
                 </div>
               </div>
               <CardContent className="p-8 lg:p-12 flex flex-col justify-center">
                 <h3
-                  className="text-3xl font-bold text-[#18457C] mb-4"
-                  style={{ fontFamily: font.style.fontFamily }}
+                  className="text-3xl font-bold text-coastal-navy mb-4 font-serif"
                 >
                   {featuredPost.title}
                 </h3>
-                <p className="text-[#707070] mb-6 text-lg leading-relaxed">{featuredPost.excerpt}</p>
-                <div className="flex items-center space-x-6 mb-6 text-sm text-[#707070]">
+                <p className="text-coastal-grey mb-6 text-lg leading-relaxed">{featuredPost.excerpt}</p>
+                <div className="flex items-center space-x-6 mb-6 text-sm text-coastal-grey">
                   <div className="flex items-center space-x-2">
                     <User className="h-4 w-4" />
                     <span>{featuredPost.author}</span>
@@ -186,12 +186,12 @@ export default function BlogClientPage() {
                   </div>
                   <span>{featuredPost.readTime}</span>
                 </div>
-                <Link href={featuredPost.href}>
-                  <Button className="bg-[#229FD9] hover:bg-[#229FD9]/90 text-white">
+                <Button asChild className="bg-coastal-blue hover:bg-coastal-blue/90 text-white">
+                  <Link href={featuredPost.href} className="flex items-center justify-center">
                     Read Full Article
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </CardContent>
             </div>
           </Card>
@@ -205,8 +205,7 @@ export default function BlogClientPage() {
             {/* Main Content */}
             <div className="lg:w-2/3">
               <h2
-                className="text-3xl md:text-4xl font-bold text-[#18457C] mb-8"
-                style={{ fontFamily: font.style.fontFamily }}
+                className="text-3xl md:text-4xl font-bold text-coastal-navy mb-8 font-serif"
               >
                 Recent Articles
               </h2>
@@ -228,7 +227,7 @@ export default function BlogClientPage() {
               <div className="text-center mt-12">
                 <Button
                   variant="outline"
-                  className="border-[#229FD9] text-[#229FD9] hover:bg-[#229FD9] hover:text-white px-8 py-3 bg-transparent"
+                  className="border-coastal-blue text-coastal-blue hover:bg-coastal-blue hover:text-white px-8 py-3 bg-transparent"
                 >
                   Load More Articles
                 </Button>
@@ -242,8 +241,7 @@ export default function BlogClientPage() {
                 <Card>
                   <CardContent className="p-6">
                     <h3
-                      className="text-xl font-bold text-[#18457C] mb-6"
-                      style={{ fontFamily: font.style.fontFamily }}
+                      className="text-xl font-bold text-coastal-navy mb-6 font-serif"
                     >
                       Categories
                     </h3>
@@ -260,7 +258,7 @@ export default function BlogClientPage() {
                               >
                                 {category.icon}
                               </div>
-                              <span className="text-[#707070] hover:text-[#229FD9]">{category.name}</span>
+                              <span className="text-coastal-grey hover:text-coastal-blue">{category.name}</span>
                             </div>
                             <Badge variant="outline" className="text-xs">
                               {category.count}
@@ -273,24 +271,23 @@ export default function BlogClientPage() {
                 </Card>
 
                 {/* Newsletter Signup */}
-                <Card className="bg-gradient-to-r from-[#229FD9]/5 to-[#18457C]/5 border-2 border-[#229FD9]/20">
+                <Card className="bg-gradient-to-r from-coastal-blue/5 to-coastal-navy/5 border-2 border-coastal-blue/20">
                   <CardContent className="p-6 text-center">
                     <h3
-                      className="text-xl font-bold text-[#18457C] mb-4"
-                      style={{ fontFamily: font.style.fontFamily }}
+                      className="text-xl font-bold text-coastal-navy mb-4 font-serif"
                     >
                       Stay Updated
                     </h3>
-                    <p className="text-[#707070] mb-6">
+                    <p className="text-coastal-grey mb-6">
                       Get the latest First Coast real estate insights and renovation tips delivered to your inbox.
                     </p>
                     <div className="space-y-3">
                       <input
                         type="email"
                         placeholder="Enter your email"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#229FD9] focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-coastal-blue focus:border-transparent"
                       />
-                      <Button className="w-full bg-[#229FD9] hover:bg-[#229FD9]/90 text-white">Subscribe</Button>
+                      <Button className="w-full bg-coastal-blue hover:bg-coastal-blue/90 text-white">Subscribe</Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -299,8 +296,7 @@ export default function BlogClientPage() {
                 <Card>
                   <CardContent className="p-6">
                     <h3
-                      className="text-xl font-bold text-[#18457C] mb-6"
-                      style={{ fontFamily: font.style.fontFamily }}
+                      className="text-xl font-bold text-coastal-navy mb-6 font-serif"
                     >
                       Featured Resources
                     </h3>
@@ -309,22 +305,22 @@ export default function BlogClientPage() {
                         href="/resources/buyers-guide"
                         className="block p-3 rounded-lg hover:bg-gray-50 transition-colors"
                       >
-                        <h4 className="font-semibold text-[#18457C] mb-1">Homebuyer's Guide</h4>
-                        <p className="text-sm text-[#707070]">Complete guide to buying your First Coast home</p>
+                        <h4 className="font-semibold text-coastal-navy mb-1">Homebuyer's Guide</h4>
+                        <p className="text-sm text-coastal-grey">Complete guide to buying your First Coast home</p>
                       </Link>
                       <Link
                         href="/resources/sellers-checklist"
                         className="block p-3 rounded-lg hover:bg-gray-50 transition-colors"
                       >
-                        <h4 className="font-semibold text-[#18457C] mb-1">Seller's Checklist</h4>
-                        <p className="text-sm text-[#707070]">Maximize your home's sale value</p>
+                        <h4 className="font-semibold text-coastal-navy mb-1">Seller's Checklist</h4>
+                        <p className="text-sm text-coastal-grey">Maximize your home's sale value</p>
                       </Link>
                       <Link
                         href="/resources/renovation-planning"
                         className="block p-3 rounded-lg hover:bg-gray-50 transition-colors"
                       >
-                        <h4 className="font-semibold text-[#18457C] mb-1">Renovation Planning</h4>
-                        <p className="text-sm text-[#707070]">Smart renovation planning guide</p>
+                        <h4 className="font-semibold text-coastal-navy mb-1">Renovation Planning</h4>
+                        <p className="text-sm text-coastal-grey">Smart renovation planning guide</p>
                       </Link>
                     </div>
                   </CardContent>
@@ -336,11 +332,10 @@ export default function BlogClientPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#18457C] text-white">
+      <section className="py-16 bg-coastal-navy text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-3xl md:text-4xl font-bold mb-6"
-            style={{ fontFamily: font.style.fontFamily }}
+            className="text-3xl md:text-4xl font-bold mb-6 font-serif"
           >
             Get Expert Insights Delivered
           </h2>
@@ -351,9 +346,9 @@ export default function BlogClientPage() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg text-[#18457C] focus:outline-none focus:ring-2 focus:ring-[#229FD9]"
+              className="flex-1 px-4 py-3 rounded-lg text-coastal-navy focus:outline-none focus:ring-2 focus:ring-coastal-blue"
             />
-            <Button className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-8 py-3">Subscribe</Button>
+            <Button className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3">Subscribe</Button>
           </div>
         </div>
       </section>

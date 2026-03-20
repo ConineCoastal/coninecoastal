@@ -1,11 +1,15 @@
 "use client"
+import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Clock, DollarSign, Search, Shield, Eye, Calculator, MapPin, Home } from "lucide-react"
+import Breadcrumb from "@/components/breadcrumb"
 
 export default function BuyersPage() {
   return (
     <div className="min-h-screen bg-white">
+      <Breadcrumb />
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div
@@ -17,27 +21,27 @@ export default function BuyersPage() {
         ></div>
 
         <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-          <h1 className="text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg" style={{ fontFamily: "serif" }}>
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg font-serif">
             Home Buying Made Smarter
           </h1>
           <p className="text-2xl lg:text-3xl mb-12 leading-relaxed drop-shadow-md">
             Why guess at renovation costs when you can know for certain?
           </p>
 
-          <Button size="lg" className="bg-[#229FD9] hover:bg-[#229FD9]/90 text-white px-10 py-4 text-xl shadow-lg">
-            Start Your Home Search
+          <Button asChild size="lg" className="bg-coastal-blue hover:bg-coastal-blue/90 text-white px-10 py-4 text-xl shadow-lg">
+            <Link href="/contact?service=buying">Start Your Home Search</Link>
           </Button>
         </div>
       </section>
 
       {/* The Conine Coastal Buyer Advantage */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+            <h2 className="text-4xl font-bold text-coastal-navy mb-4 font-serif">
               The Conine Coastal Buyer Advantage
             </h2>
-            <p className="text-xl text-[#707070] max-w-4xl mx-auto">
+            <p className="text-xl text-coastal-grey max-w-4xl mx-auto">
               Get the insider advantage that comes from 20 years of construction experience combined with deep real
               estate market knowledge.
             </p>
@@ -45,21 +49,23 @@ export default function BuyersPage() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
                 alt="Construction expertise for home buyers - coastal home inspection"
+                width={800}
+                height={600}
                 className="rounded-lg shadow-lg"
               />
             </div>
 
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#229FD9]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Calculator className="h-6 w-6 text-[#229FD9]" />
+                <div className="w-12 h-12 bg-coastal-blue/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Calculator className="h-6 w-6 text-coastal-blue" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#18457C] mb-2">Instant Renovation Estimates</h3>
-                  <p className="text-[#707070] leading-relaxed">
+                  <h3 className="text-xl font-semibold text-coastal-navy mb-2">Instant Renovation Estimates</h3>
+                  <p className="text-coastal-grey leading-relaxed">
                     Walk through any property and get accurate renovation costs on the spot. No more guessing if that
                     kitchen remodel will cost $15,000 or $50,000 - you'll know before you make an offer.
                   </p>
@@ -67,12 +73,12 @@ export default function BuyersPage() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#F16622]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Eye className="h-6 w-6 text-[#F16622]" />
+                <div className="w-12 h-12 bg-coastal-orange/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Eye className="h-6 w-6 text-coastal-orange" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#18457C] mb-2">Hidden Problem Detection</h3>
-                  <p className="text-[#707070] leading-relaxed">
+                  <h3 className="text-xl font-semibold text-coastal-navy mb-2">Hidden Problem Detection</h3>
+                  <p className="text-coastal-grey leading-relaxed">
                     20 years of construction experience means spotting issues before they become expensive surprises.
                     Foundation problems, electrical issues, plumbing concerns - we catch them early.
                   </p>
@@ -80,12 +86,12 @@ export default function BuyersPage() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#FFCA05]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <DollarSign className="h-6 w-6 text-[#FFCA05]" />
+                <div className="w-12 h-12 bg-coastal-yellow/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <DollarSign className="h-6 w-6 text-coastal-yellow" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#18457C] mb-2">True Value Assessment</h3>
-                  <p className="text-[#707070] leading-relaxed">
+                  <h3 className="text-xl font-semibold text-coastal-navy mb-2">True Value Assessment</h3>
+                  <p className="text-coastal-grey leading-relaxed">
                     Understand what a property will really be worth after improvements, not just its current condition.
                     Make offers based on true potential, not surface appearances.
                   </p>
@@ -93,12 +99,12 @@ export default function BuyersPage() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#18457C]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Clock className="h-6 w-6 text-[#18457C]" />
+                <div className="w-12 h-12 bg-coastal-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Clock className="h-6 w-6 text-coastal-navy" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#18457C] mb-2">Renovation Timeline Planning</h3>
-                  <p className="text-[#707070] leading-relaxed">
+                  <h3 className="text-xl font-semibold text-coastal-navy mb-2">Renovation Timeline Planning</h3>
+                  <p className="text-coastal-grey leading-relaxed">
                     Know exactly how long projects will take before you buy. Plan your move-in date with confidence,
                     understanding realistic timelines for any needed improvements.
                   </p>
@@ -110,13 +116,13 @@ export default function BuyersPage() {
       </section>
 
       {/* Our Buyer Services */}
-      <section className="py-20 bg-gradient-to-r from-[#18457C]/5 to-[#229FD9]/5">
+      <section className="py-16 bg-gradient-to-r from-coastal-navy/5 to-coastal-blue/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+            <h2 className="text-4xl font-bold text-coastal-navy mb-4 font-serif">
               Our Buyer Services
             </h2>
-            <p className="text-xl text-[#707070]">Comprehensive support from search to closing and beyond</p>
+            <p className="text-xl text-coastal-grey">Comprehensive support from search to closing and beyond</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -157,13 +163,13 @@ export default function BuyersPage() {
                 <CardContent className="p-6">
                   <div className="flex justify-center mb-6">
                     <div className="w-20 h-20 rounded-full flex items-center justify-center">
-                      <service.icon className="h-8 w-8 text-[#229FD9]" />
+                      <service.icon className="h-8 w-8 text-coastal-blue" />
                     </div>
                   </div>
-                  <h3 className="text-lg font-bold text-[#18457C] mb-3" style={{ fontFamily: "serif" }}>
+                  <h3 className="text-lg font-bold text-coastal-navy mb-3 font-serif">
                     {service.title}
                   </h3>
-                  <p className="text-[#707070] text-sm leading-relaxed">{service.desc}</p>
+                  <p className="text-coastal-grey text-sm leading-relaxed">{service.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -172,13 +178,13 @@ export default function BuyersPage() {
       </section>
 
       {/* Process Steps */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+            <h2 className="text-4xl font-bold text-coastal-navy mb-4 font-serif">
               Our Home Buying Process
             </h2>
-            <p className="text-xl text-[#707070]">A proven 5-step approach to finding your perfect home</p>
+            <p className="text-xl text-coastal-grey">A proven 5-step approach to finding your perfect home</p>
           </div>
 
           <div className="space-y-12">
@@ -222,10 +228,10 @@ export default function BuyersPage() {
                   {step.step}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-[#18457C] mb-2" style={{ fontFamily: "serif" }}>
+                  <h3 className="text-2xl font-bold text-coastal-navy mb-2 font-serif">
                     {step.title}
                   </h3>
-                  <p className="text-[#707070] text-lg leading-relaxed">{step.desc}</p>
+                  <p className="text-coastal-grey text-lg leading-relaxed">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -234,17 +240,17 @@ export default function BuyersPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#18457C]">
+      <section className="py-16 bg-coastal-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6" style={{ fontFamily: "serif" }}>
+          <h2 className="text-4xl font-bold text-white mb-6 font-serif">
             Ready to Start Your Home Search?
           </h2>
           <p className="text-xl text-white/90">
             Let's find your perfect home with the confidence that comes from knowing true costs and potential.
           </p>
 
-          <Button size="lg" className="bg-[#229FD9] hover:bg-[#229FD9]/90 text-white px-8 py-4 text-lg">
-            Schedule Buyer Consultation
+          <Button asChild size="lg" className="bg-coastal-blue hover:bg-coastal-blue/90 text-white px-8 py-4 text-lg">
+            <Link href="/contact?service=buying">Schedule Buyer Consultation</Link>
           </Button>
         </div>
       </section>

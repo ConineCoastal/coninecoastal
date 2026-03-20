@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Phone, Menu, X, ChevronDown } from "lucide-react"
 
@@ -36,14 +37,14 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 w-full bg-white shadow-lg z-50">
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#18457C] via-[#229FD9] to-[#18457C] opacity-20"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-coastal-navy via-coastal-blue to-coastal-navy opacity-20"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo Section */}
           <div className="flex items-center space-x-3">
             <Link href="/" onClick={closeMenu} className="flex items-center">
-              <img src="/favicon.png" alt="Conine Coastal Logo" className="h-10 sm:h-12 w-auto" />
+              <Image src="/favicon.png" alt="Conine Coastal Logo" width={48} height={48} className="h-10 sm:h-12 w-auto" />
             </Link>
           </div>
 
@@ -52,7 +53,7 @@ export default function Navigation() {
             <Link
               href="/about"
               className={`font-serif font-medium transition-colors text-sm xl:text-base ${
-                isActive("/about") ? "text-[#229FD9]" : "text-[#18457C] hover:text-[#229FD9]"
+                isActive("/about") ? "text-coastal-blue" : "text-coastal-navy hover:text-coastal-blue"
               }`}
             >
               About
@@ -80,8 +81,8 @@ export default function Navigation() {
                 type="button"
                 aria-haspopup="true"
                 aria-expanded={realEstateOpen}
-                className={`font-serif font-medium flex items-center transition-colors text-sm xl:text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-[#229FD9] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
-                  isActive("/real-estate") ? "text-[#229FD9]" : "text-[#18457C] hover:text-[#229FD9]"
+                className={`font-serif font-medium flex items-center transition-colors text-sm xl:text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-coastal-blue focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
+                  isActive("/real-estate") ? "text-coastal-blue" : "text-coastal-navy hover:text-coastal-blue"
                 }`}
                 onClick={() => {
                   const nextState = !realEstateOpen
@@ -103,35 +104,35 @@ export default function Navigation() {
                   <Link
                     href="/real-estate"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Overview
                   </Link>
                   <Link
                     href="/real-estate/buyers"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     For Buyers
                   </Link>
                   <Link
                     href="/real-estate/sellers"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     For Sellers
                   </Link>
                   <Link
                     href="/real-estate/listings"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Current Listings
                   </Link>
                   <Link
                     href="/real-estate/property-management"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Property Management
                   </Link>
@@ -161,8 +162,8 @@ export default function Navigation() {
                 type="button"
                 aria-haspopup="true"
                 aria-expanded={renovationOpen}
-                className={`font-serif font-medium flex items-center transition-colors text-sm xl:text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-[#229FD9] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
-                  isActive("/renovations") ? "text-[#F16622]" : "text-[#18457C] hover:text-[#229FD9]"
+                className={`font-serif font-medium flex items-center transition-colors text-sm xl:text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-coastal-blue focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
+                  isActive("/renovations") ? "text-coastal-orange" : "text-coastal-navy hover:text-coastal-blue"
                 }`}
                 onClick={() => {
                   const nextState = !renovationOpen
@@ -184,49 +185,49 @@ export default function Navigation() {
                   <Link
                     href="/renovations"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Overview
                   </Link>
                   <Link
                     href="/renovations/kitchen"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Kitchen Remodeling
                   </Link>
                   <Link
                     href="/renovations/bathroom"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Bathroom Renovations
                   </Link>
                   <Link
                     href="/renovations/repairs"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Home Repairs & Maintenance
                   </Link>
                   <Link
                     href="/renovations/flooring"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Flooring Services
                   </Link>
                   <Link
                     href="/renovations/interior"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Interior Renovations
                   </Link>
                   <Link
                     href="/renovations/emergency"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Emergency Repairs
                   </Link>
@@ -256,8 +257,8 @@ export default function Navigation() {
                 type="button"
                 aria-haspopup="true"
                 aria-expanded={investorOpen}
-                className={`font-serif font-medium flex items-center transition-colors text-sm xl:text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-[#229FD9] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
-                  isActive("/investor-services") ? "text-[#229FD9]" : "text-[#18457C] hover:text-[#229FD9]"
+                className={`font-serif font-medium flex items-center transition-colors text-sm xl:text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-coastal-blue focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
+                  isActive("/investor-services") ? "text-coastal-blue" : "text-coastal-navy hover:text-coastal-blue"
                 }`}
                 onClick={() => {
                   const nextState = !investorOpen
@@ -279,35 +280,35 @@ export default function Navigation() {
                   <Link
                     href="/investor-services"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Overview
                   </Link>
                   <Link
                     href="/investor-services/investment"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Investment Services
                   </Link>
                   <Link
                     href="/investor-services/portfolio-management"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Portfolio Management
                   </Link>
                   <Link
                     href="/investor-services/property-analysis"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Property Analysis
                   </Link>
                   <Link
                     href="/investor-services/fix-and-flip"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Fix & Flip Services
                   </Link>
@@ -337,8 +338,8 @@ export default function Navigation() {
                 type="button"
                 aria-haspopup="true"
                 aria-expanded={resourcesOpen}
-                className={`font-serif font-medium flex items-center transition-colors text-sm xl:text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-[#229FD9] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
-                  isActive("/resources") ? "text-[#229FD9]" : "text-[#18457C] hover:text-[#229FD9]"
+                className={`font-serif font-medium flex items-center transition-colors text-sm xl:text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-coastal-blue focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
+                  isActive("/resources") ? "text-coastal-blue" : "text-coastal-navy hover:text-coastal-blue"
                 }`}
                 onClick={() => {
                   const nextState = !resourcesOpen
@@ -360,42 +361,42 @@ export default function Navigation() {
                   <Link
                     href="/resources"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Overview
                   </Link>
                   <Link
                     href="/resources/buyers-guide"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Homebuyer's Guide
                   </Link>
                   <Link
                     href="/resources/sellers-checklist"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Seller's Checklist
                   </Link>
                   <Link
                     href="/resources/renovation-planning"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Renovation Planning
                   </Link>
                   <Link
                     href="/resources/blog"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Blog/News
                   </Link>
                   <Link
                     href="/resources/market-updates"
                     onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Market Updates
                   </Link>
@@ -406,7 +407,7 @@ export default function Navigation() {
             <Link
               href="/contact"
               className={`font-serif font-medium transition-colors text-sm xl:text-base ${
-                isActive("/contact") ? "text-[#229FD9]" : "text-[#18457C] hover:text-[#229FD9]"
+                isActive("/contact") ? "text-coastal-blue" : "text-coastal-navy hover:text-coastal-blue"
               }`}
             >
               Contact
@@ -417,7 +418,7 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center space-x-4">
             <a
               href="tel:+19046241722"
-              className="flex items-center text-[#18457C] hover:text-[#229FD9] transition-colors touch-manipulation"
+              className="flex items-center text-coastal-navy hover:text-coastal-blue transition-colors touch-manipulation"
             >
               <Phone className="h-3 w-3 xl:h-4 xl:w-4 mr-2" />
               <span className="font-serif font-medium text-sm xl:text-base">(904) 624-1722</span>
@@ -426,7 +427,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden flex items-center justify-center w-12 h-12 rounded-md text-[#18457C] hover:text-[#229FD9] hover:bg-gray-50 transition-colors touch-manipulation"
+            className="lg:hidden flex items-center justify-center w-12 h-12 rounded-md text-coastal-navy hover:text-coastal-blue hover:bg-gray-50 transition-colors touch-manipulation"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -442,7 +443,7 @@ export default function Navigation() {
             <div className="pb-4 border-b border-gray-100">
               <a
                 href="tel:+19046241722"
-                className="flex items-center justify-center text-[#18457C] text-lg font-serif font-medium py-3 touch-manipulation"
+                className="flex items-center justify-center text-coastal-navy text-lg font-serif font-medium py-3 touch-manipulation"
               >
                 <Phone className="h-5 w-5 mr-2" />
                 (904) 624-1722
@@ -455,8 +456,8 @@ export default function Navigation() {
                 onClick={closeMenu}
                 className={`block font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
                   isActive("/about")
-                    ? "text-[#229FD9] bg-blue-50"
-                    : "text-[#18457C] hover:text-[#229FD9] hover:bg-gray-50"
+                    ? "text-coastal-blue bg-blue-50"
+                    : "text-coastal-navy hover:text-coastal-blue hover:bg-gray-50"
                 }`}
               >
                 About
@@ -467,8 +468,8 @@ export default function Navigation() {
                 <button
                   className={`flex items-center justify-between w-full font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
                     isActive("/real-estate")
-                      ? "text-[#229FD9] bg-blue-50"
-                      : "text-[#18457C] hover:text-[#229FD9] hover:bg-gray-50"
+                      ? "text-coastal-blue bg-blue-50"
+                      : "text-coastal-navy hover:text-coastal-blue hover:bg-gray-50"
                   }`}
                   onClick={() => {
                     if (realEstateOpen) {
@@ -489,28 +490,28 @@ export default function Navigation() {
                     <Link
                       href="/real-estate/buyers"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       For Buyers
                     </Link>
                     <Link
                       href="/real-estate/sellers"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       For Sellers
                     </Link>
                     <Link
                       href="/real-estate/listings"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Current Listings
                     </Link>
                     <Link
                       href="/real-estate/property-management"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Property Management
                     </Link>
@@ -523,8 +524,8 @@ export default function Navigation() {
                 <button
                   className={`flex items-center justify-between w-full font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
                     isActive("/renovations")
-                      ? "text-[#F16622] bg-orange-50"
-                      : "text-[#18457C] hover:text-[#229FD9] hover:bg-gray-50"
+                      ? "text-coastal-orange bg-orange-50"
+                      : "text-coastal-navy hover:text-coastal-blue hover:bg-gray-50"
                   }`}
                   onClick={() => {
                     if (renovationOpen) {
@@ -545,42 +546,42 @@ export default function Navigation() {
                     <Link
                       href="/renovations/kitchen"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Kitchen Remodeling
                     </Link>
                     <Link
                       href="/renovations/bathroom"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Bathroom Renovations
                     </Link>
                     <Link
                       href="/renovations/repairs"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Home Repairs & Maintenance
                     </Link>
                     <Link
                       href="/renovations/flooring"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Flooring Services
                     </Link>
                     <Link
                       href="/renovations/interior"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Interior Renovations
                     </Link>
                     <Link
                       href="/renovations/emergency"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Emergency Repairs
                     </Link>
@@ -593,8 +594,8 @@ export default function Navigation() {
                 <button
                   className={`flex items-center justify-between w-full font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
                     isActive("/investor-services")
-                      ? "text-[#229FD9] bg-blue-50"
-                      : "text-[#18457C] hover:text-[#229FD9] hover:bg-gray-50"
+                      ? "text-coastal-blue bg-blue-50"
+                      : "text-coastal-navy hover:text-coastal-blue hover:bg-gray-50"
                   }`}
                   onClick={() => {
                     if (investorOpen) {
@@ -615,28 +616,28 @@ export default function Navigation() {
                     <Link
                       href="/investor-services/investment"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Investment Services
                     </Link>
                     <Link
                       href="/investor-services/portfolio-management"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Portfolio Management
                     </Link>
                     <Link
                       href="/investor-services/property-analysis"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Property Analysis
                     </Link>
                     <Link
                       href="/investor-services/fix-and-flip"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Fix & Flip Services
                     </Link>
@@ -649,8 +650,8 @@ export default function Navigation() {
                 <button
                   className={`flex items-center justify-between w-full font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
                     isActive("/resources")
-                      ? "text-[#229FD9] bg-blue-50"
-                      : "text-[#18457C] hover:text-[#229FD9] hover:bg-gray-50"
+                      ? "text-coastal-blue bg-blue-50"
+                      : "text-coastal-navy hover:text-coastal-blue hover:bg-gray-50"
                   }`}
                   onClick={() => {
                     if (resourcesOpen) {
@@ -671,35 +672,35 @@ export default function Navigation() {
                     <Link
                       href="/resources/buyers-guide"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Homebuyer's Guide
                     </Link>
                     <Link
                       href="/resources/sellers-checklist"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Seller's Checklist
                     </Link>
                     <Link
                       href="/resources/renovation-planning"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Renovation Planning
                     </Link>
                     <Link
                       href="/resources/blog"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Blog/News
                     </Link>
                     <Link
                       href="/resources/market-updates"
                       onClick={closeMenu}
-                      className="block text-[#707070] hover:text-[#229FD9] hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
                       Market Updates
                     </Link>
@@ -712,8 +713,8 @@ export default function Navigation() {
                 onClick={closeMenu}
                 className={`block font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
                   isActive("/contact")
-                    ? "text-[#229FD9] bg-blue-50"
-                    : "text-[#18457C] hover:text-[#229FD9] hover:bg-gray-50"
+                    ? "text-coastal-blue bg-blue-50"
+                    : "text-coastal-navy hover:text-coastal-blue hover:bg-gray-50"
                 }`}
               >
                 Contact

@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -13,7 +14,7 @@ export default function BuyersGuideClientPage() {
       step: "1",
       title: "Get Pre-Approved for Financing",
       description: "Understand your budget and strengthen your offer with pre-approval from trusted lenders.",
-      icon: <DollarSign className="h-8 w-8 text-[#229FD9]" />,
+      icon: <DollarSign className="h-8 w-8 text-coastal-blue" />,
       details: [
         "Check your credit score and improve if needed",
         "Gather financial documents (tax returns, pay stubs, bank statements)",
@@ -25,7 +26,7 @@ export default function BuyersGuideClientPage() {
       step: "2",
       title: "Understanding the First Coast Market",
       description: "Learn about Northeast Florida's unique coastal real estate market dynamics.",
-      icon: <Home className="h-8 w-8 text-[#229FD9]" />,
+      icon: <Home className="h-8 w-8 text-coastal-blue" />,
       details: [
         "Seasonal market trends and timing",
         "Neighborhood characteristics from St. Augustine to Amelia Island",
@@ -37,7 +38,7 @@ export default function BuyersGuideClientPage() {
       step: "3",
       title: "Working with a Buyer's Agent",
       description: "Why having an experienced agent matters, especially one with construction expertise.",
-      icon: <Shield className="h-8 w-8 text-[#229FD9]" />,
+      icon: <Shield className="h-8 w-8 text-coastal-blue" />,
       details: [
         "Agent represents your interests, not the seller's",
         "Access to MLS and off-market properties",
@@ -49,7 +50,7 @@ export default function BuyersGuideClientPage() {
       step: "4",
       title: "Home Inspection Essentials",
       description: "What to look for and why a construction expert's eye makes all the difference.",
-      icon: <FileText className="h-8 w-8 text-[#229FD9]" />,
+      icon: <FileText className="h-8 w-8 text-coastal-blue" />,
       details: [
         "Structural integrity and foundation issues",
         "Electrical, plumbing, and HVAC systems",
@@ -61,7 +62,7 @@ export default function BuyersGuideClientPage() {
       step: "5",
       title: "Closing Process Walkthrough",
       description: "Navigate the final steps to homeownership with confidence.",
-      icon: <Key className="h-8 w-8 text-[#229FD9]" />,
+      icon: <Key className="h-8 w-8 text-coastal-blue" />,
       details: [
         "Final walkthrough checklist",
         "Title search and insurance",
@@ -84,11 +85,12 @@ export default function BuyersGuideClientPage() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden py-16 text-white">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1758523671285-9ff3f4e0ff38?auto=format&fit=crop&w=2000&q=80"
           alt="Homebuyers celebrating with their agent"
-          className="absolute inset-0 h-full w-full object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge className="mb-6 bg-white/20 text-white border-white/30">Complete Guide</Badge>
@@ -99,14 +101,14 @@ export default function BuyersGuideClientPage() {
             Your step-by-step guide to buying your dream home on the First Coast, backed by construction expertise
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-8 py-3">
+            <Button className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3">
               <Download className="mr-2 h-5 w-5" />
               Download PDF Guide
             </Button>
             <Button
               asChild
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#18457C] px-8 py-3 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-coastal-navy px-8 py-3 bg-transparent"
             >
               <Link href="/contact" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />
@@ -121,10 +123,10 @@ export default function BuyersGuideClientPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+            <h2 className="text-3xl md:text-4xl font-bold text-coastal-navy mb-4 font-serif">
               Your Home Buying Journey
             </h2>
-            <p className="text-xl text-[#707070] max-w-3xl mx-auto">
+            <p className="text-xl text-coastal-grey max-w-3xl mx-auto">
               Follow these essential steps to navigate the First Coast real estate market with confidence.
             </p>
           </div>
@@ -135,21 +137,21 @@ export default function BuyersGuideClientPage() {
                 <CardContent className="p-8">
                   <div className="flex flex-col lg:flex-row items-start gap-8">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-[#229FD9]/10 rounded-full flex items-center justify-center mb-4">
+                      <div className="w-16 h-16 bg-coastal-blue/10 rounded-full flex items-center justify-center mb-4">
                         {step.icon}
                       </div>
-                      <Badge className="bg-[#18457C] text-white">Step {step.step}</Badge>
+                      <Badge className="bg-coastal-navy text-white">Step {step.step}</Badge>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+                      <h3 className="text-2xl font-bold text-coastal-navy mb-4 font-serif">
                         {step.title}
                       </h3>
-                      <p className="text-[#707070] mb-6 text-lg leading-relaxed">{step.description}</p>
+                      <p className="text-coastal-grey mb-6 text-lg leading-relaxed">{step.description}</p>
                       <div className="grid md:grid-cols-2 gap-4">
                         {step.details.map((detail, detailIndex) => (
                           <div key={detailIndex} className="flex items-start space-x-3">
-                            <CheckCircle className="h-5 w-5 text-[#229FD9] mt-0.5 flex-shrink-0" />
-                            <span className="text-[#707070]">{detail}</span>
+                            <CheckCircle className="h-5 w-5 text-coastal-blue mt-0.5 flex-shrink-0" />
+                            <span className="text-coastal-grey">{detail}</span>
                           </div>
                         ))}
                       </div>
@@ -167,10 +169,10 @@ export default function BuyersGuideClientPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-coastal-navy mb-4 font-serif">
                 Why Working with a Construction Expert Matters
               </h2>
-              <p className="text-xl text-[#707070] max-w-3xl mx-auto">
+              <p className="text-xl text-coastal-grey max-w-3xl mx-auto">
                 David Conine's 20+ years in construction gives you a unique advantage in the home buying process.
               </p>
             </div>
@@ -180,21 +182,19 @@ export default function BuyersGuideClientPage() {
                 <div className="space-y-4">
                   {expertiseHighlights.map((highlight, index) => (
                     <div key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="h-6 w-6 text-[#229FD9] mt-0.5 flex-shrink-0" />
-                      <span className="text-[#707070] text-lg">{highlight}</span>
+                      <CheckCircle className="h-6 w-6 text-coastal-blue mt-0.5 flex-shrink-0" />
+                      <span className="text-coastal-grey text-lg">{highlight}</span>
                     </div>
                   ))}
                 </div>
                 <div className="mt-8">
-                  <Link href="/contact">
-                    <Button className="bg-[#229FD9] hover:bg-[#229FD9]/90 text-white px-8 py-3">
-                      Get Expert Guidance
-                    </Button>
-                  </Link>
+                  <Button asChild className="bg-coastal-blue hover:bg-coastal-blue/90 text-white px-8 py-3">
+                    <Link href="/contact">Get Expert Guidance</Link>
+                  </Button>
                 </div>
               </div>
-              <div className="bg-[#18457C] text-white p-8 rounded-xl">
-                <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: "serif" }}>
+              <div className="bg-coastal-navy text-white p-8 rounded-xl">
+                <h3 className="text-2xl font-bold mb-4 font-serif">
                   Real Example
                 </h3>
                 <p className="text-white/90 mb-4">
@@ -211,27 +211,27 @@ export default function BuyersGuideClientPage() {
       {/* Downloadable Resources */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#18457C] mb-6" style={{ fontFamily: "serif" }}>
+          <h2 className="text-3xl md:text-4xl font-bold text-coastal-navy mb-6 font-serif">
             Take This Guide With You
           </h2>
-          <p className="text-xl text-[#707070] mb-8">
+          <p className="text-xl text-coastal-grey mb-8">
             Download our comprehensive homebuyer's checklist and keep this guide handy throughout your home search.
           </p>
 
-          <Card className="p-8 bg-gradient-to-r from-[#229FD9]/5 to-[#18457C]/5 border-2 border-[#229FD9]/20">
+          <Card className="p-8 bg-gradient-to-r from-coastal-blue/5 to-coastal-navy/5 border-2 border-coastal-blue/20">
             <CardContent className="p-0">
               <div className="flex items-center justify-center mb-6">
-                <div className="w-16 h-16 bg-[#229FD9] rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 bg-coastal-blue rounded-full flex items-center justify-center">
                   <Download className="h-8 w-8 text-white" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+              <h3 className="text-2xl font-bold text-coastal-navy mb-4 font-serif">
                 Homebuyer's Checklist PDF
               </h3>
-              <p className="text-[#707070] mb-6">
+              <p className="text-coastal-grey mb-6">
                 Complete checklist with timelines, important questions to ask, and red flags to watch for.
               </p>
-              <Button className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-8 py-3">
+              <Button className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3">
                 <Download className="mr-2 h-5 w-5" />
                 Download Free Checklist
               </Button>
@@ -241,28 +241,25 @@ export default function BuyersGuideClientPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#18457C] text-white">
+      <section className="py-16 bg-coastal-navy text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "serif" }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">
             Ready to Start Your Home Search?
           </h2>
           <p className="text-xl text-white/90 mb-8">
             Let's find your perfect First Coast home with the confidence that comes from construction expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-8 py-3">
-                Schedule Your Consultation
-              </Button>
-            </Link>
-            <Link href="/real-estate/buyers">
-              <Button
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#18457C] px-8 py-3 bg-transparent"
-              >
-                View Buyer Services
-              </Button>
-            </Link>
+            <Button asChild className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3">
+              <Link href="/contact">Schedule Your Consultation</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-coastal-navy px-8 py-3 bg-transparent"
+            >
+              <Link href="/real-estate/buyers">View Buyer Services</Link>
+            </Button>
           </div>
         </div>
       </section>

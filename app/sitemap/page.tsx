@@ -27,7 +27,12 @@ const sitemapLinks = [
       { label: "Renovation Services", href: "/renovations" },
       { label: "Kitchen Remodeling", href: "/renovations/kitchen" },
       { label: "Bathroom Renovations", href: "/renovations/bathroom" },
+      { label: "Interior Renovations", href: "/renovations/interior" },
+      { label: "Exterior Renovations", href: "/renovations/exterior" },
+      { label: "Flooring Services", href: "/renovations/flooring" },
       { label: "Whole-Home Remodeling", href: "/renovations/whole-home" },
+      { label: "Home Additions", href: "/renovations/additions" },
+      { label: "Home Repairs", href: "/renovations/repairs" },
       { label: "Emergency Repairs", href: "/renovations/emergency" },
     ],
   },
@@ -72,10 +77,10 @@ export default function SitemapPage() {
     <div className="min-h-screen bg-white py-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <header className="text-center space-y-4">
-          <h1 className="text-4xl font-bold text-[#18457C]" style={{ fontFamily: "serif" }}>
+          <h1 className="text-4xl font-bold text-coastal-navy font-serif">
             Sitemap
           </h1>
-          <p className="text-lg text-[#707070]">
+          <p className="text-lg text-coastal-grey">
             Explore every section of Conine Coastal in a single view.
           </p>
         </header>
@@ -83,11 +88,11 @@ export default function SitemapPage() {
         <div className="grid gap-10 md:grid-cols-2">
           {sitemapLinks.map((section) => (
             <div key={section.title} className="space-y-4">
-              <h2 className="text-2xl font-semibold text-[#18457C]">{section.title}</h2>
+              <h2 className="text-2xl font-semibold text-coastal-navy">{section.title}</h2>
               <ul className="space-y-2">
                 {section.items.map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="text-[#229FD9] hover:underline">
+                    <Link href={item.href} className="text-coastal-blue hover:underline">
                       {item.label}
                     </Link>
                   </li>
@@ -100,11 +105,11 @@ export default function SitemapPage() {
         <footer className="text-center text-sm text-[#909090]">
           <p>
             Need help finding something specific? Email
-            <a href="mailto:info@coninecoastal.com" className="text-[#229FD9] hover:underline ml-1">
+            <a href="mailto:info@coninecoastal.com" className="text-coastal-blue hover:underline ml-1">
               info@coninecoastal.com
             </a>
             or call
-            <a href="tel:+19046241722" className="text-[#229FD9] hover:underline ml-1">
+            <a href="tel:+19046241722" className="text-coastal-blue hover:underline ml-1">
               (904) 624-1722
             </a>
             .

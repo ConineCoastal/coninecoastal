@@ -1,19 +1,24 @@
 "use client"
+import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Phone, Users, Award, Home, Sun, Droplets, Wind, Plus, Maximize, TrendingUp } from "lucide-react"
+import Breadcrumb from "@/components/breadcrumb"
 
 export default function AdditionsExtensions() {
   return (
     <div className="min-h-screen bg-white">
+      <Breadcrumb />
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1685425481910-71c174ad7341?auto=format&fit=crop&w=2000&q=80"
           alt="Home addition and extension construction"
-          className="absolute inset-0 object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-amber-600 hover:bg-amber-700 text-white">Home Additions & Extensions</Badge>
@@ -25,16 +30,19 @@ export default function AdditionsExtensions() {
             exceptional value and functionality.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg">
-              <Phone className="mr-2 h-5 w-5" />
-              Get Free Consultation
+            <Button asChild size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg">
+              <Link href="/contact?service=additions" className="flex items-center justify-center">
+                <Phone className="mr-2 h-5 w-5" />
+                Get Free Consultation
+              </Link>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg bg-transparent"
             >
-              View Addition Portfolio
+              <Link href="/contact?service=additions">View Addition Portfolio</Link>
             </Button>
           </div>
         </div>
@@ -185,9 +193,11 @@ export default function AdditionsExtensions() {
             </div>
 
             <div className="relative">
-              <img
+              <Image
                 src="https://picsum.photos/500/600"
                 alt="Weather-resistant exterior renovation"
+                width={800}
+                height={600}
                 className="rounded-lg shadow-xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg border">
@@ -200,17 +210,17 @@ export default function AdditionsExtensions() {
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-20 bg-[#18457C]">
+      <section className="py-16 bg-coastal-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6" style={{ fontFamily: "serif" }}>
+          <h2 className="text-4xl font-bold text-white mb-6 font-serif">
             Ready to Expand Your Living Space?
           </h2>
           <p className="text-xl text-white/90">
             Schedule a comprehensive consultation to discuss your whole-home renovation vision. Let's create the home of
             your dreams while maximizing your investment.
           </p>
-          <Button size="lg" className="bg-[#229FD9] hover:bg-[#229FD9]/90 text-white px-8 py-4 text-lg">
-            Contact Us
+          <Button asChild size="lg" className="bg-coastal-blue hover:bg-coastal-blue/90 text-white px-8 py-4 text-lg">
+            <Link href="/contact?service=additions">Contact Us</Link>
           </Button>
         </div>
       </section>

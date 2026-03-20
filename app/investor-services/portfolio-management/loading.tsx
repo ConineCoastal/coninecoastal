@@ -18,7 +18,7 @@ export default function Loading() {
       </section>
 
       {/* Services Overview Skeleton */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <Skeleton className="h-12 w-2/3 mx-auto mb-4" />
@@ -40,7 +40,7 @@ export default function Loading() {
       </section>
 
       {/* Content Sections Skeleton */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
           <Skeleton className="h-12 w-1/2 mx-auto mb-16" />
           <div className="grid lg:grid-cols-3 gap-8">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -21,6 +22,7 @@ import {
   PieChart,
   FileText,
 } from "lucide-react"
+import Breadcrumb from "@/components/breadcrumb"
 
 export const metadata: Metadata = {
   title: "Investment Portfolio Management - Northeast Florida | Conine Coastal",
@@ -33,6 +35,7 @@ export const metadata: Metadata = {
 export default function PortfolioManagementPage() {
   return (
     <div className="min-h-screen bg-white">
+      <Breadcrumb />
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div
@@ -53,22 +56,23 @@ export default function PortfolioManagementPage() {
             knowledge, and professional property management to maximize your portfolio's performance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
-              Get Portfolio Analysis
+            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
+              <Link href="/contact?service=portfolio-management">Get Portfolio Analysis</Link>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 bg-transparent"
             >
-              Schedule Strategy Session
+              <Link href="/contact?service=portfolio-management">Schedule Strategy Session</Link>
             </Button>
           </div>
         </div>
       </section>
 
       {/* Portfolio Services Overview */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Comprehensive Portfolio Management Services</h2>
@@ -169,7 +173,7 @@ export default function PortfolioManagementPage() {
       </section>
 
       {/* Portfolio Size Tiers */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Tailored Services for Every Portfolio Size</h2>
@@ -293,7 +297,7 @@ export default function PortfolioManagementPage() {
       </section>
 
       {/* Portfolio Optimization Process */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Portfolio Optimization Process</h2>
@@ -374,7 +378,7 @@ export default function PortfolioManagementPage() {
       </section>
 
       {/* Competitive Advantages */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -447,7 +451,7 @@ export default function PortfolioManagementPage() {
       </section>
 
       {/* Portfolio Performance Metrics */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Track Your Portfolio's Success</h2>
@@ -518,7 +522,7 @@ export default function PortfolioManagementPage() {
       </section>
 
       {/* Case Study */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-4xl mx-auto px-4">
           <Card className="overflow-hidden">
             <CardHeader className="bg-blue-600 text-white text-center">
@@ -562,7 +566,7 @@ export default function PortfolioManagementPage() {
       </section>
 
       {/* Technology & Reporting */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Advanced Portfolio Management Technology</h2>
@@ -643,7 +647,7 @@ export default function PortfolioManagementPage() {
       </section>
 
       {/* Getting Started */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to Optimize Your Portfolio Performance?</h2>
@@ -696,7 +700,7 @@ export default function PortfolioManagementPage() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Get Your Portfolio Analysis</h2>

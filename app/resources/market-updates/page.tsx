@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -18,11 +19,12 @@ export default function MarketUpdatesPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24 text-white">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1717957566742-fd92d32e01d6?auto=format&fit=crop&w=2000&q=80"
           alt="Financial analyst reviewing real estate market charts"
-          className="absolute inset-0 h-full w-full object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
@@ -39,7 +41,7 @@ export default function MarketUpdatesPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-white text-white hover:bg-white hover:text-[#18457C]"
+                className="bg-transparent border-white text-white hover:bg-white hover:text-coastal-navy"
                 asChild
               >
                 <Link href="/contact">Get Custom Analysis</Link>
@@ -53,67 +55,67 @@ export default function MarketUpdatesPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-[#229FD9] text-white">December 2024</Badge>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#18457C] mb-4">Current Market Snapshot</h2>
-            <p className="text-lg text-[#707070] max-w-3xl mx-auto">
+            <Badge className="mb-4 bg-coastal-blue text-white">December 2024</Badge>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-coastal-navy mb-4">Current Market Snapshot</h2>
+            <p className="text-lg text-coastal-grey max-w-3xl mx-auto">
               Key metrics and trends across the First Coast real estate market
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center border-l-4 border-[#229FD9]">
+            <Card className="text-center border-l-4 border-coastal-blue">
               <CardHeader>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Median Home Price</CardTitle>
-                <div className="text-3xl font-bold text-[#229FD9]">$425K</div>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Median Home Price</CardTitle>
+                <div className="text-3xl font-bold text-coastal-blue">$425K</div>
                 <div className="flex items-center justify-center space-x-1 text-green-600">
                   <TrendingUp className="h-4 w-4" />
                   <span className="text-sm">+3.2% YoY</span>
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070]">Steady appreciation continues across Northeast Florida markets</p>
+                <p className="text-sm text-coastal-grey">Steady appreciation continues across Northeast Florida markets</p>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-l-4 border-[#F16622]">
+            <Card className="text-center border-l-4 border-coastal-orange">
               <CardHeader>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Days on Market</CardTitle>
-                <div className="text-3xl font-bold text-[#F16622]">28</div>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Days on Market</CardTitle>
+                <div className="text-3xl font-bold text-coastal-orange">28</div>
                 <div className="flex items-center justify-center space-x-1 text-red-600">
                   <TrendingDown className="h-4 w-4" />
                   <span className="text-sm">-5 days YoY</span>
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070]">Well-priced homes continue to sell quickly in desirable areas</p>
+                <p className="text-sm text-coastal-grey">Well-priced homes continue to sell quickly in desirable areas</p>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-l-4 border-[#229FD9]">
+            <Card className="text-center border-l-4 border-coastal-blue">
               <CardHeader>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Active Listings</CardTitle>
-                <div className="text-3xl font-bold text-[#229FD9]">2,847</div>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Active Listings</CardTitle>
+                <div className="text-3xl font-bold text-coastal-blue">2,847</div>
                 <div className="flex items-center justify-center space-x-1 text-green-600">
                   <TrendingUp className="h-4 w-4" />
                   <span className="text-sm">+15% YoY</span>
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070]">Increased inventory provides more options for buyers</p>
+                <p className="text-sm text-coastal-grey">Increased inventory provides more options for buyers</p>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-l-4 border-[#F16622]">
+            <Card className="text-center border-l-4 border-coastal-orange">
               <CardHeader>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Price per Sq Ft</CardTitle>
-                <div className="text-3xl font-bold text-[#F16622]">$198</div>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Price per Sq Ft</CardTitle>
+                <div className="text-3xl font-bold text-coastal-orange">$198</div>
                 <div className="flex items-center justify-center space-x-1 text-green-600">
                   <TrendingUp className="h-4 w-4" />
                   <span className="text-sm">+2.8% YoY</span>
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070]">Consistent value growth across property types</p>
+                <p className="text-sm text-coastal-grey">Consistent value growth across property types</p>
               </CardContent>
             </Card>
           </div>
@@ -124,10 +126,10 @@ export default function MarketUpdatesPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#18457C] mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-coastal-navy mb-4">
               Neighborhood Market Analysis
             </h2>
-            <p className="text-lg text-[#707070] max-w-3xl mx-auto">
+            <p className="text-lg text-coastal-grey max-w-3xl mx-auto">
               Detailed insights into First Coast's most active real estate markets
             </p>
           </div>
@@ -138,8 +140,8 @@ export default function MarketUpdatesPage() {
               <CardHeader>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">
-                    <MapPin className="h-5 w-5 text-[#229FD9]" />
-                    <CardTitle className="text-[#18457C] font-serif">Amelia Island</CardTitle>
+                    <MapPin className="h-5 w-5 text-coastal-blue" />
+                    <CardTitle className="text-coastal-navy font-serif">Amelia Island</CardTitle>
                   </div>
                   <Badge className="bg-green-100 text-green-800">Hot Market</Badge>
                 </div>
@@ -148,23 +150,23 @@ export default function MarketUpdatesPage() {
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Median Price:</span>
-                    <span className="font-semibold text-[#229FD9]">$875,000</span>
+                    <span className="text-sm text-coastal-grey">Median Price:</span>
+                    <span className="font-semibold text-coastal-blue">$875,000</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">YoY Change:</span>
+                    <span className="text-sm text-coastal-grey">YoY Change:</span>
                     <span className="font-semibold text-green-600">+8.5%</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Avg DOM:</span>
+                    <span className="text-sm text-coastal-grey">Avg DOM:</span>
                     <span className="font-semibold">22 days</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Active Listings:</span>
+                    <span className="text-sm text-coastal-grey">Active Listings:</span>
                     <span className="font-semibold">127</span>
                   </div>
                   <div className="pt-2 border-t">
-                    <p className="text-xs text-[#707070]">
+                    <p className="text-xs text-coastal-grey">
                       Waterfront properties driving premium pricing. New construction limited by development
                       restrictions.
                     </p>
@@ -178,8 +180,8 @@ export default function MarketUpdatesPage() {
               <CardHeader>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">
-                    <MapPin className="h-5 w-5 text-[#229FD9]" />
-                    <CardTitle className="text-[#18457C] font-serif">St. Augustine</CardTitle>
+                    <MapPin className="h-5 w-5 text-coastal-blue" />
+                    <CardTitle className="text-coastal-navy font-serif">St. Augustine</CardTitle>
                   </div>
                   <Badge className="bg-blue-100 text-blue-800">Balanced</Badge>
                 </div>
@@ -188,23 +190,23 @@ export default function MarketUpdatesPage() {
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Median Price:</span>
-                    <span className="font-semibold text-[#229FD9]">$385,000</span>
+                    <span className="text-sm text-coastal-grey">Median Price:</span>
+                    <span className="font-semibold text-coastal-blue">$385,000</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">YoY Change:</span>
+                    <span className="text-sm text-coastal-grey">YoY Change:</span>
                     <span className="font-semibold text-green-600">+4.2%</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Avg DOM:</span>
+                    <span className="text-sm text-coastal-grey">Avg DOM:</span>
                     <span className="font-semibold">31 days</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Active Listings:</span>
+                    <span className="text-sm text-coastal-grey">Active Listings:</span>
                     <span className="font-semibold">298</span>
                   </div>
                   <div className="pt-2 border-t">
-                    <p className="text-xs text-[#707070]">
+                    <p className="text-xs text-coastal-grey">
                       Historic district properties command premium. New developments expanding inventory.
                     </p>
                   </div>
@@ -217,8 +219,8 @@ export default function MarketUpdatesPage() {
               <CardHeader>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">
-                    <MapPin className="h-5 w-5 text-[#229FD9]" />
-                    <CardTitle className="text-[#18457C] font-serif">Jacksonville Beach</CardTitle>
+                    <MapPin className="h-5 w-5 text-coastal-blue" />
+                    <CardTitle className="text-coastal-navy font-serif">Jacksonville Beach</CardTitle>
                   </div>
                   <Badge className="bg-orange-100 text-orange-800">Competitive</Badge>
                 </div>
@@ -227,23 +229,23 @@ export default function MarketUpdatesPage() {
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Median Price:</span>
-                    <span className="font-semibold text-[#229FD9]">$525,000</span>
+                    <span className="text-sm text-coastal-grey">Median Price:</span>
+                    <span className="font-semibold text-coastal-blue">$525,000</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">YoY Change:</span>
+                    <span className="text-sm text-coastal-grey">YoY Change:</span>
                     <span className="font-semibold text-green-600">+6.1%</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Avg DOM:</span>
+                    <span className="text-sm text-coastal-grey">Avg DOM:</span>
                     <span className="font-semibold">25 days</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Active Listings:</span>
+                    <span className="text-sm text-coastal-grey">Active Listings:</span>
                     <span className="font-semibold">156</span>
                   </div>
                   <div className="pt-2 border-t">
-                    <p className="text-xs text-[#707070]">
+                    <p className="text-xs text-coastal-grey">
                       Strong demand for oceanfront and near-beach properties. Condo market particularly active.
                     </p>
                   </div>
@@ -256,8 +258,8 @@ export default function MarketUpdatesPage() {
               <CardHeader>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">
-                    <MapPin className="h-5 w-5 text-[#229FD9]" />
-                    <CardTitle className="text-[#18457C] font-serif">Ponte Vedra Beach</CardTitle>
+                    <MapPin className="h-5 w-5 text-coastal-blue" />
+                    <CardTitle className="text-coastal-navy font-serif">Ponte Vedra Beach</CardTitle>
                   </div>
                   <Badge className="bg-green-100 text-green-800">Premium</Badge>
                 </div>
@@ -266,23 +268,23 @@ export default function MarketUpdatesPage() {
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Median Price:</span>
-                    <span className="font-semibold text-[#229FD9]">$1,125,000</span>
+                    <span className="text-sm text-coastal-grey">Median Price:</span>
+                    <span className="font-semibold text-coastal-blue">$1,125,000</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">YoY Change:</span>
+                    <span className="text-sm text-coastal-grey">YoY Change:</span>
                     <span className="font-semibold text-green-600">+7.8%</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Avg DOM:</span>
+                    <span className="text-sm text-coastal-grey">Avg DOM:</span>
                     <span className="font-semibold">35 days</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Active Listings:</span>
+                    <span className="text-sm text-coastal-grey">Active Listings:</span>
                     <span className="font-semibold">89</span>
                   </div>
                   <div className="pt-2 border-t">
-                    <p className="text-xs text-[#707070]">
+                    <p className="text-xs text-coastal-grey">
                       Golf course and oceanfront properties maintain strong values. Limited inventory drives
                       competition.
                     </p>
@@ -296,8 +298,8 @@ export default function MarketUpdatesPage() {
               <CardHeader>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">
-                    <MapPin className="h-5 w-5 text-[#229FD9]" />
-                    <CardTitle className="text-[#18457C] font-serif">Fernandina Beach</CardTitle>
+                    <MapPin className="h-5 w-5 text-coastal-blue" />
+                    <CardTitle className="text-coastal-navy font-serif">Fernandina Beach</CardTitle>
                   </div>
                   <Badge className="bg-blue-100 text-blue-800">Growing</Badge>
                 </div>
@@ -306,23 +308,23 @@ export default function MarketUpdatesPage() {
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Median Price:</span>
-                    <span className="font-semibold text-[#229FD9]">$465,000</span>
+                    <span className="text-sm text-coastal-grey">Median Price:</span>
+                    <span className="font-semibold text-coastal-blue">$465,000</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">YoY Change:</span>
+                    <span className="text-sm text-coastal-grey">YoY Change:</span>
                     <span className="font-semibold text-green-600">+5.7%</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Avg DOM:</span>
+                    <span className="text-sm text-coastal-grey">Avg DOM:</span>
                     <span className="font-semibold">29 days</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Active Listings:</span>
+                    <span className="text-sm text-coastal-grey">Active Listings:</span>
                     <span className="font-semibold">142</span>
                   </div>
                   <div className="pt-2 border-t">
-                    <p className="text-xs text-[#707070]">
+                    <p className="text-xs text-coastal-grey">
                       Downtown revitalization driving interest. Mix of historic and new construction options.
                     </p>
                   </div>
@@ -335,8 +337,8 @@ export default function MarketUpdatesPage() {
               <CardHeader>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">
-                    <MapPin className="h-5 w-5 text-[#229FD9]" />
-                    <CardTitle className="text-[#18457C] font-serif">Nassau County</CardTitle>
+                    <MapPin className="h-5 w-5 text-coastal-blue" />
+                    <CardTitle className="text-coastal-navy font-serif">Nassau County</CardTitle>
                   </div>
                   <Badge className="bg-green-100 text-green-800">Value</Badge>
                 </div>
@@ -345,23 +347,23 @@ export default function MarketUpdatesPage() {
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Median Price:</span>
-                    <span className="font-semibold text-[#229FD9]">$295,000</span>
+                    <span className="text-sm text-coastal-grey">Median Price:</span>
+                    <span className="font-semibold text-coastal-blue">$295,000</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">YoY Change:</span>
+                    <span className="text-sm text-coastal-grey">YoY Change:</span>
                     <span className="font-semibold text-green-600">+3.9%</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Avg DOM:</span>
+                    <span className="text-sm text-coastal-grey">Avg DOM:</span>
                     <span className="font-semibold">38 days</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#707070]">Active Listings:</span>
+                    <span className="text-sm text-coastal-grey">Active Listings:</span>
                     <span className="font-semibold">234</span>
                   </div>
                   <div className="pt-2 border-t">
-                    <p className="text-xs text-[#707070]">
+                    <p className="text-xs text-coastal-grey">
                       Rural and suburban options attracting families. New development increasing inventory.
                     </p>
                   </div>
@@ -376,43 +378,43 @@ export default function MarketUpdatesPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#18457C] mb-4">Key Market Trends</h2>
-            <p className="text-lg text-[#707070] max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-coastal-navy mb-4">Key Market Trends</h2>
+            <p className="text-lg text-coastal-grey max-w-3xl mx-auto">
               Professional insights on what's driving the First Coast market
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-l-4 border-[#229FD9]">
+            <Card className="border-l-4 border-coastal-blue">
               <CardHeader>
-                <CardTitle className="text-[#18457C] font-serif flex items-center">
-                  <TrendingUp className="mr-2 h-5 w-5 text-[#229FD9]" />
+                <CardTitle className="text-coastal-navy font-serif flex items-center">
+                  <TrendingUp className="mr-2 h-5 w-5 text-coastal-blue" />
                   What's Driving Growth
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-[#18457C] mb-2">Population Migration</h4>
-                    <p className="text-sm text-[#707070]">
+                    <h4 className="font-semibold text-coastal-navy mb-2">Population Migration</h4>
+                    <p className="text-sm text-coastal-grey">
                       Continued influx from high-tax states seeking coastal lifestyle and business-friendly environment.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#18457C] mb-2">Remote Work Flexibility</h4>
-                    <p className="text-sm text-[#707070]">
+                    <h4 className="font-semibold text-coastal-navy mb-2">Remote Work Flexibility</h4>
+                    <p className="text-sm text-coastal-grey">
                       Professionals choosing First Coast for quality of life while maintaining career opportunities.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#18457C] mb-2">Infrastructure Investment</h4>
-                    <p className="text-sm text-[#707070]">
+                    <h4 className="font-semibold text-coastal-navy mb-2">Infrastructure Investment</h4>
+                    <p className="text-sm text-coastal-grey">
                       Major transportation and utility improvements supporting long-term growth.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#18457C] mb-2">Tourism Recovery</h4>
-                    <p className="text-sm text-[#707070]">
+                    <h4 className="font-semibold text-coastal-navy mb-2">Tourism Recovery</h4>
+                    <p className="text-sm text-coastal-grey">
                       Strong vacation rental market supporting investment property demand.
                     </p>
                   </div>
@@ -420,36 +422,36 @@ export default function MarketUpdatesPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-[#F16622]">
+            <Card className="border-l-4 border-coastal-orange">
               <CardHeader>
-                <CardTitle className="text-[#18457C] font-serif flex items-center">
-                  <DollarSign className="mr-2 h-5 w-5 text-[#F16622]" />
+                <CardTitle className="text-coastal-navy font-serif flex items-center">
+                  <DollarSign className="mr-2 h-5 w-5 text-coastal-orange" />
                   Market Challenges
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-[#18457C] mb-2">Construction Costs</h4>
-                    <p className="text-sm text-[#707070]">
+                    <h4 className="font-semibold text-coastal-navy mb-2">Construction Costs</h4>
+                    <p className="text-sm text-coastal-grey">
                       Material and labor costs remain elevated, impacting new construction and renovation projects.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#18457C] mb-2">Insurance Rates</h4>
-                    <p className="text-sm text-[#707070]">
+                    <h4 className="font-semibold text-coastal-navy mb-2">Insurance Rates</h4>
+                    <p className="text-sm text-coastal-grey">
                       Rising coastal insurance premiums affecting affordability calculations for buyers.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#18457C] mb-2">Interest Rate Sensitivity</h4>
-                    <p className="text-sm text-[#707070]">
+                    <h4 className="font-semibold text-coastal-navy mb-2">Interest Rate Sensitivity</h4>
+                    <p className="text-sm text-coastal-grey">
                       Mortgage rate fluctuations creating timing considerations for buyers and sellers.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#18457C] mb-2">Inventory Constraints</h4>
-                    <p className="text-sm text-[#707070]">
+                    <h4 className="font-semibold text-coastal-navy mb-2">Inventory Constraints</h4>
+                    <p className="text-sm text-coastal-grey">
                       Limited developable land in prime coastal areas restricting supply growth.
                     </p>
                   </div>
@@ -464,8 +466,8 @@ export default function MarketUpdatesPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#18457C] mb-4">Monthly Market Reports</h2>
-            <p className="text-lg text-[#707070] max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-coastal-navy mb-4">Monthly Market Reports</h2>
+            <p className="text-lg text-coastal-grey max-w-3xl mx-auto">
               Comprehensive analysis and data for informed decision making
             </p>
           </div>
@@ -474,14 +476,14 @@ export default function MarketUpdatesPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center space-x-2 mb-3">
-                  <Calendar className="h-5 w-5 text-[#229FD9]" />
-                  <Badge className="bg-[#229FD9] text-white">Latest</Badge>
+                  <Calendar className="h-5 w-5 text-coastal-blue" />
+                  <Badge className="bg-coastal-blue text-white">Latest</Badge>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif">December 2024 Report</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif">December 2024 Report</CardTitle>
                 <CardDescription>Year-end market analysis and 2025 outlook</CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-[#707070] mb-4">
+                <ul className="space-y-2 text-sm text-coastal-grey mb-4">
                   <li>• Q4 sales volume and pricing trends</li>
                   <li>• Inventory analysis by price range</li>
                   <li>• Construction activity update</li>
@@ -497,14 +499,14 @@ export default function MarketUpdatesPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center space-x-2 mb-3">
-                  <Calendar className="h-5 w-5 text-[#707070]" />
-                  <span className="text-sm text-[#707070]">November 2024</span>
+                  <Calendar className="h-5 w-5 text-coastal-grey" />
+                  <span className="text-sm text-coastal-grey">November 2024</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif">Holiday Market Dynamics</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif">Holiday Market Dynamics</CardTitle>
                 <CardDescription>Seasonal patterns and buyer behavior</CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-[#707070] mb-4">
+                <ul className="space-y-2 text-sm text-coastal-grey mb-4">
                   <li>• Holiday season impact on sales</li>
                   <li>• Luxury market performance</li>
                   <li>• Interest rate effects</li>
@@ -520,14 +522,14 @@ export default function MarketUpdatesPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center space-x-2 mb-3">
-                  <Calendar className="h-5 w-5 text-[#707070]" />
-                  <span className="text-sm text-[#707070]">October 2024</span>
+                  <Calendar className="h-5 w-5 text-coastal-grey" />
+                  <span className="text-sm text-coastal-grey">October 2024</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif">Fall Market Momentum</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif">Fall Market Momentum</CardTitle>
                 <CardDescription>Post-summer activity and trends</CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-[#707070] mb-4">
+                <ul className="space-y-2 text-sm text-coastal-grey mb-4">
                   <li>• Back-to-school market shift</li>
                   <li>• Hurricane season impact</li>
                   <li>• New construction updates</li>
@@ -550,7 +552,7 @@ export default function MarketUpdatesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#18457C] text-white">
+      <section className="py-16 bg-coastal-navy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">Get Personalized Market Analysis</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
@@ -563,7 +565,7 @@ export default function MarketUpdatesPage() {
             <Button
               size="lg"
               variant="outline"
-              className="bg-transparent border-white text-white hover:bg-white hover:text-[#18457C]"
+              className="bg-transparent border-white text-white hover:bg-white hover:text-coastal-navy"
             >
               <Download className="mr-2 h-5 w-5" />
               Subscribe to Reports

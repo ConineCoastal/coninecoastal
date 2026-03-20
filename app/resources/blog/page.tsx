@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -17,11 +18,12 @@ export default function BlogPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24 text-white">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1583777456855-d44bfb9066cf?auto=format&fit=crop&w=2000&q=80"
           alt="Real estate professional writing insights on a laptop"
-          className="absolute inset-0 h-full w-full object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
@@ -36,7 +38,7 @@ export default function BlogPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-white text-white hover:bg-white hover:text-[#18457C]"
+                className="bg-transparent border-white text-white hover:bg-white hover:text-coastal-navy"
                 asChild
               >
                 <Link href="#newsletter">Subscribe to Newsletter</Link>
@@ -50,10 +52,10 @@ export default function BlogPage() {
       <section id="featured" className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <Badge className="mb-4 bg-[#F16622] text-white">Featured Article</Badge>
+            <Badge className="mb-4 bg-coastal-orange text-white">Featured Article</Badge>
             <Card className="overflow-hidden hover:shadow-xl transition-shadow">
               <div className="grid lg:grid-cols-2 gap-0">
-                <div className="bg-gradient-to-br from-[#18457C] to-[#229FD9] p-8 lg:p-12 text-white">
+                <div className="bg-gradient-to-br from-coastal-navy to-coastal-blue p-8 lg:p-12 text-white">
                   <div className="flex items-center space-x-4 mb-6">
                     <div className="flex items-center space-x-2 text-sm">
                       <Calendar className="h-4 w-4" />
@@ -79,8 +81,8 @@ export default function BlogPage() {
                 <div className="p-8 lg:p-12">
                   <div className="space-y-6">
                     <div>
-                      <h3 className="font-serif font-semibold text-[#18457C] mb-3">Key Market Indicators</h3>
-                      <ul className="space-y-2 text-[#707070]">
+                      <h3 className="font-serif font-semibold text-coastal-navy mb-3">Key Market Indicators</h3>
+                      <ul className="space-y-2 text-coastal-grey">
                         <li>• Inventory levels up 15% from last year</li>
                         <li>• Average days on market: 28 days</li>
                         <li>• Price appreciation slowing to sustainable levels</li>
@@ -88,8 +90,8 @@ export default function BlogPage() {
                       </ul>
                     </div>
                     <div>
-                      <h3 className="font-serif font-semibold text-[#18457C] mb-3">What This Means</h3>
-                      <ul className="space-y-2 text-[#707070]">
+                      <h3 className="font-serif font-semibold text-coastal-navy mb-3">What This Means</h3>
+                      <ul className="space-y-2 text-coastal-grey">
                         <li>• More balanced market conditions</li>
                         <li>• Better opportunities for buyers</li>
                         <li>• Strategic timing becomes crucial for sellers</li>
@@ -108,8 +110,8 @@ export default function BlogPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#18457C] mb-4">Explore by Category</h2>
-            <p className="text-lg text-[#707070] max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-coastal-navy mb-4">Explore by Category</h2>
+            <p className="text-lg text-coastal-grey max-w-3xl mx-auto">
               Find the insights most relevant to your First Coast real estate and renovation needs
             </p>
           </div>
@@ -117,19 +119,19 @@ export default function BlogPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="hover:shadow-lg transition-shadow cursor-pointer">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#229FD9]/10 rounded-lg flex items-center justify-center mb-4">
-                  <TrendingUp className="h-6 w-6 text-[#229FD9]" />
+                <div className="w-12 h-12 bg-coastal-blue/10 rounded-lg flex items-center justify-center mb-4">
+                  <TrendingUp className="h-6 w-6 text-coastal-blue" />
                 </div>
-                <CardTitle className="text-[#18457C] font-serif">Market Updates</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif">Market Updates</CardTitle>
                 <CardDescription>Latest trends and analysis from the First Coast</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center text-sm">
-                    <span className="text-[#707070]">Recent Posts:</span>
+                    <span className="text-coastal-grey">Recent Posts:</span>
                     <Badge variant="secondary">12</Badge>
                   </div>
-                  <ul className="space-y-1 text-sm text-[#707070]">
+                  <ul className="space-y-1 text-sm text-coastal-grey">
                     <li>• Q4 2024 Market Report</li>
                     <li>• Amelia Island Luxury Trends</li>
                     <li>• St. Augustine Historic District Analysis</li>
@@ -140,19 +142,19 @@ export default function BlogPage() {
 
             <Card className="hover:shadow-lg transition-shadow cursor-pointer">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#F16622]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Wrench className="h-6 w-6 text-[#F16622]" />
+                <div className="w-12 h-12 bg-coastal-orange/10 rounded-lg flex items-center justify-center mb-4">
+                  <Wrench className="h-6 w-6 text-coastal-orange" />
                 </div>
-                <CardTitle className="text-[#18457C] font-serif">Renovation Tips</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif">Renovation Tips</CardTitle>
                 <CardDescription>Expert construction and improvement advice</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center text-sm">
-                    <span className="text-[#707070]">Recent Posts:</span>
+                    <span className="text-coastal-grey">Recent Posts:</span>
                     <Badge variant="secondary">18</Badge>
                   </div>
-                  <ul className="space-y-1 text-sm text-[#707070]">
+                  <ul className="space-y-1 text-sm text-coastal-grey">
                     <li>• Kitchen ROI Maximization</li>
                     <li>• Coastal Construction Considerations</li>
                     <li>• Hurricane-Resistant Upgrades</li>
@@ -163,19 +165,19 @@ export default function BlogPage() {
 
             <Card className="hover:shadow-lg transition-shadow cursor-pointer">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#18457C]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Home className="h-6 w-6 text-[#18457C]" />
+                <div className="w-12 h-12 bg-coastal-navy/10 rounded-lg flex items-center justify-center mb-4">
+                  <Home className="h-6 w-6 text-coastal-navy" />
                 </div>
-                <CardTitle className="text-[#18457C] font-serif">Community News</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif">Community News</CardTitle>
                 <CardDescription>First Coast developments and local insights</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center text-sm">
-                    <span className="text-[#707070]">Recent Posts:</span>
+                    <span className="text-coastal-grey">Recent Posts:</span>
                     <Badge variant="secondary">8</Badge>
                   </div>
-                  <ul className="space-y-1 text-sm text-[#707070]">
+                  <ul className="space-y-1 text-sm text-coastal-grey">
                     <li>• New Development Projects</li>
                     <li>• Infrastructure Improvements</li>
                     <li>• Local Market Spotlights</li>
@@ -192,8 +194,8 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#18457C] mb-4">Recent Posts</h2>
-              <p className="text-lg text-[#707070]">Stay up-to-date with the latest insights and analysis</p>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-coastal-navy mb-4">Recent Posts</h2>
+              <p className="text-lg text-coastal-grey">Stay up-to-date with the latest insights and analysis</p>
             </div>
             <Button variant="outline">View All Posts</Button>
           </div>
@@ -203,10 +205,10 @@ export default function BlogPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center space-x-2 mb-3">
-                  <Badge className="bg-[#229FD9] text-white">Market Update</Badge>
-                  <span className="text-sm text-[#707070]">Dec 10, 2024</span>
+                  <Badge className="bg-coastal-blue text-white">Market Update</Badge>
+                  <span className="text-sm text-coastal-grey">Dec 10, 2024</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">
+                <CardTitle className="text-coastal-navy font-serif text-lg">
                   5 Kitchen Updates That Actually Add Value
                 </CardTitle>
                 <CardDescription>
@@ -214,12 +216,12 @@ export default function BlogPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070] mb-4">
+                <p className="text-sm text-coastal-grey mb-4">
                   After 20 years in construction and countless kitchen renovations, I've learned which updates truly add
                   value and which ones are just expensive...
                 </p>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-sm text-[#707070]">
+                  <div className="flex items-center space-x-2 text-sm text-coastal-grey">
                     <User className="h-4 w-4" />
                     <span>David Conine</span>
                   </div>
@@ -235,22 +237,22 @@ export default function BlogPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center space-x-2 mb-3">
-                  <Badge className="bg-[#F16622] text-white">Renovation</Badge>
-                  <span className="text-sm text-[#707070]">Dec 8, 2024</span>
+                  <Badge className="bg-coastal-orange text-white">Renovation</Badge>
+                  <span className="text-sm text-coastal-grey">Dec 8, 2024</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Best Time to Buy on Amelia Island</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Best Time to Buy on Amelia Island</CardTitle>
                 <CardDescription>
                   Understanding seasonal patterns and market cycles can save you thousands on your Amelia Island
                   purchase.
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070] mb-4">
+                <p className="text-sm text-coastal-grey mb-4">
                   Amelia Island's luxury market has unique seasonal patterns that smart buyers can leverage. Here's what
                   I've observed over the past decade...
                 </p>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-sm text-[#707070]">
+                  <div className="flex items-center space-x-2 text-sm text-coastal-grey">
                     <User className="h-4 w-4" />
                     <span>David Conine</span>
                   </div>
@@ -266,10 +268,10 @@ export default function BlogPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center space-x-2 mb-3">
-                  <Badge className="bg-[#18457C] text-white">Community</Badge>
-                  <span className="text-sm text-[#707070]">Dec 5, 2024</span>
+                  <Badge className="bg-coastal-navy text-white">Community</Badge>
+                  <span className="text-sm text-coastal-grey">Dec 5, 2024</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">
+                <CardTitle className="text-coastal-navy font-serif text-lg">
                   Hurricane Preparation for Coastal Homes
                 </CardTitle>
                 <CardDescription>
@@ -277,12 +279,12 @@ export default function BlogPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070] mb-4">
+                <p className="text-sm text-coastal-grey mb-4">
                   Living on the First Coast means preparing for hurricane season. Here are the most effective ways to
                   protect your home and family...
                 </p>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-sm text-[#707070]">
+                  <div className="flex items-center space-x-2 text-sm text-coastal-grey">
                     <User className="h-4 w-4" />
                     <span>David Conine</span>
                   </div>
@@ -298,10 +300,10 @@ export default function BlogPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center space-x-2 mb-3">
-                  <Badge className="bg-[#229FD9] text-white">Market Update</Badge>
-                  <span className="text-sm text-[#707070]">Dec 3, 2024</span>
+                  <Badge className="bg-coastal-blue text-white">Market Update</Badge>
+                  <span className="text-sm text-coastal-grey">Dec 3, 2024</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">
+                <CardTitle className="text-coastal-navy font-serif text-lg">
                   St. Augustine Historic District: Investment Opportunities
                 </CardTitle>
                 <CardDescription>
@@ -309,12 +311,12 @@ export default function BlogPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070] mb-4">
+                <p className="text-sm text-coastal-grey mb-4">
                   The St. Augustine Historic District offers unique investment opportunities, but requires specialized
                   knowledge of preservation requirements...
                 </p>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-sm text-[#707070]">
+                  <div className="flex items-center space-x-2 text-sm text-coastal-grey">
                     <User className="h-4 w-4" />
                     <span>David Conine</span>
                   </div>
@@ -330,10 +332,10 @@ export default function BlogPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center space-x-2 mb-3">
-                  <Badge className="bg-[#F16622] text-white">Renovation</Badge>
-                  <span className="text-sm text-[#707070]">Nov 30, 2024</span>
+                  <Badge className="bg-coastal-orange text-white">Renovation</Badge>
+                  <span className="text-sm text-coastal-grey">Nov 30, 2024</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">
+                <CardTitle className="text-coastal-navy font-serif text-lg">
                   Choosing the Right Contractor: Red Flags to Avoid
                 </CardTitle>
                 <CardDescription>
@@ -341,12 +343,12 @@ export default function BlogPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070] mb-4">
+                <p className="text-sm text-coastal-grey mb-4">
                   As both a contractor and realtor, I've seen the aftermath of poor contractor choices. Here's how to
                   avoid the most common pitfalls...
                 </p>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-sm text-[#707070]">
+                  <div className="flex items-center space-x-2 text-sm text-coastal-grey">
                     <User className="h-4 w-4" />
                     <span>David Conine</span>
                   </div>
@@ -362,10 +364,10 @@ export default function BlogPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center space-x-2 mb-3">
-                  <Badge className="bg-[#18457C] text-white">Community</Badge>
-                  <span className="text-sm text-[#707070]">Nov 28, 2024</span>
+                  <Badge className="bg-coastal-navy text-white">Community</Badge>
+                  <span className="text-sm text-coastal-grey">Nov 28, 2024</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">
+                <CardTitle className="text-coastal-navy font-serif text-lg">
                   Ponte Vedra Beach: Market Analysis & Trends
                 </CardTitle>
                 <CardDescription>
@@ -373,12 +375,12 @@ export default function BlogPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070] mb-4">
+                <p className="text-sm text-coastal-grey mb-4">
                   Ponte Vedra Beach continues to attract discerning buyers seeking luxury coastal living. Here's what's
                   driving the market...
                 </p>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-sm text-[#707070]">
+                  <div className="flex items-center space-x-2 text-sm text-coastal-grey">
                     <User className="h-4 w-4" />
                     <span>David Conine</span>
                   </div>
@@ -394,7 +396,7 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter Signup */}
-      <section id="newsletter" className="py-16 bg-[#18457C] text-white">
+      <section id="newsletter" className="py-16 bg-coastal-navy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">Stay Informed with Our Newsletter</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
@@ -405,7 +407,7 @@ export default function BlogPage() {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="flex-1 w-full px-4 py-3 rounded-lg text-[#18457C] placeholder-gray-400"
+                className="flex-1 w-full px-4 py-3 rounded-lg text-coastal-navy placeholder-gray-400"
               />
               <Button size="lg" variant="secondary" className="w-full sm:w-auto">
                 Subscribe

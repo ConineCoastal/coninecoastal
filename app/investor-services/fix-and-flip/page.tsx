@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -21,6 +22,7 @@ import {
   Shield,
   Calculator,
 } from "lucide-react"
+import Breadcrumb from "@/components/breadcrumb"
 
 export const metadata: Metadata = {
   title: "Fix & Flip Investment Services - Northeast Florida | Conine Coastal",
@@ -31,6 +33,7 @@ export const metadata: Metadata = {
 export default function FixAndFlipPage() {
   return (
     <div className="min-h-screen bg-white">
+      <Breadcrumb />
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div
@@ -51,22 +54,23 @@ export default function FixAndFlipPage() {
             quality renovations, and faster sales for maximum ROI on your fix-and-flip investments.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
-              Analyze Your Next Flip
+            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
+              <Link href="/contact?service=fix-and-flip">Analyze Your Next Flip</Link>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 bg-transparent"
             >
-              View Flip Success Stories
+              <Link href="/contact?service=fix-and-flip">View Flip Success Stories</Link>
             </Button>
           </div>
         </div>
       </section>
 
       {/* Flip Services Overview */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Complete Fix & Flip Solution</h2>
@@ -152,7 +156,7 @@ export default function FixAndFlipPage() {
       </section>
 
       {/* Timeline Comparison */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Faster Flips, Higher Profits</h2>
@@ -242,7 +246,7 @@ export default function FixAndFlipPage() {
       </section>
 
       {/* Success Metrics */}
-      <section className="py-20 bg-blue-50">
+      <section className="py-16bg-blue-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Fix & Flip Track Record</h2>
@@ -341,7 +345,7 @@ export default function FixAndFlipPage() {
       </section>
 
       {/* Property Criteria */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Properties We Target for Maximum Flip Potential</h2>
@@ -456,7 +460,7 @@ export default function FixAndFlipPage() {
       </section>
 
       {/* Case Studies */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Recent Fix & Flip Success Stories</h2>
@@ -600,7 +604,7 @@ export default function FixAndFlipPage() {
       </section>
 
       {/* Flip Calculator */}
-      <section className="py-20 bg-blue-50">
+      <section className="py-16bg-blue-50">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Calculate Your Flip Potential</h2>
@@ -674,8 +678,8 @@ export default function FixAndFlipPage() {
                   </div>
                 </div>
 
-                <Button className="w-full" size="lg">
-                  Get Detailed Analysis
+                <Button asChild className="w-full" size="lg">
+                  <Link href="/contact?service=fix-and-flip">Get Detailed Analysis</Link>
                 </Button>
               </div>
             </CardContent>
@@ -684,7 +688,7 @@ export default function FixAndFlipPage() {
       </section>
 
       {/* Getting Started */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Start Your Next Fix & Flip Project</h2>
@@ -738,7 +742,7 @@ export default function FixAndFlipPage() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to Start Your Fix & Flip Journey?</h2>

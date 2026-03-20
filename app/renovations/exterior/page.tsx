@@ -4,10 +4,12 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Phone, Mail, MapPin, Users, Award, Home, Sun, Droplets, Wind } from "lucide-react"
+import Breadcrumb from "@/components/breadcrumb"
 
 export default function ExteriorRenovations() {
   return (
     <div className="min-h-screen bg-white">
+      <Breadcrumb />
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <Image
@@ -27,16 +29,19 @@ export default function ExteriorRenovations() {
             maximizes your home's market value.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg">
-              <Phone className="mr-2 h-5 w-5" />
-              Get Free Assessment
+            <Button asChild size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg">
+              <Link href="/contact?service=exterior-renovation" className="flex items-center justify-center">
+                <Phone className="mr-2 h-5 w-5" />
+                Get Free Assessment
+              </Link>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg bg-transparent"
             >
-              View Transformations
+              <Link href="/contact?service=exterior-renovation">View Transformations</Link>
             </Button>
           </div>
         </div>
@@ -184,7 +189,7 @@ export default function ExteriorRenovations() {
 
             <div className="relative">
               <Image
-                src="/placeholder.svg?height=600&width=500"
+                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=500&q=80"
                 alt="Weather-resistant exterior renovation"
                 width={500}
                 height={600}
@@ -244,7 +249,7 @@ export default function ExteriorRenovations() {
             </div>
             <div className="relative">
               <Image
-                src="/placeholder.svg?height=500&width=600"
+                src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80"
                 alt="Historic home restoration"
                 width={600}
                 height={500}
@@ -256,7 +261,7 @@ export default function ExteriorRenovations() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative">
               <Image
-                src="/placeholder.svg?height=500&width=600"
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80"
                 alt="Modern coastal renovation"
                 width={600}
                 height={500}
@@ -364,7 +369,7 @@ export default function ExteriorRenovations() {
               size="lg"
               className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg"
             >
-              <Link href="/contact" className="flex items-center justify-center">
+              <Link href="/contact?service=exterior-renovation" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />
                 Talk with Our Team
               </Link>
@@ -375,7 +380,7 @@ export default function ExteriorRenovations() {
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg bg-transparent"
             >
-              <Link href="/contact" className="flex items-center justify-center">
+              <Link href="/contact?service=exterior-renovation" className="flex items-center justify-center">
                 <Mail className="mr-2 h-5 w-5" />
                 Request Assessment
               </Link>

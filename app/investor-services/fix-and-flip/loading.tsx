@@ -17,7 +17,7 @@ export default function Loading() {
       </div>
 
       {/* Services Overview Skeleton */}
-      <div className="py-20 bg-gray-50">
+      <div className="py-16bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <Skeleton className="h-12 w-96 mx-auto mb-4" />
@@ -42,7 +42,7 @@ export default function Loading() {
       </div>
 
       {/* Content Sections Skeleton */}
-      <div className="py-20">
+      <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 space-y-20">
           {[...Array(3)].map((_, i) => (
             <div key={i}>

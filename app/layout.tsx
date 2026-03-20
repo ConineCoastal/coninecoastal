@@ -1,11 +1,9 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import "./globals.css"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
-
-const inter = Inter({ subsets: ["latin"] })
+import { font, serifFont } from "@/styles/fonts"
 
 export const metadata: Metadata = {
   title: "Conine Coastal - Your Real Estate and Construction Expert",
@@ -61,9 +59,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
+  // verification: {
+  //   google: "REPLACE_WITH_ACTUAL_CODE",
+  // },
   category: "Real Estate and Construction",
   classification: "Business",
   other: {
@@ -91,7 +89,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#18457C" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={inter.className}>
+      <body className={`${font.className} ${serifFont.variable}`}>
         <Navigation />
         <div className="flex min-h-screen flex-col">
           <div className="h-16 sm:h-20" aria-hidden="true" />

@@ -1,5 +1,7 @@
 "use client"
 import React from "react"
+import Link from "next/link"
+import Image from "next/image"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -18,6 +20,7 @@ import {
   MapPin,
   Star,
 } from "lucide-react"
+import Breadcrumb from "@/components/breadcrumb"
 
 export default function SellersPage() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -44,6 +47,7 @@ export default function SellersPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Breadcrumb />
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div
@@ -55,27 +59,27 @@ export default function SellersPage() {
         ></div>
 
         <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-          <h1 className="text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg" style={{ fontFamily: "serif" }}>
+          <h1 className="text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg font-serif">
             Sell Smarter, Not Harder
           </h1>
           <p className="text-2xl lg:text-3xl mb-12 leading-relaxed drop-shadow-md">
             Maximize your profit with renovation insights others can't provide
           </p>
 
-          <Button size="lg" className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-10 py-4 text-xl shadow-lg">
-            Get Free Home Valuation
+          <Button asChild size="lg" className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-10 py-4 text-xl shadow-lg">
+            <Link href="/contact?service=selling">Get Free Home Valuation</Link>
           </Button>
         </div>
       </section>
 
       {/* The Seller's Edge */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+            <h2 className="text-4xl font-bold text-coastal-navy mb-4 font-serif">
               The Seller's Edge
             </h2>
-            <p className="text-xl text-[#707070] max-w-4xl mx-auto">
+            <p className="text-xl text-coastal-grey max-w-4xl mx-auto">
               Why settle for guesswork when you can have certainty? Our construction expertise gives you the insider
               advantage.
             </p>
@@ -83,21 +87,23 @@ export default function SellersPage() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80"
                 alt="Strategic home improvements for selling - coastal home staging"
+                width={800}
+                height={600}
                 className="rounded-lg shadow-lg"
               />
             </div>
 
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#F16622]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <TrendingUp className="h-6 w-6 text-[#F16622]" />
+                <div className="w-12 h-12 bg-coastal-orange/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <TrendingUp className="h-6 w-6 text-coastal-orange" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#18457C] mb-2">Strategic Improvements</h3>
-                  <p className="text-[#707070] leading-relaxed">
+                  <h3 className="text-xl font-semibold text-coastal-navy mb-2">Strategic Improvements</h3>
+                  <p className="text-coastal-grey leading-relaxed">
                     Only invest in upgrades that add real value. We know which $5,000 kitchen update will add $15,000 to
                     your sale price - and which $20,000 renovation won't add a dime.
                   </p>
@@ -105,12 +111,12 @@ export default function SellersPage() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#229FD9]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <DollarSign className="h-6 w-6 text-[#229FD9]" />
+                <div className="w-12 h-12 bg-coastal-blue/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <DollarSign className="h-6 w-6 text-coastal-blue" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#18457C] mb-2">Accurate Pricing</h3>
-                  <p className="text-[#707070] leading-relaxed">
+                  <h3 className="text-xl font-semibold text-coastal-navy mb-2">Accurate Pricing</h3>
+                  <p className="text-coastal-grey leading-relaxed">
                     Factor in true property potential, not just current condition. Price your home based on what it
                     could be worth, giving buyers confidence in their investment.
                   </p>
@@ -118,12 +124,12 @@ export default function SellersPage() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#FFCA05]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <CheckCircle className="h-6 w-6 text-[#FFCA05]" />
+                <div className="w-12 h-12 bg-coastal-yellow/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <CheckCircle className="h-6 w-6 text-coastal-yellow" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#18457C] mb-2">Pre-Sale Renovations</h3>
-                  <p className="text-[#707070] leading-relaxed">
+                  <h3 className="text-xl font-semibold text-coastal-navy mb-2">Pre-Sale Renovations</h3>
+                  <p className="text-coastal-grey leading-relaxed">
                     Complete cost-effective improvements before listing. We handle the work so you can focus on
                     maximizing your return on investment.
                   </p>
@@ -131,12 +137,12 @@ export default function SellersPage() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-[#18457C]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Home className="h-6 w-6 text-[#18457C]" />
+                <div className="w-12 h-12 bg-coastal-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Home className="h-6 w-6 text-coastal-navy" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-[#18457C] mb-2">Marketing Advantage</h3>
-                  <p className="text-[#707070] leading-relaxed">
+                  <h3 className="text-xl font-semibold text-coastal-navy mb-2">Marketing Advantage</h3>
+                  <p className="text-coastal-grey leading-relaxed">
                     Showcase renovation potential to buyers. Help them see the possibilities while providing accurate
                     cost estimates for their peace of mind.
                   </p>
@@ -148,13 +154,13 @@ export default function SellersPage() {
       </section>
 
       {/* Our Seller Services */}
-      <section className="py-20 bg-gradient-to-r from-[#18457C]/5 to-[#229FD9]/5">
+      <section className="py-16 bg-gradient-to-r from-coastal-navy/5 to-coastal-blue/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+            <h2 className="text-4xl font-bold text-coastal-navy mb-4 font-serif">
               Our Seller Services
             </h2>
-            <p className="text-xl text-[#707070]">Complete support from valuation to closing</p>
+            <p className="text-xl text-coastal-grey">Complete support from valuation to closing</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -193,14 +199,14 @@ export default function SellersPage() {
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="flex justify-center mb-4">
-                    <div className="w-20 h-20 bg-[#F16622]/10 rounded-full flex items-center justify-center">
-                      <service.icon className="h-8 w-8 text-[#F16622]" />
+                    <div className="w-20 h-20 bg-coastal-orange/10 rounded-full flex items-center justify-center">
+                      <service.icon className="h-8 w-8 text-coastal-orange" />
                     </div>
                   </div>
-                  <h3 className="text-lg font-bold text-[#18457C] mb-3" style={{ fontFamily: "serif" }}>
+                  <h3 className="text-lg font-bold text-coastal-navy mb-3 font-serif">
                     {service.title}
                   </h3>
-                  <p className="text-[#707070] text-sm leading-relaxed">{service.desc}</p>
+                  <p className="text-coastal-grey text-sm leading-relaxed">{service.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -209,20 +215,20 @@ export default function SellersPage() {
       </section>
 
       {/* ROI-Focused Improvements */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+            <h2 className="text-4xl font-bold text-coastal-navy mb-4 font-serif">
               ROI-Focused Improvements
             </h2>
-            <p className="text-xl text-[#707070]">Smart investments that actually increase your home's value</p>
+            <p className="text-xl text-coastal-grey">Smart investments that actually increase your home's value</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* What TO Do */}
-            <Card className="border-2 border-[#229FD9]/20">
+            <Card className="border-2 border-coastal-blue/20">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-[#229FD9] mb-6" style={{ fontFamily: "serif" }}>
+                <h3 className="text-2xl font-bold text-coastal-blue mb-6 font-serif">
                   High-Return Improvements
                 </h3>
                 <div className="space-y-4">
@@ -249,13 +255,13 @@ export default function SellersPage() {
                     },
                   ].map((item, index) => (
                     <div key={index} className="flex items-start space-x-4">
-                      <CheckCircle className="h-6 w-6 text-[#229FD9] mt-1 flex-shrink-0" />
+                      <CheckCircle className="h-6 w-6 text-coastal-blue mt-1 flex-shrink-0" />
                       <div>
                         <div className="flex items-center justify-between mb-1">
-                          <h4 className="font-semibold text-[#18457C]">{item.improvement}</h4>
-                          <span className="text-[#229FD9] font-bold text-sm">{item.roi}</span>
+                          <h4 className="font-semibold text-coastal-navy">{item.improvement}</h4>
+                          <span className="text-coastal-blue font-bold text-sm">{item.roi}</span>
                         </div>
-                        <p className="text-[#707070] text-sm">{item.desc}</p>
+                        <p className="text-coastal-grey text-sm">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -264,9 +270,9 @@ export default function SellersPage() {
             </Card>
 
             {/* What NOT To Do */}
-            <Card className="border-2 border-[#F16622]/20">
+            <Card className="border-2 border-coastal-orange/20">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-[#F16622] mb-6" style={{ fontFamily: "serif" }}>
+                <h3 className="text-2xl font-bold text-coastal-orange mb-6 font-serif">
                   What NOT to Renovate Before Selling
                 </h3>
                 <div className="space-y-4">
@@ -293,13 +299,13 @@ export default function SellersPage() {
                     },
                   ].map((item, index) => (
                     <div key={index} className="flex items-start space-x-4">
-                      <X className="h-6 w-6 text-[#F16622] mt-1 flex-shrink-0" />
+                      <X className="h-6 w-6 text-coastal-orange mt-1 flex-shrink-0" />
                       <div>
                         <div className="flex items-center justify-between mb-1">
-                          <h4 className="font-semibold text-[#18457C]">{item.improvement}</h4>
-                          <span className="text-[#F16622] font-bold text-sm">{item.warning}</span>
+                          <h4 className="font-semibold text-coastal-navy">{item.improvement}</h4>
+                          <span className="text-coastal-orange font-bold text-sm">{item.warning}</span>
                         </div>
-                        <p className="text-[#707070] text-sm">{item.desc}</p>
+                        <p className="text-coastal-grey text-sm">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -311,13 +317,13 @@ export default function SellersPage() {
       </section>
 
       {/* Success Stories */}
-      <section className="py-20 bg-gradient-to-r from-[#229FD9]/10 to-[#18457C]/10">
+      <section className="py-16 bg-gradient-to-r from-coastal-blue/10 to-coastal-navy/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+            <h2 className="text-4xl font-bold text-coastal-navy mb-4 font-serif">
               Success Stories
             </h2>
-            <p className="text-xl text-[#707070]">Real results from real sellers</p>
+            <p className="text-xl text-coastal-grey">Real results from real sellers</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -354,31 +360,31 @@ export default function SellersPage() {
                 <CardContent className="p-6">
                   <div className="flex mb-4">
                     {[...Array(story.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-[#FFCA05] fill-current" />
+                      <Star key={i} className="h-5 w-5 text-coastal-yellow fill-current" />
                     ))}
                   </div>
                   <div className="mb-4">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm text-[#707070]">Investment:</span>
-                      <span className="font-bold text-[#F16622]">{story.investment}</span>
+                      <span className="text-sm text-coastal-grey">Investment:</span>
+                      <span className="font-bold text-coastal-orange">{story.investment}</span>
                     </div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm text-[#707070]">Additional Sale Value:</span>
-                      <span className="font-bold text-[#229FD9]">{story.return}</span>
+                      <span className="text-sm text-coastal-grey">Additional Sale Value:</span>
+                      <span className="font-bold text-coastal-blue">{story.return}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-[#707070] font-semibold">Net Profit:</span>
-                      <span className="font-bold text-[#18457C]">
+                      <span className="text-sm text-coastal-grey font-semibold">Net Profit:</span>
+                      <span className="font-bold text-coastal-navy">
                         $
                         {Number.parseInt(story.return.replace(/[$,]/g, "")) -
                           Number.parseInt(story.investment.replace(/[$,]/g, ""))}
                       </span>
                     </div>
                   </div>
-                  <p className="text-[#707070] mb-4 italic text-sm">"{story.story}"</p>
+                  <p className="text-coastal-grey mb-4 italic text-sm">"{story.story}"</p>
                   <div>
-                    <p className="font-semibold text-[#18457C]">{story.name}</p>
-                    <p className="text-sm text-[#707070]">{story.location}</p>
+                    <p className="font-semibold text-coastal-navy">{story.name}</p>
+                    <p className="text-sm text-coastal-grey">{story.location}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -388,9 +394,9 @@ export default function SellersPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#18457C]">
+      <section className="py-16 bg-coastal-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6" style={{ fontFamily: "serif" }}>
+          <h2 className="text-4xl font-bold text-white mb-6 font-serif">
             Get Your Free Home Valuation
           </h2>
           <p className="text-xl text-white/90">
@@ -400,7 +406,7 @@ export default function SellersPage() {
           <div className="grid lg:grid-cols-2 gap-12">
             <Card className="bg-white">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-[#18457C] mb-6" style={{ fontFamily: "serif" }}>
+                <h3 className="text-2xl font-bold text-coastal-navy mb-6 font-serif">
                   Schedule Home Assessment
                 </h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -410,22 +416,22 @@ export default function SellersPage() {
                     value={formData.address}
                     onChange={handleInputChange}
                     required
-                    className="border-[#707070]/30 focus:border-[#229FD9]"
+                    className="border-coastal-grey/30 focus:border-coastal-blue"
                   />
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-[#18457C] mb-1">Name *</label>
+                      <label className="block text-sm font-medium text-coastal-navy mb-1">Name *</label>
                       <Input
                         name="name"
                         placeholder="Your Name"
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="border-[#707070]/30 focus:border-[#229FD9]"
+                        className="border-coastal-grey/30 focus:border-coastal-blue"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-[#18457C] mb-1">Phone *</label>
+                      <label className="block text-sm font-medium text-coastal-navy mb-1">Phone *</label>
                       <Input
                         name="phone"
                         type="tel"
@@ -433,7 +439,7 @@ export default function SellersPage() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         required
-                        className="border-[#707070]/30 focus:border-[#229FD9]"
+                        className="border-coastal-grey/30 focus:border-coastal-blue"
                       />
                     </div>
                   </div>
@@ -444,14 +450,14 @@ export default function SellersPage() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="border-[#707070]/30 focus:border-[#229FD9]"
+                    className="border-coastal-grey/30 focus:border-coastal-blue"
                   />
                   <select
                     name="timeline"
                     value={formData.timeline}
                     onChange={handleInputChange}
                     required
-                    className="w-full p-3 border border-[#707070]/30 rounded-md focus:border-[#229FD9] focus:outline-none"
+                    className="w-full p-3 border border-coastal-grey/30 rounded-md focus:border-coastal-blue focus:outline-none"
                   >
                     <option value="">Timeline to Sell</option>
                     <option value="asap">ASAP</option>
@@ -466,9 +472,9 @@ export default function SellersPage() {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={4}
-                    className="border-[#707070]/30 focus:border-[#229FD9]"
+                    className="border-coastal-grey/30 focus:border-coastal-blue"
                   />
-                  <Button type="submit" className="w-full bg-[#F16622] hover:bg-[#F16622]/90 text-white py-3">
+                  <Button type="submit" className="w-full bg-coastal-orange hover:bg-coastal-orange/90 text-white py-3">
                     Schedule Home Assessment
                   </Button>
                 </form>
@@ -477,28 +483,28 @@ export default function SellersPage() {
 
             <div className="text-left text-white space-y-6">
               <div>
-                <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: "serif" }}>
+                <h3 className="text-2xl font-bold mb-4 font-serif">
                   What You'll Receive
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="h-6 w-6 text-[#FFCA05] mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-coastal-yellow mt-1 flex-shrink-0" />
                     <p>Comprehensive market analysis and current home value</p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="h-6 w-6 text-[#FFCA05] mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-coastal-yellow mt-1 flex-shrink-0" />
                     <p>Strategic improvement recommendations with ROI projections</p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="h-6 w-6 text-[#FFCA05] mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-coastal-yellow mt-1 flex-shrink-0" />
                     <p>Detailed renovation cost estimates for suggested improvements</p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="h-6 w-6 text-[#FFCA05] mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-coastal-yellow mt-1 flex-shrink-0" />
                     <p>Timeline projections for pre-sale improvements</p>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="h-6 w-6 text-[#FFCA05] mt-1 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-coastal-yellow mt-1 flex-shrink-0" />
                     <p>Marketing strategy tailored to your property</p>
                   </div>
                 </div>
@@ -507,7 +513,7 @@ export default function SellersPage() {
               <div className="bg-white/10 p-6 rounded-lg">
                 <h4 className="text-lg font-bold mb-2">Emergency Contact</h4>
                 <p className="text-white/80 text-sm mb-2">For urgent selling questions</p>
-                <a href="tel:+19046241722" className="text-[#FFCA05] font-semibold">
+                <a href="tel:+19046241722" className="text-coastal-yellow font-semibold">
                   (904) 624-1722
                 </a>
               </div>
@@ -516,11 +522,11 @@ export default function SellersPage() {
                 <h4 className="text-lg font-bold mb-2">Contact Information</h4>
                 <div className="space-y-2">
                   <p className="flex items-center">
-                    <Phone className="h-5 w-5 mr-2 text-[#F16622]" />
+                    <Phone className="h-5 w-5 mr-2 text-coastal-orange" />
                     (904) 624-1722
                   </p>
                   <p className="flex items-center">
-                    <MapPin className="h-5 w-5 mr-2 text-[#F16622]" />
+                    <MapPin className="h-5 w-5 mr-2 text-coastal-orange" />
                     Serving Northeast Florida
                   </p>
                 </div>

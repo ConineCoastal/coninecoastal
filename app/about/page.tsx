@@ -20,8 +20,7 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1
-              className="text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg"
-              style={{ fontFamily: "serif" }}
+              className="text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg font-serif"
             >
               Meet David Conine
             </h1>
@@ -30,23 +29,23 @@ export default function AboutPage() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <Badge className="bg-[#229FD9] text-white px-4 py-2 text-sm">UNF Construction Management</Badge>
-              <Badge className="bg-[#F16622] text-white px-4 py-2 text-sm">Harvard Real Estate Certificate</Badge>
-              <Badge className="bg-[#18457C] text-white px-4 py-2 text-sm">FL Licensed Realtor & Contractor</Badge>
+              <Badge className="bg-coastal-blue text-white px-4 py-2 text-sm">UNF Construction Management</Badge>
+              <Badge className="bg-coastal-orange text-white px-4 py-2 text-sm">Harvard Real Estate Certificate</Badge>
+              <Badge className="bg-coastal-navy text-white px-4 py-2 text-sm">FL Licensed Realtor & Contractor</Badge>
             </div>
           </div>
         </div>
       </section>
 
       {/* Our Story Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-[#18457C] mb-12 text-center" style={{ fontFamily: "serif" }}>
+            <h2 className="text-4xl font-bold text-coastal-navy mb-12 text-center font-serif">
               Our Story
             </h2>
 
-            <div className="space-y-8 text-lg text-[#707070] leading-relaxed">
+            <div className="space-y-8 text-lg text-coastal-grey leading-relaxed">
               <p>
                 Combining a lifelong love of coastal living with two decades of construction and project management
                 experience, David Conine founded Conine Coastal to bridge the gap between real estate and renovation.
@@ -65,31 +64,31 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-12 flex justify-center">
-              <div className="w-32 h-1 bg-gradient-to-r from-[#18457C] via-[#229FD9] to-[#18457C] rounded-full"></div>
+              <div className="w-32 h-1 bg-gradient-to-r from-coastal-navy via-coastal-blue to-coastal-navy rounded-full"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* The Conine Coastal Advantage Section */}
-      <section className="py-20 bg-gradient-to-r from-[#18457C]/5 to-[#229FD9]/5">
+      <section className="py-16 bg-gradient-to-r from-coastal-navy/5 to-coastal-blue/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+            <h2 className="text-4xl font-bold text-coastal-navy mb-4 font-serif">
               Why Our Dual Expertise Changes Everything
             </h2>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            <Card className="border-2 border-[#229FD9]/20 hover:border-[#229FD9] transition-all duration-300 hover:shadow-xl">
+            <Card className="border-2 border-coastal-blue/20 hover:border-coastal-blue transition-all duration-300 hover:shadow-xl">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
-                  <Target className="h-12 w-12 text-[#229FD9] mr-4" />
-                  <h3 className="text-2xl font-bold text-[#18457C]" style={{ fontFamily: "serif" }}>
+                  <Target className="h-12 w-12 text-coastal-blue mr-4" />
+                  <h3 className="text-2xl font-bold text-coastal-navy font-serif">
                     For Buyers
                   </h3>
                 </div>
-                <p className="text-[#707070] leading-relaxed">
+                <p className="text-coastal-grey leading-relaxed">
                   Imagine walking through a potential home with an agent who can instantly tell you the real cost to
                   renovate that outdated kitchen—not a guess, but an accurate estimate based on 20 years of construction
                   experience.
@@ -97,30 +96,30 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center border-2 border-[#F16622]/20 hover:border-[#F16622] transition-all duration-300 hover:shadow-xl">
+            <Card className="text-center border-2 border-coastal-orange/20 hover:border-coastal-orange transition-all duration-300 hover:shadow-xl">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
-                  <Award className="h-12 w-12 text-[#F16622] mr-4" />
-                  <h3 className="text-2xl font-bold text-[#18457C]" style={{ fontFamily: "serif" }}>
+                  <Award className="h-12 w-12 text-coastal-orange mr-4" />
+                  <h3 className="text-2xl font-bold text-coastal-navy font-serif">
                     For Sellers
                   </h3>
                 </div>
-                <p className="text-[#707070] leading-relaxed">
+                <p className="text-coastal-grey leading-relaxed">
                   Get the insider advantage of knowing exactly which improvements will maximize your home's value and
                   which ones won't. David's construction background means he can recommend cost-effective updates.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-2 border-[#FFCA05]/20 hover:border-[#FFCA05] transition-all duration-300 hover:shadow-xl">
+            <Card className="text-center border-2 border-coastal-yellow/20 hover:border-coastal-yellow transition-all duration-300 hover:shadow-xl">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
-                  <Hammer className="h-12 w-12 text-[#FFCA05] mr-4" />
-                  <h3 className="text-2xl font-bold text-[#18457C]" style={{ fontFamily: "serif" }}>
+                  <Hammer className="h-12 w-12 text-coastal-yellow mr-4" />
+                  <h3 className="text-2xl font-bold text-coastal-navy font-serif">
                     For Investors
                   </h3>
                 </div>
-                <p className="text-[#707070] leading-relaxed">
+                <p className="text-coastal-grey leading-relaxed">
                   Evaluate properties with confidence knowing you have both market analysis AND renovation expertise in
                   one consultant. Calculate accurate rehab costs and profit potential before you make an offer.
                 </p>
@@ -131,13 +130,13 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#18457C] mb-8" style={{ fontFamily: "serif" }}>
+            <h2 className="text-4xl font-bold text-coastal-navy mb-8 font-serif">
               Our Values
             </h2>
-            <p className="text-xl text-[#707070] max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-coastal-grey max-w-4xl mx-auto leading-relaxed">
               Our mission is simple: help families find great homes to raise their children, provide beautiful spaces
               for retirees to enjoy their golden years, and identify profitable investment opportunities.
             </p>
@@ -146,42 +145,42 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 bg-[#229FD9]/10 rounded-full flex items-center justify-center">
-                  <Shield className="h-10 w-10 text-[#229FD9]" />
+                <div className="w-20 h-20 bg-coastal-blue/10 rounded-full flex items-center justify-center">
+                  <Shield className="h-10 w-10 text-coastal-blue" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+              <h3 className="text-2xl font-bold text-coastal-navy mb-4 font-serif">
                 Honesty
               </h3>
-              <p className="text-[#707070] leading-relaxed">
+              <p className="text-coastal-grey leading-relaxed">
                 Transparent communication and honest assessments in every interaction. No surprises, no hidden agendas.
               </p>
             </div>
 
             <div className="text-center">
               <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 bg-[#F16622]/10 rounded-full flex items-center justify-center">
-                  <Hammer className="h-10 w-10 text-[#F16622]" />
+                <div className="w-20 h-20 bg-coastal-orange/10 rounded-full flex items-center justify-center">
+                  <Hammer className="h-10 w-10 text-coastal-orange" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+              <h3 className="text-2xl font-bold text-coastal-navy mb-4 font-serif">
                 Quality Craftsmanship
               </h3>
-              <p className="text-[#707070] leading-relaxed">
+              <p className="text-coastal-grey leading-relaxed">
                 Two decades of construction experience ensures every project meets the highest standards of excellence.
               </p>
             </div>
 
             <div className="text-center">
               <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 bg-[#FFCA05]/10 rounded-full flex items-center justify-center">
-                  <CheckCircle className="h-10 w-10 text-[#FFCA05]" />
+                <div className="w-20 h-20 bg-coastal-yellow/10 rounded-full flex items-center justify-center">
+                  <CheckCircle className="h-10 w-10 text-coastal-yellow" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+              <h3 className="text-2xl font-bold text-coastal-navy mb-4 font-serif">
                 Attention to Detail
               </h3>
-              <p className="text-[#707070] leading-relaxed">
+              <p className="text-coastal-grey leading-relaxed">
                 From market analysis to finish carpentry, every detail matters in delivering exceptional results.
               </p>
             </div>
@@ -190,17 +189,16 @@ export default function AboutPage() {
       </section>
 
       {/* Testimonial Quote */}
-      <section className="py-16 bg-[#18457C]">
+      <section className="py-16 bg-coastal-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-6">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-8 w-8 text-[#FFCA05] fill-current" />
+              <Star key={i} className="h-8 w-8 text-coastal-yellow fill-current" />
             ))}
           </div>
 
           <blockquote
-            className="text-2xl lg:text-3xl text-white mb-8 italic leading-relaxed"
-            style={{ fontFamily: "serif" }}
+            className="text-2xl lg:text-3xl text-white mb-8 italic leading-relaxed font-serif"
           >
             "David's unique combination of real estate knowledge and construction expertise saved us thousands. He
             spotted issues other agents missed and helped us negotiate a fair price."
@@ -214,9 +212,9 @@ export default function AboutPage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-gradient-to-r from-[#18457C] to-[#229FD9]">
+      <section className="py-16 bg-gradient-to-r from-coastal-navy to-coastal-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6" style={{ fontFamily: "serif" }}>
+          <h2 className="text-4xl font-bold text-white mb-6 font-serif">
             Ready to Experience the Conine Coastal Difference?
           </h2>
 
@@ -229,14 +227,14 @@ export default function AboutPage() {
             <Button
               asChild
               size="lg"
-              className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-8 py-4 text-lg"
+              className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-4 text-lg"
             >
               <Link href="/contact">Schedule Consultation</Link>
             </Button>
             <Button
               asChild
               size="lg"
-              className="bg-white text-[#18457C] hover:bg-white/90 px-8 py-4 text-lg"
+              className="bg-white text-coastal-navy hover:bg-white/90 px-8 py-4 text-lg"
             >
               <Link href="/contact">View Our Work</Link>
             </Button>

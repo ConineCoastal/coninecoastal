@@ -26,6 +26,8 @@ import {
   Calendar,
 } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+import Breadcrumb from "@/components/breadcrumb"
 
 export const metadata: Metadata = {
   title: "Investment Property Services - Northeast Florida | Conine Coastal",
@@ -38,6 +40,7 @@ export const metadata: Metadata = {
 export default function InvestmentServicesPage() {
   return (
     <div className="min-h-screen bg-white">
+      <Breadcrumb />
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div
@@ -70,7 +73,7 @@ export default function InvestmentServicesPage() {
               size="lg"
               className="bg-white/10 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3"
             >
-              <Link href="/contact">
+              <Link href="/contact?service=investment">
                 <Calendar className="mr-2 h-5 w-5" />
                 Schedule Free Consultation
               </Link>
@@ -80,7 +83,7 @@ export default function InvestmentServicesPage() {
       </section>
 
       {/* Investment Process Timeline */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Your Complete Investment Journey</h2>
@@ -198,7 +201,7 @@ export default function InvestmentServicesPage() {
       </section>
 
       {/* Why Invest in Northeast Florida */}
-      <section className="py-20 bg-white">
+      <section className="py-16bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -272,7 +275,7 @@ export default function InvestmentServicesPage() {
       </section>
 
       {/* Our Investment Advantage */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -356,7 +359,7 @@ export default function InvestmentServicesPage() {
       </section>
 
       {/* Investment Property Criteria */}
-      <section className="py-20 bg-white">
+      <section className="py-16bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Properties We Target for Maximum ROI</h2>
@@ -460,7 +463,7 @@ export default function InvestmentServicesPage() {
       </section>
 
       {/* Investment Calculator Preview */}
-      <section className="py-20 bg-blue-50">
+      <section className="py-16bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">See Your Potential Returns</h2>
@@ -531,7 +534,7 @@ export default function InvestmentServicesPage() {
       </section>
 
       {/* Success Story Highlight */}
-      <section className="py-20 bg-white">
+      <section className="py-16bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Investment Success Story</h2>
@@ -546,17 +549,21 @@ export default function InvestmentServicesPage() {
               <div className="space-y-4 p-6">
                 <div>
                   <h4 className="font-semibold mb-2">Before Renovation</h4>
-                  <img
+                  <Image
                     src="/dated-property-exterior-before-renovation.png"
                     alt="Property before renovation"
+                    width={600}
+                    height={400}
                     className="w-full h-48 object-cover rounded-lg"
                   />
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">After Renovation</h4>
-                  <img
+                  <Image
                     src="/modern-renovated-property-exterior-after-renovatio.png"
                     alt="Property after renovation"
+                    width={600}
+                    height={400}
                     className="w-full h-48 object-cover rounded-lg"
                   />
                 </div>
@@ -604,7 +611,7 @@ export default function InvestmentServicesPage() {
       </section>
 
       {/* Investment Services Breakdown */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comprehensive Investment Services</h2>
@@ -696,7 +703,7 @@ export default function InvestmentServicesPage() {
       </section>
 
       {/* Market Areas Served */}
-      <section className="py-20 bg-white">
+      <section className="py-16bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Northeast Florida Investment Markets</h2>
@@ -733,7 +740,7 @@ export default function InvestmentServicesPage() {
       </section>
 
       {/* Getting Started Section */}
-      <section className="py-20 bg-blue-50">
+      <section className="py-16bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Start Your Investment Journey Today</h2>
@@ -792,7 +799,7 @@ export default function InvestmentServicesPage() {
       </section>
 
       {/* Investment Contact Form */}
-      <section className="py-20 bg-white">
+      <section className="py-16bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ready to Start Investing?</h2>
@@ -946,7 +953,7 @@ export default function InvestmentServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-600 text-white">
+      <section className="py-16bg-blue-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Build Your Investment Portfolio?</h2>
           <p className="text-xl mb-8 opacity-90">
@@ -965,7 +972,7 @@ export default function InvestmentServicesPage() {
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 bg-transparent"
             >
-              <Link href="/contact">
+              <Link href="/contact?service=investment">
                 <Phone className="mr-2 h-5 w-5" />
                 Schedule Consultation
               </Link>

@@ -13,7 +13,7 @@ export default function RenovationPlanningClientPage() {
       step: "1",
       title: "Setting Realistic Budgets",
       description: "Learn how to budget for your renovation project with accurate cost estimates.",
-      icon: <DollarSign className="h-8 w-8 text-[#229FD9]" />,
+      icon: <DollarSign className="h-8 w-8 text-coastal-blue" />,
       details: [
         "Add 20% contingency for unexpected issues",
         "Get multiple detailed quotes from contractors",
@@ -25,7 +25,7 @@ export default function RenovationPlanningClientPage() {
       step: "2",
       title: "Choosing the Right Contractor",
       description: "Essential criteria for selecting a contractor who will deliver quality work on time and budget.",
-      icon: <Users className="h-8 w-8 text-[#229FD9]" />,
+      icon: <Users className="h-8 w-8 text-coastal-blue" />,
       details: [
         "Verify licensing, insurance, and bonding",
         "Check references from recent projects",
@@ -37,7 +37,7 @@ export default function RenovationPlanningClientPage() {
       step: "3",
       title: "Permits and Planning Requirements",
       description: "Navigate the permit process and ensure your project meets all local codes.",
-      icon: <FileText className="h-8 w-8 text-[#229FD9]" />,
+      icon: <FileText className="h-8 w-8 text-coastal-blue" />,
       details: [
         "Understand which projects require permits",
         "Factor permit timeline into project schedule",
@@ -49,7 +49,7 @@ export default function RenovationPlanningClientPage() {
       step: "4",
       title: "Project Timeline Management",
       description: "Realistic scheduling and managing the renovation process from start to finish.",
-      icon: <Calendar className="h-8 w-8 text-[#229FD9]" />,
+      icon: <Calendar className="h-8 w-8 text-coastal-blue" />,
       details: [
         "Account for material delivery delays",
         "Plan around weather and seasonal factors",
@@ -125,9 +125,9 @@ export default function RenovationPlanningClientPage() {
     <div className="min-h-screen bg-white">
       <Breadcrumb />
 
-      <main className="mx-auto max-w-4xl px-6 py-20 space-y-16">
+      <main className="mx-auto max-w-4xl px-6 py-16 space-y-16">
         <header className="space-y-4 text-center">
-          <h1 className={`${font.variable} font-serif text-4xl sm:text-5xl text-[#18457C]`}>
+          <h1 className={`${font.variable} font-serif text-4xl sm:text-5xl text-coastal-navy`}>
             Smart Renovation Planning
           </h1>
           <p className="text-lg">
@@ -142,10 +142,10 @@ export default function RenovationPlanningClientPage() {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-coastal-navy mb-4 font-serif">
                 Your Renovation Planning Process
               </h2>
-              <p className="text-xl text-[#707070] max-w-3xl mx-auto">
+              <p className="text-xl text-coastal-grey max-w-3xl mx-auto">
                 Follow these essential steps to ensure your renovation project is successful, on-budget, and adds real
                 value.
               </p>
@@ -157,21 +157,21 @@ export default function RenovationPlanningClientPage() {
                   <CardContent className="p-8">
                     <div className="flex flex-col lg:flex-row items-start gap-8">
                       <div className="flex-shrink-0">
-                        <div className="w-16 h-16 bg-[#229FD9]/10 rounded-full flex items-center justify-center mb-4">
+                        <div className="w-16 h-16 bg-coastal-blue/10 rounded-full flex items-center justify-center mb-4">
                           {step.icon}
                         </div>
-                        <Badge className="bg-[#18457C] text-white">Step {step.step}</Badge>
+                        <Badge className="bg-coastal-navy text-white">Step {step.step}</Badge>
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+                        <h3 className="text-2xl font-bold text-coastal-navy mb-4 font-serif">
                           {step.title}
                         </h3>
-                        <p className="text-[#707070] mb-6 text-lg leading-relaxed">{step.description}</p>
+                        <p className="text-coastal-grey mb-6 text-lg leading-relaxed">{step.description}</p>
                         <div className="grid md:grid-cols-2 gap-4">
                           {step.details.map((detail, detailIndex) => (
                             <div key={detailIndex} className="flex items-start space-x-3">
-                              <CheckCircle className="h-5 w-5 text-[#229FD9] mt-0.5 flex-shrink-0" />
-                              <span className="text-[#707070]">{detail}</span>
+                              <CheckCircle className="h-5 w-5 text-coastal-blue mt-0.5 flex-shrink-0" />
+                              <span className="text-coastal-grey">{detail}</span>
                             </div>
                           ))}
                         </div>
@@ -188,10 +188,10 @@ export default function RenovationPlanningClientPage() {
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-coastal-navy mb-4 font-serif">
                 ROI Considerations for Different Renovations
               </h2>
-              <p className="text-xl text-[#707070] max-w-3xl mx-auto">
+              <p className="text-xl text-coastal-grey max-w-3xl mx-auto">
                 Not all renovations are created equal. Here's what you can expect for return on investment in the First
                 Coast market.
               </p>
@@ -202,19 +202,19 @@ export default function RenovationPlanningClientPage() {
                 <Card key={index} className="hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
                     <div className="text-center mb-4">
-                      <h3 className="text-xl font-bold text-[#18457C] mb-2" style={{ fontFamily: "serif" }}>
+                      <h3 className="text-xl font-bold text-coastal-navy mb-2 font-serif">
                         {project.project}
                       </h3>
                       <div className="flex justify-between items-center mb-2">
-                        <span className="text-[#707070] text-sm">Investment:</span>
-                        <span className="font-semibold text-[#18457C]">{project.investment}</span>
+                        <span className="text-coastal-grey text-sm">Investment:</span>
+                        <span className="font-semibold text-coastal-navy">{project.investment}</span>
                       </div>
                       <div className="flex justify-between items-center mb-4">
-                        <span className="text-[#707070] text-sm">Expected ROI:</span>
-                        <Badge className="bg-[#229FD9] text-white">{project.roi}</Badge>
+                        <span className="text-coastal-grey text-sm">Expected ROI:</span>
+                        <Badge className="bg-coastal-blue text-white">{project.roi}</Badge>
                       </div>
                     </div>
-                    <p className="text-[#707070] text-sm text-center">{project.description}</p>
+                    <p className="text-coastal-grey text-sm text-center">{project.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -226,10 +226,10 @@ export default function RenovationPlanningClientPage() {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-coastal-navy mb-4 font-serif">
                 Financing Your Renovation Project
               </h2>
-              <p className="text-xl text-[#707070] max-w-3xl mx-auto">
+              <p className="text-xl text-coastal-grey max-w-3xl mx-auto">
                 Explore different financing options to fund your renovation project.
               </p>
             </div>
@@ -238,32 +238,32 @@ export default function RenovationPlanningClientPage() {
               {financingOptions.map((option, index) => (
                 <Card key={index} className="h-full">
                   <CardContent className="p-8">
-                    <h3 className="text-2xl font-bold text-[#18457C] mb-6" style={{ fontFamily: "serif" }}>
+                    <h3 className="text-2xl font-bold text-coastal-navy mb-6 font-serif">
                       {option.option}
                     </h3>
 
                     <div className="space-y-6">
                       <div>
-                        <h4 className="text-lg font-semibold text-[#229FD9] mb-3">Pros:</h4>
+                        <h4 className="text-lg font-semibold text-coastal-blue mb-3">Pros:</h4>
                         <div className="space-y-2">
                           {option.pros.map((pro, proIndex) => (
                             <div key={proIndex} className="flex items-start space-x-3">
                               <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                              <span className="text-[#707070] text-sm">{pro}</span>
+                              <span className="text-coastal-grey text-sm">{pro}</span>
                             </div>
                           ))}
                         </div>
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-semibold text-[#F16622] mb-3">Cons:</h4>
+                        <h4 className="text-lg font-semibold text-coastal-orange mb-3">Cons:</h4>
                         <div className="space-y-2">
                           {option.cons.map((con, conIndex) => (
                             <div key={conIndex} className="flex items-start space-x-3">
                               <div className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center mt-0.5 flex-shrink-0">
                                 <div className="w-2 h-2 bg-red-500 rounded-full"></div>
                               </div>
-                              <span className="text-[#707070] text-sm">{con}</span>
+                              <span className="text-coastal-grey text-sm">{con}</span>
                             </div>
                           ))}
                         </div>
@@ -280,10 +280,10 @@ export default function RenovationPlanningClientPage() {
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-coastal-navy mb-4 font-serif">
                 Planning Tools & Resources
               </h2>
-              <p className="text-xl text-[#707070] max-w-3xl mx-auto">
+              <p className="text-xl text-coastal-grey max-w-3xl mx-auto">
                 Use these tools to plan and budget your renovation project effectively.
               </p>
             </div>
@@ -291,44 +291,44 @@ export default function RenovationPlanningClientPage() {
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="text-center p-8 hover:shadow-lg transition-shadow">
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-[#229FD9] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-coastal-blue rounded-full flex items-center justify-center mx-auto mb-6">
                     <Calculator className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+                  <h3 className="text-xl font-bold text-coastal-navy mb-4 font-serif">
                     Budget Calculator
                   </h3>
-                  <p className="text-[#707070] mb-6">
+                  <p className="text-coastal-grey mb-6">
                     Calculate realistic budgets for different types of renovation projects.
                   </p>
-                  <Button className="bg-[#229FD9] hover:bg-[#229FD9]/90 text-white">Use Calculator</Button>
+                  <Button className="bg-coastal-blue hover:bg-coastal-blue/90 text-white">Use Calculator</Button>
                 </CardContent>
               </Card>
 
               <Card className="text-center p-8 hover:shadow-lg transition-shadow">
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-[#F16622] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-coastal-orange rounded-full flex items-center justify-center mx-auto mb-6">
                     <DollarSign className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+                  <h3 className="text-xl font-bold text-coastal-navy mb-4 font-serif">
                     ROI Estimator
                   </h3>
-                  <p className="text-[#707070] mb-6">
+                  <p className="text-coastal-grey mb-6">
                     Estimate the return on investment for various home improvement projects.
                   </p>
-                  <Button className="bg-[#F16622] hover:bg-[#F16622]/90 text-white">Estimate ROI</Button>
+                  <Button className="bg-coastal-orange hover:bg-coastal-orange/90 text-white">Estimate ROI</Button>
                 </CardContent>
               </Card>
 
               <Card className="text-center p-8 hover:shadow-lg transition-shadow">
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-[#FFCA05] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-coastal-yellow rounded-full flex items-center justify-center mx-auto mb-6">
                     <FileText className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#18457C] mb-4" style={{ fontFamily: "serif" }}>
+                  <h3 className="text-xl font-bold text-coastal-navy mb-4 font-serif">
                     Contractor Questions
                   </h3>
-                  <p className="text-[#707070] mb-6">Essential questions to ask potential contractors before hiring.</p>
-                  <Button className="bg-[#FFCA05] hover:bg-[#FFCA05]/90 text-white">
+                  <p className="text-coastal-grey mb-6">Essential questions to ask potential contractors before hiring.</p>
+                  <Button className="bg-coastal-yellow hover:bg-coastal-yellow/90 text-white">
                     <Download className="mr-2 h-4 w-4" />
                     Download List
                   </Button>

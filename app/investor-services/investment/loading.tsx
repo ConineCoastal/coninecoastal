@@ -18,7 +18,7 @@ export default function InvestmentServicesLoading() {
       </section>
 
       {/* Timeline Section Skeleton */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Skeleton className="h-12 w-1/2 mx-auto mb-4" />
@@ -40,7 +40,7 @@ export default function InvestmentServicesLoading() {
       </section>
 
       {/* Market Stats Section Skeleton */}
-      <section className="py-20 bg-white">
+      <section className="py-16bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Skeleton className="h-12 w-1/2 mx-auto mb-4" />
@@ -60,7 +60,7 @@ export default function InvestmentServicesLoading() {
       </section>
 
       {/* Additional sections would have similar skeleton patterns */}
-      <div className="py-20 bg-gray-50">
+      <div className="py-16bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Skeleton className="h-12 w-1/2 mx-auto mb-8" />
           <div className="grid lg:grid-cols-2 gap-12">

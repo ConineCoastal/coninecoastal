@@ -1,20 +1,24 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Phone, Mail, MapPin } from "lucide-react"
+import Breadcrumb from "@/components/breadcrumb"
 
 export default function BathroomRemodeling() {
   return (
     <div className="min-h-screen bg-white">
+      <Breadcrumb />
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1758448018619-4cbe2250b9ad?auto=format&fit=crop&w=2000&q=80"
           alt="Luxury bathroom renovation"
-          className="absolute inset-0 object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-amber-600 hover:bg-amber-700 text-white">Bathroom Renovation Specialists</Badge>
@@ -26,16 +30,19 @@ export default function BathroomRemodeling() {
             market expertise to maximize your home's value.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg">
-              <Phone className="mr-2 h-5 w-5" />
-              Get Free Consultation
+            <Button asChild size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg">
+              <Link href="/contact?service=bathroom-renovation" className="flex items-center justify-center">
+                <Phone className="mr-2 h-5 w-5" />
+                Get Free Consultation
+              </Link>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg bg-transparent"
             >
-              View Portfolio
+              <Link href="/contact?service=bathroom-renovation">View Portfolio</Link>
             </Button>
           </div>
         </div>
@@ -125,7 +132,7 @@ export default function BathroomRemodeling() {
               size="lg"
               className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg"
             >
-              <Link href="/contact" className="flex items-center justify-center">
+              <Link href="/contact?service=bathroom-renovation" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />
                 Talk with Our Team
               </Link>
@@ -136,7 +143,7 @@ export default function BathroomRemodeling() {
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg bg-transparent"
             >
-              <Link href="/contact" className="flex items-center justify-center">
+              <Link href="/contact?service=bathroom-renovation" className="flex items-center justify-center">
                 <Mail className="mr-2 h-5 w-5" />
                 Request Quote
               </Link>

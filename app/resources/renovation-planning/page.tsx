@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calculator, FileText, Users } from "lucide-react"
@@ -17,11 +18,12 @@ export default function RenovationPlanningPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24 text-white">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1754780960162-839cda44d736?auto=format&fit=crop&w=2000&q=80"
           alt="Architect working through renovation plans and blueprints"
-          className="absolute inset-0 h-full w-full object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
@@ -38,7 +40,7 @@ export default function RenovationPlanningPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-white text-white hover:bg-white hover:text-[#18457C]"
+                className="bg-transparent border-white text-white hover:bg-white hover:text-coastal-navy"
                 asChild
               >
                 <Link href="/contact">Schedule Consultation</Link>
@@ -52,10 +54,10 @@ export default function RenovationPlanningPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#18457C] mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-coastal-navy mb-4">
               Your 6-Step Renovation Planning Process
             </h2>
-            <p className="text-lg text-[#707070] max-w-3xl mx-auto">
+            <p className="text-lg text-coastal-grey max-w-3xl mx-auto">
               A proven methodology that prevents costly mistakes and ensures successful project completion
             </p>
           </div>
@@ -64,13 +66,13 @@ export default function RenovationPlanningPage() {
             {/* Step 1 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-[#F16622]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-[#F16622]">1</span>
+                <div className="w-16 h-16 bg-coastal-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-orange">1</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Define Goals & Budget</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Define Goals & Budget</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070]">
+                <p className="text-sm text-coastal-grey">
                   Establish clear objectives, realistic budgets, and ROI expectations for your First Coast property.
                 </p>
               </CardContent>
@@ -79,13 +81,13 @@ export default function RenovationPlanningPage() {
             {/* Step 2 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-[#F16622]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-[#F16622]">2</span>
+                <div className="w-16 h-16 bg-coastal-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-orange">2</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Design & Planning</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Design & Planning</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070]">
+                <p className="text-sm text-coastal-grey">
                   Create detailed plans, select materials, and obtain necessary permits for coastal construction.
                 </p>
               </CardContent>
@@ -94,13 +96,13 @@ export default function RenovationPlanningPage() {
             {/* Step 3 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-[#F16622]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-[#F16622]">3</span>
+                <div className="w-16 h-16 bg-coastal-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-orange">3</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Contractor Selection</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Contractor Selection</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070]">
+                <p className="text-sm text-coastal-grey">
                   Choose qualified contractors with coastal experience and proper licensing and insurance.
                 </p>
               </CardContent>
@@ -109,13 +111,13 @@ export default function RenovationPlanningPage() {
             {/* Step 4 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-[#F16622]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-[#F16622]">4</span>
+                <div className="w-16 h-16 bg-coastal-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-orange">4</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Project Management</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Project Management</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070]">
+                <p className="text-sm text-coastal-grey">
                   Coordinate schedules, manage quality control, and handle change orders professionally.
                 </p>
               </CardContent>
@@ -124,13 +126,13 @@ export default function RenovationPlanningPage() {
             {/* Step 5 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-[#F16622]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-[#F16622]">5</span>
+                <div className="w-16 h-16 bg-coastal-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-orange">5</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Quality Inspection</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Quality Inspection</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070]">
+                <p className="text-sm text-coastal-grey">
                   Professional inspections at key milestones ensure work meets coastal building standards.
                 </p>
               </CardContent>
@@ -139,13 +141,13 @@ export default function RenovationPlanningPage() {
             {/* Step 6 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-[#F16622]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-[#F16622]">6</span>
+                <div className="w-16 h-16 bg-coastal-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-orange">6</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Final Completion</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Final Completion</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070]">
+                <p className="text-sm text-coastal-grey">
                   Final walkthrough, punch list completion, and warranty documentation for peace of mind.
                 </p>
               </CardContent>
@@ -158,19 +160,19 @@ export default function RenovationPlanningPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#18457C] mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-coastal-navy mb-4">
               Renovation ROI by Project Type
             </h2>
-            <p className="text-lg text-[#707070] max-w-3xl mx-auto">
+            <p className="text-lg text-coastal-grey max-w-3xl mx-auto">
               Make informed decisions with real data from First Coast renovation projects
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="text-center border-l-4 border-[#229FD9]">
+            <Card className="text-center border-l-4 border-coastal-blue">
               <CardHeader>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Kitchen Remodel</CardTitle>
-                <div className="text-3xl font-bold text-[#229FD9]">78%</div>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Kitchen Remodel</CardTitle>
+                <div className="text-3xl font-bold text-coastal-blue">78%</div>
                 <CardDescription>Average ROI</CardDescription>
               </CardHeader>
               <CardContent>
@@ -191,10 +193,10 @@ export default function RenovationPlanningPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center border-l-4 border-[#229FD9]">
+            <Card className="text-center border-l-4 border-coastal-blue">
               <CardHeader>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Bathroom Remodel</CardTitle>
-                <div className="text-3xl font-bold text-[#229FD9]">71%</div>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Bathroom Remodel</CardTitle>
+                <div className="text-3xl font-bold text-coastal-blue">71%</div>
                 <CardDescription>Average ROI</CardDescription>
               </CardHeader>
               <CardContent>
@@ -215,10 +217,10 @@ export default function RenovationPlanningPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center border-l-4 border-[#229FD9]">
+            <Card className="text-center border-l-4 border-coastal-blue">
               <CardHeader>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Deck Addition</CardTitle>
-                <div className="text-3xl font-bold text-[#229FD9]">69%</div>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Deck Addition</CardTitle>
+                <div className="text-3xl font-bold text-coastal-blue">69%</div>
                 <CardDescription>Average ROI</CardDescription>
               </CardHeader>
               <CardContent>
@@ -239,10 +241,10 @@ export default function RenovationPlanningPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center border-l-4 border-[#229FD9]">
+            <Card className="text-center border-l-4 border-coastal-blue">
               <CardHeader>
-                <CardTitle className="text-[#18457C] font-serif text-lg">HVAC Replacement</CardTitle>
-                <div className="text-3xl font-bold text-[#229FD9]">58%</div>
+                <CardTitle className="text-coastal-navy font-serif text-lg">HVAC Replacement</CardTitle>
+                <div className="text-3xl font-bold text-coastal-blue">58%</div>
                 <CardDescription>Average ROI</CardDescription>
               </CardHeader>
               <CardContent>
@@ -276,10 +278,10 @@ export default function RenovationPlanningPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#18457C] mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-coastal-navy mb-4">
               Free Planning Tools & Resources
             </h2>
-            <p className="text-lg text-[#707070] max-w-3xl mx-auto">
+            <p className="text-lg text-coastal-grey max-w-3xl mx-auto">
               Professional-grade tools to help you plan and budget your renovation project
             </p>
           </div>
@@ -287,14 +289,14 @@ export default function RenovationPlanningPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#F16622]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Calculator className="h-6 w-6 text-[#F16622]" />
+                <div className="w-12 h-12 bg-coastal-orange/10 rounded-lg flex items-center justify-center mb-4">
+                  <Calculator className="h-6 w-6 text-coastal-orange" />
                 </div>
-                <CardTitle className="text-[#18457C] font-serif">Budget Calculator</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif">Budget Calculator</CardTitle>
                 <CardDescription>Estimate costs for different renovation types</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <ul className="space-y-2 text-sm text-[#707070]">
+                <ul className="space-y-2 text-sm text-coastal-grey">
                   <li>• Material cost estimates</li>
                   <li>• Labor cost calculations</li>
                   <li>• Permit and inspection fees</li>
@@ -307,14 +309,14 @@ export default function RenovationPlanningPage() {
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#F16622]/10 rounded-lg flex items-center justify-center mb-4">
-                  <FileText className="h-6 w-6 text-[#F16622]" />
+                <div className="w-12 h-12 bg-coastal-orange/10 rounded-lg flex items-center justify-center mb-4">
+                  <FileText className="h-6 w-6 text-coastal-orange" />
                 </div>
-                <CardTitle className="text-[#18457C] font-serif">Project Timeline</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif">Project Timeline</CardTitle>
                 <CardDescription>Plan realistic schedules for your renovation</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <ul className="space-y-2 text-sm text-[#707070]">
+                <ul className="space-y-2 text-sm text-coastal-grey">
                   <li>• Design and planning phase</li>
                   <li>• Permit acquisition timeline</li>
                   <li>• Construction milestones</li>
@@ -327,14 +329,14 @@ export default function RenovationPlanningPage() {
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#F16622]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-[#F16622]" />
+                <div className="w-12 h-12 bg-coastal-orange/10 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-coastal-orange" />
                 </div>
-                <CardTitle className="text-[#18457C] font-serif">Contractor Interview</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif">Contractor Interview</CardTitle>
                 <CardDescription>Essential questions for vetting contractors</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <ul className="space-y-2 text-sm text-[#707070]">
+                <ul className="space-y-2 text-sm text-coastal-grey">
                   <li>• License and insurance verification</li>
                   <li>• Reference and portfolio review</li>
                   <li>• Coastal construction experience</li>
@@ -352,10 +354,10 @@ export default function RenovationPlanningPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#18457C] mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-coastal-navy mb-4">
               Renovation Financing Options
             </h2>
-            <p className="text-lg text-[#707070] max-w-3xl mx-auto">
+            <p className="text-lg text-coastal-grey max-w-3xl mx-auto">
               Choose the right financing strategy for your First Coast renovation project
             </p>
           </div>
@@ -363,21 +365,21 @@ export default function RenovationPlanningPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Home Equity Loan</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Home Equity Loan</CardTitle>
                 <CardDescription>Fixed rate, predictable payments</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#707070]">Interest Rate:</span>
-                    <span className="font-semibold text-[#229FD9]">6-8%</span>
+                    <span className="text-sm text-coastal-grey">Interest Rate:</span>
+                    <span className="font-semibold text-coastal-blue">6-8%</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#707070]">Term:</span>
+                    <span className="text-sm text-coastal-grey">Term:</span>
                     <span className="font-semibold">5-30 years</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#707070]">Best For:</span>
+                    <span className="text-sm text-coastal-grey">Best For:</span>
                     <span className="font-semibold">Large projects</span>
                   </div>
                 </div>
@@ -386,21 +388,21 @@ export default function RenovationPlanningPage() {
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle className="text-[#18457C] font-serif text-lg">HELOC</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">HELOC</CardTitle>
                 <CardDescription>Flexible credit line access</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#707070]">Interest Rate:</span>
-                    <span className="font-semibold text-[#229FD9]">5-7%</span>
+                    <span className="text-sm text-coastal-grey">Interest Rate:</span>
+                    <span className="font-semibold text-coastal-blue">5-7%</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#707070]">Term:</span>
+                    <span className="text-sm text-coastal-grey">Term:</span>
                     <span className="font-semibold">10-20 years</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#707070]">Best For:</span>
+                    <span className="text-sm text-coastal-grey">Best For:</span>
                     <span className="font-semibold">Phased projects</span>
                   </div>
                 </div>
@@ -409,21 +411,21 @@ export default function RenovationPlanningPage() {
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Cash-Out Refi</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Cash-Out Refi</CardTitle>
                 <CardDescription>Refinance with extra cash</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#707070]">Interest Rate:</span>
-                    <span className="font-semibold text-[#229FD9]">4-6%</span>
+                    <span className="text-sm text-coastal-grey">Interest Rate:</span>
+                    <span className="font-semibold text-coastal-blue">4-6%</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#707070]">Term:</span>
+                    <span className="text-sm text-coastal-grey">Term:</span>
                     <span className="font-semibold">15-30 years</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#707070]">Best For:</span>
+                    <span className="text-sm text-coastal-grey">Best For:</span>
                     <span className="font-semibold">Rate improvement</span>
                   </div>
                 </div>
@@ -432,21 +434,21 @@ export default function RenovationPlanningPage() {
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Personal Loan</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Personal Loan</CardTitle>
                 <CardDescription>No collateral required</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#707070]">Interest Rate:</span>
-                    <span className="font-semibold text-[#229FD9]">8-15%</span>
+                    <span className="text-sm text-coastal-grey">Interest Rate:</span>
+                    <span className="font-semibold text-coastal-blue">8-15%</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#707070]">Term:</span>
+                    <span className="text-sm text-coastal-grey">Term:</span>
                     <span className="font-semibold">2-7 years</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-[#707070]">Best For:</span>
+                    <span className="text-sm text-coastal-grey">Best For:</span>
                     <span className="font-semibold">Small projects</span>
                   </div>
                 </div>
@@ -457,7 +459,7 @@ export default function RenovationPlanningPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#18457C] text-white">
+      <section className="py-16 bg-coastal-navy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">Ready to Start Planning Your Renovation?</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
@@ -470,7 +472,7 @@ export default function RenovationPlanningPage() {
             <Button
               size="lg"
               variant="outline"
-              className="bg-transparent border-white text-white hover:bg-white hover:text-[#18457C]"
+              className="bg-transparent border-white text-white hover:bg-white hover:text-coastal-navy"
             >
               <Calculator className="mr-2 h-5 w-5" />
               Use Planning Tools

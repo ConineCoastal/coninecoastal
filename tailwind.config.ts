@@ -19,6 +19,9 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        serif: ["var(--font-serif)", "serif"],
+      },
       colors: {
         // Conine Coastal Brand Colors
         "coastal-navy": "#18457C",

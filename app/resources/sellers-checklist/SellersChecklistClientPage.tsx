@@ -1,27 +1,31 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, ListChecks, Lightbulb, Paintbrush, KeyRound, Camera, Home } from "lucide-react"
+import Breadcrumb from "@/components/breadcrumb"
 
 export default function SellersChecklistClientPage() {
   return (
     <div className="min-h-screen bg-white">
+      <Breadcrumb />
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1667450799167-09e7dd903e59?auto=format&fit=crop&w=2000&q=80"
           alt="Beautifully staged living room prepared for sale"
-          className="absolute inset-0 object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">The Ultimate Seller's Checklist</h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
             Maximize your home's value and attract top buyers with our proven pre-listing checklist.
           </p>
-          <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-xl">
-            Get Free Home Valuation
+          <Button asChild size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-xl">
+            <Link href="/contact?service=selling">Get Free Home Valuation</Link>
           </Button>
         </div>
       </section>

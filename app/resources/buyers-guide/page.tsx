@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle, Download, Home, Calculator, FileText, Users } from "lucide-react"
@@ -16,11 +17,12 @@ export default function BuyersGuidePage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24 text-white">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1758523671285-9ff3f4e0ff38?auto=format&fit=crop&w=2000&q=80"
           alt="Excited homebuyers reviewing a guide with their agent"
-          className="absolute inset-0 h-full w-full object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
@@ -36,7 +38,7 @@ export default function BuyersGuidePage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-white text-white hover:bg-white hover:text-[#18457C]"
+                className="bg-transparent border-white text-white hover:bg-white hover:text-coastal-navy"
                 asChild
               >
                 <Link href="/contact">Schedule Consultation</Link>
@@ -50,10 +52,10 @@ export default function BuyersGuidePage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#18457C] mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-coastal-navy mb-4">
               Your 5-Step Home Buying Journey
             </h2>
-            <p className="text-lg text-[#707070] max-w-3xl mx-auto">
+            <p className="text-lg text-coastal-grey max-w-3xl mx-auto">
               A proven process that combines real estate expertise with construction knowledge to help you make the best
               decision
             </p>
@@ -63,13 +65,13 @@ export default function BuyersGuidePage() {
             {/* Step 1 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-[#229FD9]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-[#229FD9]">1</span>
+                <div className="w-16 h-16 bg-coastal-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-blue">1</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Get Pre-Approved</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Get Pre-Approved</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070]">
+                <p className="text-sm text-coastal-grey">
                   Understand your budget and strengthen your offer with pre-approval from trusted First Coast lenders.
                 </p>
               </CardContent>
@@ -78,13 +80,13 @@ export default function BuyersGuidePage() {
             {/* Step 2 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-[#229FD9]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-[#229FD9]">2</span>
+                <div className="w-16 h-16 bg-coastal-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-blue">2</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Find Your Home</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Find Your Home</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070]">
+                <p className="text-sm text-coastal-grey">
                   Search properties with an agent who understands construction quality and potential issues.
                 </p>
               </CardContent>
@@ -93,13 +95,13 @@ export default function BuyersGuidePage() {
             {/* Step 3 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-[#229FD9]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-[#229FD9]">3</span>
+                <div className="w-16 h-16 bg-coastal-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-blue">3</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Make an Offer</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Make an Offer</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070]">
+                <p className="text-sm text-coastal-grey">
                   Craft competitive offers with strategic contingencies that protect your interests.
                 </p>
               </CardContent>
@@ -108,13 +110,13 @@ export default function BuyersGuidePage() {
             {/* Step 4 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-[#229FD9]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-[#229FD9]">4</span>
+                <div className="w-16 h-16 bg-coastal-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-blue">4</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Inspect & Appraise</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Inspect & Appraise</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070]">
+                <p className="text-sm text-coastal-grey">
                   Professional inspection with construction expertise to identify potential issues and costs.
                 </p>
               </CardContent>
@@ -123,13 +125,13 @@ export default function BuyersGuidePage() {
             {/* Step 5 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-[#229FD9]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-[#229FD9]">5</span>
+                <div className="w-16 h-16 bg-coastal-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-blue">5</span>
                 </div>
-                <CardTitle className="text-[#18457C] font-serif text-lg">Close & Move</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif text-lg">Close & Move</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-[#707070]">
+                <p className="text-sm text-coastal-grey">
                   Navigate closing with confidence and get keys to your new First Coast home.
                 </p>
               </CardContent>
@@ -143,50 +145,50 @@ export default function BuyersGuidePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#18457C] mb-6">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-coastal-navy mb-6">
                 Why Construction Expertise Matters
               </h2>
-              <p className="text-lg text-[#707070] mb-8">
+              <p className="text-lg text-coastal-grey mb-8">
                 With 20 years in construction, I can spot issues other agents miss and help you understand the true cost
                 of ownership.
               </p>
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <CheckCircle className="h-6 w-6 text-[#229FD9] mt-1 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-coastal-blue mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-serif font-semibold text-[#18457C] mb-2">Structural Assessment</h3>
-                    <p className="text-[#707070]">
+                    <h3 className="font-serif font-semibold text-coastal-navy mb-2">Structural Assessment</h3>
+                    <p className="text-coastal-grey">
                       Identify foundation, framing, and structural issues that could cost thousands later.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <CheckCircle className="h-6 w-6 text-[#229FD9] mt-1 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-coastal-blue mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-serif font-semibold text-[#18457C] mb-2">System Evaluation</h3>
-                    <p className="text-[#707070]">
+                    <h3 className="font-serif font-semibold text-coastal-navy mb-2">System Evaluation</h3>
+                    <p className="text-coastal-grey">
                       Assess HVAC, plumbing, and electrical systems for efficiency and remaining lifespan.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <CheckCircle className="h-6 w-6 text-[#229FD9] mt-1 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-coastal-blue mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-serif font-semibold text-[#18457C] mb-2">Renovation Potential</h3>
-                    <p className="text-[#707070]">
+                    <h3 className="font-serif font-semibold text-coastal-navy mb-2">Renovation Potential</h3>
+                    <p className="text-coastal-grey">
                       Understand what improvements are possible and their realistic costs.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <CheckCircle className="h-6 w-6 text-[#229FD9] mt-1 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-coastal-blue mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-serif font-semibold text-[#18457C] mb-2">Coastal Considerations</h3>
-                    <p className="text-[#707070]">
+                    <h3 className="font-serif font-semibold text-coastal-navy mb-2">Coastal Considerations</h3>
+                    <p className="text-coastal-grey">
                       Navigate First Coast-specific challenges like flood zones, wind resistance, and salt air exposure.
                     </p>
                   </div>
@@ -195,20 +197,20 @@ export default function BuyersGuidePage() {
             </div>
 
             <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-serif font-bold text-[#18457C] mb-6">Real Example: Hidden Savings</h3>
+              <h3 className="text-2xl font-serif font-bold text-coastal-navy mb-6">Real Example: Hidden Savings</h3>
               <div className="space-y-4">
-                <div className="border-l-4 border-[#229FD9] pl-4">
-                  <p className="text-[#707070] italic mb-2">
+                <div className="border-l-4 border-coastal-blue pl-4">
+                  <p className="text-coastal-grey italic mb-2">
                     "A client was considering a $450,000 home that seemed perfect. During our walkthrough, I noticed
                     subtle signs of foundation settling that the inspector missed."
                   </p>
-                  <p className="text-[#707070]">
+                  <p className="text-coastal-grey">
                     <strong>Result:</strong> We negotiated a $15,000 credit for foundation repairs, saving the buyer
                     significant future costs.
                   </p>
                 </div>
                 <div className="text-center pt-4">
-                  <p className="text-sm text-[#707070] mb-4">- David Conine, Licensed Contractor & Realtor</p>
+                  <p className="text-sm text-coastal-grey mb-4">- David Conine, Licensed Contractor & Realtor</p>
                   <Button asChild>
                     <Link href="/contact">Get Expert Guidance</Link>
                   </Button>
@@ -223,10 +225,10 @@ export default function BuyersGuidePage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#18457C] mb-4">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-coastal-navy mb-4">
               Understanding the First Coast Market
             </h2>
-            <p className="text-lg text-[#707070] max-w-3xl mx-auto">
+            <p className="text-lg text-coastal-grey max-w-3xl mx-auto">
               Local insights that help you make informed decisions in Northeast Florida's unique market
             </p>
           </div>
@@ -234,13 +236,13 @@ export default function BuyersGuidePage() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#229FD9]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Home className="h-6 w-6 text-[#229FD9]" />
+                <div className="w-12 h-12 bg-coastal-blue/10 rounded-lg flex items-center justify-center mb-4">
+                  <Home className="h-6 w-6 text-coastal-blue" />
                 </div>
-                <CardTitle className="text-[#18457C] font-serif">Neighborhood Analysis</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif">Neighborhood Analysis</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-[#707070]">
+                <ul className="space-y-2 text-sm text-coastal-grey">
                   <li>• St. Augustine historic district considerations</li>
                   <li>• Amelia Island luxury market trends</li>
                   <li>• Jacksonville Beach development impact</li>
@@ -252,13 +254,13 @@ export default function BuyersGuidePage() {
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#229FD9]/10 rounded-lg flex items-center justify-center mb-4">
-                  <Calculator className="h-6 w-6 text-[#229FD9]" />
+                <div className="w-12 h-12 bg-coastal-blue/10 rounded-lg flex items-center justify-center mb-4">
+                  <Calculator className="h-6 w-6 text-coastal-blue" />
                 </div>
-                <CardTitle className="text-[#18457C] font-serif">Financing Options</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif">Financing Options</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-[#707070]">
+                <ul className="space-y-2 text-sm text-coastal-grey">
                   <li>• Conventional loans for primary residences</li>
                   <li>• Jumbo loans for luxury properties</li>
                   <li>• VA loans for military families</li>
@@ -270,13 +272,13 @@ export default function BuyersGuidePage() {
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-12 h-12 bg-[#229FD9]/10 rounded-lg flex items-center justify-center mb-4">
-                  <FileText className="h-6 w-6 text-[#229FD9]" />
+                <div className="w-12 h-12 bg-coastal-blue/10 rounded-lg flex items-center justify-center mb-4">
+                  <FileText className="h-6 w-6 text-coastal-blue" />
                 </div>
-                <CardTitle className="text-[#18457C] font-serif">Coastal Considerations</CardTitle>
+                <CardTitle className="text-coastal-navy font-serif">Coastal Considerations</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm text-[#707070]">
+                <ul className="space-y-2 text-sm text-coastal-grey">
                   <li>• Flood zone requirements and insurance</li>
                   <li>• Wind mitigation features</li>
                   <li>• Salt air impact on materials</li>
@@ -290,7 +292,7 @@ export default function BuyersGuidePage() {
       </section>
 
       {/* Downloadable Checklist */}
-      <section className="py-16 bg-[#18457C] text-white">
+      <section className="py-16 bg-coastal-navy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -302,19 +304,19 @@ export default function BuyersGuidePage() {
 
               <div className="space-y-4 mb-8">
                 <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-[#229FD9]" />
+                  <CheckCircle className="h-5 w-5 text-coastal-blue" />
                   <span>Pre-approval requirements and documentation</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-[#229FD9]" />
+                  <CheckCircle className="h-5 w-5 text-coastal-blue" />
                   <span>Property search criteria and must-haves</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-[#229FD9]" />
+                  <CheckCircle className="h-5 w-5 text-coastal-blue" />
                   <span>Inspection points from a contractor's perspective</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-[#229FD9]" />
+                  <CheckCircle className="h-5 w-5 text-coastal-blue" />
                   <span>Closing preparation and final walkthrough</span>
                 </div>
               </div>
@@ -334,15 +336,15 @@ export default function BuyersGuidePage() {
 
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Users className="h-5 w-5 text-[#229FD9]" />
+                  <Users className="h-5 w-5 text-coastal-blue" />
                   <span>One-on-one consultation</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Home className="h-5 w-5 text-[#229FD9]" />
+                  <Home className="h-5 w-5 text-coastal-blue" />
                   <span>Personalized property search</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <FileText className="h-5 w-5 text-[#229FD9]" />
+                  <FileText className="h-5 w-5 text-coastal-blue" />
                   <span>Construction expertise included</span>
                 </div>
               </div>
@@ -350,7 +352,7 @@ export default function BuyersGuidePage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full mt-6 bg-transparent border-white text-white hover:bg-white hover:text-[#18457C]"
+                className="w-full mt-6 bg-transparent border-white text-white hover:bg-white hover:text-coastal-navy"
                 asChild
               >
                 <Link href="/contact">Schedule Consultation</Link>

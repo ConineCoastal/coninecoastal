@@ -1,11 +1,13 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Search, Filter, MapPin, Home, Bath, Square, Heart, Phone, Mail } from "lucide-react"
+import Breadcrumb from "@/components/breadcrumb"
 
 export default function CurrentListingsPage() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -121,23 +123,25 @@ export default function CurrentListingsPage() {
 
     const matchesType = propertyType === "all" || listing.type.toLowerCase().includes(propertyType.toLowerCase())
 
-    const matchesBeds = bedrooms === "all" || listing.beds.toString() === bedrooms
+    const matchesBeds = bedrooms === "all" || listing.beds >= Number(bedrooms)
 
     return matchesSearch && matchesPrice && matchesType && matchesBeds
   })
 
   return (
     <div className="min-h-screen bg-white">
+      <Breadcrumb />
       {/* Hero Section */}
       <section className="relative overflow-hidden py-16 text-white">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1761895564224-923498d06301?auto=format&fit=crop&w=2000&q=80"
           alt="Coastal Florida neighborhood with modern homes"
-          className="absolute inset-0 h-full w-full object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{ fontFamily: "serif" }}>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif">
             Current Listings
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
@@ -161,7 +165,7 @@ export default function CurrentListingsPage() {
                     placeholder="Search by location or property name..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 h-12 border-2 border-gray-200 focus:border-[#229FD9]"
+                    className="pl-10 h-12 border-2 border-gray-200 focus:border-coastal-blue"
                   />
                 </div>
               </div>
@@ -169,7 +173,7 @@ export default function CurrentListingsPage() {
               <select
                 value={priceRange}
                 onChange={(e) => setPriceRange(e.target.value)}
-                className="h-12 px-4 border-2 border-gray-200 rounded-md focus:border-[#229FD9] focus:outline-none"
+                className="h-12 px-4 border-2 border-gray-200 rounded-md focus:border-coastal-blue focus:outline-none"
               >
                 <option value="all">All Prices</option>
                 <option value="under-300k">Under $300K</option>
@@ -180,7 +184,7 @@ export default function CurrentListingsPage() {
               <select
                 value={propertyType}
                 onChange={(e) => setPropertyType(e.target.value)}
-                className="h-12 px-4 border-2 border-gray-200 rounded-md focus:border-[#229FD9] focus:outline-none"
+                className="h-12 px-4 border-2 border-gray-200 rounded-md focus:border-coastal-blue focus:outline-none"
               >
                 <option value="all">All Types</option>
                 <option value="single family">Single Family</option>
@@ -193,7 +197,7 @@ export default function CurrentListingsPage() {
               <select
                 value={bedrooms}
                 onChange={(e) => setBedrooms(e.target.value)}
-                className="h-12 px-4 border-2 border-gray-200 rounded-md focus:border-[#229FD9] focus:outline-none"
+                className="h-12 px-4 border-2 border-gray-200 rounded-md focus:border-coastal-blue focus:outline-none"
               >
                 <option value="all">Any Bedrooms</option>
                 <option value="1">1+ Bedrooms</option>
@@ -210,7 +214,7 @@ export default function CurrentListingsPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-bold text-[#18457C]" style={{ fontFamily: "serif" }}>
+            <h2 className="text-2xl font-bold text-coastal-navy font-serif">
               {filteredListings.length} Properties Found
             </h2>
             <div className="flex items-center space-x-2">
@@ -226,12 +230,14 @@ export default function CurrentListingsPage() {
                 className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="relative">
-                  <img
+                  <Image
                     src={listing.image || "/placeholder.svg"}
                     alt={listing.title}
+                    width={400}
+                    height={300}
                     className="w-full h-64 object-cover"
                   />
-                  <Badge className="absolute top-4 left-4 bg-[#229FD9] text-white">{listing.status}</Badge>
+                  <Badge className="absolute top-4 left-4 bg-coastal-blue text-white">{listing.status}</Badge>
                   <button className="absolute top-4 right-4 p-2 bg-white/80 rounded-full hover:bg-white transition-colors">
                     <Heart className="h-5 w-5 text-gray-600" />
                   </button>
@@ -239,7 +245,7 @@ export default function CurrentListingsPage() {
 
                 <CardContent className="p-6">
                   <div className="mb-4">
-                    <h3 className="text-2xl font-bold text-[#18457C] mb-2" style={{ fontFamily: "serif" }}>
+                    <h3 className="text-2xl font-bold text-coastal-navy mb-2 font-serif">
                       {listing.price}
                     </h3>
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">{listing.title}</h4>
@@ -275,12 +281,12 @@ export default function CurrentListingsPage() {
                   </div>
 
                   <div className="flex gap-2">
-                    <Button asChild className="flex-1 bg-[#229FD9] hover:bg-[#229FD9]/90 text-white">
+                    <Button asChild className="flex-1 bg-coastal-blue hover:bg-coastal-blue/90 text-white">
                       <Link href="/contact" className="flex items-center justify-center">
                         View Details
                       </Link>
                     </Button>
-                    <Button asChild className="flex-1 bg-[#F16622] hover:bg-[#F16622]/90 text-white">
+                    <Button asChild className="flex-1 bg-coastal-orange hover:bg-coastal-orange/90 text-white">
                       <Link href="/contact" className="flex items-center justify-center">
                         Schedule Tour
                       </Link>
@@ -294,9 +300,9 @@ export default function CurrentListingsPage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 bg-[#18457C] text-white">
+      <section className="py-16 bg-coastal-navy text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "serif" }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">
             Don't See What You're Looking For?
           </h2>
           <p className="text-xl text-white/90 mb-8">
@@ -306,7 +312,7 @@ export default function CurrentListingsPage() {
             <Button
               asChild
               size="lg"
-              className="bg-[#F16622] hover:bg-[#F16622]/90 text-white px-8 py-4 text-lg"
+              className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-4 text-lg"
             >
               <Link href="/contact" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />
@@ -316,7 +322,7 @@ export default function CurrentListingsPage() {
             <Button
               asChild
               size="lg"
-              className="bg-white text-[#18457C] hover:bg-white/90 px-8 py-4 text-lg"
+              className="bg-white text-coastal-navy hover:bg-white/90 px-8 py-4 text-lg"
             >
               <Link href="/contact" className="flex items-center justify-center">
                 <Mail className="mr-2 h-5 w-5" />

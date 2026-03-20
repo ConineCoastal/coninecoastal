@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -21,6 +22,7 @@ import {
   Download,
   Zap,
 } from "lucide-react"
+import Breadcrumb from "@/components/breadcrumb"
 
 export const metadata: Metadata = {
   title: "Investment Property Analysis - Northeast Florida | Conine Coastal",
@@ -31,6 +33,7 @@ export const metadata: Metadata = {
 export default function PropertyAnalysisPage() {
   return (
     <div className="min-h-screen bg-white">
+      <Breadcrumb />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-24 lg:py-32">
         <div
@@ -72,7 +75,7 @@ export default function PropertyAnalysisPage() {
       </section>
 
       {/* Analysis Services Overview */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-16bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -170,7 +173,7 @@ export default function PropertyAnalysisPage() {
       </section>
 
       {/* Analysis Process */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Comprehensive Analysis Process</h2>
@@ -265,7 +268,7 @@ export default function PropertyAnalysisPage() {
       </section>
 
       {/* Construction Expertise Advantage */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-16bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -332,7 +335,7 @@ export default function PropertyAnalysisPage() {
       </section>
 
       {/* Sample Analysis Results */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Real Analysis Examples</h2>
@@ -416,7 +419,7 @@ export default function PropertyAnalysisPage() {
       </section>
 
       {/* Analysis Pricing */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-16bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Transparent Analysis Pricing</h2>
@@ -484,8 +487,8 @@ export default function PropertyAnalysisPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full mt-6" variant={plan.popular ? "default" : "outline"}>
-                    Choose {plan.name.split(" ")[0]}
+                  <Button asChild className="w-full mt-6" variant={plan.popular ? "default" : "outline"}>
+                    <Link href="/contact?service=property-analysis">Choose {plan.name.split(" ")[0]}</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -501,7 +504,7 @@ export default function PropertyAnalysisPage() {
       </section>
 
       {/* Rush Analysis Option */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-2xl p-8">
             <Zap className="h-12 w-12 mx-auto mb-4" />
@@ -519,15 +522,15 @@ export default function PropertyAnalysisPage() {
                 <p className="opacity-90">Perfect for hot markets and bidding situations</p>
               </div>
             </div>
-            <Button size="lg" className="bg-white text-orange-600 hover:bg-slate-100">
-              Request Rush Analysis
+            <Button asChild size="lg" className="bg-white text-orange-600 hover:bg-slate-100">
+              <Link href="/contact?service=property-analysis">Request Rush Analysis</Link>
             </Button>
           </div>
         </div>
       </section>
 
       {/* Getting Started */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-16bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -569,7 +572,7 @@ export default function PropertyAnalysisPage() {
       </section>
 
       {/* Property Analysis Request Form */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Request Your Property Analysis</h2>
@@ -743,7 +746,7 @@ export default function PropertyAnalysisPage() {
       </section>
 
       {/* Guarantee Section */}
-      <section className="py-20 bg-blue-50">
+      <section className="py-16bg-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white rounded-2xl p-8 shadow-lg">
             <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />

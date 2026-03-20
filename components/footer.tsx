@@ -1,16 +1,17 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react"
 import { XLogo } from "./icons/x-logo"
 import { LinkedInLogo } from "./icons/linkedin-logo"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#18457C] text-white py-12">
+    <footer className="bg-coastal-navy text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <img src="/favicon.png" alt="Conine Coastal Logo" className="h-12 sm:h-16 w-auto" />
+              <Image src="/favicon.png" alt="Conine Coastal Logo" width={48} height={48} className="h-12 sm:h-16 w-auto" />
             </div>
             <p className="text-white/80 mb-4 text-sm sm:text-base">
               Your trusted partner for coastal real estate and home renovations in Northeast Florida.

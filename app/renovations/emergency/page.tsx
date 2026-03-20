@@ -1,20 +1,24 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Phone, Users, Award, AlertTriangle, Clock, Home } from "lucide-react"
+import Breadcrumb from "@/components/breadcrumb"
 
 export default function EmergencyRepairs() {
   return (
     <div className="min-h-screen bg-white">
+      <Breadcrumb />
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1737739973200-61c2ae4d1272?auto=format&fit=crop&w=2000&q=80"
           alt="Technician responding to an emergency home repair"
-          className="absolute inset-0 object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-red-600 hover:bg-red-700 text-white">24/7 Emergency Repairs</Badge>
@@ -31,7 +35,7 @@ export default function EmergencyRepairs() {
               size="lg"
               className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg"
             >
-              <Link href="/contact" className="flex items-center justify-center">
+              <Link href="/contact?service=emergency" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />
                 Request Immediate Help
               </Link>
@@ -42,7 +46,7 @@ export default function EmergencyRepairs() {
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg bg-transparent"
             >
-              <Link href="/contact" className="flex items-center justify-center">
+              <Link href="/contact?service=emergency" className="flex items-center justify-center">
                 Request Emergency Service
               </Link>
             </Button>
@@ -134,7 +138,7 @@ export default function EmergencyRepairs() {
             size="lg"
             className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg"
           >
-            <Link href="/contact" className="flex items-center justify-center">
+            <Link href="/contact?service=emergency" className="flex items-center justify-center">
               <Phone className="mr-2 h-5 w-5" />
               Contact Our Emergency Team
             </Link>

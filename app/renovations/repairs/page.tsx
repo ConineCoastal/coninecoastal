@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import type React from "react"
 
@@ -9,6 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { CheckCircle, Phone, Mail, Clock, AlertTriangle, Wrench, Home, Zap, Droplets, Shield } from "lucide-react"
 import { useState } from "react"
+import Breadcrumb from "@/components/breadcrumb"
 
 export default function HomeRepairsMaintenancePage() {
   const [formData, setFormData] = useState({
@@ -34,13 +36,15 @@ export default function HomeRepairsMaintenancePage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Breadcrumb />
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1724712729744-0c9f17441b8a?auto=format&fit=crop&w=2000&q=80"
           alt="Professional performing careful home repairs"
-          className="absolute inset-0 object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-amber-600 hover:bg-amber-700 text-white">Home Repairs & Maintenance</Badge>
@@ -57,7 +61,7 @@ export default function HomeRepairsMaintenancePage() {
               size="lg"
               className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg"
             >
-              <Link href="/contact" className="flex items-center justify-center">
+              <Link href="/contact?service=repairs" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />
                 Talk with Our Team
               </Link>
@@ -68,7 +72,7 @@ export default function HomeRepairsMaintenancePage() {
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg bg-transparent"
             >
-              <Link href="/contact" className="flex items-center justify-center">
+              <Link href="/contact?service=repairs" className="flex items-center justify-center">
                 <AlertTriangle className="mr-2 h-5 w-5" />
                 Request Emergency Help
               </Link>
@@ -212,9 +216,11 @@ export default function HomeRepairsMaintenancePage() {
             </div>
 
             <div className="relative">
-              <img
+              <Image
                 src="https://picsum.photos/400/300"
                 alt="Professional home repair service"
+                width={400}
+                height={300}
                 className="rounded-lg shadow-xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg border">
@@ -341,7 +347,7 @@ export default function HomeRepairsMaintenancePage() {
                     variant="outline"
                     className="flex-1 border-red-600 text-red-600 hover:bg-red-600 hover:text-white py-4 text-lg font-semibold bg-transparent"
                   >
-                    <Link href="/contact" className="flex items-center justify-center">
+                    <Link href="/contact?service=repairs" className="flex items-center justify-center">
                       <AlertTriangle className="mr-2 h-5 w-5" />
                       Emergency Support
                     </Link>
@@ -366,7 +372,7 @@ export default function HomeRepairsMaintenancePage() {
               size="lg"
               className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg"
             >
-              <Link href="/contact" className="flex items-center justify-center">
+              <Link href="/contact?service=repairs" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />
                 Talk with Our Team
               </Link>
@@ -377,7 +383,7 @@ export default function HomeRepairsMaintenancePage() {
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg bg-transparent"
             >
-              <Link href="/contact" className="flex items-center justify-center">
+              <Link href="/contact?service=repairs" className="flex items-center justify-center">
                 <Mail className="mr-2 h-5 w-5" />
                 Email Us
               </Link>
