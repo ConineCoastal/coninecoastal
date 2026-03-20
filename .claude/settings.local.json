@@ -8,7 +8,8 @@
       "Bash(grep -r import.*from.*pages C:/Users/david/Documents/coninecoastal/app --include=*.tsx)",
       "Bash(grep -r loading=lazy C:/Users/david/Documents/coninecoastal/app --include=*.tsx)",
       "Bash(grep -r \"placeholder\\\\.svg\\\\|placeholder\\\\.\" C:/Users/david/Documents/coninecoastal/app --include=*.tsx)",
-      "Bash(pnpm next:*)"
+      "Bash(pnpm next:*)",
+      "Bash(git push:*)"
     ]
   }
 }
