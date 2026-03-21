@@ -6,10 +6,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { CheckCircle, Download, TrendingUp, DollarSign, Home, Wrench } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Seller's Checklist - Maximize Your Home's Value | Conine Coastal",
+  title: "Seller's Checklist - Maximize Your Home's Value",
   description:
     "Strategic home improvements and selling tips from a construction expert. Maximize your First Coast property value with proven strategies.",
   keywords: "home selling tips, property value, construction expertise, First Coast real estate, home improvements ROI",
+  openGraph: {
+    title: "Seller's Checklist - Maximize Your Home's Value",
+    description:
+      "Strategic home improvements and selling tips from a construction expert. Maximize your First Coast property value with proven strategies.",
+  },
+  alternates: { canonical: "/resources/sellers-checklist" },
 }
 
 export default function SellersChecklistPage() {
@@ -21,9 +27,11 @@ export default function SellersChecklistPage() {
           src="https://images.unsplash.com/photo-1667450799167-09e7dd903e59?auto=format&fit=crop&w=2000&q=80"
           alt="Staged living room prepared for home sale"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Maximize Your Home's Sale Value</h1>

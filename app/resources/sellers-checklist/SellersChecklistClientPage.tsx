@@ -16,9 +16,11 @@ export default function SellersChecklistClientPage() {
           src="https://images.unsplash.com/photo-1667450799167-09e7dd903e59?auto=format&fit=crop&w=2000&q=80"
           alt="Beautifully staged living room prepared for sale"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">The Ultimate Seller's Checklist</h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">

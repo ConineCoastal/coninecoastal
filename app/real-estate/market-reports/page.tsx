@@ -1,10 +1,21 @@
-"use client"
 import Image from "next/image"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { TrendingUp, TrendingDown, Download, Calendar, MapPin, Home, BarChart3 } from "lucide-react"
 import Breadcrumb from "@/components/breadcrumb"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Market Reports",
+  description: "Northeast Florida real estate market reports and analysis. Stay informed with the latest trends, pricing data, and insights for the First Coast housing market.",
+  alternates: { canonical: "/real-estate/market-reports" },
+  openGraph: {
+    title: "Market Reports",
+    description: "Northeast Florida real estate market reports and analysis. Stay informed with the latest trends, pricing data, and insights for the First Coast housing market.",
+  },
+}
 
 export default function MarketReportsPage() {
   const marketData = [
@@ -107,9 +118,11 @@ export default function MarketReportsPage() {
           src="https://images.unsplash.com/photo-1758518729794-456bbd9f70f8?auto=format&fit=crop&w=2000&q=80"
           alt="Team discussing financial charts and market reports"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif">
             Market Reports & Analysis
@@ -325,14 +338,9 @@ export default function MarketReportsPage() {
           <p className="text-xl text-white/90 mb-8">
             Subscribe to receive our monthly market reports and exclusive insights delivered to your inbox.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg text-coastal-navy focus:outline-none focus:ring-2 focus:ring-coastal-blue"
-            />
-            <Button className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-6 py-3">Subscribe</Button>
-          </div>
+          <Button asChild className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3">
+            <Link href="/contact?service=newsletter">Subscribe to Reports</Link>
+          </Button>
           <p className="text-white/60 text-sm mt-4">No spam, unsubscribe at any time. Reports delivered monthly.</p>
         </div>
       </section>

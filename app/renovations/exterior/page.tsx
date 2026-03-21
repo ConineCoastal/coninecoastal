@@ -1,10 +1,21 @@
 import Image from "next/image"
 import Link from "next/link"
+import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Phone, Mail, MapPin, Users, Award, Home, Sun, Droplets, Wind } from "lucide-react"
 import Breadcrumb from "@/components/breadcrumb"
+
+export const metadata: Metadata = {
+  title: "Exterior Renovation",
+  description: "Exterior renovation and improvement services in Northeast Florida. Siding, roofing, outdoor living spaces, and curb appeal upgrades built to withstand coastal conditions.",
+  alternates: { canonical: "/renovations/exterior" },
+  openGraph: {
+    title: "Exterior Renovation",
+    description: "Exterior renovation and improvement services in Northeast Florida. Siding, roofing, outdoor living spaces, and curb appeal upgrades built to withstand coastal conditions.",
+  },
+}
 
 export default function ExteriorRenovations() {
   return (
@@ -19,6 +30,7 @@ export default function ExteriorRenovations() {
           className="object-cover"
           priority
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-amber-600 hover:bg-amber-700 text-white">Exterior Renovation Specialists</Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -189,7 +201,7 @@ export default function ExteriorRenovations() {
 
             <div className="relative">
               <Image
-                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=500&q=80"
+                src="https://images.unsplash.com/photo-1625602812206-5ec545ca1231?auto=format&fit=crop&w=500&q=80"
                 alt="Weather-resistant exterior renovation"
                 width={500}
                 height={600}

@@ -1,4 +1,3 @@
-"use client"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -6,6 +5,17 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Phone, Users, Award, Home, Sun, Droplets, Wind, Plus, Maximize, TrendingUp } from "lucide-react"
 import Breadcrumb from "@/components/breadcrumb"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Home Additions & Extensions",
+  description: "Expand your living space with expertly built home additions in Northeast Florida. Room additions, second stories, and extensions designed and built to last.",
+  alternates: { canonical: "/renovations/additions" },
+  openGraph: {
+    title: "Home Additions & Extensions",
+    description: "Expand your living space with expertly built home additions in Northeast Florida. Room additions, second stories, and extensions designed and built to last.",
+  },
+}
 
 export default function AdditionsExtensions() {
   return (
@@ -17,9 +27,11 @@ export default function AdditionsExtensions() {
           src="https://images.unsplash.com/photo-1685425481910-71c174ad7341?auto=format&fit=crop&w=2000&q=80"
           alt="Home addition and extension construction"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-amber-600 hover:bg-amber-700 text-white">Home Additions & Extensions</Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">

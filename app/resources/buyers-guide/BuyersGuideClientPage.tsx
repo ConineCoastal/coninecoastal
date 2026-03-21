@@ -89,9 +89,11 @@ export default function BuyersGuideClientPage() {
           src="https://images.unsplash.com/photo-1758523671285-9ff3f4e0ff38?auto=format&fit=crop&w=2000&q=80"
           alt="Homebuyers celebrating with their agent"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge className="mb-6 bg-white/20 text-white border-white/30">Complete Guide</Badge>
           <h1 className={`${font.variable} font-serif text-4xl md:text-6xl font-bold text-white mb-6`}>

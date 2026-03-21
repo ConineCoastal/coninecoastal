@@ -7,6 +7,12 @@ export const metadata: Metadata = {
     "Calculate your real estate investment returns with our comprehensive ROI calculator. Get accurate projections for rental properties, fix & flip, and investment analysis in Northeast Florida.",
   keywords:
     "ROI calculator, real estate investment, rental property calculator, fix and flip calculator, investment analysis, Northeast Florida",
+  openGraph: {
+    title: "Investment ROI Calculator - Conine Coastal | Real Estate Investment Analysis",
+    description:
+      "Calculate your real estate investment returns with our comprehensive ROI calculator. Get accurate projections for rental properties, fix & flip, and investment analysis in Northeast Florida.",
+  },
+  alternates: { canonical: "/roi-calculator" },
 }
 
 export default function ROICalculatorPage() {

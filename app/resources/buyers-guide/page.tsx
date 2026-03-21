@@ -10,6 +10,12 @@ export const metadata: Metadata = {
   description:
     "Navigate the First Coast real estate market with confidence. Expert guidance from a construction professional with 20 years of experience.",
   keywords: "homebuyer guide, First Coast real estate, construction expertise, home inspection, Northeast Florida",
+  openGraph: {
+    title: "Complete Homebuyer's Guide - Conine Coastal | First Coast Real Estate",
+    description:
+      "Navigate the First Coast real estate market with confidence. Expert guidance from a construction professional with 20 years of experience.",
+  },
+  alternates: { canonical: "/resources/buyers-guide" },
 }
 
 export default function BuyersGuidePage() {
@@ -21,9 +27,11 @@ export default function BuyersGuidePage() {
           src="https://images.unsplash.com/photo-1758523671285-9ff3f4e0ff38?auto=format&fit=crop&w=2000&q=80"
           alt="Excited homebuyers reviewing a guide with their agent"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Complete Homebuyer's Guide</h1>

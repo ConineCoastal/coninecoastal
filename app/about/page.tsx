@@ -1,22 +1,35 @@
-"use client"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Star, Shield, Hammer, Target, Award } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "About David Conine",
+  description: "Meet David Conine — licensed Realtor with 20+ years of construction experience serving Northeast Florida. Expert guidance for buyers, sellers, and investors on the First Coast.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About David Conine",
+    description: "Meet David Conine — licensed Realtor with 20+ years of construction experience serving Northeast Florida. Expert guidance for buyers, sellers, and investors on the First Coast.",
+  },
+}
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80')",
-          }}
-        ></div>
+        <Image
+          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80"
+          alt="David Conine - licensed realtor and construction expert serving Northeast Florida"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1
@@ -32,6 +45,30 @@ export default function AboutPage() {
               <Badge className="bg-coastal-blue text-white px-4 py-2 text-sm">UNF Construction Management</Badge>
               <Badge className="bg-coastal-orange text-white px-4 py-2 text-sm">Harvard Real Estate Certificate</Badge>
               <Badge className="bg-coastal-navy text-white px-4 py-2 text-sm">FL Licensed Realtor & Contractor</Badge>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Credentials & Stats */}
+      <section className="py-10 bg-coastal-navy text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl sm:text-4xl font-bold text-coastal-blue mb-1">20+</div>
+              <div className="text-sm sm:text-base text-white/80">Years in Construction</div>
+            </div>
+            <div>
+              <div className="text-3xl sm:text-4xl font-bold text-coastal-orange mb-1">UNF</div>
+              <div className="text-sm sm:text-base text-white/80">Construction Management</div>
+            </div>
+            <div>
+              <div className="text-3xl sm:text-4xl font-bold text-coastal-blue mb-1">Harvard</div>
+              <div className="text-sm sm:text-base text-white/80">Real Estate Certificate</div>
+            </div>
+            <div>
+              <div className="text-3xl sm:text-4xl font-bold text-coastal-orange mb-1">FL</div>
+              <div className="text-sm sm:text-base text-white/80">Licensed Realtor & Contractor</div>
             </div>
           </div>
         </div>
@@ -236,7 +273,7 @@ export default function AboutPage() {
               size="lg"
               className="bg-white text-coastal-navy hover:bg-white/90 px-8 py-4 text-lg"
             >
-              <Link href="/contact">View Our Work</Link>
+              <Link href="/renovations">View Our Work</Link>
             </Button>
           </div>
         </div>

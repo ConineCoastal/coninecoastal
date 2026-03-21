@@ -19,77 +19,6 @@ const featuredPost = {
   href: "/resources/blog/q4-2024-market-trends",
 }
 
-const _blogPosts = [
-  {
-    title: "5 Kitchen Updates That Actually Add Value",
-    excerpt:
-      "Not all kitchen renovations are created equal. Learn which updates provide the best return on investment in coastal markets.",
-    author: "David Conine",
-    date: "December 10, 2024",
-    category: "Home Improvement",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=400&q=80",
-    href: "/resources/blog/kitchen-updates-roi",
-  },
-  {
-    title: "Best Time to Buy on Amelia Island",
-    excerpt:
-      "Seasonal market patterns and timing strategies for purchasing property on Amelia Island and surrounding areas.",
-    author: "David Conine",
-    date: "December 5, 2024",
-    category: "Buying Tips",
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=400&q=80",
-    href: "/resources/blog/amelia-island-buying-timing",
-  },
-  {
-    title: "Emergency Hurricane Preparation for Coastal Homes",
-    excerpt:
-      "Essential preparation steps for protecting your coastal property during hurricane season, from a construction expert's perspective.",
-    author: "David Conine",
-    date: "November 28, 2024",
-    category: "Home Maintenance",
-    readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80",
-    href: "/resources/blog/hurricane-preparation-coastal-homes",
-  },
-  {
-    title: "St. Augustine Historic District Investment Opportunities",
-    excerpt:
-      "Analyzing investment potential in St. Augustine's historic properties, including renovation considerations and rental income prospects.",
-    author: "David Conine",
-    date: "November 20, 2024",
-    category: "Investment",
-    readTime: "9 min read",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80",
-    href: "/resources/blog/st-augustine-investment-opportunities",
-  },
-  {
-    title: "Bathroom Renovation ROI: What Works in Coastal Markets",
-    excerpt:
-      "Maximize your bathroom renovation investment with strategies that appeal to First Coast buyers and add real value.",
-    author: "David Conine",
-    date: "November 15, 2024",
-    category: "Home Improvement",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=400&q=80",
-    href: "/resources/blog/bathroom-renovation-roi",
-  },
-  {
-    title: "Jacksonville Beach Condo Market Update",
-    excerpt:
-      "Current trends in the Jacksonville Beach condominium market, including pricing, inventory, and buyer preferences.",
-    author: "David Conine",
-    date: "November 8, 2024",
-    category: "Market Analysis",
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80",
-    href: "/resources/blog/jacksonville-beach-condo-market",
-  },
-]
-
-void _blogPosts
-
 const categories = [
   { name: "Market Analysis", count: 12, icon: <TrendingUp className="h-5 w-5" />, color: "bg-coastal-blue" },
   { name: "Home Improvement", count: 18, icon: <Wrench className="h-5 w-5" />, color: "bg-coastal-orange" },
@@ -109,7 +38,6 @@ const posts = [
     href: "/resources/blog/kitchen-updates-roi",
     excerpt: "Not every upgrade nets a return—these five deliver the highest ROI…",
   },
-  // more placeholder posts …
 ]
 
 export default function BlogClientPage() {
@@ -123,9 +51,11 @@ export default function BlogClientPage() {
           src="https://images.unsplash.com/photo-1583777456855-d44bfb9066cf?auto=format&fit=crop&w=2000&q=80"
           alt="Real estate expert drafting a blog post on a laptop"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1
             className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif"
@@ -158,7 +88,7 @@ export default function BlogClientPage() {
             <div className="grid lg:grid-cols-2 gap-0">
               <div className="relative h-64 lg:h-auto">
                 <Image
-                  src={featuredPost.image || "/placeholder.svg"}
+                  src={featuredPost.image}
                   alt={featuredPost.title}
                   width={600}
                   height={400}
@@ -281,14 +211,9 @@ export default function BlogClientPage() {
                     <p className="text-coastal-grey mb-6">
                       Get the latest First Coast real estate insights and renovation tips delivered to your inbox.
                     </p>
-                    <div className="space-y-3">
-                      <input
-                        type="email"
-                        placeholder="Enter your email"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-coastal-blue focus:border-transparent"
-                      />
-                      <Button className="w-full bg-coastal-blue hover:bg-coastal-blue/90 text-white">Subscribe</Button>
-                    </div>
+                    <Button asChild className="w-full bg-coastal-blue hover:bg-coastal-blue/90 text-white">
+                      <Link href="/contact?service=newsletter">Sign Up for Updates</Link>
+                    </Button>
                   </CardContent>
                 </Card>
 
@@ -342,14 +267,9 @@ export default function BlogClientPage() {
           <p className="text-xl text-white/90 mb-8">
             Subscribe to our newsletter for the latest First Coast real estate trends and renovation tips.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg text-coastal-navy focus:outline-none focus:ring-2 focus:ring-coastal-blue"
-            />
-            <Button className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3">Subscribe</Button>
-          </div>
+          <Button asChild className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3">
+            <Link href="/contact?service=newsletter">Subscribe to Newsletter</Link>
+          </Button>
         </div>
       </section>
     </div>

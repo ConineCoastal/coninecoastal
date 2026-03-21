@@ -136,6 +136,13 @@ export default function Navigation() {
                   >
                     Property Management
                   </Link>
+                  <Link
+                    href="/real-estate/market-reports"
+                    onClick={handleSubmenuItemClick}
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                  >
+                    Market Reports
+                  </Link>
                 </div>
               </div>
             </div>
@@ -231,6 +238,27 @@ export default function Navigation() {
                   >
                     Emergency Repairs
                   </Link>
+                  <Link
+                    href="/renovations/whole-home"
+                    onClick={handleSubmenuItemClick}
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                  >
+                    Whole Home Renovation
+                  </Link>
+                  <Link
+                    href="/renovations/additions"
+                    onClick={handleSubmenuItemClick}
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                  >
+                    Home Additions
+                  </Link>
+                  <Link
+                    href="/renovations/exterior"
+                    onClick={handleSubmenuItemClick}
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                  >
+                    Exterior Renovation
+                  </Link>
                 </div>
               </div>
             </div>
@@ -311,6 +339,13 @@ export default function Navigation() {
                     className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Fix & Flip Services
+                  </Link>
+                  <Link
+                    href="/roi-calculator"
+                    onClick={handleSubmenuItemClick}
+                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                  >
+                    ROI Calculator
                   </Link>
                 </div>
               </div>
@@ -466,6 +501,8 @@ export default function Navigation() {
               {/* Real Estate Services - Mobile Dropdown */}
               <div>
                 <button
+                  aria-haspopup="true"
+                  aria-expanded={realEstateOpen}
                   className={`flex items-center justify-between w-full font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
                     isActive("/real-estate")
                       ? "text-coastal-blue bg-blue-50"
@@ -515,6 +552,13 @@ export default function Navigation() {
                     >
                       Property Management
                     </Link>
+                    <Link
+                      href="/real-estate/market-reports"
+                      onClick={closeMenu}
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                    >
+                      Market Reports
+                    </Link>
                   </div>
                 )}
               </div>
@@ -522,6 +566,8 @@ export default function Navigation() {
               {/* Construction Services - Mobile Dropdown */}
               <div>
                 <button
+                  aria-haspopup="true"
+                  aria-expanded={renovationOpen}
                   className={`flex items-center justify-between w-full font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
                     isActive("/renovations")
                       ? "text-coastal-orange bg-orange-50"
@@ -585,6 +631,27 @@ export default function Navigation() {
                     >
                       Emergency Repairs
                     </Link>
+                    <Link
+                      href="/renovations/whole-home"
+                      onClick={closeMenu}
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                    >
+                      Whole Home Renovation
+                    </Link>
+                    <Link
+                      href="/renovations/additions"
+                      onClick={closeMenu}
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                    >
+                      Home Additions
+                    </Link>
+                    <Link
+                      href="/renovations/exterior"
+                      onClick={closeMenu}
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                    >
+                      Exterior Renovation
+                    </Link>
                   </div>
                 )}
               </div>
@@ -592,6 +659,8 @@ export default function Navigation() {
               {/* Investor Services - Mobile Dropdown */}
               <div>
                 <button
+                  aria-haspopup="true"
+                  aria-expanded={investorOpen}
                   className={`flex items-center justify-between w-full font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
                     isActive("/investor-services")
                       ? "text-coastal-blue bg-blue-50"
@@ -641,6 +710,13 @@ export default function Navigation() {
                     >
                       Fix & Flip Services
                     </Link>
+                    <Link
+                      href="/roi-calculator"
+                      onClick={closeMenu}
+                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                    >
+                      ROI Calculator
+                    </Link>
                   </div>
                 )}
               </div>
@@ -648,6 +724,8 @@ export default function Navigation() {
               {/* Resources - Mobile Dropdown */}
               <div>
                 <button
+                  aria-haspopup="true"
+                  aria-expanded={resourcesOpen}
                   className={`flex items-center justify-between w-full font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
                     isActive("/resources")
                       ? "text-coastal-blue bg-blue-50"

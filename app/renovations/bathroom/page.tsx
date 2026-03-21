@@ -1,11 +1,21 @@
-"use client"
 import Link from "next/link"
 import Image from "next/image"
+import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Phone, Mail, MapPin } from "lucide-react"
 import Breadcrumb from "@/components/breadcrumb"
+
+export const metadata: Metadata = {
+  title: "Bathroom Renovation",
+  description: "Professional bathroom renovation in Northeast Florida. Custom designs, quality fixtures, and expert craftsmanship for beautiful, functional bathrooms.",
+  alternates: { canonical: "/renovations/bathroom" },
+  openGraph: {
+    title: "Bathroom Renovation",
+    description: "Professional bathroom renovation in Northeast Florida. Custom designs, quality fixtures, and expert craftsmanship for beautiful, functional bathrooms.",
+  },
+}
 
 export default function BathroomRemodeling() {
   return (
@@ -17,9 +27,11 @@ export default function BathroomRemodeling() {
           src="https://images.unsplash.com/photo-1758448018619-4cbe2250b9ad?auto=format&fit=crop&w=2000&q=80"
           alt="Luxury bathroom renovation"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-amber-600 hover:bg-amber-700 text-white">Bathroom Renovation Specialists</Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">

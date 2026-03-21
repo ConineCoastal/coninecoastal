@@ -1,9 +1,19 @@
-"use client"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { DollarSign, Eye, Calculator } from "lucide-react"
 import Breadcrumb from "@/components/breadcrumb"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Kitchen Remodeling",
+  description: "Professional kitchen remodeling in Northeast Florida. Custom designs, quality craftsmanship, and expert project management for your dream kitchen renovation.",
+  alternates: { canonical: "/renovations/kitchen" },
+  openGraph: {
+    title: "Kitchen Remodeling",
+    description: "Professional kitchen remodeling in Northeast Florida. Custom designs, quality craftsmanship, and expert project management for your dream kitchen renovation.",
+  },
+}
 
 export default function KitchenRemodelingPage() {
   return (
@@ -15,9 +25,11 @@ export default function KitchenRemodelingPage() {
           src="https://images.unsplash.com/photo-1609280069678-ab9ef26a0b05?auto=format&fit=crop&w=2000&q=80"
           alt="Modern coastal-inspired kitchen remodel"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
           <h1 className="text-5xl lg:text-6xl font-bold mb-6 font-serif">
             Kitchen Remodeling

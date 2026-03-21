@@ -1,11 +1,21 @@
-"use client"
 import Link from "next/link"
 import Image from "next/image"
+import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Phone, Mail, MapPin, Users, Award, TrendingUp, Layers, Palette, Shield } from "lucide-react"
 import Breadcrumb from "@/components/breadcrumb"
+
+export const metadata: Metadata = {
+  title: "Flooring Services",
+  description: "Professional flooring installation and renovation in Northeast Florida. Hardwood, tile, luxury vinyl, and more — expert installation with quality materials.",
+  alternates: { canonical: "/renovations/flooring" },
+  openGraph: {
+    title: "Flooring Services",
+    description: "Professional flooring installation and renovation in Northeast Florida. Hardwood, tile, luxury vinyl, and more — expert installation with quality materials.",
+  },
+}
 
 export default function FlooringServices() {
   return (
@@ -17,9 +27,11 @@ export default function FlooringServices() {
           src="https://images.unsplash.com/photo-1693948568453-a3564f179a84?auto=format&fit=crop&w=2000&q=80"
           alt="Premium hardwood flooring installation"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-amber-600 hover:bg-amber-700 text-white">Premium Flooring Solutions</Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">Transform Your Home From the Ground Up</h1>

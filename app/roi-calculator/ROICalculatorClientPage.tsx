@@ -38,9 +38,11 @@ export default function ROICalculatorClientPage() {
           src="https://images.unsplash.com/photo-1763565062965-16173b9ee752?auto=format&fit=crop&w=2000&q=80"
           alt="Investment advisor calculating property returns"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">
             Real Estate Investment ROI Calculator

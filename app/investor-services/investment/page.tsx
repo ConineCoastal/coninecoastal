@@ -30,11 +30,16 @@ import Image from "next/image"
 import Breadcrumb from "@/components/breadcrumb"
 
 export const metadata: Metadata = {
-  title: "Investment Property Services - Northeast Florida | Conine Coastal",
+  title: "Investment Property Services - Northeast Florida",
   description:
     "Turn-key investment property solutions in Northeast Florida. From acquisition to sale, we manage every step of your rental property investment journey with 20 years of construction expertise.",
   keywords:
     "investment property, rental property, Northeast Florida, Jacksonville real estate investment, property management, construction expertise, ROI calculator",
+  openGraph: {
+    title: "Investment Property Services - Northeast Florida",
+    description: "Turn-key investment property solutions in Northeast Florida. From acquisition to sale, we manage every step of your rental property investment journey with 20 years of construction expertise.",
+  },
+  alternates: { canonical: "/investor-services/investment" },
 }
 
 export default function InvestmentServicesPage() {
@@ -43,12 +48,15 @@ export default function InvestmentServicesPage() {
       <Breadcrumb />
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/modern-renovated-rental-property-exterior-with-pro.png')`,
-          }}
+        <Image
+          src="/modern-renovated-rental-property-exterior-with-pro.png"
+          alt="Modern renovated rental property exterior"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-shadow-lg">
             Turn-Key Investment Property Solutions in Northeast Florida
@@ -554,6 +562,7 @@ export default function InvestmentServicesPage() {
                     alt="Property before renovation"
                     width={600}
                     height={400}
+                    sizes="(max-width: 768px) 50vw, 25vw"
                     className="w-full h-48 object-cover rounded-lg"
                   />
                 </div>
@@ -564,6 +573,7 @@ export default function InvestmentServicesPage() {
                     alt="Property after renovation"
                     width={600}
                     height={400}
+                    sizes="(max-width: 768px) 50vw, 25vw"
                     className="w-full h-48 object-cover rounded-lg"
                   />
                 </div>

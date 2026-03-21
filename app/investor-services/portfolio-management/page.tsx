@@ -22,14 +22,20 @@ import {
   PieChart,
   FileText,
 } from "lucide-react"
+import Image from "next/image"
 import Breadcrumb from "@/components/breadcrumb"
 
 export const metadata: Metadata = {
-  title: "Investment Portfolio Management - Northeast Florida | Conine Coastal",
+  title: "Investment Portfolio Management - Northeast Florida",
   description:
     "Comprehensive multi-property investment portfolio management services in Northeast Florida. Maximize your real estate portfolio performance with our integrated approach.",
   keywords:
     "portfolio management, investment properties, Northeast Florida, real estate portfolio, property management, Jacksonville investments",
+  openGraph: {
+    title: "Investment Portfolio Management - Northeast Florida",
+    description: "Comprehensive multi-property investment portfolio management services in Northeast Florida. Maximize your real estate portfolio performance with our integrated approach.",
+  },
+  alternates: { canonical: "/investor-services/portfolio-management" },
 }
 
 export default function PortfolioManagementPage() {
@@ -38,12 +44,15 @@ export default function PortfolioManagementPage() {
       <Breadcrumb />
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/aerial-view-of-multiple-well-maintained-rental-pro.png')`,
-          }}
+        <Image
+          src="/aerial-view-of-multiple-well-maintained-rental-pro.png"
+          alt="Aerial view of well-maintained rental properties"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-shadow-lg">
             Multi-Property Investment Portfolio Management
@@ -450,73 +459,32 @@ export default function PortfolioManagementPage() {
         </div>
       </section>
 
-      {/* Portfolio Performance Metrics */}
-      <section className="py-16bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
+      {/* Portfolio Performance Tracking */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Track Your Portfolio's Success</h2>
+            <h2 className="text-4xl font-bold text-coastal-navy mb-4 font-serif">Track Your Portfolio's Success</h2>
+            <p className="text-xl text-coastal-grey max-w-3xl mx-auto">
+              We provide comprehensive reporting so you always know exactly how your investments are performing.
+            </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            <Card className="p-6">
-              <CardHeader>
-                <CardTitle className="text-xl mb-4">Performance Indicators</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Total Portfolio Value:</span>
-                  <span className="font-semibold text-lg">$X.X Million</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Monthly Gross Income:</span>
-                  <span className="font-semibold text-lg">$XX,XXX</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Average Occupancy Rate:</span>
-                  <span className="font-semibold text-lg">XX%</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Portfolio ROI:</span>
-                  <span className="font-semibold text-lg text-green-600">XX.X%</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Cash-on-Cash Return:</span>
-                  <span className="font-semibold text-lg text-green-600">XX.X%</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Appreciation Rate:</span>
-                  <span className="font-semibold text-lg text-green-600">XX.X%</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="p-6">
-              <CardHeader>
-                <CardTitle className="text-xl mb-4">Property Breakdown</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Number of Properties:</span>
-                  <span className="font-semibold text-lg">XX</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Total Units:</span>
-                  <span className="font-semibold text-lg">XX</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Average Rent per Unit:</span>
-                  <span className="font-semibold text-lg">$X,XXX</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Properties Under Renovation:</span>
-                  <span className="font-semibold text-lg">X</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Properties for Sale:</span>
-                  <span className="font-semibold text-lg">X</span>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { label: "Portfolio Value", desc: "Total current market value of all properties in your portfolio" },
+              { label: "Monthly Cash Flow", desc: "Net rental income after expenses, vacancies, and reserves" },
+              { label: "Occupancy Rate", desc: "Percentage of units currently leased and generating income" },
+              { label: "Portfolio ROI", desc: "Total return on investment including appreciation and cash flow" },
+              { label: "Cash-on-Cash Return", desc: "Annual pre-tax cash flow relative to total cash invested" },
+              { label: "Appreciation Rate", desc: "Year-over-year property value growth across your portfolio" },
+            ].map((metric, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold text-coastal-navy mb-2 font-serif">{metric.label}</h3>
+                  <p className="text-coastal-grey text-sm leading-relaxed">{metric.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

@@ -10,6 +10,12 @@ export const metadata: Metadata = {
   description:
     "Access expert guides, market reports, and planning tools for smart real estate and renovation decisions in Northeast Florida.",
   keywords: "real estate guides, renovation planning, market reports, First Coast, homebuyer guide, seller checklist",
+  openGraph: {
+    title: "Resources & Guides - Conine Coastal | Expert Real Estate & Renovation Insights",
+    description:
+      "Access expert guides, market reports, and planning tools for smart real estate and renovation decisions in Northeast Florida.",
+  },
+  alternates: { canonical: "/resources" },
 }
 
 export default function ResourcesPage() {
@@ -21,9 +27,11 @@ export default function ResourcesPage() {
           src="https://images.unsplash.com/photo-1709080381729-965c62ab0471?auto=format&fit=crop&w=2000&q=80"
           alt="Advisor reviewing real estate resources and market data"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Resources & Guides</h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">

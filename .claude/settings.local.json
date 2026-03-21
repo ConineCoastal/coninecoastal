@@ -9,7 +9,31 @@
       "Bash(grep -r loading=lazy C:/Users/david/Documents/coninecoastal/app --include=*.tsx)",
       "Bash(grep -r \"placeholder\\\\.svg\\\\|placeholder\\\\.\" C:/Users/david/Documents/coninecoastal/app --include=*.tsx)",
       "Bash(pnpm next:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(grep -r \"lorem ipsum\\\\|placeholder\\\\|TODO\\\\|FIXME\\\\|HACK\\\\|BUG\" /c/Users/david/Documents/coninecoastal/app --include=*.tsx --include=*.ts)",
+      "Bash(for icon:*)",
+      "Bash(do echo:*)",
+      "Bash(grep -c \"<$icon \" app/investor-services/InvestorServicesClientPage.tsx)",
+      "Bash(done)",
+      "Bash(grep -r import.*Label app/**/*.tsx)",
+      "Bash(grep -c \"<$icon \" app/real-estate/sellers/SellersClientPage.tsx)",
+      "Bash(find /c/Users/david/Documents/coninecoastal/components -type f -name *.tsx)",
+      "Bash(wc -l /c/Users/david/Documents/coninecoastal/app/*/page.tsx /c/Users/david/Documents/coninecoastal/app/*/*/page.tsx)",
+      "Bash(npx shadcn@latest add accordion --yes)",
+      "Bash(npx tsc:*)",
+      "Bash(node_modules/.bin/tsc --noEmit --pretty)",
+      "Bash(for f:*)",
+      "Read(//c/Users/david/Documents/coninecoastal/**)",
+      "Bash(for file:*)",
+      "Bash(do grep:*)",
+      "Bash(/dev/null done:*)",
+      "WebFetch(domain:www.instagram.com)",
+      "WebFetch(domain:www.facebook.com)",
+      "WebFetch(domain:x.com)",
+      "WebFetch(domain:www.linkedin.com)",
+      "Bash(xargs grep:*)",
+      "Bash(while read:*)",
+      "Bash(do sed:*)"
     ]
   }
 }

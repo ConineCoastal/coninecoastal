@@ -22,12 +22,18 @@ import {
   Download,
   Zap,
 } from "lucide-react"
+import Image from "next/image"
 import Breadcrumb from "@/components/breadcrumb"
 
 export const metadata: Metadata = {
-  title: "Investment Property Analysis - Northeast Florida | Conine Coastal",
+  title: "Investment Property Analysis - Northeast Florida",
   description:
     "Expert property analysis for smart investment decisions. Comprehensive analysis backed by 20 years of construction expertise in Northeast Florida.",
+  openGraph: {
+    title: "Investment Property Analysis - Northeast Florida",
+    description: "Expert property analysis for smart investment decisions. Comprehensive analysis backed by 20 years of construction expertise in Northeast Florida.",
+  },
+  alternates: { canonical: "/investor-services/property-analysis" },
 }
 
 export default function PropertyAnalysisPage() {
@@ -36,12 +42,15 @@ export default function PropertyAnalysisPage() {
       <Breadcrumb />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-24 lg:py-32">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/professional-analyzing-property-with-tablet-and-do.png')",
-          }}
+        <Image
+          src="/professional-analyzing-property-with-tablet-and-do.png"
+          alt="Professional analyzing investment property with tablet"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">

@@ -60,7 +60,7 @@ export default function Footer() {
                 <Facebook className="h-6 w-6" />
               </Link>
               <Link
-                href="https://www.x.com/coninecoastal"
+                href="https://x.com/coninecoastal"
                 className="text-white/60 hover:text-white transition-colors p-2 -m-2 touch-manipulation"
                 aria-label="Follow us on X"
                 target="_blank"
@@ -113,6 +113,14 @@ export default function Footer() {
                   className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
                 >
                   Property Management
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/real-estate/market-reports"
+                  className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
+                >
+                  Market Reports
                 </Link>
               </li>
             </ul>
@@ -169,6 +177,30 @@ export default function Footer() {
                   Emergency Repairs
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/renovations/whole-home"
+                  className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
+                >
+                  Whole Home Renovation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/renovations/additions"
+                  className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
+                >
+                  Home Additions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/renovations/exterior"
+                  className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
+                >
+                  Exterior Renovation
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -197,6 +229,14 @@ export default function Footer() {
                   className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
                 >
                   Property Analysis
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/roi-calculator"
+                  className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
+                >
+                  ROI Calculator
                 </Link>
               </li>
               <li>
@@ -238,7 +278,7 @@ export default function Footer() {
         <div className="border-t border-white/20 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-white/60 text-center md:text-left">
-              <p className="text-sm sm:text-base">&copy; 2024 Conine Coastal. All rights reserved.</p>
+              <p className="text-sm sm:text-base">&copy; {new Date().getFullYear()} Conine Coastal. All rights reserved.</p>
               <p className="text-xs sm:text-sm mt-1">
                 Licensed Real Estate & Construction Services | Northeast Florida
               </p>

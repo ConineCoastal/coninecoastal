@@ -2,9 +2,15 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Conine Coastal",
+  title: "Privacy Policy",
   description:
     "Learn how Conine Coastal collects, uses, and protects your personal information across our real estate and construction services.",
+  openGraph: {
+    title: "Privacy Policy",
+    description:
+      "Learn how Conine Coastal collects, uses, and protects your personal information across our real estate and construction services.",
+  },
+  alternates: { canonical: "/privacy-policy" },
 }
 
 export default function PrivacyPolicyPage() {
@@ -22,7 +28,7 @@ export default function PrivacyPolicyPage() {
 
         <section className="space-y-3">
           <h2 className="text-2xl font-semibold text-coastal-navy">1. Information We Collect</h2>
-          <p className="text-[#505050]">
+          <p className="text-coastal-grey">
             We collect personal information that you provide directly to us, including your name, email address, phone
             number, property preferences, and project details. We also gather usage data related to how you interact with
             our website and services to improve the experience we deliver.
@@ -31,7 +37,7 @@ export default function PrivacyPolicyPage() {
 
         <section className="space-y-3">
           <h2 className="text-2xl font-semibold text-coastal-navy">2. How We Use Your Information</h2>
-          <p className="text-[#505050]">
+          <p className="text-coastal-grey">
             Your information enables us to respond to inquiries, prepare market and renovation analyses, manage projects,
             and keep you informed about services that may be relevant to your goals. We do not sell your personal
             information to third parties.
@@ -40,7 +46,7 @@ export default function PrivacyPolicyPage() {
 
         <section className="space-y-3">
           <h2 className="text-2xl font-semibold text-coastal-navy">3. Sharing and Security</h2>
-          <p className="text-[#505050]">
+          <p className="text-coastal-grey">
             We share data only with trusted partners who assist in delivering our services—such as inspectors, lenders, or
             contractors—and only when necessary. Industry-standard safeguards protect your information, and we limit
             access to authorized personnel.
@@ -49,7 +55,7 @@ export default function PrivacyPolicyPage() {
 
         <section className="space-y-3">
           <h2 className="text-2xl font-semibold text-coastal-navy">4. Your Choices</h2>
-          <p className="text-[#505050]">
+          <p className="text-coastal-grey">
             You may request updates or deletion of your personal data, opt out of marketing communications, or ask for a
             summary of what we store. Contact us using the information below to submit a request.
           </p>
@@ -57,7 +63,7 @@ export default function PrivacyPolicyPage() {
 
         <section className="space-y-3">
           <h2 className="text-2xl font-semibold text-coastal-navy">5. Contact Us</h2>
-          <p className="text-[#505050]">
+          <p className="text-coastal-grey">
             If you have questions about this policy or how we handle your data, reach out to our team at
             <a href="mailto:info@coninecoastal.com" className="text-coastal-blue hover:underline ml-1">
               info@coninecoastal.com
@@ -74,7 +80,7 @@ export default function PrivacyPolicyPage() {
           </p>
         </section>
 
-        <footer className="text-sm text-[#909090] text-center">
+        <footer className="text-sm text-gray-400 text-center">
           <p>
             We may update this Privacy Policy periodically to reflect changes in our practices or regulatory requirements.
             Significant updates will be posted on this page with a revised effective date.

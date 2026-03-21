@@ -12,6 +12,12 @@ export const metadata: Metadata = {
     "Current market statistics, trends, and analysis for Northeast Florida real estate. Monthly reports and neighborhood insights from a local expert.",
   keywords:
     "First Coast market reports, Northeast Florida real estate trends, market statistics, property values, Amelia Island, St. Augustine",
+  openGraph: {
+    title: "First Coast Market Updates - Conine Coastal | Real Estate Market Intelligence",
+    description:
+      "Current market statistics, trends, and analysis for Northeast Florida real estate. Monthly reports and neighborhood insights from a local expert.",
+  },
+  alternates: { canonical: "/resources/market-updates" },
 }
 
 export default function MarketUpdatesPage() {
@@ -23,9 +29,11 @@ export default function MarketUpdatesPage() {
           src="https://images.unsplash.com/photo-1717957566742-fd92d32e01d6?auto=format&fit=crop&w=2000&q=80"
           alt="Financial analyst reviewing real estate market charts"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">First Coast Market Intelligence</h1>
@@ -566,9 +574,12 @@ export default function MarketUpdatesPage() {
               size="lg"
               variant="outline"
               className="bg-transparent border-white text-white hover:bg-white hover:text-coastal-navy"
+              asChild
             >
-              <Download className="mr-2 h-5 w-5" />
-              Subscribe to Reports
+              <Link href="/contact?service=newsletter">
+                <Download className="mr-2 h-5 w-5" />
+                Subscribe to Reports
+              </Link>
             </Button>
           </div>
         </div>

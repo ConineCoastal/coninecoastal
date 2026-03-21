@@ -22,12 +22,18 @@ import {
   Shield,
   Calculator,
 } from "lucide-react"
+import Image from "next/image"
 import Breadcrumb from "@/components/breadcrumb"
 
 export const metadata: Metadata = {
-  title: "Fix & Flip Investment Services - Northeast Florida | Conine Coastal",
+  title: "Fix & Flip Investment Services - Northeast Florida",
   description:
     "Expert fix & flip services with 20 years construction experience. Maximize your flip profits with integrated real estate expertise and professional construction management in Northeast Florida.",
+  openGraph: {
+    title: "Fix & Flip Investment Services - Northeast Florida",
+    description: "Expert fix & flip services with 20 years construction experience. Maximize your flip profits with integrated real estate expertise and professional construction management in Northeast Florida.",
+  },
+  alternates: { canonical: "/investor-services/fix-and-flip" },
 }
 
 export default function FixAndFlipPage() {
@@ -36,12 +42,15 @@ export default function FixAndFlipPage() {
       <Breadcrumb />
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/before-after-split-image-successful-house-flip-tra.png')`,
-          }}
+        <Image
+          src="/before-after-split-image-successful-house-flip-tra.png"
+          alt="Before and after comparison of a successful house flip"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-shadow-lg">
             Expert Fix & Flip Services with 20 Years Construction Experience

@@ -68,8 +68,13 @@ const sitemapLinks = [
 ]
 
 export const metadata: Metadata = {
-  title: "Sitemap | Conine Coastal",
+  title: "Sitemap",
   description: "Quickly navigate to any Conine Coastal page, including real estate services, renovation offerings, and resources.",
+  openGraph: {
+    title: "Sitemap",
+    description: "Quickly navigate to any Conine Coastal page, including real estate services, renovation offerings, and resources.",
+  },
+  alternates: { canonical: "/sitemap" },
 }
 
 export default function SitemapPage() {
@@ -102,7 +107,7 @@ export default function SitemapPage() {
           ))}
         </div>
 
-        <footer className="text-center text-sm text-[#909090]">
+        <footer className="text-center text-sm text-gray-400">
           <p>
             Need help finding something specific? Email
             <a href="mailto:info@coninecoastal.com" className="text-coastal-blue hover:underline ml-1">

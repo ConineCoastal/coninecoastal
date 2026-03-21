@@ -1,9 +1,10 @@
-"use client"
 import Link from "next/link"
 import Image from "next/image"
+import FadeIn from "@/components/fade-in"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import {
   CheckCircle,
   Phone,
@@ -17,6 +18,17 @@ import {
   Star,
   ArrowRight,
 } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Home Renovation Services",
+  description: "Professional home renovation services in Northeast Florida. Kitchen remodels, bathroom renovations, additions, and whole-home transformations backed by 20+ years of construction expertise.",
+  alternates: { canonical: "/renovations" },
+  openGraph: {
+    title: "Home Renovation Services",
+    description: "Professional home renovation services in Northeast Florida. Kitchen remodels, bathroom renovations, additions, and whole-home transformations backed by 20+ years of construction expertise.",
+  },
+}
 
 export default function ConstructionServicesPage() {
   const services = [
@@ -134,11 +146,13 @@ export default function ConstructionServicesPage() {
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1618832515490-e181c4794a45?auto=format&fit=crop&w=2000&q=80"
-          alt="Construction team transforming a home interior"
+          alt="Professional home renovation project in Northeast Florida by Conine Coastal"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <Badge className="mb-6 bg-coastal-orange text-white px-6 py-3 text-lg">Construction Excellence</Badge>
           <h1 className="text-5xl lg:text-7xl font-bold text-coastal-navy mb-8 font-serif">
@@ -171,14 +185,16 @@ export default function ConstructionServicesPage() {
       {/* The Construction Advantage */}
       <section className="py-16 bg-gradient-to-r from-coastal-orange/5 to-coastal-blue/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-coastal-navy mb-6 font-serif">
-              The Conine Coastal Construction Advantage
-            </h2>
-            <p className="text-2xl text-coastal-grey max-w-4xl mx-auto leading-relaxed">
-              What happens when you combine master construction skills with deep real estate market knowledge?
-            </p>
-          </div>
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-coastal-navy mb-6 font-serif">
+                The Conine Coastal Construction Advantage
+              </h2>
+              <p className="text-2xl text-coastal-grey max-w-4xl mx-auto leading-relaxed">
+                What happens when you combine master construction skills with deep real estate market knowledge?
+              </p>
+            </div>
+          </FadeIn>
 
           <div className="grid lg:grid-cols-3 gap-12 mb-16">
             <Card className="text-center border-2 border-coastal-orange/20 hover:border-coastal-orange transition-all duration-300 hover:shadow-xl">
@@ -232,52 +248,55 @@ export default function ConstructionServicesPage() {
       {/* Our Services */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-coastal-navy mb-6 font-serif">
-              Complete Construction Services
-            </h2>
-            <p className="text-xl text-coastal-grey max-w-3xl mx-auto">
-              From kitchen remodels to whole-home transformations, we provide expert construction services that enhance
-              your lifestyle and maximize your investment.
-            </p>
-          </div>
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-coastal-navy mb-6 font-serif">
+                Complete Construction Services
+              </h2>
+              <p className="text-xl text-coastal-grey max-w-3xl mx-auto">
+                From kitchen remodels to whole-home transformations, we provide expert construction services that enhance
+                your lifestyle and maximize your investment.
+              </p>
+            </div>
+          </FadeIn>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card
-                key={index}
-                className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 ${service.color}`}
-              >
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex-shrink-0">{service.icon}</div>
-                    <Badge variant="outline" className="text-xs font-semibold">
-                      ROI: {service.roi}
-                    </Badge>
-                  </div>
+              <FadeIn key={index} delay={index * 150}>
+                <Card
+                  className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 ${service.color}`}
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex-shrink-0">{service.icon}</div>
+                      <Badge variant="outline" className="text-xs font-semibold">
+                        ROI: {service.roi}
+                      </Badge>
+                    </div>
 
-                  <h3 className="text-xl font-bold text-coastal-navy mb-3 font-serif">
-                    {service.title}
-                  </h3>
-                  <p className="text-coastal-grey leading-relaxed mb-6 text-sm">{service.description}</p>
+                    <h3 className="text-xl font-bold text-coastal-navy mb-3 font-serif">
+                      {service.title}
+                    </h3>
+                    <p className="text-coastal-grey leading-relaxed mb-6 text-sm">{service.description}</p>
 
-                  <div className="space-y-2 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
-                        <span className="text-coastal-grey text-sm">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
+                    <div className="space-y-2 mb-6">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center">
+                          <CheckCircle className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
+                          <span className="text-coastal-grey text-sm">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
 
-                  <Button asChild className="w-full bg-coastal-navy hover:bg-coastal-navy/90 text-white py-2 text-sm">
-                    <Link href={service.href} className="flex items-center justify-center">
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+                    <Button asChild className="w-full bg-coastal-navy hover:bg-coastal-navy/90 text-white py-2 text-sm">
+                      <Link href={service.href} className="flex items-center justify-center">
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -286,58 +305,64 @@ export default function ConstructionServicesPage() {
       {/* Before & After Gallery */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-coastal-navy mb-6 font-serif">
-              Transformation Gallery
-            </h2>
-            <p className="text-xl text-coastal-grey max-w-3xl mx-auto">
-              See how our construction projects have transformed homes throughout Northeast Florida, creating stunning
-              results and lasting value.
-            </p>
-          </div>
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-coastal-navy mb-6 font-serif">
+                Transformation Gallery
+              </h2>
+              <p className="text-xl text-coastal-grey max-w-3xl mx-auto">
+                See how our construction projects have transformed homes throughout Northeast Florida, creating stunning
+                results and lasting value.
+              </p>
+            </div>
+          </FadeIn>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {beforeAfter.map((project, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="grid grid-cols-2">
-                  <div className="relative">
-                    <Image
-                      src={project.before}
-                      alt="Before renovation"
-                      width={400}
-                      height={300}
-                      className="w-full h-48 object-cover"
-                    />
-                    <Badge className="absolute top-2 left-2 bg-gray-600 text-white text-xs">Before</Badge>
-                  </div>
-                  <div className="relative">
-                    <Image
-                      src={project.after}
-                      alt="After renovation"
-                      width={400}
-                      height={300}
-                      className="w-full h-48 object-cover"
-                    />
-                    <Badge className="absolute top-2 right-2 bg-coastal-blue text-white text-xs">After</Badge>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-bold text-coastal-navy mb-3 font-serif">
-                    {project.title}
-                  </h3>
-                  <p className="text-coastal-grey mb-4 text-sm leading-relaxed">{project.description}</p>
-                  <div className="grid grid-cols-2 gap-4 text-center">
-                    <div className="bg-gray-50 p-3 rounded">
-                      <div className="text-lg font-bold text-coastal-orange">{project.investment}</div>
-                      <div className="text-xs text-gray-600">Investment</div>
+              <FadeIn key={index} delay={index * 150}>
+                <Card className="overflow-hidden hover:shadow-xl transition-shadow">
+                  <div className="grid grid-cols-2">
+                    <div className="relative">
+                      <Image
+                        src={project.before}
+                        alt={`${project.title} before renovation`}
+                        width={400}
+                        height={300}
+                        sizes="(max-width: 768px) 50vw, 17vw"
+                        className="w-full h-48 object-cover"
+                      />
+                      <Badge className="absolute top-2 left-2 bg-gray-600 text-white text-xs">Before</Badge>
                     </div>
-                    <div className="bg-gray-50 p-3 rounded">
-                      <div className="text-lg font-bold text-coastal-blue">{project.valueAdded}</div>
-                      <div className="text-xs text-gray-600">Value Added</div>
+                    <div className="relative">
+                      <Image
+                        src={project.after}
+                        alt={`${project.title} after renovation`}
+                        width={400}
+                        height={300}
+                        sizes="(max-width: 768px) 50vw, 17vw"
+                        className="w-full h-48 object-cover"
+                      />
+                      <Badge className="absolute top-2 right-2 bg-coastal-blue text-white text-xs">After</Badge>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-bold text-coastal-navy mb-3 font-serif">
+                      {project.title}
+                    </h3>
+                    <p className="text-coastal-grey mb-4 text-sm leading-relaxed">{project.description}</p>
+                    <div className="grid grid-cols-2 gap-4 text-center">
+                      <div className="bg-gray-50 p-3 rounded">
+                        <div className="text-lg font-bold text-coastal-orange">{project.investment}</div>
+                        <div className="text-xs text-gray-600">Investment</div>
+                      </div>
+                      <div className="bg-gray-50 p-3 rounded">
+                        <div className="text-lg font-bold text-coastal-blue">{project.valueAdded}</div>
+                        <div className="text-xs text-gray-600">Value Added</div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -346,31 +371,35 @@ export default function ConstructionServicesPage() {
       {/* Client Testimonials */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-coastal-navy mb-6 font-serif">
-              What Our Clients Say
-            </h2>
-            <p className="text-xl text-coastal-grey max-w-3xl mx-auto">
-              Real results from real clients who experienced the Conine Coastal construction difference
-            </p>
-          </div>
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-coastal-navy mb-6 font-serif">
+                What Our Clients Say
+              </h2>
+              <p className="text-xl text-coastal-grey max-w-3xl mx-auto">
+                Real results from real clients who experienced the Conine Coastal construction difference
+              </p>
+            </div>
+          </FadeIn>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-coastal-yellow fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-coastal-grey mb-6 italic leading-relaxed">"{testimonial.text}"</p>
-                  <div>
-                    <p className="font-semibold text-coastal-navy">{testimonial.name}</p>
-                    <p className="text-sm text-coastal-grey">{testimonial.location}</p>
-                  </div>
-                </CardContent>
-              </Card>
+              <FadeIn key={index} delay={index * 150}>
+                <Card className="hover:shadow-lg transition-shadow">
+                  <CardContent className="p-8">
+                    <div className="flex mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="h-5 w-5 text-coastal-yellow fill-current" />
+                      ))}
+                    </div>
+                    <p className="text-coastal-grey mb-6 italic leading-relaxed">"{testimonial.text}"</p>
+                    <div>
+                      <p className="font-semibold text-coastal-navy">{testimonial.name}</p>
+                      <p className="text-sm text-coastal-grey">{testimonial.location}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -399,6 +428,134 @@ export default function ConstructionServicesPage() {
               Emergency Support
             </Link>
           </Button>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <h2 className="text-4xl font-bold text-coastal-navy mb-4 text-center font-serif">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-coastal-grey text-center mb-12">
+              Common questions about our renovation services
+            </p>
+          </FadeIn>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger className="text-left text-lg font-semibold text-coastal-navy">
+                How long does a typical kitchen renovation take?
+              </AccordionTrigger>
+              <AccordionContent className="text-coastal-grey leading-relaxed">
+                A typical kitchen renovation takes 6-10 weeks depending on the scope. Simple cosmetic updates like cabinet refacing and new countertops can be completed in 3-4 weeks, while a full gut renovation with layout changes takes 8-12 weeks. We provide a detailed timeline during your consultation so you know exactly what to expect.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger className="text-left text-lg font-semibold text-coastal-navy">
+                Do I need to move out during a renovation?
+              </AccordionTrigger>
+              <AccordionContent className="text-coastal-grey leading-relaxed">
+                For most projects, you can stay in your home. We carefully plan work phases to minimize disruption. For whole-home renovations, we may recommend temporary relocation for 2-4 weeks during the most intensive phases. We'll discuss this during planning and help you prepare.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger className="text-left text-lg font-semibold text-coastal-navy">
+                How do you handle permits and inspections?
+              </AccordionTrigger>
+              <AccordionContent className="text-coastal-grey leading-relaxed">
+                We handle all permitting and inspections as part of our service. With 20+ years of construction experience in Northeast Florida, we know the local building codes and requirements. Permit costs are included in your project estimate, and we coordinate all required inspections.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger className="text-left text-lg font-semibold text-coastal-navy">
+                What's the difference between a renovation and a remodel?
+              </AccordionTrigger>
+              <AccordionContent className="text-coastal-grey leading-relaxed">
+                A renovation updates and restores existing spaces without changing the layout — think new finishes, fixtures, and surfaces. A remodel changes the structure or layout of a space, such as removing walls or reconfiguring a floor plan. We handle both and will recommend the best approach for your goals and budget.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-5">
+              <AccordionTrigger className="text-left text-lg font-semibold text-coastal-navy">
+                Do you provide warranties on your work?
+              </AccordionTrigger>
+              <AccordionContent className="text-coastal-grey leading-relaxed">
+                Yes. All our renovation work comes with a workmanship warranty, and manufacturer warranties apply to all materials and fixtures we install. We stand behind the quality of our work and are always available if any issues arise after project completion.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How long does a typical kitchen renovation take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A typical kitchen renovation takes 6-10 weeks depending on the scope. Simple cosmetic updates like cabinet refacing and new countertops can be completed in 3-4 weeks, while a full gut renovation with layout changes takes 8-12 weeks. We provide a detailed timeline during your consultation so you know exactly what to expect."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to move out during a renovation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For most projects, you can stay in your home. We carefully plan work phases to minimize disruption. For whole-home renovations, we may recommend temporary relocation for 2-4 weeks during the most intensive phases. We'll discuss this during planning and help you prepare."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do you handle permits and inspections?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We handle all permitting and inspections as part of our service. With 20+ years of construction experience in Northeast Florida, we know the local building codes and requirements. Permit costs are included in your project estimate, and we coordinate all required inspections."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What's the difference between a renovation and a remodel?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A renovation updates and restores existing spaces without changing the layout — think new finishes, fixtures, and surfaces. A remodel changes the structure or layout of a space, such as removing walls or reconfiguring a floor plan. We handle both and will recommend the best approach for your goals and budget."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you provide warranties on your work?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. All our renovation work comes with a workmanship warranty, and manufacturer warranties apply to all materials and fixtures we install. We stand behind the quality of our work and are always available if any issues arise after project completion."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
+      {/* Related Services */}
+      <section className="py-16 bg-gradient-to-r from-coastal-navy/5 to-coastal-blue/5">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-coastal-navy mb-8 font-serif">Related Services</h2>
+          <div className="grid sm:grid-cols-3 gap-6">
+            <Link href="/real-estate/buyers" className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+              <h3 className="text-lg font-semibold text-coastal-navy mb-2 font-serif">Buyer Services</h3>
+              <p className="text-sm text-coastal-grey">Find your next home with a construction expert's eye</p>
+            </Link>
+            <Link href="/investor-services" className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+              <h3 className="text-lg font-semibold text-coastal-navy mb-2 font-serif">Investor Services</h3>
+              <p className="text-sm text-coastal-grey">Maximize ROI on investment properties</p>
+            </Link>
+            <Link href="/real-estate/sellers" className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+              <h3 className="text-lg font-semibold text-coastal-navy mb-2 font-serif">Seller Services</h3>
+              <p className="text-sm text-coastal-grey">Strategic improvements to maximize sale price</p>
+            </Link>
+          </div>
         </div>
       </section>
 

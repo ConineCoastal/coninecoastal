@@ -1,4 +1,3 @@
-"use client"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -6,6 +5,17 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Phone, Users, Award, AlertTriangle, Clock, Home } from "lucide-react"
 import Breadcrumb from "@/components/breadcrumb"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Emergency Repairs",
+  description: "24/7 emergency home repair services in Northeast Florida. Storm damage, water damage, and urgent structural repairs handled by experienced construction professionals.",
+  alternates: { canonical: "/renovations/emergency" },
+  openGraph: {
+    title: "Emergency Repairs",
+    description: "24/7 emergency home repair services in Northeast Florida. Storm damage, water damage, and urgent structural repairs handled by experienced construction professionals.",
+  },
+}
 
 export default function EmergencyRepairs() {
   return (
@@ -17,9 +27,11 @@ export default function EmergencyRepairs() {
           src="https://images.unsplash.com/photo-1737739973200-61c2ae4d1272?auto=format&fit=crop&w=2000&q=80"
           alt="Technician responding to an emergency home repair"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-red-600 hover:bg-red-700 text-white">24/7 Emergency Repairs</Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">

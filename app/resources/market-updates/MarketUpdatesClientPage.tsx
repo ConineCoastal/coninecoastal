@@ -166,9 +166,11 @@ export default function MarketUpdatesClientPage() {
           src="https://images.unsplash.com/photo-1717957566742-fd92d32e01d6?auto=format&fit=crop&w=2000&q=80"
           alt="Detailed charts showing real estate performance"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className={`${font.variable} font-serif text-4xl md:text-6xl font-bold text-white mb-6`}>
             First Coast Market Intelligence

@@ -11,6 +11,12 @@ export const metadata: Metadata = {
     "Plan successful home renovations with expert guidance from a licensed contractor. Budget planning, contractor selection, and ROI strategies for First Coast properties.",
   keywords:
     "renovation planning, construction expertise, home improvement ROI, contractor selection, First Coast renovations",
+  openGraph: {
+    title: "Smart Renovation Planning Guide - Conine Coastal | Construction Expertise",
+    description:
+      "Plan successful home renovations with expert guidance from a licensed contractor. Budget planning, contractor selection, and ROI strategies for First Coast properties.",
+  },
+  alternates: { canonical: "/resources/renovation-planning" },
 }
 
 export default function RenovationPlanningPage() {
@@ -22,9 +28,11 @@ export default function RenovationPlanningPage() {
           src="https://images.unsplash.com/photo-1754780960162-839cda44d736?auto=format&fit=crop&w=2000&q=80"
           alt="Architect working through renovation plans and blueprints"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Smart Renovation Planning</h1>

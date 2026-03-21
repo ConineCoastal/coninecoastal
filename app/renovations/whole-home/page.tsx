@@ -1,11 +1,21 @@
-"use client"
 import Link from "next/link"
 import Image from "next/image"
+import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Phone, Mail, Users, Award, Home, Zap, Shield, TrendingUp } from "lucide-react"
 import Breadcrumb from "@/components/breadcrumb"
+
+export const metadata: Metadata = {
+  title: "Whole Home Renovation",
+  description: "Complete whole-home renovation services in Northeast Florida. Transform your entire home with expert design, quality construction, and seamless project management.",
+  alternates: { canonical: "/renovations/whole-home" },
+  openGraph: {
+    title: "Whole Home Renovation",
+    description: "Complete whole-home renovation services in Northeast Florida. Transform your entire home with expert design, quality construction, and seamless project management.",
+  },
+}
 
 export default function WholeHomeRenovations() {
   return (
@@ -17,9 +27,11 @@ export default function WholeHomeRenovations() {
           src="https://images.unsplash.com/photo-1632214533040-eb166a3b172d?auto=format&fit=crop&w=2000&q=80"
           alt="Whole home renovation transformation"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-20 text-center text-white max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-amber-600 hover:bg-amber-700 text-white">Complete Home Transformation</Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">

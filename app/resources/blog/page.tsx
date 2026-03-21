@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   description:
     "Expert insights on First Coast real estate market trends, home renovation tips, and construction industry news from Northeast Florida.",
   keywords: "First Coast real estate blog, construction news, home renovation tips, market trends, Northeast Florida",
+  openGraph: {
+    title: "Blog & News - Conine Coastal | First Coast Real Estate & Construction Insights",
+    description:
+      "Expert insights on First Coast real estate market trends, home renovation tips, and construction industry news from Northeast Florida.",
+  },
+  alternates: { canonical: "/resources/blog" },
 }
 
 export default function BlogPage() {
@@ -22,9 +28,11 @@ export default function BlogPage() {
           src="https://images.unsplash.com/photo-1583777456855-d44bfb9066cf?auto=format&fit=crop&w=2000&q=80"
           alt="Real estate professional writing insights on a laptop"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Latest Insights & News</h1>
@@ -402,19 +410,10 @@ export default function BlogPage() {
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Get monthly market updates, renovation tips, and exclusive insights delivered to your inbox.
           </p>
-          <div className="max-w-md mx-auto">
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 w-full px-4 py-3 rounded-lg text-coastal-navy placeholder-gray-400"
-              />
-              <Button size="lg" variant="secondary" className="w-full sm:w-auto">
-                Subscribe
-              </Button>
-            </div>
-            <p className="text-sm mt-4 opacity-80">No spam, unsubscribe anytime. Your email stays private.</p>
-          </div>
+          <Button asChild size="lg" className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3">
+            <Link href="/contact?service=newsletter">Subscribe to Newsletter</Link>
+          </Button>
+          <p className="text-sm mt-4 opacity-80">No spam, unsubscribe anytime. Your email stays private.</p>
         </div>
       </section>
     </div>
