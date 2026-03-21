@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Home, ArrowLeft, Search, Phone } from "lucide-react"
+import { Home, Phone } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
