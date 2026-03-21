@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Suspense } from "react"
 import ScheduleClientPage from "./ScheduleClientPage"
 
 export const metadata: Metadata = {
@@ -14,5 +15,9 @@ export const metadata: Metadata = {
 }
 
 export default function SchedulePage() {
-  return <ScheduleClientPage />
+  return (
+    <Suspense>
+      <ScheduleClientPage />
+    </Suspense>
+  )
 }

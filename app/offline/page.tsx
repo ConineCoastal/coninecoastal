@@ -1,9 +1,6 @@
-import type { Metadata } from "next"
-import { WifiOff, Phone } from "lucide-react"
+"use client"
 
-export const metadata: Metadata = {
-  title: "Offline",
-}
+import { WifiOff, Phone } from "lucide-react"
 
 export default function OfflinePage() {
   return (

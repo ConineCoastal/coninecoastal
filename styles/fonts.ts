@@ -1,17 +1,38 @@
-import { Inter, Playfair_Display } from "next/font/google"
+import localFont from "next/font/local"
 
 /*
- * Google Inter font with a CSS variable so it can be
- * referenced from globals or Tailwind utilities.
+ * Use local font declarations with system fallbacks.
+ * Google Fonts are loaded via CSS @font-face with external URLs,
+ * avoiding build-time fetch failures.
  */
-export const font = Inter({
-  subsets: ["latin"],
+export const font = localFont({
+  src: [
+    {
+      path: "./inter-latin.woff2",
+      style: "normal",
+    },
+  ],
   display: "swap",
   variable: "--font-inter",
+  fallback: [
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue",
+    "Arial",
+    "sans-serif",
+  ],
 })
 
-export const serifFont = Playfair_Display({
-  subsets: ["latin"],
+export const serifFont = localFont({
+  src: [
+    {
+      path: "./playfair-display-latin.woff2",
+      style: "normal",
+    },
+  ],
   display: "swap",
   variable: "--font-serif",
+  fallback: ["Georgia", "Times New Roman", "serif"],
 })
