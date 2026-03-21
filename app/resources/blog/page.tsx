@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, User, ArrowRight, TrendingUp, Home, Wrench } from "lucide-react"
+import { blogPosts } from "@/lib/blog-data"
 
 export const metadata: Metadata = {
   title: "Blog & News - Conine Coastal | First Coast Real Estate & Construction Insights",
@@ -19,7 +20,27 @@ export const metadata: Metadata = {
   alternates: { canonical: "/resources/blog" },
 }
 
+function categoryColor(category: string): string {
+  switch (category) {
+    case "Market Update":
+      return "bg-coastal-blue text-white"
+    case "Renovation":
+      return "bg-coastal-orange text-white"
+    case "Community":
+      return "bg-coastal-navy text-white"
+    case "Buying Tips":
+      return "bg-green-600 text-white"
+    case "Investment":
+      return "bg-coastal-yellow text-coastal-navy"
+    default:
+      return "bg-coastal-grey text-white"
+  }
+}
+
 export default function BlogPage() {
+  const featuredPost = blogPosts[0]
+  const recentPosts = blogPosts.slice(1)
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -62,53 +83,54 @@ export default function BlogPage() {
           <div className="mb-12">
             <Badge className="mb-4 bg-coastal-orange text-white">Featured Article</Badge>
             <Card className="overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="grid lg:grid-cols-2 gap-0">
-                <div className="bg-gradient-to-br from-coastal-navy to-coastal-blue p-8 lg:p-12 text-white">
-                  <div className="flex items-center space-x-4 mb-6">
-                    <div className="flex items-center space-x-2 text-sm">
-                      <Calendar className="h-4 w-4" />
-                      <span>December 15, 2024</span>
+              <Link href={`/resources/blog/${featuredPost.slug}`} className="block">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  <div className="bg-gradient-to-br from-coastal-navy to-coastal-blue p-8 lg:p-12 text-white">
+                    <div className="flex items-center space-x-4 mb-6">
+                      <div className="flex items-center space-x-2 text-sm">
+                        <Calendar className="h-4 w-4" />
+                        <span>{featuredPost.date}</span>
+                      </div>
+                      <div className="flex items-center space-x-2 text-sm">
+                        <User className="h-4 w-4" />
+                        <span>{featuredPost.author}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-2 text-sm">
-                      <User className="h-4 w-4" />
-                      <span>David Conine</span>
+                    <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
+                      {featuredPost.title}
+                    </h2>
+                    <p className="text-lg mb-8 opacity-90">
+                      {featuredPost.excerpt}
+                    </p>
+                    <Button variant="secondary" size="lg">
+                      Read Full Article
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </div>
+                  <div className="p-8 lg:p-12">
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="font-serif font-semibold text-coastal-navy mb-3">Key Market Indicators</h3>
+                        <ul className="space-y-2 text-coastal-grey">
+                          <li>• Inventory levels up 15% from last year</li>
+                          <li>• Average days on market: 28 days</li>
+                          <li>• Price appreciation slowing to sustainable levels</li>
+                          <li>• Construction costs stabilizing</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h3 className="font-serif font-semibold text-coastal-navy mb-3">What This Means</h3>
+                        <ul className="space-y-2 text-coastal-grey">
+                          <li>• More balanced market conditions</li>
+                          <li>• Better opportunities for buyers</li>
+                          <li>• Strategic timing becomes crucial for sellers</li>
+                          <li>• Quality and condition matter more than ever</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-                    First Coast Market Outlook: What 2025 Holds for Buyers and Sellers
-                  </h2>
-                  <p className="text-lg mb-8 opacity-90">
-                    After analyzing Q4 2024 data and current market indicators, here's what I'm seeing for the First
-                    Coast real estate market in the coming year, plus strategic advice for both buyers and sellers.
-                  </p>
-                  <Button variant="secondary" size="lg">
-                    Read Full Article
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
                 </div>
-                <div className="p-8 lg:p-12">
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="font-serif font-semibold text-coastal-navy mb-3">Key Market Indicators</h3>
-                      <ul className="space-y-2 text-coastal-grey">
-                        <li>• Inventory levels up 15% from last year</li>
-                        <li>• Average days on market: 28 days</li>
-                        <li>• Price appreciation slowing to sustainable levels</li>
-                        <li>• Construction costs stabilizing</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="font-serif font-semibold text-coastal-navy mb-3">What This Means</h3>
-                      <ul className="space-y-2 text-coastal-grey">
-                        <li>• More balanced market conditions</li>
-                        <li>• Better opportunities for buyers</li>
-                        <li>• Strategic timing becomes crucial for sellers</li>
-                        <li>• Quality and condition matter more than ever</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </Link>
             </Card>
           </div>
         </div>
@@ -205,200 +227,51 @@ export default function BlogPage() {
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-coastal-navy mb-4">Recent Posts</h2>
               <p className="text-lg text-coastal-grey">Stay up-to-date with the latest insights and analysis</p>
             </div>
-            <Button variant="outline">View All Posts</Button>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Post 1 */}
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center space-x-2 mb-3">
-                  <Badge className="bg-coastal-blue text-white">Market Update</Badge>
-                  <span className="text-sm text-coastal-grey">Dec 10, 2024</span>
-                </div>
-                <CardTitle className="text-coastal-navy font-serif text-lg">
-                  5 Kitchen Updates That Actually Add Value
-                </CardTitle>
-                <CardDescription>
-                  Not all kitchen improvements deliver the same ROI. Here's what really matters to First Coast buyers.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-coastal-grey mb-4">
-                  After 20 years in construction and countless kitchen renovations, I've learned which updates truly add
-                  value and which ones are just expensive...
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-sm text-coastal-grey">
-                    <User className="h-4 w-4" />
-                    <span>David Conine</span>
+            {recentPosts.map((post) => (
+              <Card key={post.slug} className="hover:shadow-lg transition-shadow">
+                <Link href={`/resources/blog/${post.slug}`} className="block h-full">
+                  <div className="relative h-48">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover rounded-t-lg"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <Badge className={`absolute top-3 left-3 ${categoryColor(post.category)}`}>
+                      {post.category}
+                    </Badge>
                   </div>
-                  <Button variant="ghost" size="sm">
-                    Read More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Post 2 */}
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center space-x-2 mb-3">
-                  <Badge className="bg-coastal-orange text-white">Renovation</Badge>
-                  <span className="text-sm text-coastal-grey">Dec 8, 2024</span>
-                </div>
-                <CardTitle className="text-coastal-navy font-serif text-lg">Best Time to Buy on Amelia Island</CardTitle>
-                <CardDescription>
-                  Understanding seasonal patterns and market cycles can save you thousands on your Amelia Island
-                  purchase.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-coastal-grey mb-4">
-                  Amelia Island's luxury market has unique seasonal patterns that smart buyers can leverage. Here's what
-                  I've observed over the past decade...
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-sm text-coastal-grey">
-                    <User className="h-4 w-4" />
-                    <span>David Conine</span>
-                  </div>
-                  <Button variant="ghost" size="sm">
-                    Read More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Post 3 */}
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center space-x-2 mb-3">
-                  <Badge className="bg-coastal-navy text-white">Community</Badge>
-                  <span className="text-sm text-coastal-grey">Dec 5, 2024</span>
-                </div>
-                <CardTitle className="text-coastal-navy font-serif text-lg">
-                  Hurricane Preparation for Coastal Homes
-                </CardTitle>
-                <CardDescription>
-                  Essential preparations and improvements that protect your First Coast investment.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-coastal-grey mb-4">
-                  Living on the First Coast means preparing for hurricane season. Here are the most effective ways to
-                  protect your home and family...
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-sm text-coastal-grey">
-                    <User className="h-4 w-4" />
-                    <span>David Conine</span>
-                  </div>
-                  <Button variant="ghost" size="sm">
-                    Read More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Post 4 */}
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center space-x-2 mb-3">
-                  <Badge className="bg-coastal-blue text-white">Market Update</Badge>
-                  <span className="text-sm text-coastal-grey">Dec 3, 2024</span>
-                </div>
-                <CardTitle className="text-coastal-navy font-serif text-lg">
-                  St. Augustine Historic District: Investment Opportunities
-                </CardTitle>
-                <CardDescription>
-                  Navigating the unique challenges and opportunities of historic property ownership.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-coastal-grey mb-4">
-                  The St. Augustine Historic District offers unique investment opportunities, but requires specialized
-                  knowledge of preservation requirements...
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-sm text-coastal-grey">
-                    <User className="h-4 w-4" />
-                    <span>David Conine</span>
-                  </div>
-                  <Button variant="ghost" size="sm">
-                    Read More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Post 5 */}
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center space-x-2 mb-3">
-                  <Badge className="bg-coastal-orange text-white">Renovation</Badge>
-                  <span className="text-sm text-coastal-grey">Nov 30, 2024</span>
-                </div>
-                <CardTitle className="text-coastal-navy font-serif text-lg">
-                  Choosing the Right Contractor: Red Flags to Avoid
-                </CardTitle>
-                <CardDescription>
-                  Protect yourself from costly mistakes with these contractor selection guidelines.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-coastal-grey mb-4">
-                  As both a contractor and realtor, I've seen the aftermath of poor contractor choices. Here's how to
-                  avoid the most common pitfalls...
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-sm text-coastal-grey">
-                    <User className="h-4 w-4" />
-                    <span>David Conine</span>
-                  </div>
-                  <Button variant="ghost" size="sm">
-                    Read More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Post 6 */}
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center space-x-2 mb-3">
-                  <Badge className="bg-coastal-navy text-white">Community</Badge>
-                  <span className="text-sm text-coastal-grey">Nov 28, 2024</span>
-                </div>
-                <CardTitle className="text-coastal-navy font-serif text-lg">
-                  Ponte Vedra Beach: Market Analysis & Trends
-                </CardTitle>
-                <CardDescription>
-                  Deep dive into one of the First Coast's most desirable luxury markets.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-coastal-grey mb-4">
-                  Ponte Vedra Beach continues to attract discerning buyers seeking luxury coastal living. Here's what's
-                  driving the market...
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-sm text-coastal-grey">
-                    <User className="h-4 w-4" />
-                    <span>David Conine</span>
-                  </div>
-                  <Button variant="ghost" size="sm">
-                    Read More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                  <CardHeader>
+                    <div className="flex items-center space-x-2 mb-1">
+                      <span className="text-sm text-coastal-grey">{post.date}</span>
+                      <span className="text-sm text-coastal-grey">· {post.readTime}</span>
+                    </div>
+                    <CardTitle className="text-coastal-navy font-serif text-lg">
+                      {post.title}
+                    </CardTitle>
+                    <CardDescription>
+                      {post.excerpt}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-2 text-sm text-coastal-grey">
+                        <User className="h-4 w-4" />
+                        <span>{post.author}</span>
+                      </div>
+                      <span className="text-coastal-blue text-sm font-medium flex items-center">
+                        Read More
+                        <ArrowRight className="ml-1 h-4 w-4" />
+                      </span>
+                    </div>
+                  </CardContent>
+                </Link>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

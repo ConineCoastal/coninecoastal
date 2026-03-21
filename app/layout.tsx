@@ -4,6 +4,9 @@ import "./globals.css"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import BackToTop from "@/components/back-to-top"
+import Analytics from "@/components/analytics"
+import { ThemeProvider } from "@/components/theme-provider"
+import PWARegister from "@/components/pwa-register"
 import { font, serifFont } from "@/styles/fonts"
 
 export const metadata: Metadata = {
@@ -118,7 +121,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
@@ -135,19 +138,23 @@ export default function RootLayout({
         />
       </head>
       <body className={`${font.className} ${serifFont.variable}`}>
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-coastal-navy focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm"
-        >
-          Skip to main content
-        </a>
-        <Navigation />
-        <div className="flex min-h-screen flex-col">
-          <div className="h-16 sm:h-20" aria-hidden="true" />
-          <main id="main-content" className="flex-1">{children}</main>
-          <Footer />
-        </div>
-        <BackToTop />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-coastal-navy focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm"
+          >
+            Skip to main content
+          </a>
+          <Navigation />
+          <div className="flex min-h-screen flex-col">
+            <div className="h-16 sm:h-20" aria-hidden="true" />
+            <main id="main-content" className="flex-1">{children}</main>
+            <Footer />
+          </div>
+          <BackToTop />
+          <Analytics />
+          <PWARegister />
+        </ThemeProvider>
       </body>
     </html>
   )

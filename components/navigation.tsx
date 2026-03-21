@@ -3,7 +3,10 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Phone, Menu, X, ChevronDown } from "lucide-react"
+import { Phone, Menu, X, ChevronDown, Calendar } from "lucide-react"
+import { trackEvent } from "@/lib/track-event"
+import SiteSearch from "./site-search"
+import ThemeToggle from "./theme-toggle"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -36,7 +39,7 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="fixed top-0 w-full bg-white shadow-lg z-50">
+    <nav className="fixed top-0 w-full bg-white dark:bg-gray-950 shadow-lg z-50">
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-coastal-navy via-coastal-blue to-coastal-navy opacity-20"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -259,6 +262,14 @@ export default function Navigation() {
                   >
                     Exterior Renovation
                   </Link>
+                  <div className="border-t border-gray-100 my-1" />
+                  <Link
+                    href="/renovations/portfolio"
+                    onClick={handleSubmenuItemClick}
+                    className="block px-4 py-3 text-coastal-orange hover:text-coastal-orange/80 hover:bg-orange-50 text-sm font-medium transition-colors touch-manipulation"
+                  >
+                    Project Portfolio
+                  </Link>
                 </div>
               </div>
             </div>
@@ -449,25 +460,39 @@ export default function Navigation() {
             </Link>
           </div>
 
-          {/* Right Side - Phone Only */}
+          {/* Right Side - Search + Theme + Phone + Schedule */}
           <div className="hidden lg:flex items-center space-x-4">
+            <SiteSearch />
+            <ThemeToggle />
             <a
               href="tel:+19046241722"
+              onClick={() => trackEvent("phone_click", { location: "nav_desktop" })}
               className="flex items-center text-coastal-navy hover:text-coastal-blue transition-colors touch-manipulation"
             >
               <Phone className="h-3 w-3 xl:h-4 xl:w-4 mr-2" />
               <span className="font-serif font-medium text-sm xl:text-base">(904) 624-1722</span>
             </a>
+            <Link
+              href="/schedule"
+              className="flex items-center bg-coastal-orange hover:bg-coastal-orange/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors touch-manipulation"
+            >
+              <Calendar className="h-4 w-4 mr-1.5" />
+              Schedule
+            </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden flex items-center justify-center w-12 h-12 rounded-md text-coastal-navy hover:text-coastal-blue hover:bg-gray-50 transition-colors touch-manipulation"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Mobile Menu Button + Search + Theme */}
+          <div className="lg:hidden flex items-center gap-1">
+            <SiteSearch />
+            <ThemeToggle />
+            <button
+              className="flex items-center justify-center w-12 h-12 rounded-md text-coastal-navy hover:text-coastal-blue hover:bg-gray-50 transition-colors touch-manipulation"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -478,6 +503,7 @@ export default function Navigation() {
             <div className="pb-4 border-b border-gray-100">
               <a
                 href="tel:+19046241722"
+                onClick={() => trackEvent("phone_click", { location: "nav_mobile" })}
                 className="flex items-center justify-center text-coastal-navy text-lg font-serif font-medium py-3 touch-manipulation"
               >
                 <Phone className="h-5 w-5 mr-2" />
@@ -652,6 +678,14 @@ export default function Navigation() {
                     >
                       Exterior Renovation
                     </Link>
+                    <div className="border-t border-gray-100 my-1" />
+                    <Link
+                      href="/renovations/portfolio"
+                      onClick={closeMenu}
+                      className="block text-coastal-orange font-medium hover:text-coastal-orange/80 hover:bg-orange-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                    >
+                      Project Portfolio
+                    </Link>
                   </div>
                 )}
               </div>
@@ -797,6 +831,17 @@ export default function Navigation() {
               >
                 Contact
               </Link>
+
+              <div className="pt-2 border-t border-gray-100">
+                <Link
+                  href="/schedule"
+                  onClick={closeMenu}
+                  className="flex items-center justify-center bg-coastal-orange hover:bg-coastal-orange/90 text-white font-medium py-3 px-4 rounded-lg transition-colors touch-manipulation"
+                >
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Schedule Consultation
+                </Link>
+              </div>
             </div>
           </div>
         </div>

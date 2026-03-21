@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calculator, FileText, Users } from "lucide-react"
+import ResourceDownload from "@/components/resource-download"
 
 export const metadata: Metadata = {
   title: "Smart Renovation Planning Guide - Conine Coastal | Construction Expertise",
@@ -41,9 +42,11 @@ export default function RenovationPlanningPage() {
               Coast homes
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="secondary">
-                <Calculator className="mr-2 h-5 w-5" />
-                Use Planning Tools
+              <Button size="lg" variant="secondary" asChild>
+                <Link href="/roi-calculator">
+                  <Calculator className="mr-2 h-5 w-5" />
+                  Use ROI Calculator
+                </Link>
               </Button>
               <Button
                 size="lg"
@@ -311,7 +314,13 @@ export default function RenovationPlanningPage() {
                   <li>• Contingency planning (15-20%)</li>
                   <li>• Financing options comparison</li>
                 </ul>
-                <Button className="w-full">Use Calculator</Button>
+                <ResourceDownload
+                  resourceName="Budget Calculator"
+                  resourceSlug="budget-calculator"
+                  buttonText="Get Calculator"
+                  size="default"
+                  className="w-full"
+                />
               </CardContent>
             </Card>
 
@@ -331,7 +340,13 @@ export default function RenovationPlanningPage() {
                   <li>• Inspection schedules</li>
                   <li>• Weather and seasonal factors</li>
                 </ul>
-                <Button className="w-full">Download Template</Button>
+                <ResourceDownload
+                  resourceName="Project Timeline Template"
+                  resourceSlug="project-timeline"
+                  buttonText="Get Template"
+                  size="default"
+                  className="w-full"
+                />
               </CardContent>
             </Card>
 
@@ -351,7 +366,13 @@ export default function RenovationPlanningPage() {
                   <li>• Communication and timeline</li>
                   <li>• Warranty and guarantee terms</li>
                 </ul>
-                <Button className="w-full">Get Questions List</Button>
+                <ResourceDownload
+                  resourceName="Contractor Interview Guide"
+                  resourceSlug="contractor-interview"
+                  buttonText="Get Questions List"
+                  size="default"
+                  className="w-full"
+                />
               </CardContent>
             </Card>
           </div>
@@ -481,9 +502,12 @@ export default function RenovationPlanningPage() {
               size="lg"
               variant="outline"
               className="bg-transparent border-white text-white hover:bg-white hover:text-coastal-navy"
+              asChild
             >
-              <Calculator className="mr-2 h-5 w-5" />
-              Use Planning Tools
+              <Link href="/roi-calculator">
+                <Calculator className="mr-2 h-5 w-5" />
+                Use ROI Calculator
+              </Link>
             </Button>
           </div>
         </div>

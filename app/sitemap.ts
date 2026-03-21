@@ -1,13 +1,25 @@
 import type { MetadataRoute } from "next"
+import { blogPosts } from "@/lib/blog-data"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.coninecoastal.com"
+
+  const blogUrls: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${baseUrl}/resources/blog/${post.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }))
 
   return [
     // Main pages
     { url: baseUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
     { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+
+    { url: `${baseUrl}/schedule`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/faq`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/reviews`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
 
     // Real Estate
     { url: `${baseUrl}/real-estate`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
@@ -19,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Renovations
     { url: `${baseUrl}/renovations`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/renovations/portfolio`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/renovations/kitchen`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/renovations/bathroom`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/renovations/whole-home`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
@@ -38,6 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Tools
     { url: `${baseUrl}/roi-calculator`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/portal`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
 
     // Resources
     { url: `${baseUrl}/resources`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
@@ -46,6 +60,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/resources/renovation-planning`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/resources/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/resources/market-updates`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
+
+    // Blog Posts
+    ...blogUrls,
 
     // Legal
     { url: `${baseUrl}/privacy-policy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },

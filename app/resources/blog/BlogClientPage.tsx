@@ -7,16 +7,18 @@ import { Badge } from "@/components/ui/badge"
 import { Calendar, User, ArrowRight, TrendingUp, Home, Wrench, DollarSign } from "lucide-react"
 import Breadcrumb from "@/components/breadcrumb"
 
+import { blogPosts } from "@/lib/blog-data"
+
+const featuredPostData = blogPosts[0]
 const featuredPost = {
-  title: "First Coast Market Trends - Q4 2024",
-  excerpt:
-    "Comprehensive analysis of Northeast Florida real estate market trends, including pricing, inventory levels, and buyer behavior patterns.",
-  author: "David Conine",
-  date: "December 15, 2024",
-  category: "Market Analysis",
-  readTime: "8 min read",
-  image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80",
-  href: "/resources/blog/q4-2024-market-trends",
+  title: featuredPostData.title,
+  excerpt: featuredPostData.excerpt,
+  author: featuredPostData.author,
+  date: featuredPostData.date,
+  category: featuredPostData.category,
+  readTime: featuredPostData.readTime,
+  image: featuredPostData.image,
+  href: `/resources/blog/${featuredPostData.slug}`,
 }
 
 const categories = [
@@ -27,18 +29,11 @@ const categories = [
   { name: "Home Maintenance", count: 10, icon: <Wrench className="h-5 w-5" />, color: "bg-coastal-grey" },
 ]
 
-const posts = [
-  {
-    title: "First Coast Market Trends – Q4 2024",
-    href: "/resources/blog/q4-2024-market-trends",
-    excerpt: "Prices continue to rise in St. Augustine while inventory remains tight…",
-  },
-  {
-    title: "5 Kitchen Updates That Actually Add Value",
-    href: "/resources/blog/kitchen-updates-roi",
-    excerpt: "Not every upgrade nets a return—these five deliver the highest ROI…",
-  },
-]
+const posts = blogPosts.slice(1).map((p) => ({
+  title: p.title,
+  href: `/resources/blog/${p.slug}`,
+  excerpt: p.excerpt,
+}))
 
 export default function BlogClientPage() {
   return (

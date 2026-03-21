@@ -3,11 +3,24 @@ import Image from "next/image"
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react"
 import { XLogo } from "./icons/x-logo"
 import { LinkedInLogo } from "./icons/linkedin-logo"
+import NewsletterSignup from "./newsletter-signup"
 
 export default function Footer() {
   return (
-    <footer className="bg-coastal-navy text-white py-12">
+    <footer className="bg-coastal-navy dark:bg-gray-950 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Newsletter Signup */}
+        <div className="border-b border-white/20 pb-8 mb-8">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-lg font-semibold mb-2">Get First Coast Market Insights</h3>
+            <p className="text-white/70 text-sm mb-4">
+              Monthly market updates, renovation tips, and expert advice delivered to your inbox.
+            </p>
+            <NewsletterSignup />
+            <p className="text-white/40 text-xs mt-2">No spam. Unsubscribe anytime.</p>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
@@ -265,10 +278,42 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/reviews"
+                  className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
+                >
+                  Client Reviews
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/schedule"
+                  className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
+                >
+                  Schedule Consultation
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
                 >
                   Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/portal"
+                  className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
+                >
+                  Client Portal
                 </Link>
               </li>
             </ul>

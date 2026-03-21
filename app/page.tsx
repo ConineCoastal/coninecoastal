@@ -6,6 +6,9 @@ import { Badge } from "@/components/ui/badge"
 import FadeIn from "@/components/fade-in"
 import { CheckCircle, Phone, Mail, Home, Hammer, TrendingUp, Star, ArrowRight, Users, Shield } from "lucide-react"
 import type { Metadata } from "next"
+import { testimonials, aggregateRating } from "@/lib/testimonials-data"
+
+const featuredTestimonials = testimonials.slice(0, 6)
 
 export const metadata: Metadata = {
   title: "Conine Coastal - Real Estate & Construction Expert | Northeast Florida",
@@ -389,85 +392,91 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl font-bold text-coastal-navy mb-4 font-serif">
               What Our Clients Say
             </h2>
-            <p className="text-lg sm:text-xl text-coastal-grey px-2">
+            <p className="text-lg sm:text-xl text-coastal-grey px-2 mb-6">
               Real results from real clients who experienced the Conine Coastal difference
             </p>
+
+            {/* Aggregate Rating */}
+            <div className="inline-flex items-center gap-3 bg-gray-50 rounded-full px-6 py-3">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 text-coastal-yellow fill-current" />
+                ))}
+              </div>
+              <span className="text-2xl font-bold text-coastal-navy">{aggregateRating.averageRating}</span>
+              <span className="text-coastal-grey">·</span>
+              <span className="text-coastal-grey text-sm">{aggregateRating.totalReviews} reviews</span>
+            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {[
-              {
-                name: "Sarah Johnson",
-                service: "Real Estate & Construction",
-                text: "Conine Coastal helped us find the perfect fixer-upper and then transformed it into our dream home. Their dual expertise saved us time and money!",
-                rating: 5,
-              },
-              {
-                name: "Mike Rodriguez",
-                service: "Investment Property",
-                text: "Their construction knowledge helped me identify the best investment opportunities. They knew exactly what renovations would maximize my ROI.",
-                rating: 5,
-              },
-              {
-                name: "Emily Chen",
-                service: "Kitchen Remodel",
-                text: "Professional, reliable, and the results exceeded our expectations. Our coastal kitchen is now the heart of our home.",
-                rating: 5,
-              },
-            ].map((testimonial, index) => (
+            {featuredTestimonials.map((testimonial, index) => (
               <FadeIn key={index} delay={index * 150}>
-                <Card
-                  className="bg-white sm:col-span-2 lg:col-span-1 last:sm:col-start-1 last:sm:col-end-3 last:lg:col-start-auto last:lg:col-end-auto h-full"
-                >
+                <Card className="bg-white h-full">
                   <CardContent className="p-5 sm:p-6">
-                    <div className="flex mb-3">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 text-coastal-yellow fill-current" />
-                      ))}
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 text-coastal-yellow fill-current" />
+                        ))}
+                      </div>
+                      {testimonial.source === "Google" && (
+                        <span className="text-xs text-coastal-grey bg-gray-100 px-2 py-0.5 rounded">Google</span>
+                      )}
+                      {testimonial.source === "Zillow" && (
+                        <span className="text-xs text-coastal-grey bg-gray-100 px-2 py-0.5 rounded">Zillow</span>
+                      )}
                     </div>
                     <p className="text-coastal-grey mb-3 italic leading-relaxed text-sm sm:text-base">
-                      "{testimonial.text}"
+                      &ldquo;{testimonial.text}&rdquo;
                     </p>
-                    <div>
-                      <p className="font-semibold text-coastal-navy text-sm sm:text-base">{testimonial.name}</p>
-                      <p className="text-xs sm:text-sm text-coastal-grey">{testimonial.service}</p>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-semibold text-coastal-navy text-sm sm:text-base">{testimonial.name}</p>
+                        <p className="text-xs sm:text-sm text-coastal-grey">{testimonial.service} · {testimonial.location}</p>
+                      </div>
+                      <span className="text-xs text-coastal-grey">{testimonial.date}</span>
                     </div>
                   </CardContent>
                 </Card>
               </FadeIn>
             ))}
           </div>
+
+          {/* View All + Leave Review */}
+          <FadeIn>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+              <Button asChild variant="outline" className="border-coastal-blue text-coastal-blue hover:bg-coastal-blue hover:text-white bg-transparent">
+                <Link href="/reviews">
+                  See All {aggregateRating.totalReviews} Reviews
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </FadeIn>
         </div>
       </section>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            {
-              "@context": "https://schema.org",
-              "@type": "Review",
-              author: { "@type": "Person", name: "Sarah Johnson" },
-              reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
-              reviewBody: "Conine Coastal helped us find the perfect fixer-upper and then transformed it into our dream home. Their dual expertise saved us time and money!",
-              itemReviewed: { "@type": "RealEstateAgent", name: "Conine Coastal" },
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Conine Coastal",
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: aggregateRating.averageRating,
+              reviewCount: aggregateRating.totalReviews,
+              bestRating: 5,
             },
-            {
-              "@context": "https://schema.org",
+            review: featuredTestimonials.map((t) => ({
               "@type": "Review",
-              author: { "@type": "Person", name: "Mike Rodriguez" },
-              reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
-              reviewBody: "Their construction knowledge helped me identify the best investment opportunities. They knew exactly what renovations would maximize my ROI.",
-              itemReviewed: { "@type": "RealEstateAgent", name: "Conine Coastal" },
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "Review",
-              author: { "@type": "Person", name: "Emily Chen" },
-              reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
-              reviewBody: "Professional, reliable, and the results exceeded our expectations. Our coastal kitchen is now the heart of our home.",
-              itemReviewed: { "@type": "RealEstateAgent", name: "Conine Coastal" },
-            },
-          ]),
+              author: { "@type": "Person", name: t.name },
+              reviewRating: { "@type": "Rating", ratingValue: t.rating, bestRating: 5 },
+              reviewBody: t.text,
+              datePublished: t.date,
+            })),
+          }),
         }}
       />
 
@@ -497,7 +506,7 @@ export default function HomePage() {
               size="lg"
               className="w-full sm:w-auto bg-white text-coastal-navy hover:bg-white/90 px-6 sm:px-8 py-4 text-base sm:text-lg min-h-[56px] touch-manipulation"
             >
-              <Link href="/contact" className="flex items-center justify-center">
+              <Link href="/schedule" className="flex items-center justify-center">
                 <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
                 <span className="whitespace-nowrap">Schedule a Consultation</span>
               </Link>

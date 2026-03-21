@@ -3,7 +3,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle, Download, Home, Calculator, FileText, Users } from "lucide-react"
+import { CheckCircle, Home, Calculator, FileText, Users } from "lucide-react"
+import ResourceDownload from "@/components/resource-download"
 
 export const metadata: Metadata = {
   title: "Complete Homebuyer's Guide - Conine Coastal | First Coast Real Estate",
@@ -39,10 +40,11 @@ export default function BuyersGuidePage() {
               Navigate the First Coast market with confidence using insights from 20 years of construction expertise
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="secondary">
-                <Download className="mr-2 h-5 w-5" />
-                Download PDF Guide
-              </Button>
+              <ResourceDownload
+                resourceName="Homebuyer's Guide"
+                resourceSlug="buyers-guide"
+                buttonText="Download PDF Guide"
+              />
               <Button
                 size="lg"
                 variant="outline"
@@ -329,10 +331,11 @@ export default function BuyersGuidePage() {
                 </div>
               </div>
 
-              <Button size="lg" variant="secondary">
-                <Download className="mr-2 h-5 w-5" />
-                Download Free Checklist
-              </Button>
+              <ResourceDownload
+                resourceName="Homebuyer's Checklist"
+                resourceSlug="buyers-checklist"
+                buttonText="Download Free Checklist"
+              />
             </div>
 
             <div className="bg-white/10 p-8 rounded-lg backdrop-blur-sm">

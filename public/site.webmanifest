@@ -1,21 +1,46 @@
 {
   "name": "Conine Coastal - Real Estate & Construction Expert",
   "short_name": "Conine Coastal",
-  "description": "Expert real estate services and home renovations in Northeast Florida",
+  "description": "Expert real estate services and home renovations in Northeast Florida. 20+ years of construction expertise.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "theme_color": "#1e40af",
+  "theme_color": "#18457C",
   "background_color": "#ffffff",
   "display": "standalone",
-  "start_url": "/"
+  "start_url": "/",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "categories": ["business", "real estate"],
+  "shortcuts": [
+    {
+      "name": "Schedule Consultation",
+      "short_name": "Schedule",
+      "url": "/schedule",
+      "description": "Book a free consultation"
+    },
+    {
+      "name": "Current Listings",
+      "short_name": "Listings",
+      "url": "/real-estate/listings",
+      "description": "Browse available properties"
+    },
+    {
+      "name": "ROI Calculator",
+      "short_name": "ROI Calc",
+      "url": "/roi-calculator",
+      "description": "Calculate renovation ROI"
+    }
+  ]
 }

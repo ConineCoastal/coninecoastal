@@ -6,12 +6,54 @@ import { Resend } from "resend"
 import { z } from "zod"
 
 const contactSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  email: z.string().email("Valid email is required"),
-  phone: z.string().min(1, "Phone number is required"),
-  message: z.string().optional(),
-  source: z.string().optional(),
+  name: z.string().min(1, "Name is required").max(200),
+  email: z.string().email("Valid email is required").max(254),
+  phone: z.string().min(1, "Phone number is required").max(30),
+  message: z.string().max(5000).optional(),
+  source: z.string().max(100).optional(),
+  utm: z.object({
+    utm_source: z.string().max(200).optional(),
+    utm_medium: z.string().max(200).optional(),
+    utm_campaign: z.string().max(200).optional(),
+    utm_term: z.string().max(200).optional(),
+    utm_content: z.string().max(200).optional(),
+    referrer: z.string().max(500).optional(),
+    landing_page: z.string().max(500).optional(),
+  }).optional(),
 })
+
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;")
+}
+
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>()
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000 // 1 hour
+const RATE_LIMIT_MAX = 10 // max requests per IP per hour
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now()
+  const entry = rateLimitMap.get(ip)
+
+  // Clean up expired entries periodically
+  if (rateLimitMap.size > 10000) {
+    for (const [key, val] of rateLimitMap) {
+      if (val.resetAt < now) rateLimitMap.delete(key)
+    }
+  }
+
+  if (!entry || entry.resetAt < now) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS })
+    return false
+  }
+
+  entry.count++
+  return entry.count > RATE_LIMIT_MAX
+}
 
 const smtpHost = process.env.SMTP_HOST
 const smtpPort = process.env.SMTP_PORT
@@ -156,6 +198,17 @@ interface TransportErrorEntry {
 
 export async function POST(request: Request) {
   try {
+    const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim()
+      ?? request.headers.get("x-real-ip")
+      ?? "unknown"
+
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { success: false, message: "Too many requests. Please try again later." },
+        { status: 429 }
+      )
+    }
+
     const json = await request.json()
     const data = contactSchema.parse(json)
 
@@ -166,7 +219,27 @@ export async function POST(request: Request) {
     const recipients = CONTACT_TO_EMAILS
     const bccRecipients = CONTACT_BCC_EMAILS
 
-    const subject = `New inquiry from ${data.name}`
+    const utmInfo = data.utm
+    const utmLines = utmInfo
+      ? [
+          utmInfo.utm_source && `UTM Source: ${utmInfo.utm_source}`,
+          utmInfo.utm_medium && `UTM Medium: ${utmInfo.utm_medium}`,
+          utmInfo.utm_campaign && `UTM Campaign: ${utmInfo.utm_campaign}`,
+          utmInfo.utm_term && `UTM Term: ${utmInfo.utm_term}`,
+          utmInfo.utm_content && `UTM Content: ${utmInfo.utm_content}`,
+          utmInfo.referrer && `Referrer: ${utmInfo.referrer}`,
+          utmInfo.landing_page && `Landing Page: ${utmInfo.landing_page}`,
+        ].filter(Boolean)
+      : []
+
+    const safeName = escapeHtml(data.name)
+    const safeEmail = escapeHtml(data.email)
+    const safePhone = escapeHtml(data.phone)
+    const safeSource = data.source ? escapeHtml(data.source) : null
+    const safeMessage = escapeHtml(data.message ?? "(No message provided)")
+    const safeUtmLines = utmLines.map((line) => escapeHtml(line as string))
+
+    const subject = `New inquiry from ${safeName}`
     const textBody = `New inquiry submitted on ${submittedAt}.
 
 Name: ${data.name}
@@ -176,16 +249,18 @@ Source: ${data.source ?? "N/A"}
 
 Message:
 ${data.message ?? "(No message provided)"}
+${utmLines.length > 0 ? `\n--- Lead Source ---\n${utmLines.join("\n")}` : ""}
 `
     const htmlBody = `
       <h1>New Inquiry</h1>
       <p><strong>Submitted at:</strong> ${submittedAt}</p>
-      <p><strong>Name:</strong> ${data.name}</p>
-      <p><strong>Email:</strong> ${data.email}</p>
-      <p><strong>Phone:</strong> ${data.phone}</p>
-      ${data.source ? `<p><strong>Source:</strong> ${data.source}</p>` : ""}
+      <p><strong>Name:</strong> ${safeName}</p>
+      <p><strong>Email:</strong> ${safeEmail}</p>
+      <p><strong>Phone:</strong> ${safePhone}</p>
+      ${safeSource ? `<p><strong>Source:</strong> ${safeSource}</p>` : ""}
       <p><strong>Message:</strong></p>
-      <p>${(data.message ?? "(No message provided)").replace(/\n/g, "<br/>")}</p>
+      <p>${safeMessage.replace(/\n/g, "<br/>")}</p>
+      ${safeUtmLines.length > 0 ? `<hr/><h3>Lead Source</h3><p>${safeUtmLines.join("<br/>")}</p>` : ""}
     `
 
     const tags = [{ name: "channel", value: data.source ?? "contact-form" }]

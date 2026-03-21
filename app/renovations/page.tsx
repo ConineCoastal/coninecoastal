@@ -125,7 +125,7 @@ export default function ConstructionServicesPage() {
     },
   ]
 
-  const testimonials = [
+  const pageTestimonials = [
     {
       name: "Maria & Carlos Rodriguez",
       location: "St. Augustine",
@@ -365,6 +365,17 @@ export default function ConstructionServicesPage() {
               </FadeIn>
             ))}
           </div>
+
+          <FadeIn>
+            <div className="text-center mt-12">
+              <Button asChild size="lg" className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-4 text-lg">
+                <Link href="/renovations/portfolio" className="flex items-center justify-center">
+                  View Full Portfolio
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -383,7 +394,7 @@ export default function ConstructionServicesPage() {
           </FadeIn>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {testimonials.map((testimonial, index) => (
+            {pageTestimonials.map((testimonial, index) => (
               <FadeIn key={index} delay={index * 150}>
                 <Card className="hover:shadow-lg transition-shadow">
                   <CardContent className="p-8">

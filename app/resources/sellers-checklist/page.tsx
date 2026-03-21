@@ -3,7 +3,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle, Download, TrendingUp, DollarSign, Home, Wrench } from "lucide-react"
+import { CheckCircle, TrendingUp, DollarSign, Home, Wrench } from "lucide-react"
+import ResourceDownload from "@/components/resource-download"
 
 export const metadata: Metadata = {
   title: "Seller's Checklist - Maximize Your Home's Value",
@@ -40,10 +41,11 @@ export default function SellersChecklistPage() {
               want
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="secondary">
-                <Download className="mr-2 h-5 w-5" />
-                Get Free Checklist
-              </Button>
+              <ResourceDownload
+                resourceName="Seller's Checklist"
+                resourceSlug="sellers-checklist"
+                buttonText="Get Free Checklist"
+              />
               <Button
                 size="lg"
                 variant="outline"
@@ -372,10 +374,11 @@ export default function SellersChecklistPage() {
                 </div>
               </div>
 
-              <Button size="lg" variant="secondary">
-                <Download className="mr-2 h-5 w-5" />
-                Download Complete Checklist
-              </Button>
+              <ResourceDownload
+                resourceName="Pre-Sale Checklist"
+                resourceSlug="pre-sale-checklist"
+                buttonText="Download Complete Checklist"
+              />
             </div>
 
             <div className="bg-white/10 p-8 rounded-lg backdrop-blur-sm">

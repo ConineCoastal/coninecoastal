@@ -1,4 +1,6 @@
 "use client"
+import { trackEvent } from "@/lib/track-event"
+import { getUTMData } from "@/lib/utm-tracker"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -98,6 +100,7 @@ export default function ContactClientPage() {
           phone: formData.phone,
           message: formData.message,
           source: formData.service || "contact",
+          utm: getUTMData(),
         }),
       })
 
@@ -120,6 +123,7 @@ export default function ContactClientPage() {
 
       setFormStatus("success")
       setFormMessage(responseBody?.message ?? "Thanks for reaching out! We'll be in touch soon.")
+      trackEvent("contact_form_submit", { service: formData.service || "general" })
       setFormData({ name: "", email: "", phone: "", service: "", message: "" })
     } catch (error) {
       console.error("Contact form submission failed", error)
@@ -163,13 +167,22 @@ export default function ContactClientPage() {
             Let's discuss your real estate and renovation needs. We're here to help.
           </p>
 
-          <Button
-            asChild
-            size="lg"
-            className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-10 py-4 text-xl shadow-lg"
-          >
-            <a href="#contact-form">Schedule Consultation</a>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              asChild
+              size="lg"
+              className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-10 py-4 text-xl shadow-lg"
+            >
+              <a href="/schedule">Schedule Consultation</a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="bg-white/10 border-2 border-white text-white hover:bg-white hover:text-coastal-navy px-10 py-4 text-xl"
+            >
+              <a href="#contact-form">Send a Message</a>
+            </Button>
+          </div>
         </div>
       </section>
 

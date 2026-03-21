@@ -33,7 +33,27 @@
       "WebFetch(domain:www.linkedin.com)",
       "Bash(xargs grep:*)",
       "Bash(while read:*)",
-      "Bash(do sed:*)"
+      "Bash(do sed:*)",
+      "Bash(pnpm update:*)",
+      "Bash(npx pnpm:*)",
+      "Bash(where pnpm:*)",
+      "Bash(where npm:*)",
+      "Bash(where node:*)",
+      "Bash(export PATH=\"$PATH:/c/Users/david/AppData/Roaming/npm:/c/Program Files/nodejs\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "WebSearch",
+      "Bash(git -C /c/Users/david/Documents/coninecoastal log --oneline -10)",
+      "Bash(find /c/Users/david/Documents/coninecoastal -type f -name *.tsx -path */renovations/*)",
+      "Bash(ls -lh /c/Users/david/Documents/coninecoastal/public/*.png /c/Users/david/Documents/coninecoastal/public/*.jpg)",
+      "Bash(find /c/Users/david/Documents/coninecoastal -name *.css -o -name globals.css)",
+      "Bash(grep -r \"coastal-orange\\\\|coastal-blue\\\\|coastal-navy\" /c/Users/david/Documents/coninecoastal --include=*.ts --include=*.js --include=*.tsx --include=*.json)",
+      "Bash(npx next:*)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs:/c/Users/david/AppData/Roaming/npm:/c/Users/david/AppData/Local/pnpm\")",
+      "Bash(find /c/Users/david/Documents/coninecoastal -type f \\\\\\(-name *.env* -o -name *secret* -o -name *key* \\\\\\))",
+      "Bash(find /c/Users/david/Documents/coninecoastal -path ./node_modules -prune -o -type f \\\\\\(-name *.ts -o -name *.tsx \\\\\\) -print)",
+      "Bash(npm list:*)",
+      "Bash(find /c/Users/david/Documents/coninecoastal -maxdepth 3 \\\\\\(-name .env* -o -name *.env* \\\\\\) -type f)"
     ]
   }
 }
