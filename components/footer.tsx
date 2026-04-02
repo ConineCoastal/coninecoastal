@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react"
 import { XLogo } from "./icons/x-logo"
 import { LinkedInLogo } from "./icons/linkedin-logo"
 import NewsletterSignup from "./newsletter-signup"
+import ThemeToggle from "./theme-toggle"
 
 export default function Footer() {
   return (
@@ -328,7 +329,7 @@ export default function Footer() {
                 Licensed Real Estate & Construction Services | Northeast Florida
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
               <Link
                 href="/privacy-policy"
                 className="text-white/60 hover:text-white text-sm transition-colors text-center py-2 touch-manipulation"
@@ -347,6 +348,7 @@ export default function Footer() {
               >
                 Sitemap
               </Link>
+              <ThemeToggle />
             </div>
           </div>
         </div>

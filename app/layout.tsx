@@ -138,7 +138,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${font.className} ${serifFont.variable}`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <a
             href="#main-content"
             className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-coastal-navy focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm"

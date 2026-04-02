@@ -5,8 +5,6 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Phone, Menu, X, ChevronDown, Calendar } from "lucide-react"
 import { trackEvent } from "@/lib/track-event"
-import SiteSearch from "./site-search"
-import ThemeToggle from "./theme-toggle"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -460,10 +458,8 @@ export default function Navigation() {
             </Link>
           </div>
 
-          {/* Right Side - Search + Theme + Phone + Schedule */}
+          {/* Right Side - Phone + Schedule */}
           <div className="hidden lg:flex items-center space-x-4">
-            <SiteSearch />
-            <ThemeToggle />
             <a
               href="tel:+19046241722"
               onClick={() => trackEvent("phone_click", { location: "nav_desktop" })}
@@ -481,10 +477,8 @@ export default function Navigation() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button + Search + Theme */}
+          {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-1">
-            <SiteSearch />
-            <ThemeToggle />
             <button
               className="flex items-center justify-center w-12 h-12 rounded-md text-coastal-navy hover:text-coastal-blue hover:bg-gray-50 transition-colors touch-manipulation"
               onClick={() => setIsMenuOpen(!isMenuOpen)}

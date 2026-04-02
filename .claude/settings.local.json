@@ -53,7 +53,13 @@
       "Bash(find /c/Users/david/Documents/coninecoastal -type f \\\\\\(-name *.env* -o -name *secret* -o -name *key* \\\\\\))",
       "Bash(find /c/Users/david/Documents/coninecoastal -path ./node_modules -prune -o -type f \\\\\\(-name *.ts -o -name *.tsx \\\\\\) -print)",
       "Bash(npm list:*)",
-      "Bash(find /c/Users/david/Documents/coninecoastal -maxdepth 3 \\\\\\(-name .env* -o -name *.env* \\\\\\) -type f)"
+      "Bash(find /c/Users/david/Documents/coninecoastal -maxdepth 3 \\\\\\(-name .env* -o -name *.env* \\\\\\) -type f)",
+      "Bash(pnpm run:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://fonts.gstatic.com)",
+      "Bash(find C:/Users/david/Documents/coninecoastal/.next -name *.woff2)",
+      "Bash(curl -L -o inter-latin.woff2 \"https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2\")",
+      "Bash(pnpm add:*)",
+      "Bash(ls -la C:/Users/david/Documents/coninecoastal/styles/*.woff2)"
     ]
   }
 }
