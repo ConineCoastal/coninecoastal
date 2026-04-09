@@ -470,7 +470,7 @@ export default function MarketUpdatesClientPage() {
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-coastal-navy px-8 py-3 bg-transparent"
             >
-              <Link href="/real-estate">View Real Estate Services</Link>
+              <Link href="/companies/real-estate">View Real Estate Services</Link>
             </Button>
           </div>
         </div>

@@ -11,13 +11,13 @@ import { font, serifFont } from "@/styles/fonts"
 
 export const metadata: Metadata = {
   title: {
-    default: "Conine Coastal - Your Real Estate and Construction Expert",
-    template: "%s | Conine Coastal",
+    default: "Conine Coastal Group - Northeast Florida's Premier Family of Companies",
+    template: "%s | Conine Coastal Group",
   },
   description:
-    "Northeast Florida's premier real estate and construction company. Combining 20 years of construction expertise with professional real estate services for buyers, sellers, and investors.",
+    "Conine Coastal Group is a family of companies serving Northeast Florida across real estate, construction, land development, home services, and travel & hospitality.",
   keywords:
-    "real estate, construction, Northeast Florida, Jacksonville, St. Augustine, home renovation, property management, investment properties",
+    "Conine Coastal Group, Northeast Florida, Jacksonville, St. Augustine, real estate, construction, land development, home services, travel, holding company",
   authors: [{ name: "Conine Coastal" }],
   creator: "Conine Coastal",
   publisher: "Conine Coastal",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Conine Coastal - Your Real Estate and Construction Expert",
+    title: "Conine Coastal Group - Northeast Florida's Premier Family of Companies",
     description:
-      "Northeast Florida's premier real estate and construction company. Expert services for buyers, sellers, investors, and renovation projects.",
+      "A family of companies serving Northeast Florida across real estate, construction, land development, home services, and travel & hospitality.",
     url: "https://www.coninecoastal.com",
     siteName: "Conine Coastal",
     images: [
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Conine Coastal - Your Real Estate and Construction Expert",
+    title: "Conine Coastal Group - Northeast Florida's Premier Family of Companies",
     description:
-      "Northeast Florida's premier real estate and construction company. Expert services for buyers, sellers, investors, and renovation projects.",
+      "A family of companies serving Northeast Florida across real estate, construction, land development, home services, and travel & hospitality.",
     images: ["/conine-coastal-logo.png"],
     creator: "@coninecoastal",
   },
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  category: "Real Estate and Construction",
+  category: "Holding Company",
   classification: "Business",
   other: {
     "geo.region": "US-FL",
@@ -76,10 +76,10 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
-  name: "Conine Coastal",
+  "@type": "Organization",
+  name: "Conine Coastal Group",
   description:
-    "Northeast Florida's premier real estate and construction company. 20+ years of construction expertise with professional real estate services.",
+    "A family of companies serving Northeast Florida across real estate, construction, land development, home services, and travel & hospitality.",
   url: "https://www.coninecoastal.com",
   telephone: "+1-904-624-1722",
   email: "info@coninecoastal.com",
@@ -96,14 +96,21 @@ const jsonLd = {
   founder: {
     "@type": "Person",
     name: "David Conine",
-    jobTitle: "Licensed Realtor & Construction Expert",
   },
   knowsAbout: [
     "Real Estate",
-    "Home Renovation",
     "Construction",
+    "Land Development",
+    "Home Services",
+    "Travel & Hospitality",
     "Property Management",
-    "Investment Properties",
+  ],
+  subOrganization: [
+    { "@type": "Organization", name: "Conine Coastal Real Estate" },
+    { "@type": "Organization", name: "Conine Coastal Estates" },
+    { "@type": "Organization", name: "Conine Coastal Development" },
+    { "@type": "Organization", name: "Conine Coastal Home Services" },
+    { "@type": "Organization", name: "Conine Coastal Travel" },
   ],
   serviceArea: [
     "Jacksonville, FL",

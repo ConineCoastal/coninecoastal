@@ -341,7 +341,7 @@ export default function ScheduleClientPage() {
                 <Link href="/">Return Home</Link>
               </Button>
               <Button asChild variant="outline" className="border-coastal-blue text-coastal-blue hover:bg-coastal-blue hover:text-white bg-transparent">
-                <Link href="/renovations/portfolio">View Our Portfolio</Link>
+                <Link href="/companies/estates">View Our Work</Link>
               </Button>
             </div>
           </div>

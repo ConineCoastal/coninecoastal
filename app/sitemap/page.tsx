@@ -11,40 +11,13 @@ const sitemapLinks = [
     ],
   },
   {
-    title: "Real Estate",
+    title: "Our Companies",
     items: [
-      { label: "Real Estate Services", href: "/real-estate" },
-      { label: "For Buyers", href: "/real-estate/buyers" },
-      { label: "For Sellers", href: "/real-estate/sellers" },
-      { label: "Current Listings", href: "/real-estate/listings" },
-      { label: "Property Management", href: "/real-estate/property-management" },
-      { label: "Market Reports", href: "/real-estate/market-reports" },
-    ],
-  },
-  {
-    title: "Renovations",
-    items: [
-      { label: "Renovation Services", href: "/renovations" },
-      { label: "Kitchen Remodeling", href: "/renovations/kitchen" },
-      { label: "Bathroom Renovations", href: "/renovations/bathroom" },
-      { label: "Interior Renovations", href: "/renovations/interior" },
-      { label: "Exterior Renovations", href: "/renovations/exterior" },
-      { label: "Flooring Services", href: "/renovations/flooring" },
-      { label: "Whole-Home Remodeling", href: "/renovations/whole-home" },
-      { label: "Home Additions", href: "/renovations/additions" },
-      { label: "Home Repairs", href: "/renovations/repairs" },
-      { label: "Emergency Repairs", href: "/renovations/emergency" },
-    ],
-  },
-  {
-    title: "Investor Services",
-    items: [
-      { label: "Overview", href: "/investor-services" },
-      { label: "Investment Services", href: "/investor-services/investment" },
-      { label: "Portfolio Management", href: "/investor-services/portfolio-management" },
-      { label: "Property Analysis", href: "/investor-services/property-analysis" },
-      { label: "Fix & Flip", href: "/investor-services/fix-and-flip" },
-      { label: "ROI Calculator", href: "/roi-calculator" },
+      { label: "Conine Coastal Real Estate", href: "/companies/real-estate" },
+      { label: "Conine Coastal Estates", href: "/companies/estates" },
+      { label: "Conine Coastal Development", href: "/companies/development" },
+      { label: "Conine Coastal Home Services", href: "/companies/home-services" },
+      { label: "Conine Coastal Travel", href: "/companies/travel" },
     ],
   },
   {
@@ -61,6 +34,10 @@ const sitemapLinks = [
   {
     title: "Company",
     items: [
+      { label: "Client Reviews", href: "/reviews" },
+      { label: "FAQ", href: "/faq" },
+      { label: "Schedule Consultation", href: "/schedule" },
+      { label: "Client Portal", href: "/portal" },
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms of Service", href: "/terms-of-service" },
     ],
@@ -69,10 +46,10 @@ const sitemapLinks = [
 
 export const metadata: Metadata = {
   title: "Sitemap",
-  description: "Quickly navigate to any Conine Coastal page, including real estate services, renovation offerings, and resources.",
+  description: "Quickly navigate to any Conine Coastal Group page, including our companies, resources, and more.",
   openGraph: {
     title: "Sitemap",
-    description: "Quickly navigate to any Conine Coastal page, including real estate services, renovation offerings, and resources.",
+    description: "Quickly navigate to any Conine Coastal Group page, including our companies, resources, and more.",
   },
   alternates: { canonical: "/sitemap" },
 }
@@ -86,7 +63,7 @@ export default function SitemapPage() {
             Sitemap
           </h1>
           <p className="text-lg text-coastal-grey">
-            Explore every section of Conine Coastal in a single view.
+            Explore every section of Conine Coastal Group in a single view.
           </p>
         </header>
 

@@ -273,7 +273,7 @@ export default function AboutPage() {
               size="lg"
               className="bg-white text-coastal-navy hover:bg-white/90 px-8 py-4 text-lg"
             >
-              <Link href="/renovations">View Our Work</Link>
+              <Link href="/companies/estates">View Our Work</Link>
             </Button>
           </div>
         </div>

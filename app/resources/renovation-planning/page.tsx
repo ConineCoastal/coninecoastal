@@ -43,9 +43,9 @@ export default function RenovationPlanningPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" variant="secondary" asChild>
-                <Link href="/roi-calculator">
+                <Link href="/contact">
                   <Calculator className="mr-2 h-5 w-5" />
-                  Use ROI Calculator
+                  Get a Quote
                 </Link>
               </Button>
               <Button
@@ -504,9 +504,9 @@ export default function RenovationPlanningPage() {
               className="bg-transparent border-white text-white hover:bg-white hover:text-coastal-navy"
               asChild
             >
-              <Link href="/roi-calculator">
+              <Link href="/companies/estates">
                 <Calculator className="mr-2 h-5 w-5" />
-                Use ROI Calculator
+                View Construction Services
               </Link>
             </Button>
           </div>

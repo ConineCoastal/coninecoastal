@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useMemo } from "react"
 import { useRouter } from "next/navigation"
-import { Search, X, FileText, Home, Wrench, TrendingUp, BookOpen } from "lucide-react"
+import { Search, X, FileText, Building2, BookOpen } from "lucide-react"
 import { blogPosts } from "@/lib/blog-data"
 
 interface SearchResult {
@@ -10,45 +10,23 @@ interface SearchResult {
   description: string
   url: string
   category: string
-  icon: "page" | "real-estate" | "renovation" | "investment" | "resource" | "blog"
+  icon: "page" | "company" | "resource" | "blog"
 }
 
 const STATIC_PAGES: SearchResult[] = [
-  { title: "Home", description: "Conine Coastal - Real Estate & Construction", url: "/", category: "Pages", icon: "page" },
-  { title: "About Us", description: "Learn about David Conine and our dual expertise", url: "/about", category: "Pages", icon: "page" },
+  { title: "Home", description: "Conine Coastal Group - Family of Companies", url: "/", category: "Pages", icon: "page" },
+  { title: "About Us", description: "Learn about Conine Coastal Group", url: "/about", category: "Pages", icon: "page" },
   { title: "Contact", description: "Get in touch with our team", url: "/contact", category: "Pages", icon: "page" },
   { title: "Schedule Consultation", description: "Book a free consultation online", url: "/schedule", category: "Pages", icon: "page" },
-  { title: "FAQ", description: "Frequently asked questions about our services", url: "/faq", category: "Pages", icon: "page" },
+  { title: "FAQ", description: "Frequently asked questions about our companies", url: "/faq", category: "Pages", icon: "page" },
   { title: "Client Reviews", description: "Read what our clients say about us", url: "/reviews", category: "Pages", icon: "page" },
-  { title: "ROI Calculator", description: "Calculate your renovation return on investment", url: "/roi-calculator", category: "Tools", icon: "investment" },
 
-  // Real Estate
-  { title: "Real Estate Services", description: "Full-service real estate for the First Coast", url: "/real-estate", category: "Real Estate", icon: "real-estate" },
-  { title: "For Buyers", description: "Home buying with construction expertise", url: "/real-estate/buyers", category: "Real Estate", icon: "real-estate" },
-  { title: "For Sellers", description: "Sell your home for maximum value", url: "/real-estate/sellers", category: "Real Estate", icon: "real-estate" },
-  { title: "Current Listings", description: "Browse available properties", url: "/real-estate/listings", category: "Real Estate", icon: "real-estate" },
-  { title: "Property Management", description: "Professional property management services", url: "/real-estate/property-management", category: "Real Estate", icon: "real-estate" },
-  { title: "Market Reports", description: "Northeast Florida market analysis and trends", url: "/real-estate/market-reports", category: "Real Estate", icon: "real-estate" },
-
-  // Renovations
-  { title: "Renovation Services", description: "Professional home renovation and construction", url: "/renovations", category: "Renovations", icon: "renovation" },
-  { title: "Project Portfolio", description: "Before and after renovation gallery", url: "/renovations/portfolio", category: "Renovations", icon: "renovation" },
-  { title: "Kitchen Remodeling", description: "Custom kitchen renovations and remodels", url: "/renovations/kitchen", category: "Renovations", icon: "renovation" },
-  { title: "Bathroom Renovations", description: "Modern bathroom upgrades and remodels", url: "/renovations/bathroom", category: "Renovations", icon: "renovation" },
-  { title: "Whole Home Renovation", description: "Complete home transformation services", url: "/renovations/whole-home", category: "Renovations", icon: "renovation" },
-  { title: "Interior Renovations", description: "Interior remodeling and updates", url: "/renovations/interior", category: "Renovations", icon: "renovation" },
-  { title: "Exterior Renovation", description: "Curb appeal and exterior improvements", url: "/renovations/exterior", category: "Renovations", icon: "renovation" },
-  { title: "Flooring Services", description: "Hardwood, tile, and flooring installation", url: "/renovations/flooring", category: "Renovations", icon: "renovation" },
-  { title: "Home Additions", description: "Room additions and expansions", url: "/renovations/additions", category: "Renovations", icon: "renovation" },
-  { title: "Home Repairs", description: "General repairs and maintenance", url: "/renovations/repairs", category: "Renovations", icon: "renovation" },
-  { title: "Emergency Repairs", description: "24/7 emergency repair services", url: "/renovations/emergency", category: "Renovations", icon: "renovation" },
-
-  // Investor Services
-  { title: "Investor Services", description: "Real estate investment services and consulting", url: "/investor-services", category: "Investment", icon: "investment" },
-  { title: "Investment Services", description: "Property investment opportunities and guidance", url: "/investor-services/investment", category: "Investment", icon: "investment" },
-  { title: "Portfolio Management", description: "Investment portfolio management services", url: "/investor-services/portfolio-management", category: "Investment", icon: "investment" },
-  { title: "Property Analysis", description: "Detailed investment property analysis", url: "/investor-services/property-analysis", category: "Investment", icon: "investment" },
-  { title: "Fix and Flip", description: "Fix-and-flip investment strategies", url: "/investor-services/fix-and-flip", category: "Investment", icon: "investment" },
+  // Companies
+  { title: "Conine Coastal Real Estate", description: "Residential & commercial real estate services", url: "/companies/real-estate", category: "Companies", icon: "company" },
+  { title: "Conine Coastal Estates", description: "Construction and design-build services", url: "/companies/estates", category: "Companies", icon: "company" },
+  { title: "Conine Coastal Development", description: "Land development and planning", url: "/companies/development", category: "Companies", icon: "company" },
+  { title: "Conine Coastal Home Services", description: "Property maintenance and repairs", url: "/companies/home-services", category: "Companies", icon: "company" },
+  { title: "Conine Coastal Travel", description: "Vacation rentals and experiences", url: "/companies/travel", category: "Companies", icon: "company" },
 
   // Resources
   { title: "Resources", description: "Guides, tools, and educational content", url: "/resources", category: "Resources", icon: "resource" },
@@ -61,9 +39,7 @@ const STATIC_PAGES: SearchResult[] = [
 
 function getIcon(icon: string) {
   switch (icon) {
-    case "real-estate": return <Home className="h-4 w-4" />
-    case "renovation": return <Wrench className="h-4 w-4" />
-    case "investment": return <TrendingUp className="h-4 w-4" />
+    case "company": return <Building2 className="h-4 w-4" />
     case "resource": return <BookOpen className="h-4 w-4" />
     case "blog": return <FileText className="h-4 w-4" />
     default: return <FileText className="h-4 w-4" />
@@ -195,7 +171,7 @@ export default function SiteSearch() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="Search pages, services, blog posts..."
+                placeholder="Search companies, pages, blog posts..."
                 aria-label="Search site"
                 className="flex-1 py-4 px-3 text-base outline-none placeholder:text-coastal-grey/50"
               />
@@ -248,13 +224,13 @@ export default function SiteSearch() {
               <div className="py-8 text-center text-coastal-grey/60">
                 <Search className="h-8 w-8 mx-auto mb-2 opacity-40" />
                 <p className="text-sm">No results for &ldquo;{query}&rdquo;</p>
-                <p className="text-xs mt-1">Try different keywords or browse our services</p>
+                <p className="text-xs mt-1">Try different keywords or browse our companies</p>
               </div>
             )}
 
             {!query && (
               <div className="py-4 px-4 text-center text-coastal-grey/50 text-xs">
-                Type to search across all pages, services, and blog posts
+                Type to search across all companies, pages, and blog posts
               </div>
             )}
           </div>

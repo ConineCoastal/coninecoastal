@@ -8,9 +8,7 @@ import { trackEvent } from "@/lib/track-event"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [realEstateOpen, setRealEstateOpen] = useState(false)
-  const [renovationOpen, setRenovationOpen] = useState(false)
-  const [investorOpen, setInvestorOpen] = useState(false)
+  const [companiesOpen, setCompaniesOpen] = useState(false)
   const [resourcesOpen, setResourcesOpen] = useState(false)
   const pathname = usePathname()
 
@@ -21,9 +19,7 @@ export default function Navigation() {
   }
 
   const closeAllSubmenus = () => {
-    setRealEstateOpen(false)
-    setRenovationOpen(false)
-    setInvestorOpen(false)
+    setCompaniesOpen(false)
     setResourcesOpen(false)
   }
 
@@ -36,6 +32,14 @@ export default function Navigation() {
     closeAllSubmenus()
   }
 
+  const companies = [
+    { name: "Conine Coastal Real Estate", href: "/companies/real-estate", description: "Residential & Commercial Real Estate" },
+    { name: "Conine Coastal Estates", href: "/companies/estates", description: "Construction & Design-Build" },
+    { name: "Conine Coastal Development", href: "/companies/development", description: "Land Development & Planning" },
+    { name: "Conine Coastal Home Services", href: "/companies/home-services", description: "Property Maintenance & Repairs" },
+    { name: "Conine Coastal Travel", href: "/companies/travel", description: "Vacation Rentals & Experiences" },
+  ]
+
   return (
     <nav className="fixed top-0 w-full bg-white dark:bg-gray-950 shadow-lg z-50">
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-coastal-navy via-coastal-blue to-coastal-navy opacity-20"></div>
@@ -45,7 +49,7 @@ export default function Navigation() {
           {/* Logo Section */}
           <div className="flex items-center space-x-3">
             <Link href="/" onClick={closeMenu} className="flex items-center">
-              <Image src="/favicon.png" alt="Conine Coastal Logo" width={48} height={48} className="h-10 sm:h-12 w-auto" />
+              <Image src="/favicon.png" alt="Conine Coastal Group Logo" width={48} height={48} className="h-10 sm:h-12 w-auto" />
             </Link>
           </div>
 
@@ -60,302 +64,59 @@ export default function Navigation() {
               About
             </Link>
 
-            {/* Real Estate Services Dropdown */}
+            {/* Companies Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => {
                 closeAllSubmenus()
-                setRealEstateOpen(true)
+                setCompaniesOpen(true)
               }}
               onMouseLeave={closeAllSubmenus}
               onFocus={() => {
                 closeAllSubmenus()
-                setRealEstateOpen(true)
+                setCompaniesOpen(true)
               }}
               onBlur={(event) => {
                 if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
-                  setRealEstateOpen(false)
+                  setCompaniesOpen(false)
                 }
               }}
             >
               <button
                 type="button"
                 aria-haspopup="true"
-                aria-expanded={realEstateOpen}
+                aria-expanded={companiesOpen}
                 className={`font-serif font-medium flex items-center transition-colors text-sm xl:text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-coastal-blue focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
-                  isActive("/real-estate") ? "text-coastal-blue" : "text-coastal-navy hover:text-coastal-blue"
+                  isActive("/companies") ? "text-coastal-blue" : "text-coastal-navy hover:text-coastal-blue"
                 }`}
                 onClick={() => {
-                  const nextState = !realEstateOpen
+                  const nextState = !companiesOpen
                   closeAllSubmenus()
-                  setRealEstateOpen(nextState)
+                  setCompaniesOpen(nextState)
                 }}
               >
-                Real Estate Services
+                Companies
                 <ChevronDown
-                  className={`ml-1 h-3 w-3 xl:h-4 xl:w-4 transition-transform ${realEstateOpen ? "rotate-180" : ""}`}
+                  className={`ml-1 h-3 w-3 xl:h-4 xl:w-4 transition-transform ${companiesOpen ? "rotate-180" : ""}`}
                 />
               </button>
               <div
-                className={`absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 transition-all duration-200 ${
-                  realEstateOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                className={`absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-100 transition-all duration-200 ${
+                  companiesOpen ? "opacity-100 visible" : "opacity-0 invisible"
                 }`}
               >
                 <div className="py-2">
-                  <Link
-                    href="/real-estate"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Overview
-                  </Link>
-                  <Link
-                    href="/real-estate/buyers"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    For Buyers
-                  </Link>
-                  <Link
-                    href="/real-estate/sellers"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    For Sellers
-                  </Link>
-                  <Link
-                    href="/real-estate/listings"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Current Listings
-                  </Link>
-                  <Link
-                    href="/real-estate/property-management"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Property Management
-                  </Link>
-                  <Link
-                    href="/real-estate/market-reports"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Market Reports
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Construction Services Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => {
-                closeAllSubmenus()
-                setRenovationOpen(true)
-              }}
-              onMouseLeave={closeAllSubmenus}
-              onFocus={() => {
-                closeAllSubmenus()
-                setRenovationOpen(true)
-              }}
-              onBlur={(event) => {
-                if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
-                  setRenovationOpen(false)
-                }
-              }}
-            >
-              <button
-                type="button"
-                aria-haspopup="true"
-                aria-expanded={renovationOpen}
-                className={`font-serif font-medium flex items-center transition-colors text-sm xl:text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-coastal-blue focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
-                  isActive("/renovations") ? "text-coastal-orange" : "text-coastal-navy hover:text-coastal-blue"
-                }`}
-                onClick={() => {
-                  const nextState = !renovationOpen
-                  closeAllSubmenus()
-                  setRenovationOpen(nextState)
-                }}
-              >
-                Construction Services
-                <ChevronDown
-                  className={`ml-1 h-3 w-3 xl:h-4 xl:w-4 transition-transform ${renovationOpen ? "rotate-180" : ""}`}
-                />
-              </button>
-              <div
-                className={`absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 transition-all duration-200 ${
-                  renovationOpen ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-              >
-                <div className="py-2">
-                  <Link
-                    href="/renovations"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Overview
-                  </Link>
-                  <Link
-                    href="/renovations/kitchen"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Kitchen Remodeling
-                  </Link>
-                  <Link
-                    href="/renovations/bathroom"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Bathroom Renovations
-                  </Link>
-                  <Link
-                    href="/renovations/repairs"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Home Repairs & Maintenance
-                  </Link>
-                  <Link
-                    href="/renovations/flooring"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Flooring Services
-                  </Link>
-                  <Link
-                    href="/renovations/interior"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Interior Renovations
-                  </Link>
-                  <Link
-                    href="/renovations/emergency"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Emergency Repairs
-                  </Link>
-                  <Link
-                    href="/renovations/whole-home"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Whole Home Renovation
-                  </Link>
-                  <Link
-                    href="/renovations/additions"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Home Additions
-                  </Link>
-                  <Link
-                    href="/renovations/exterior"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Exterior Renovation
-                  </Link>
-                  <div className="border-t border-gray-100 my-1" />
-                  <Link
-                    href="/renovations/portfolio"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-orange hover:text-coastal-orange/80 hover:bg-orange-50 text-sm font-medium transition-colors touch-manipulation"
-                  >
-                    Project Portfolio
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Investor Services Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => {
-                closeAllSubmenus()
-                setInvestorOpen(true)
-              }}
-              onMouseLeave={closeAllSubmenus}
-              onFocus={() => {
-                closeAllSubmenus()
-                setInvestorOpen(true)
-              }}
-              onBlur={(event) => {
-                if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
-                  setInvestorOpen(false)
-                }
-              }}
-            >
-              <button
-                type="button"
-                aria-haspopup="true"
-                aria-expanded={investorOpen}
-                className={`font-serif font-medium flex items-center transition-colors text-sm xl:text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-coastal-blue focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
-                  isActive("/investor-services") ? "text-coastal-blue" : "text-coastal-navy hover:text-coastal-blue"
-                }`}
-                onClick={() => {
-                  const nextState = !investorOpen
-                  closeAllSubmenus()
-                  setInvestorOpen(nextState)
-                }}
-              >
-                Investor Services
-                <ChevronDown
-                  className={`ml-1 h-3 w-3 xl:h-4 xl:w-4 transition-transform ${investorOpen ? "rotate-180" : ""}`}
-                />
-              </button>
-              <div
-                className={`absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-100 transition-all duration-200 ${
-                  investorOpen ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-              >
-                <div className="py-2">
-                  <Link
-                    href="/investor-services"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Overview
-                  </Link>
-                  <Link
-                    href="/investor-services/investment"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Investment Services
-                  </Link>
-                  <Link
-                    href="/investor-services/portfolio-management"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Portfolio Management
-                  </Link>
-                  <Link
-                    href="/investor-services/property-analysis"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Property Analysis
-                  </Link>
-                  <Link
-                    href="/investor-services/fix-and-flip"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Fix & Flip Services
-                  </Link>
-                  <Link
-                    href="/roi-calculator"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    ROI Calculator
-                  </Link>
+                  {companies.map((company) => (
+                    <Link
+                      key={company.href}
+                      href={company.href}
+                      onClick={handleSubmenuItemClick}
+                      className="block px-4 py-3 hover:bg-gray-50 text-sm transition-colors touch-manipulation"
+                    >
+                      <span className="font-medium text-coastal-navy">{company.name}</span>
+                      <span className="block text-xs text-coastal-grey mt-0.5">{company.description}</span>
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
@@ -408,27 +169,6 @@ export default function Navigation() {
                     className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                   >
                     Overview
-                  </Link>
-                  <Link
-                    href="/resources/buyers-guide"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Homebuyer's Guide
-                  </Link>
-                  <Link
-                    href="/resources/sellers-checklist"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Seller's Checklist
-                  </Link>
-                  <Link
-                    href="/resources/renovation-planning"
-                    onClick={handleSubmenuItemClick}
-                    className="block px-4 py-3 text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 text-sm transition-colors touch-manipulation"
-                  >
-                    Renovation Planning
                   </Link>
                   <Link
                     href="/resources/blog"
@@ -518,233 +258,41 @@ export default function Navigation() {
                 About
               </Link>
 
-              {/* Real Estate Services - Mobile Dropdown */}
+              {/* Companies - Mobile Dropdown */}
               <div>
                 <button
                   aria-haspopup="true"
-                  aria-expanded={realEstateOpen}
+                  aria-expanded={companiesOpen}
                   className={`flex items-center justify-between w-full font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
-                    isActive("/real-estate")
+                    isActive("/companies")
                       ? "text-coastal-blue bg-blue-50"
                       : "text-coastal-navy hover:text-coastal-blue hover:bg-gray-50"
                   }`}
                   onClick={() => {
-                    if (realEstateOpen) {
-                      setRealEstateOpen(false)
+                    if (companiesOpen) {
+                      setCompaniesOpen(false)
                     } else {
-                      setRealEstateOpen(true)
-                      setRenovationOpen(false)
-                      setInvestorOpen(false)
+                      setCompaniesOpen(true)
                       setResourcesOpen(false)
                     }
                   }}
                 >
-                  Real Estate Services
-                  <ChevronDown className={`h-4 w-4 transition-transform ${realEstateOpen ? "rotate-180" : ""}`} />
+                  Companies
+                  <ChevronDown className={`h-4 w-4 transition-transform ${companiesOpen ? "rotate-180" : ""}`} />
                 </button>
-                {realEstateOpen && (
+                {companiesOpen && (
                   <div className="pl-4 mt-2 space-y-1">
-                    <Link
-                      href="/real-estate/buyers"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      For Buyers
-                    </Link>
-                    <Link
-                      href="/real-estate/sellers"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      For Sellers
-                    </Link>
-                    <Link
-                      href="/real-estate/listings"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Current Listings
-                    </Link>
-                    <Link
-                      href="/real-estate/property-management"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Property Management
-                    </Link>
-                    <Link
-                      href="/real-estate/market-reports"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Market Reports
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              {/* Construction Services - Mobile Dropdown */}
-              <div>
-                <button
-                  aria-haspopup="true"
-                  aria-expanded={renovationOpen}
-                  className={`flex items-center justify-between w-full font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
-                    isActive("/renovations")
-                      ? "text-coastal-orange bg-orange-50"
-                      : "text-coastal-navy hover:text-coastal-blue hover:bg-gray-50"
-                  }`}
-                  onClick={() => {
-                    if (renovationOpen) {
-                      setRenovationOpen(false)
-                    } else {
-                      setRenovationOpen(true)
-                      setRealEstateOpen(false)
-                      setInvestorOpen(false)
-                      setResourcesOpen(false)
-                    }
-                  }}
-                >
-                  Construction Services
-                  <ChevronDown className={`h-4 w-4 transition-transform ${renovationOpen ? "rotate-180" : ""}`} />
-                </button>
-                {renovationOpen && (
-                  <div className="pl-4 mt-2 space-y-1">
-                    <Link
-                      href="/renovations/kitchen"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Kitchen Remodeling
-                    </Link>
-                    <Link
-                      href="/renovations/bathroom"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Bathroom Renovations
-                    </Link>
-                    <Link
-                      href="/renovations/repairs"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Home Repairs & Maintenance
-                    </Link>
-                    <Link
-                      href="/renovations/flooring"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Flooring Services
-                    </Link>
-                    <Link
-                      href="/renovations/interior"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Interior Renovations
-                    </Link>
-                    <Link
-                      href="/renovations/emergency"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Emergency Repairs
-                    </Link>
-                    <Link
-                      href="/renovations/whole-home"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Whole Home Renovation
-                    </Link>
-                    <Link
-                      href="/renovations/additions"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Home Additions
-                    </Link>
-                    <Link
-                      href="/renovations/exterior"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Exterior Renovation
-                    </Link>
-                    <div className="border-t border-gray-100 my-1" />
-                    <Link
-                      href="/renovations/portfolio"
-                      onClick={closeMenu}
-                      className="block text-coastal-orange font-medium hover:text-coastal-orange/80 hover:bg-orange-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Project Portfolio
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              {/* Investor Services - Mobile Dropdown */}
-              <div>
-                <button
-                  aria-haspopup="true"
-                  aria-expanded={investorOpen}
-                  className={`flex items-center justify-between w-full font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
-                    isActive("/investor-services")
-                      ? "text-coastal-blue bg-blue-50"
-                      : "text-coastal-navy hover:text-coastal-blue hover:bg-gray-50"
-                  }`}
-                  onClick={() => {
-                    if (investorOpen) {
-                      setInvestorOpen(false)
-                    } else {
-                      setInvestorOpen(true)
-                      setRealEstateOpen(false)
-                      setRenovationOpen(false)
-                      setResourcesOpen(false)
-                    }
-                  }}
-                >
-                  Investor Services
-                  <ChevronDown className={`h-4 w-4 transition-transform ${investorOpen ? "rotate-180" : ""}`} />
-                </button>
-                {investorOpen && (
-                  <div className="pl-4 mt-2 space-y-1">
-                    <Link
-                      href="/investor-services/investment"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Investment Services
-                    </Link>
-                    <Link
-                      href="/investor-services/portfolio-management"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Portfolio Management
-                    </Link>
-                    <Link
-                      href="/investor-services/property-analysis"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Property Analysis
-                    </Link>
-                    <Link
-                      href="/investor-services/fix-and-flip"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Fix & Flip Services
-                    </Link>
-                    <Link
-                      href="/roi-calculator"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      ROI Calculator
-                    </Link>
+                    {companies.map((company) => (
+                      <Link
+                        key={company.href}
+                        href={company.href}
+                        onClick={closeMenu}
+                        className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
+                      >
+                        <span className="block font-medium">{company.name}</span>
+                        <span className="block text-xs text-coastal-grey/70 mt-0.5">{company.description}</span>
+                      </Link>
+                    ))}
                   </div>
                 )}
               </div>
@@ -764,9 +312,7 @@ export default function Navigation() {
                       setResourcesOpen(false)
                     } else {
                       setResourcesOpen(true)
-                      setRealEstateOpen(false)
-                      setRenovationOpen(false)
-                      setInvestorOpen(false)
+                      setCompaniesOpen(false)
                     }
                   }}
                 >
@@ -776,25 +322,11 @@ export default function Navigation() {
                 {resourcesOpen && (
                   <div className="pl-4 mt-2 space-y-1">
                     <Link
-                      href="/resources/buyers-guide"
+                      href="/resources"
                       onClick={closeMenu}
                       className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                     >
-                      Homebuyer's Guide
-                    </Link>
-                    <Link
-                      href="/resources/sellers-checklist"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Seller's Checklist
-                    </Link>
-                    <Link
-                      href="/resources/renovation-planning"
-                      onClick={closeMenu}
-                      className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
-                    >
-                      Renovation Planning
+                      Overview
                     </Link>
                     <Link
                       href="/resources/blog"

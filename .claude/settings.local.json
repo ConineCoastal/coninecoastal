@@ -59,7 +59,12 @@
       "Bash(find C:/Users/david/Documents/coninecoastal/.next -name *.woff2)",
       "Bash(curl -L -o inter-latin.woff2 \"https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2\")",
       "Bash(pnpm add:*)",
-      "Bash(ls -la C:/Users/david/Documents/coninecoastal/styles/*.woff2)"
+      "Bash(ls -la C:/Users/david/Documents/coninecoastal/styles/*.woff2)",
+      "mcp__Claude_Preview__preview_start",
+      "Read(//c/Users/david/Documents/**)",
+      "Bash(mv coninecoastal:*)",
+      "Bash(netstat -ano)",
+      "Bash(pnpm dev:*)"
     ]
   }
 }
