@@ -89,7 +89,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Conine Coastal is a production Next.js 16 website for a Northeast Florida real estate and construction company. Originally built with v0.dev and deployed on Vercel. Uses App Router, React 19, TypeScript, and Tailwind CSS.
+Conine Coastal is the production Next.js 16 holding-company marketing site for the Conine Coastal group — a Northeast Florida real estate and construction family of ventures. This is the parent marketing surface; the five sibling sub-sites (Development, Estates, Home Services, Real Estate, Travel) live in their own repos and are linked from this site's `app/companies/` aggregator. Originally built with v0.dev and deployed on Vercel. Uses App Router, React 19, TypeScript, and Tailwind CSS.
 
 ## Commands
 
@@ -110,11 +110,13 @@ Pages use a server/client split pattern: `page.tsx` files are Server Components 
 
 ### Routing
 
-App Router with nested file-based routing organized by service category:
-- `/real-estate/` — buyer, seller, listings, market reports, property management
-- `/renovations/` — kitchen, bathroom, whole-home, exterior, flooring, etc.
-- `/investor-services/` — investment, fix-and-flip, portfolio, property analysis
+App Router with nested file-based routing. Top-level routes:
+- `/companies/` — sub-site aggregator linking to Development, Estates, Home Services, Real Estate, Travel
+- `/about/`, `/contact/`, `/faq/`, `/reviews/`, `/schedule/` — marketing + contact flow
+- `/portal/` — client-portal entry
 - `/resources/blog/[slug]/` — dynamic blog routes from static data in `lib/blog-data.ts`
+- `/api/contact/` — contact-form POST endpoint (Resend → SMTP fallback)
+- `/offline/`, `/sitemap/`, `/privacy-policy/`, `/terms-of-service/` — PWA + legal
 
 ### Data
 
@@ -135,12 +137,26 @@ shadcn/ui components in `components/ui/`. Config in `components.json`. Path alia
 
 ### Key Shared Components
 
-- `components/navigation.tsx` — main nav with dropdown menus
-- `components/footer.tsx` — site footer
-- `components/fade-in.tsx` — Intersection Observer animation wrapper (used extensively)
-- `components/analytics.tsx` — GA4 + Facebook Pixel
+Standalone components in `components/` (13 files):
+- `navigation.tsx` — main nav with dropdown menus
+- `footer.tsx` — site footer
+- `fade-in.tsx` — Intersection Observer animation wrapper (used extensively)
+- `analytics.tsx` — GA4 + Facebook Pixel
+- `breadcrumb.tsx` — structured-data breadcrumb trail
+- `back-to-top.tsx` — scroll-to-top button
+- `newsletter-signup.tsx` — email capture form
+- `loading-skeleton.tsx` — suspense fallback skeleton
+- `pwa-register.tsx` — service worker registration
+- `resource-download.tsx` — gated-asset download trigger
+- `site-search.tsx` — client-side site search
+- `theme-provider.tsx` / `theme-toggle.tsx` — next-themes integration
+
+Plus `components/icons/` (linkedin-logo, x-logo) and `components/ui/` (13 shadcn/Radix primitives).
+
+Helpers:
 - `lib/track-event.ts` — event tracking helper
 - `lib/utils.ts` — `cn()` class merger
+- `lib/utm-tracker.ts` — UTM capture
 
 ### API Routes
 
