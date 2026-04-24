@@ -29,7 +29,12 @@ Pass-numbering resets to Pass 1 for this CC repo. Ambiguity-letter sequence rese
 | 1 | 2026-04-24 | Scaffolded `_migration/{SCOPE.md, DRY_RUN.md, AUDIT_LOG.md}` (three empty placeholders) | `6a5e6da` |
 | 2 | 2026-04-24 | Authored `_migration/SCOPE.md` | `bb95394` |
 | 3 | 2026-04-24 | Authored `_migration/DRY_RUN.md` | `9e6caa3` |
-| 4 | 2026-04-24 | Authored `_migration/AUDIT_LOG.md` (this document) | *(fill after commit)* |
+| 4 | 2026-04-24 | Authored `_migration/AUDIT_LOG.md` (this document) | `e4937a5` (local); landed in squash-merge `ec0aad1` |
+| 2b | 2026-04-24 | Backfill Pass-4 self-SHA + PR-landing note (this commit) | *(fill after commit — terminal per Ambiguity E)* |
+
+**SHA convention note (added Pass 2b, 2026-04-24).** Passes 1–4 + §7 post-audit appendix originally committed on local-only branch `backup/pre-harness-audit-2026-04-24` (SHAs `6a5e6da` / `bb95394` / `9e6caa3` / `e4937a5` / `086d56b`). That branch predated fleet-consolidation waves 1–3 + the governance contract on `main` and could not merge directly without regressing those payloads. Per LFG Ambiguity H / Landmark precedent, the five commits were cherry-picked onto `audit/harness-pass-1-4-cc` from `main` HEAD `eac73bb` (cherry-pick SHAs: `78f964d` / `873e056` / `2050e94` / `c61fabb` / `dca394a`) and squash-merged via [PR #8](https://github.com/ConineCoastal/coninecoastal/pull/8) as `ec0aad1`. The backup and cherry-pick SHAs are historical-only (not reachable from `main`); the authoritative `main` record is `ec0aad1`.
+
+**Self-reference limit (Ambiguity E recursion).** Pass 2b's own landing SHA cannot be recorded in its own commit. Per Ambiguity E the recursion is accepted and the row carries `(fill after commit — terminal per Ambiguity E)` as durable state. `git log -- _migration/AUDIT_LOG.md` on `main` is the authoritative source.
 
 ---
 
