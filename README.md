@@ -1,30 +1,41 @@
-# Conine coastal website
+# Conine Coastal
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Holding-company marketing site for Conine Coastal — a Northeast Florida real estate and construction group. This is the parent marketing surface; the five sibling sub-sites (Development, Estates, Home Services, Real Estate, Travel) each live in their own repos.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/lfgetaway/v0-conine-coastal)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/yIkWen7SzcT)
+Built with Next.js 16 (App Router), React 19, TypeScript, and Tailwind CSS. Deployed on Vercel. Originally scaffolded via [v0.dev](https://v0.dev).
 
-## Overview
+## Stack
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+- **Framework:** Next.js 16 (App Router)
+- **UI:** React 19 · Tailwind CSS · shadcn/ui · next-themes (class-based dark mode)
+- **Package manager:** pnpm
+- **Content:** static TypeScript modules under `lib/` (no database, no CMS)
+- **Email:** Resend → Nodemailer/SMTP fallback (`app/api/contact/`)
+- **Analytics:** GA4 + Facebook Pixel (`components/analytics.tsx`)
+- **PWA:** service worker + manifest
+
+## Commands
+
+```bash
+pnpm install
+pnpm dev          # dev server
+pnpm build        # production build
+pnpm start        # production server
+pnpm lint         # ESLint
+```
+
+## Structure
+
+- `app/` — App Router routes and API handlers (`app/api/contact/`)
+- `components/` — standalone components + `icons/` + `ui/` (shadcn/ui primitives)
+- `lib/` — static content registries (`blog-data.ts`, `testimonials-data.ts`) and helpers
+- `public/` — favicons, PWA manifest, site imagery
+- `styles/` — fonts, globals
+
+## Agent guidance
+
+See [`CLAUDE.md`](./CLAUDE.md) for Claude Code session governance — venture scope (`conine-coastal-holding`), prohibited actions, session checklist. Changes to the governance contract block require a PR.
 
 ## Deployment
 
-Your project is live at:
-
-**[https://vercel.com/lfgetaway/v0-conine-coastal](https://vercel.com/lfgetaway/v0-conine-coastal)**
-
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.dev/chat/projects/yIkWen7SzcT](https://v0.dev/chat/projects/yIkWen7SzcT)**
-
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+Vercel auto-deploys on push to `main`.
