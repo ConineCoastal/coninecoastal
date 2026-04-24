@@ -171,3 +171,14 @@ When CC-3 is resolved (backup branch pushed to origin) post-audit, rollback path
 git push origin --delete backup/pre-harness-audit-2026-04-24
 ```
 This step is documented here for completeness; it is not required while CC-3 stays open.
+
+---
+
+## 7. Post-audit feedback to canonical scaffold
+
+**Date:** 2026-04-24
+
+Two lessons from CC Pass 4 were fed back into the ai-infrastructure canonical simplified-scaffold template at `shared/templates/audit-scaffold-simplified/` (README.md + SCOPE.md + DRY_RUN.md + AUDIT_LOG.md), tagged `audit-scaffold-v1.0`. Codification commit SHA in ai-infra: `05fbadd` on branch `backup/pre-harness-audit-2026-04-21`.
+
+- **Ambiguity-Log-as-decision-gate idiom.** CC Pass 4 extended `AUDIT_LOG.md` §3 beyond "runtime surprises only" to include pre-Pass decision gates recorded as resolved entries with explicit rationale. Pattern established by CC Gates 1–3 — see §3 entries **C** (Pass 4 scope: AUDIT_LOG-only vs compound-commit), **D** (backup branch push-to-origin timing), and **E** (`SCOPE.md` §9 placeholder durable-state acceptance).
+- **Pass-per-file cadence (Pattern B).** CC split `AUDIT_LOG.md` authoring out to Pass 4, establishing a pass-per-file cadence distinct from LFG's bundled Pass 3. Template README now documents both as valid patterns. Controlling decision recorded in §3 entry **A** (Pass 3 Gate 1 — AUDIT_LOG authoring timing).
