@@ -7,7 +7,7 @@
 **Canonical scope ID:** `conine-coastal-holding`
 **GitHub remote:** `ConineCoastal/coninecoastal`
 **Pinned gh account:** `ConineCoastal` (applied via `ai-infrastructure/shared/scripts/pin-credential.sh`)
-**Governed by:** `ai-infrastructure/GOVERNANCE.md` + `ai-infrastructure/offices/web-design-firm/CLAUDE.md` + this file.
+**Governed by:** `ai-infrastructure/GOVERNANCE.md` + `ai-infrastructure/guides/skills/web-design-firm/_system.md` + this file.
 
 ### 1. Venture scope declaration
 
@@ -34,8 +34,8 @@ Vercel auto-deploys on push to `main`.
 
 ### 4. AI Infrastructure references
 
-- **`ai-infrastructure/offices/web-design-firm/`** — primary. Marketing website work (brand surface, public pages, conversion). Client file at `offices/web-design-firm/clients/conine-coastal-holding.md`.
-- **`ai-infrastructure/offices/c-suite/`** — for strategic/executive cross-venture questions only.
+- **`ai-infrastructure/guides/skills/web-design-firm/`** — primary. Marketing website work (brand surface, public pages, conversion). Client file at `guides/skills/web-design-firm/clients/conine-coastal-holding.md`.
+- **`ai-infrastructure/guides/skills/c-suite/`** — for strategic/executive cross-venture questions only.
 
 **Scheduled routines touching this venture:** none currently.
 
@@ -74,7 +74,7 @@ At session start:
 
 1. Confirm the session is scoped to `conine-coastal-holding` — state this explicitly.
 2. Read `ai-infrastructure/GOVERNANCE.md §3, §4` and §5 above.
-3. If the session touches site content: load `ai-infrastructure/offices/web-design-firm/clients/conine-coastal-holding.md`.
+3. If the session touches site content: load `ai-infrastructure/guides/skills/web-design-firm/clients/conine-coastal-holding.md`.
 4. Before any push: `git config --local --get credential.username` → must return `ConineCoastal`.
 
 At session end:
