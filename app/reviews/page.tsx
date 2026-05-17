@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 export default function ReviewsPage() {
   return (
     <main className="bg-white">
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Reviews" }]} />
+      <Breadcrumb />
 
       <section className="py-16 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
