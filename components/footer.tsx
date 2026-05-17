@@ -189,14 +189,8 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4 text-base sm:text-lg">Quick Links</h4>
             <ul className="space-y-3 text-white/80">
-              <li>
-                <Link
-                  href="/schedule"
-                  className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
-                >
-                  Schedule Consultation
-                </Link>
-              </li>
+              {/* /schedule + /portal footer links removed per ai-infra SYS-011 Q3-R1 Flag #3 (2026-05-17):
+                  scheduling + portal backends (CRM, auth) not yet selected; routes return by sitenav once wired. */}
               <li>
                 <Link
                   href="/resources"
@@ -211,14 +205,6 @@ export default function Footer() {
                   className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
                 >
                   Market Updates
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/portal"
-                  className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
-                >
-                  Client Portal
                 </Link>
               </li>
             </ul>
