@@ -208,13 +208,8 @@ export default function Navigation() {
               <Phone className="h-3 w-3 xl:h-4 xl:w-4 mr-2" />
               <span className="font-serif font-medium text-sm xl:text-base">(904) 624-1722</span>
             </a>
-            <Link
-              href="/schedule"
-              className="flex items-center bg-coastal-orange hover:bg-coastal-orange/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors touch-manipulation"
-            >
-              <Calendar className="h-4 w-4 mr-1.5" />
-              Schedule
-            </Link>
+            {/* /schedule CTA removed per ai-infra SYS-011 Q3-R1 Flag #3 (2026-05-17):
+                scheduling backend (CRM) not yet selected; route returns by sitenav once wired. */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -358,16 +353,8 @@ export default function Navigation() {
                 Contact
               </Link>
 
-              <div className="pt-2 border-t border-gray-100">
-                <Link
-                  href="/schedule"
-                  onClick={closeMenu}
-                  className="flex items-center justify-center bg-coastal-orange hover:bg-coastal-orange/90 text-white font-medium py-3 px-4 rounded-lg transition-colors touch-manipulation"
-                >
-                  <Calendar className="h-5 w-5 mr-2" />
-                  Schedule Consultation
-                </Link>
-              </div>
+              {/* /schedule mobile CTA removed per ai-infra SYS-011 Q3-R1 Flag #3 (2026-05-17):
+                  scheduling backend (CRM) not yet selected; route returns by sitenav once wired. */}
             </div>
           </div>
         </div>
