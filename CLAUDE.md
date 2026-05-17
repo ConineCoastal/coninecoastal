@@ -89,7 +89,41 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Conine Coastal is the production Next.js 16 holding-company marketing site for the Conine Coastal group — a Northeast Florida real estate and construction family of ventures. This is the parent marketing surface; the five sibling sub-sites (Development, Estates, Home Services, Real Estate, Travel) live in their own repos and are linked from this site's `app/companies/` aggregator. Originally built with v0.dev and deployed on Vercel. Uses App Router, React 19, TypeScript, and Tailwind CSS.
+Conine Coastal is the parent holding company and brand umbrella for the Conine Coastal family of Northeast Florida property businesses — a single directory and front door routing visitors to **Real Estate, Estates, Development, Home Services, and Travel**. This site is the production Next.js 16 holding-company marketing surface; the five sibling sub-sites live in their own repos and are linked from this site's `app/companies/` aggregator. Originally built with v0.dev and deployed on Vercel. App Router, React 19, TypeScript, Tailwind CSS.
+
+### Audience (not buyer-facing)
+
+This is not a transactional surface. The audience is:
+
+1. **Prospective clients of any subsidiary** verifying the legitimacy of the group before engaging a sub-site.
+2. **Referral partners** (brokers, attorneys, wealth managers, family offices) evaluating the ecosystem.
+3. **Press / vendors.**
+
+Effectively a credibility layer behind the five operating brands. No CTAs that imply transactional intent.
+
+### Differentiator vs. the five sub-sites
+
+This is the only site that talks about the *group*: integrated land-through-maintenance lifecycle, intercompany cross-referral protocol, shared brand. Sub-sites should never describe the holding co; they link up to it.
+
+## Pre-Launch State
+
+**The Conine Coastal group is pre-launch. No subsidiary entities have been formed.** All five companies (Development, Estates, Home Services, Real Estate, Travel) are planning frameworks awaiting attorney review.
+
+Hard rules for any content edits to this site:
+
+- **Do not imply** that subsidiaries are "operating," holding revenue, serving clients, or carrying testimonials. None of these are true yet.
+- The `reviews` route exists structurally but is **empty content territory** until launch. Do not populate it with fabricated testimonials.
+- "By appointment / inquiry" framing applies by default. Avoid "book now" CTAs.
+- CRM platform for cross-referral tracking is **still unselected** (open decision). Don't reference a specific CRM as if it's wired in.
+
+## Brand Positioning
+
+- **Palette:** Coastal Blue / Sand / White (see `tailwind.config.ts` below for exact tokens).
+- **Type:** Goldenbook display + Times body.
+- **Voice:** institutional, integrated, lifecycle-of-property. Never frame as a single service provider — always *"a family of companies."*
+- **Geography:** Always **Northeast Florida / First Coast / St. Augustine to Amelia Island.** Never "Charleston," never generic "the coast," never other FL regions.
+
+> **Updated 2026-05-17 per ai-infrastructure SYS-011 Q3-R1 (David's questionnaire).** Supersedes the prior 4-sentence summary.
 
 ## Commands
 
