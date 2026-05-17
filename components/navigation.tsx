@@ -3,7 +3,7 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Phone, Menu, X, ChevronDown, Calendar } from "lucide-react"
+import { Phone, Menu, X, ChevronDown } from "lucide-react"
 import { trackEvent } from "@/lib/track-event"
 
 export default function Navigation() {
