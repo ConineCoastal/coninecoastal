@@ -22,14 +22,14 @@ function AnalyticsPageTracker() {
 
     // GA4 page view
     if (GA_MEASUREMENT_ID && typeof window !== "undefined" && "gtag" in window) {
-      ;(window as unknown as Record<string, Function>).gtag("config", GA_MEASUREMENT_ID, {
+      ;(window as unknown as Record<string, (...args: unknown[]) => void>).gtag("config", GA_MEASUREMENT_ID, {
         page_path: url,
       })
     }
 
     // Facebook Pixel page view
     if (FB_PIXEL_ID && typeof window !== "undefined" && "fbq" in window) {
-      ;(window as unknown as Record<string, Function>).fbq("track", "PageView")
+      ;(window as unknown as Record<string, (...args: unknown[]) => void>).fbq("track", "PageView")
     }
   }, [pathname, searchParams])
 

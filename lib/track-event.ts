@@ -14,12 +14,12 @@ export function trackEvent(
 
   // Google Analytics 4
   if ("gtag" in window) {
-    ;(window as unknown as Record<string, Function>).gtag("event", eventName, params)
+    ;(window as unknown as Record<string, (...args: unknown[]) => void>).gtag("event", eventName, params)
   }
 
   // Facebook Pixel — map to standard events where applicable
   if ("fbq" in window) {
-    const fbq = (window as unknown as Record<string, Function>).fbq
+    const fbq = (window as unknown as Record<string, (...args: unknown[]) => void>).fbq
     switch (eventName) {
       case "contact_form_submit":
         fbq("track", "Lead", params)
