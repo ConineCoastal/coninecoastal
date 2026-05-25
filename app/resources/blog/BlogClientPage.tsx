@@ -79,7 +79,7 @@ export default function BlogClientPage() {
             </h2>
           </div>
 
-          <Card className="overflow-hidden hover:shadow-xl transition-shadow">
+          <Card className="overflow-hidden hover:shadow-md transition-shadow">
             <div className="grid lg:grid-cols-2 gap-0">
               <div className="relative h-64 lg:h-auto">
                 <Image

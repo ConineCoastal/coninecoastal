@@ -111,7 +111,7 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto bg-coastal-blue hover:bg-coastal-blue/90 text-white px-8 sm:px-10 py-4 text-lg sm:text-xl shadow-2xl min-h-[56px] touch-manipulation"
+              className="w-full sm:w-auto bg-coastal-blue hover:bg-coastal-blue/90 text-white px-8 sm:px-10 py-4 text-lg sm:text-xl min-h-[56px] touch-manipulation"
             >
               <Link href="/about" className="flex items-center justify-center">
                 <Building2 className="mr-2 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" />
@@ -121,7 +121,7 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 sm:px-10 py-4 text-lg sm:text-xl shadow-2xl min-h-[56px] touch-manipulation"
+              className="w-full sm:w-auto bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 sm:px-10 py-4 text-lg sm:text-xl min-h-[56px] touch-manipulation"
             >
               <Link href="/contact" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" />

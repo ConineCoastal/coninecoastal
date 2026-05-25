@@ -82,7 +82,7 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <Badge className="mb-4 bg-coastal-orange text-white">Featured Article</Badge>
-            <Card className="overflow-hidden hover:shadow-xl transition-shadow">
+            <Card className="overflow-hidden hover:shadow-md transition-shadow">
               <Link href={`/resources/blog/${featuredPost.slug}`} className="block">
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div className="bg-coastal-navy p-8 lg:p-12 text-white">
