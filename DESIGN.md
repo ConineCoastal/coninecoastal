@@ -142,6 +142,8 @@ A restrained coastal palette: navy and blue carry the brand, warm tones are rati
 **Display Font:** Playfair Display (with Georgia, Times New Roman, serif fallback)
 **Body Font:** Inter (with -apple-system, Segoe UI, sans-serif fallback)
 
+> **Brand-intent note.** The brand positioning in `CLAUDE.md` (per the Q3-R1 questionnaire) names **Goldenbook display + Times body** as the intended typographic direction. The current shipped implementation uses **Playfair Display + Inter** as the working stand-in (Goldenbook is a commercial license not yet acquired). This spec documents the shipped system; treat Goldenbook + Times as the migration target rather than a contradiction. When the license lands, swap the families and re-run `/impeccable document` to refresh these tokens.
+
 **Character:** A high-contrast editorial serif paired with a neutral, highly legible grotesque. Playfair carries gravity and age, the look of a printed annual report or a chartered institution; Inter keeps the reading experience modern and clean. Distinctively, navigation links are set in Playfair medium at small size, lending even the chrome an editorial, institutional tone. Headings are tightly tracked (-0.025em); body is set loose and readable (1.65 line-height) with a faint negative tracking (-0.01em).
 
 ### Hierarchy
