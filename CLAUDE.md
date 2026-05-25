@@ -118,8 +118,8 @@ Hard rules for any content edits to this site:
 
 ## Brand Positioning
 
-- **Palette:** Coastal Blue / Sand / White (see `tailwind.config.ts` below for exact tokens).
-- **Type:** Goldenbook display + Times body.
+- **Palette:** Per Brand Guidelines (5.25.26): **Primary** Navy Blue `#18457C` + Blue `#229FD9`; **Secondary** Orange `#F16622` / Yellow `#FFCA05` / Grey `#707070`. Navy/blue lead; secondary colors are rationed and never a page's primary identity. See `DESIGN.md` + `tailwind.config.ts`.
+- **Type:** Goldenbook display + Times body is the brand intent (pending Goldenbook font licensing). Shipped/canonical implementation: Playfair Display (display) + Inter (body) as working stand-ins. Recommendation: keep Inter for body even after licensing Goldenbook (Times reads dated as a web body font).
 - **Voice:** institutional, integrated, lifecycle-of-property. Never frame as a single service provider — always *"a family of companies."*
 - **Geography:** Always **Northeast Florida / First Coast / St. Augustine to Amelia Island.** Never "Charleston," never generic "the coast," never other FL regions.
 

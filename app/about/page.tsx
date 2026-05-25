@@ -117,7 +117,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            <Card className="border-2 border-coastal-blue/20 hover:border-coastal-blue transition-all duration-300 hover:shadow-xl">
+            <Card className="border border-gray-200 hover:border-coastal-navy transition-colors">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
                   <Target className="h-12 w-12 text-coastal-blue mr-4" />
@@ -133,10 +133,10 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center border-2 border-coastal-orange/20 hover:border-coastal-orange transition-all duration-300 hover:shadow-xl">
+            <Card className="text-center border border-gray-200 hover:border-coastal-navy transition-colors">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
-                  <Award className="h-12 w-12 text-coastal-orange mr-4" />
+                  <Award className="h-12 w-12 text-coastal-blue mr-4" />
                   <h3 className="text-2xl font-bold text-coastal-navy font-serif">
                     For Sellers
                   </h3>
@@ -148,10 +148,10 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center border-2 border-coastal-yellow/20 hover:border-coastal-yellow transition-all duration-300 hover:shadow-xl">
+            <Card className="text-center border border-gray-200 hover:border-coastal-navy transition-colors">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
-                  <Hammer className="h-12 w-12 text-coastal-yellow mr-4" />
+                  <Hammer className="h-12 w-12 text-coastal-blue mr-4" />
                   <h3 className="text-2xl font-bold text-coastal-navy font-serif">
                     For Investors
                   </h3>

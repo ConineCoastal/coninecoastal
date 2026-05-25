@@ -74,7 +74,7 @@ export default function SellersChecklistPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Kitchen Updates */}
-            <Card className="hover:shadow-lg transition-shadow border-l-4 border-coastal-blue">
+            <Card className="hover:shadow-lg transition-shadow border border-gray-200">
               <CardHeader>
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 bg-coastal-blue/10 rounded-lg flex items-center justify-center">
@@ -105,7 +105,7 @@ export default function SellersChecklistPage() {
             </Card>
 
             {/* Bathroom Updates */}
-            <Card className="hover:shadow-lg transition-shadow border-l-4 border-coastal-blue">
+            <Card className="hover:shadow-lg transition-shadow border border-gray-200">
               <CardHeader>
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 bg-coastal-blue/10 rounded-lg flex items-center justify-center">
@@ -136,7 +136,7 @@ export default function SellersChecklistPage() {
             </Card>
 
             {/* Curb Appeal */}
-            <Card className="hover:shadow-lg transition-shadow border-l-4 border-coastal-blue">
+            <Card className="hover:shadow-lg transition-shadow border border-gray-200">
               <CardHeader>
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 bg-coastal-blue/10 rounded-lg flex items-center justify-center">
