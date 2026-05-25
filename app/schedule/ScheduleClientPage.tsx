@@ -895,7 +895,7 @@ export default function ScheduleClientPage() {
       </section>
 
       {/* Quick Contact Alternative */}
-      <section className="py-12 bg-gradient-to-r from-coastal-navy to-coastal-blue">
+      <section className="py-12 bg-coastal-navy">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-2xl font-bold text-white mb-4 font-serif">
             Prefer to Talk Now?

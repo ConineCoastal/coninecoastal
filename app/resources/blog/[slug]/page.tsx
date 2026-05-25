@@ -260,7 +260,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-coastal-navy to-coastal-blue">
+      <section className="py-16 bg-coastal-navy">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white mb-4 font-serif">
             Have Questions About This Topic?

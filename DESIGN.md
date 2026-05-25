@@ -115,6 +115,8 @@ This system explicitly rejects two things named in PRODUCT.md. It must never loo
 
 A restrained coastal palette: navy and blue carry the brand, warm tones are rationed to wayfinding accents, and everything sits on near-white with hairline greys. The accent colors are the exception, not the field.
 
+> **Authoritative source: Conine Coastal Brand Guidelines (5.25.26).** These five hex values are the official company palette and must be used exactly across all Conine Coastal sites. The guideline classifies them as **Primary: Navy Blue #18457C, Blue #229FD9** and **Secondary: Orange #F16622, Yellow #FFCA05, Grey #707070**. The functional roles below (Primary / Secondary / Tertiary / Neutral) refine this for the site without contradicting it: navy and blue lead; orange, yellow, and grey are rationed secondary and support. Secondary colors are never a page's primary identity color.
+
 ### Primary
 - **Deep Harbor Navy** (#18457C): The institutional anchor. Used for primary headings on light backgrounds, the full-bleed conviction sections (stats band, closing band), navigation text, and body text where weight matters. This is the color of permanence; it should dominate the brand impression.
 - **First Coast Blue** (#229FD9): The single signature accent. Primary calls to action, links and hover states, the global focus ring (2px solid #229FD9), badges, and small wayfinding marks. Clear and coastal, it is the brand's one bright voice and should stay rare enough to mean something.
