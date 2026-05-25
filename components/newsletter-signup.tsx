@@ -50,7 +50,7 @@ export default function NewsletterSignup() {
 
   if (status === "success") {
     return (
-      <div className="flex items-center gap-2 text-green-400">
+      <div className="flex items-center gap-2 text-green-400" role="status" aria-live="polite">
         <CheckCircle className="h-5 w-5 flex-shrink-0" />
         <span className="text-sm">{message}</span>
       </div>
@@ -64,6 +64,11 @@ export default function NewsletterSignup() {
         <Input
           type="email"
           placeholder="Enter your email"
+          aria-label="Email address"
+          autoComplete="email"
+          maxLength={254}
+          aria-invalid={status === "error"}
+          aria-describedby={status === "error" ? "newsletter-error" : undefined}
           value={email}
           onChange={(e) => {
             setEmail(e.target.value)
@@ -84,7 +89,11 @@ export default function NewsletterSignup() {
         )}
       </Button>
       {status === "error" && (
-        <p className="text-red-400 text-xs sm:absolute sm:bottom-0 sm:translate-y-full sm:mt-1">
+        <p
+          id="newsletter-error"
+          role="alert"
+          className="text-red-400 text-xs sm:absolute sm:bottom-0 sm:translate-y-full sm:mt-1"
+        >
           {message}
         </p>
       )}

@@ -17,6 +17,25 @@ export default function FadeIn({ children, className, delay = 0 }: FadeInProps) 
     const el = ref.current
     if (!el) return
 
+    // Reveal immediately (no scroll animation) when the user prefers reduced
+    // motion or the browser lacks IntersectionObserver, so content is never
+    // left stuck at opacity-0.
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+
+    if (prefersReducedMotion || typeof IntersectionObserver === "undefined") {
+      setIsVisible(true)
+      return
+    }
+
+    // Reveal content already in view at mount without waiting on the observer
+    // callback, so above-the-fold content can never be stuck at opacity-0.
+    if (el.getBoundingClientRect().top < window.innerHeight) {
+      setIsVisible(true)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -35,8 +54,8 @@ export default function FadeIn({ children, className, delay = 0 }: FadeInProps) 
     <div
       ref={ref}
       className={cn(
-        "opacity-0",
-        isVisible && "animate-fade-in-up",
+        "motion-safe:opacity-0",
+        isVisible && "motion-safe:animate-fade-in-up",
         className
       )}
       style={isVisible && delay ? { animationDelay: `${delay}ms` } : undefined}

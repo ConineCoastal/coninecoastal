@@ -235,13 +235,17 @@ export default function ContactClientPage() {
                       id="contact-name"
                       type="text"
                       name="name"
+                      autoComplete="name"
+                      maxLength={200}
                       value={formData.name}
                       onChange={handleInputChange}
                       onBlur={handleBlur}
                       required
+                      aria-invalid={!!getError("name")}
+                      aria-describedby={getError("name") ? "contact-name-error" : undefined}
                       className={`border-coastal-grey/30 focus:border-coastal-blue ${getError("name") ? "border-red-500" : ""}`}
                     />
-                    {getError("name") && <p className="text-red-500 text-xs mt-1">{getError("name")}</p>}
+                    {getError("name") && <p id="contact-name-error" role="alert" className="text-red-500 text-xs mt-1">{getError("name")}</p>}
                   </div>
 
                   <div>
@@ -252,13 +256,18 @@ export default function ContactClientPage() {
                       id="contact-email"
                       type="email"
                       name="email"
+                      autoComplete="email"
+                      inputMode="email"
+                      maxLength={254}
                       value={formData.email}
                       onChange={handleInputChange}
                       onBlur={handleBlur}
                       required
+                      aria-invalid={!!getError("email")}
+                      aria-describedby={getError("email") ? "contact-email-error" : undefined}
                       className={`border-coastal-grey/30 focus:border-coastal-blue ${getError("email") ? "border-red-500" : ""}`}
                     />
-                    {getError("email") && <p className="text-red-500 text-xs mt-1">{getError("email")}</p>}
+                    {getError("email") && <p id="contact-email-error" role="alert" className="text-red-500 text-xs mt-1">{getError("email")}</p>}
                   </div>
 
                   <div>
@@ -269,13 +278,18 @@ export default function ContactClientPage() {
                       id="contact-phone"
                       type="tel"
                       name="phone"
+                      autoComplete="tel"
+                      inputMode="tel"
+                      maxLength={30}
                       value={formData.phone}
                       onChange={handleInputChange}
                       onBlur={handleBlur}
                       required
+                      aria-invalid={!!getError("phone")}
+                      aria-describedby={getError("phone") ? "contact-phone-error" : undefined}
                       className={`border-coastal-grey/30 focus:border-coastal-blue ${getError("phone") ? "border-red-500" : ""}`}
                     />
-                    {getError("phone") && <p className="text-red-500 text-xs mt-1">{getError("phone")}</p>}
+                    {getError("phone") && <p id="contact-phone-error" role="alert" className="text-red-500 text-xs mt-1">{getError("phone")}</p>}
                   </div>
 
                   <div>
@@ -304,6 +318,7 @@ export default function ContactClientPage() {
                     <Textarea
                       id="contact-message"
                       name="message"
+                      maxLength={5000}
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={4}
