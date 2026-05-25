@@ -33,11 +33,11 @@ export default function Navigation() {
   }
 
   const companies = [
-    { name: "Conine Coastal Real Estate", href: "/companies/real-estate", description: "Residential & Commercial Real Estate" },
-    { name: "Conine Coastal Estates", href: "/companies/estates", description: "Construction & Design-Build" },
-    { name: "Conine Coastal Development", href: "/companies/development", description: "Land Development & Planning" },
-    { name: "Conine Coastal Home Services", href: "/companies/home-services", description: "Property Maintenance & Repairs" },
-    { name: "Conine Coastal Travel", href: "/companies/travel", description: "Vacation Rentals & Experiences" },
+    { name: "Conine Coastal Real Estate", href: "https://coninecoastalrealestate.com", description: "Residential & Commercial Real Estate" },
+    { name: "Conine Coastal Estates", href: "https://coninecoastalestates.com", description: "Construction & Design-Build" },
+    { name: "Conine Coastal Development", href: "https://coninecoastaldevelopment.com", description: "Land Development & Planning" },
+    { name: "Conine Coastal Home Services", href: "https://coninecoastalhomeservices.com", description: "Property Maintenance & Repairs" },
+    { name: "Conine Coastal Travel", href: "https://coninecoastaltravel.com", description: "Vacation Rentals & Experiences" },
   ]
 
   return (
@@ -110,6 +110,8 @@ export default function Navigation() {
                     <Link
                       key={company.href}
                       href={company.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={handleSubmenuItemClick}
                       className="block px-4 py-3 hover:bg-gray-50 text-sm transition-colors touch-manipulation"
                     >
@@ -281,6 +283,8 @@ export default function Navigation() {
                       <Link
                         key={company.href}
                         href={company.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={closeMenu}
                         className="block text-coastal-grey hover:text-coastal-blue hover:bg-gray-50 py-3 px-2 rounded-md transition-colors touch-manipulation"
                       >
