@@ -37,6 +37,15 @@ const nextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      { source: "/companies/real-estate", destination: "https://coninecoastalrealestate.com", permanent: true },
+      { source: "/companies/estates", destination: "https://coninecoastalestates.com", permanent: true },
+      { source: "/companies/development", destination: "https://coninecoastaldevelopment.com", permanent: true },
+      { source: "/companies/home-services", destination: "https://coninecoastalhomeservices.com", permanent: true },
+      { source: "/companies/travel", destination: "https://coninecoastaltravel.com", permanent: true },
+    ]
+  },
 }
 
 export default nextConfig

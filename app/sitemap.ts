@@ -20,12 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/faq`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/reviews`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
 
-    // Companies
-    { url: `${baseUrl}/companies/real-estate`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/companies/estates`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/companies/development`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/companies/home-services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/companies/travel`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    // Companies — each /companies/* path 301/308-redirects to its child site (see next.config.mjs);
+    // excluded from the sitemap to avoid competing with the child sites for the same content.
 
     // Tools
     // /portal removed per ai-infra SYS-011 Q3-R1 Flag #3 follow-up (2026-05-25): portal backend (auth) not yet selected; restore once wired.
