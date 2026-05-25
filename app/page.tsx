@@ -21,10 +21,7 @@ const companies = [
   {
     name: "Conine Coastal Real Estate",
     href: "/companies/real-estate",
-    icon: <Home className="h-10 w-10 sm:h-12 sm:w-12 text-coastal-blue" />,
-    color: "border-coastal-blue/20 hover:border-coastal-blue",
-    buttonColor: "bg-coastal-blue hover:bg-coastal-blue/90",
-    checkColor: "text-coastal-blue",
+    icon: <Home className="h-10 w-10 sm:h-12 sm:w-12 text-coastal-navy" />,
     description: "Full-service residential and commercial real estate — sales, leasing, property management, appraisals, and specialized services including waterfront properties and investment acquisitions.",
     highlights: [
       "Residential & commercial sales and leasing",
@@ -36,10 +33,7 @@ const companies = [
   {
     name: "Conine Coastal Estates",
     href: "/companies/estates",
-    icon: <Hammer className="h-10 w-10 sm:h-12 sm:w-12 text-coastal-orange" />,
-    color: "border-coastal-orange/20 hover:border-coastal-orange",
-    buttonColor: "bg-coastal-orange hover:bg-coastal-orange/90",
-    checkColor: "text-coastal-orange",
+    icon: <Hammer className="h-10 w-10 sm:h-12 sm:w-12 text-coastal-navy" />,
     description: "Custom home building, historic restorations, major renovations, and commercial construction — from design through completion with sustainable building practices.",
     highlights: [
       "Custom homes and historic restorations",
@@ -52,9 +46,6 @@ const companies = [
     name: "Conine Coastal Development",
     href: "/companies/development",
     icon: <HardHat className="h-10 w-10 sm:h-12 sm:w-12 text-coastal-navy" />,
-    color: "border-coastal-navy/20 hover:border-coastal-navy",
-    buttonColor: "bg-coastal-navy hover:bg-coastal-navy/90",
-    checkColor: "text-coastal-navy",
     description: "Land acquisition, master planning, entitlement and permitting, site development, and project management — turning raw land into thriving communities.",
     highlights: [
       "Land acquisition and due diligence",
@@ -66,10 +57,7 @@ const companies = [
   {
     name: "Conine Coastal Home Services",
     href: "/companies/home-services",
-    icon: <Wrench className="h-10 w-10 sm:h-12 sm:w-12 text-coastal-yellow" />,
-    color: "border-coastal-yellow/20 hover:border-coastal-yellow",
-    buttonColor: "bg-coastal-yellow hover:bg-coastal-yellow/90 text-coastal-navy",
-    checkColor: "text-coastal-yellow",
+    icon: <Wrench className="h-10 w-10 sm:h-12 sm:w-12 text-coastal-navy" />,
     description: "Comprehensive property maintenance, HVAC, plumbing, electrical, landscaping, pool services, and seasonal maintenance programs to keep your property in top condition.",
     highlights: [
       "Property maintenance and inspections",
@@ -81,10 +69,7 @@ const companies = [
   {
     name: "Conine Coastal Travel",
     href: "/companies/travel",
-    icon: <Palmtree className="h-10 w-10 sm:h-12 sm:w-12 text-coastal-blue" />,
-    color: "border-coastal-blue/20 hover:border-coastal-blue",
-    buttonColor: "bg-coastal-blue hover:bg-coastal-blue/90",
-    checkColor: "text-coastal-blue",
+    icon: <Palmtree className="h-10 w-10 sm:h-12 sm:w-12 text-coastal-navy" />,
     description: "Vacation rental management, local experiences, equipment rentals, concierge services, and custom travel itineraries for visitors and property owners alike.",
     highlights: [
       "Vacation property management and bookings",
@@ -147,27 +132,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="py-10 bg-coastal-navy text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl sm:text-4xl font-bold text-coastal-blue mb-1">5</div>
-              <div className="text-sm sm:text-base text-white/80">Companies</div>
-            </div>
-            <div>
-              <div className="text-3xl sm:text-4xl font-bold text-coastal-orange mb-1">20+</div>
-              <div className="text-sm sm:text-base text-white/80">Years Experience</div>
-            </div>
-            <div>
-              <div className="text-3xl sm:text-4xl font-bold text-coastal-blue mb-1">500+</div>
-              <div className="text-sm sm:text-base text-white/80">Projects Completed</div>
-            </div>
-            <div>
-              <div className="text-3xl sm:text-4xl font-bold text-coastal-orange mb-1">100%</div>
-              <div className="text-sm sm:text-base text-white/80">Client-Focused</div>
-            </div>
-          </div>
+      {/* Lifecycle Statement Band */}
+      <section className="py-12 sm:py-16 bg-coastal-navy text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xl sm:text-2xl lg:text-3xl font-serif leading-relaxed text-balance">
+            One integrated group across the full lifecycle of property: land, building, brokerage, maintenance, and travel. Serving Northeast Florida from St. Augustine to Amelia Island.
+          </p>
         </div>
       </section>
 
@@ -233,7 +203,7 @@ export default function HomePage() {
       </section>
 
       {/* Our Companies */}
-      <section className="py-12 sm:py-16 bg-gradient-to-r from-coastal-navy/5 to-coastal-blue/5">
+      <section className="py-12 sm:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-coastal-navy mb-4 font-serif">
@@ -247,7 +217,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
             {companies.map((company, index) => (
               <FadeIn key={company.href} delay={index * 100}>
-                <Card className={`border-2 ${company.color} transition-all duration-300 hover:shadow-xl h-full`}>
+                <Card className="border border-gray-200 hover:border-coastal-navy transition-colors duration-300 h-full">
                   <CardContent className="p-5 sm:p-6">
                     <div className="flex flex-col sm:flex-row sm:items-center mb-4 gap-3">
                       {company.icon}
@@ -262,13 +232,13 @@ export default function HomePage() {
                     <div className="space-y-2 sm:space-y-3 mb-5">
                       {company.highlights.map((highlight, i) => (
                         <div key={i} className="flex items-start space-x-3">
-                          <ArrowRight className={`h-4 w-4 sm:h-5 sm:w-5 ${company.checkColor} mt-0.5 flex-shrink-0`} />
+                          <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 text-coastal-blue mt-0.5 flex-shrink-0" />
                           <span className="text-coastal-grey text-sm sm:text-base">{highlight}</span>
                         </div>
                       ))}
                     </div>
 
-                    <Button asChild className={`w-full ${company.buttonColor} text-white py-3 text-sm sm:text-base min-h-[48px] touch-manipulation`}>
+                    <Button asChild className="w-full bg-coastal-navy hover:bg-coastal-navy/90 text-white py-3 text-sm sm:text-base min-h-[48px] touch-manipulation">
                       <Link href={company.href} className="flex items-center justify-center">
                         Learn More
                         <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
@@ -283,7 +253,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 sm:py-16 bg-gradient-to-r from-coastal-navy to-coastal-blue">
+      <section className="py-12 sm:py-16 bg-coastal-navy">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-serif">
             Ready to Get Started?

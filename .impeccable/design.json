@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-25T00:00:00Z",
+  "title": "Design System: Conine Coastal Group",
+  "extensions": {
+    "colorMeta": {
+      "deep-harbor-navy": {
+        "role": "primary",
+        "displayName": "Deep Harbor Navy",
+        "canonical": "oklch(0.38 0.10 256)",
+        "tonalRamp": ["oklch(0.20 0.06 256)", "oklch(0.28 0.08 256)", "oklch(0.38 0.10 256)", "oklch(0.48 0.10 256)", "oklch(0.58 0.09 256)", "oklch(0.70 0.07 256)", "oklch(0.82 0.04 256)", "oklch(0.93 0.02 256)"]
+      },
+      "first-coast-blue": {
+        "role": "primary",
+        "displayName": "First Coast Blue",
+        "canonical": "oklch(0.67 0.13 233)",
+        "tonalRamp": ["oklch(0.30 0.06 233)", "oklch(0.40 0.08 233)", "oklch(0.50 0.10 233)", "oklch(0.60 0.12 233)", "oklch(0.67 0.13 233)", "oklch(0.76 0.10 233)", "oklch(0.86 0.06 233)", "oklch(0.94 0.03 233)"]
+      },
+      "inlet-orange": {
+        "role": "secondary",
+        "displayName": "Inlet Orange",
+        "canonical": "oklch(0.67 0.18 42)",
+        "tonalRamp": ["oklch(0.30 0.08 42)", "oklch(0.40 0.11 42)", "oklch(0.50 0.14 42)", "oklch(0.60 0.17 42)", "oklch(0.67 0.18 42)", "oklch(0.77 0.14 42)", "oklch(0.87 0.08 42)", "oklch(0.94 0.04 42)"]
+      },
+      "dune-yellow": {
+        "role": "tertiary",
+        "displayName": "Dune Yellow",
+        "canonical": "oklch(0.86 0.17 92)",
+        "tonalRamp": ["oklch(0.40 0.08 92)", "oklch(0.52 0.11 92)", "oklch(0.64 0.14 92)", "oklch(0.74 0.16 92)", "oklch(0.86 0.17 92)", "oklch(0.91 0.13 92)", "oklch(0.95 0.08 92)", "oklch(0.98 0.04 92)"]
+      },
+      "driftwood-grey": {
+        "role": "neutral",
+        "displayName": "Driftwood Grey",
+        "canonical": "oklch(0.56 0.004 256)",
+        "tonalRamp": ["oklch(0.20 0.004 256)", "oklch(0.30 0.004 256)", "oklch(0.40 0.004 256)", "oklch(0.56 0.004 256)", "oklch(0.68 0.004 256)", "oklch(0.80 0.003 256)", "oklch(0.90 0.003 256)", "oklch(0.96 0.002 256)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(0.18 0.004 256)",
+        "tonalRamp": ["oklch(0.12 0.004 256)", "oklch(0.18 0.004 256)", "oklch(0.28 0.004 256)", "oklch(0.40 0.004 256)", "oklch(0.55 0.004 256)", "oklch(0.70 0.003 256)", "oklch(0.85 0.002 256)", "oklch(0.95 0.002 256)"]
+      },
+      "canvas-white": {
+        "role": "neutral",
+        "displayName": "Canvas White",
+        "canonical": "oklch(1 0 0)",
+        "tonalRamp": ["oklch(0.90 0.002 256)", "oklch(0.93 0.002 256)", "oklch(0.95 0.002 256)", "oklch(0.97 0.001 256)", "oklch(0.98 0.001 256)", "oklch(0.99 0 0)", "oklch(0.995 0 0)", "oklch(1 0 0)"]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "oklch(0.97 0.002 256)",
+        "tonalRamp": ["oklch(0.85 0.003 256)", "oklch(0.89 0.003 256)", "oklch(0.92 0.002 256)", "oklch(0.95 0.002 256)", "oklch(0.97 0.002 256)", "oklch(0.98 0.001 256)", "oklch(0.99 0.001 256)", "oklch(0.995 0 0)"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(0.90 0.003 256)",
+        "tonalRamp": ["oklch(0.78 0.004 256)", "oklch(0.82 0.004 256)", "oklch(0.86 0.003 256)", "oklch(0.90 0.003 256)", "oklch(0.93 0.002 256)", "oklch(0.96 0.002 256)", "oklch(0.98 0.001 256)", "oklch(0.99 0 0)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only. Playfair Display; the single largest statement on a page." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles. The recurring Playfair serif drumbeat that structures a page." },
+      "title": { "displayName": "Title", "purpose": "Sub-section and card headings within body content. Inter semibold; company names may step up to Playfair." },
+      "body": { "displayName": "Body", "purpose": "Paragraphs and lists in Inter. Cap measure at 65 to 75ch." },
+      "label": { "displayName": "Label", "purpose": "Small supporting text, descriptions, captions in Driftwood Grey." }
+    },
+    "shadows": [
+      { "name": "overlay-soft", "value": "0 8px 24px -8px rgba(24, 69, 124, 0.18)", "purpose": "Navigation bar, dropdown menus, popovers. Navy-tinted quiet lift for true overlays only." },
+      { "name": "dialog", "value": "0 16px 48px -12px rgba(24, 69, 124, 0.28)", "purpose": "Modal dialogs only (themselves a last resort)." }
+    ],
+    "motion": [
+      { "name": "ease-out-standard", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Default ease-out for color, opacity, and transform-based state transitions." },
+      { "name": "duration-fast", "value": "200ms", "purpose": "Button and link hover/focus state changes." },
+      { "name": "duration-reveal", "value": "600ms", "purpose": "FadeIn / scroll-reveal entrances (translateY + opacity). Honor prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "container-max", "value": "1400px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The default brand CTA. Solid First Coast Blue, calm, no lift.",
+      "html": "<button class=\"ds-btn-primary\">Get in Touch</button>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:#229FD9; color:#FFFFFF; font-family:Inter,-apple-system,'Segoe UI',sans-serif; font-weight:500; font-size:1rem; line-height:1; padding:14px 32px; min-height:48px; border:none; border-radius:6px; cursor:pointer; transition:background .2s cubic-bezier(0.22,1,0.36,1), color .2s cubic-bezier(0.22,1,0.36,1); } .ds-btn-primary:hover { background:#1E8FC4; } .ds-btn-primary:focus-visible { outline:2px solid #229FD9; outline-offset:2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Warm second action used only beside a primary CTA. Inlet Orange.",
+      "html": "<button class=\"ds-btn-secondary\">About Our Group</button>",
+      "css": ".ds-btn-secondary { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:#F16622; color:#FFFFFF; font-family:Inter,-apple-system,'Segoe UI',sans-serif; font-weight:500; font-size:1rem; line-height:1; padding:14px 32px; min-height:48px; border:none; border-radius:6px; cursor:pointer; transition:background .2s cubic-bezier(0.22,1,0.36,1); } .ds-btn-secondary:hover { background:#D9551A; } .ds-btn-secondary:focus-visible { outline:2px solid #229FD9; outline-offset:2px; }"
+    },
+    {
+      "name": "On-Dark Button",
+      "kind": "button",
+      "refersTo": "button-on-dark",
+      "description": "White-on-navy action for use on navy or photographic backgrounds.",
+      "html": "<button class=\"ds-btn-on-dark\">Explore Our Companies</button>",
+      "css": ".ds-btn-on-dark { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:#FFFFFF; color:#18457C; font-family:Inter,-apple-system,'Segoe UI',sans-serif; font-weight:600; font-size:1rem; line-height:1; padding:14px 32px; min-height:48px; border:none; border-radius:6px; cursor:pointer; transition:background .2s cubic-bezier(0.22,1,0.36,1); } .ds-btn-on-dark:hover { background:#F0F4F8; } .ds-btn-on-dark:focus-visible { outline:2px solid #FFFFFF; outline-offset:2px; }"
+    },
+    {
+      "name": "Content Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Flat, bordered content surface. No resting shadow; border deepens on hover.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">Integrated Expertise</h3><p class=\"ds-card-body\">Real estate, construction, development, maintenance, and travel, coordinated under one group across the First Coast.</p></div>",
+      "css": ".ds-card { background:#FFFFFF; color:#18457C; border:1px solid #E5E5E5; border-radius:8px; padding:24px; transition:border-color .2s cubic-bezier(0.22,1,0.36,1); } .ds-card:hover { border-color:#18457C; } .ds-card-title { font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:1.25rem; letter-spacing:-0.01em; margin:0 0 8px; color:#18457C; } .ds-card-body { font-family:Inter,-apple-system,'Segoe UI',sans-serif; font-weight:400; font-size:1rem; line-height:1.65; letter-spacing:-0.01em; margin:0; color:#707070; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Clean-stroked field. Blue ring and border on focus, no glow.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Your name\" />",
+      "css": ".ds-input { display:block; width:100%; height:40px; background:#FFFFFF; color:#0A0A0A; border:1px solid #E5E5E5; border-radius:6px; padding:8px 12px; font-family:Inter,-apple-system,'Segoe UI',sans-serif; font-size:1rem; line-height:1.4; transition:border-color .2s cubic-bezier(0.22,1,0.36,1); } .ds-input::placeholder { color:#707070; } .ds-input:focus-visible { outline:2px solid #229FD9; outline-offset:2px; border-color:#229FD9; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Editorial serif navigation link. Navy at rest, blue on hover/active.",
+      "html": "<a class=\"ds-navlink\" href=\"#\">Companies</a>",
+      "css": ".ds-navlink { font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:1rem; color:#18457C; text-decoration:none; transition:color .2s cubic-bezier(0.22,1,0.36,1); } .ds-navlink:hover { color:#229FD9; } .ds-navlink:focus-visible { outline:2px solid #229FD9; outline-offset:2px; border-radius:2px; }"
+    },
+    {
+      "name": "Badge",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Small wayfinding label. Used sparingly (for example 'A Family of Companies').",
+      "html": "<span class=\"ds-badge\">A Family of Companies</span>",
+      "css": ".ds-badge { display:inline-block; background:#229FD9; color:#FFFFFF; font-family:Inter,-apple-system,'Segoe UI',sans-serif; font-weight:500; font-size:0.8125rem; line-height:1.4; letter-spacing:0.02em; padding:4px 12px; border-radius:6px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The First Coast Institution",
+    "overview": "This is the front door to a family of Northeast Florida property companies, and its only job is to make a sophisticated visitor (a referral attorney, a wealth manager, a family office, a prospective client) feel that this group is real, established, and built to outlast any single deal. The aesthetic is a quiet holding company: authority expressed through restraint, whitespace, and hairline structure rather than volume. It presents itself as a lifecycle atlas, a calm directory mapping land-through-maintenance as one integrated system, never as a hard-selling service provider. The palette is coastal but never touristic: a deep institutional navy anchored to a clear First Coast blue, with warm accents used sparingly as wayfinding, not decoration. Typography pairs a Playfair Display serif with Inter for clean body text. Surfaces are flat and bordered, not floating. The whole system should read closer to a land-and-trust company or a university endowment than to a real-estate franchise or a venture-funded app.",
+    "keyCharacteristics": [
+      "Quiet authority over flash; restraint is the signature.",
+      "Coastal palette anchored to deep navy, warm accents rationed.",
+      "Serif display (Playfair) for permanence, Inter for clarity.",
+      "Flat, bordered surfaces; shadows reserved for true overlays.",
+      "Generous, varied vertical rhythm; nothing cramped, nothing shouting.",
+      "Credibility framing throughout: inquiry and by-appointment, never 'book now'."
+    ],
+    "rules": [
+      { "name": "The One Bright Voice Rule", "body": "First Coast Blue is the only color allowed to draw the eye, and it appears on roughly 10% of any screen or less. Navy is the field; blue is the signal. Orange and gold are emergency wayfinding, never atmosphere.", "section": "colors" },
+      { "name": "The Earned-Accent Rule", "body": "Warm accents (orange, gold) appear only where they guide an action or distinguish a sibling company. Never as a gradient, a background wash, or a mood.", "section": "colors" },
+      { "name": "The Serif-for-Permanence Rule", "body": "Every page-structuring heading is Playfair. The serif is what signals an institution rather than a startup; never substitute a bold sans for a section title.", "section": "typography" },
+      { "name": "The Quiet Caps Rule", "body": "If small uppercase labels are introduced, track them open (around +0.08em) and keep them in navy or grey. Loud, tight, colored caps read as marketing.", "section": "typography" },
+      { "name": "The Flat-Content Rule", "body": "Cards, panels, stat bands, and images carry no resting shadow. If a content surface needs separation, use a hairline border or a Mist background, never a shadow.", "section": "elevation" },
+      { "name": "The Float-Means-Overlay Rule", "body": "A shadow is a promise that the element is temporarily above the page and will go away (a menu, a dialog). If it is permanent page content, it does not get a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do lead with Deep Harbor Navy and reserve First Coast Blue for roughly 10% of the surface (The One Bright Voice Rule).",
+      "Do set every page-structuring heading in Playfair Display (The Serif-for-Permanence Rule).",
+      "Do keep content surfaces flat with 1px Hairline borders; reserve shadows for true overlays only (The Flat-Content Rule).",
+      "Do cap body measure at 65 to 75ch and use generous, varied vertical rhythm (section-y 48px to 64px).",
+      "Do frame all actions as inquiry or by-appointment, per the credibility-over-conversion principle.",
+      "Do name the real geography (First Coast, St. Augustine to Amelia Island) and keep imagery genuinely Northeast Florida.",
+      "Do keep the five company cards structurally uniform and let navy carry them."
+    ],
+    "donts": [
+      "Don't use purple or blue gradients, gradient text, glassmorphism, or the hero-metric template (big number plus small label plus supporting stats). These are the SaaS or startup cliches PRODUCT.md forbids; the current navy-to-blue gradient bands and the '5 / 20+ / 500+ / 100%' stats bar are exactly this pattern and should be replaced.",
+      "Don't state metrics the pre-launch group has not earned ('20+ Years Experience', '500+ Projects Completed'). This violates the pre-launch-honesty principle; empty-until-real beats impressive-but-false.",
+      "Don't turn the five company accent colors into a rainbow grid of identical cards. Let navy lead and use each accent only as a small mark.",
+      "Don't drift toward a real-estate franchise look: no stock agent headshots, no 'search homes now' bars, no listing grids, no sold-sign badges.",
+      "Don't use beach-tourist kitsch (palm-tree clip art, sunset-orange washes, exclamation marks) or generic corporate-template blandness (stock handshake photography).",
+      "Don't put a colored border-left or border-right stripe greater than 1px on cards, callouts, or list items. Use full hairline borders or a Mist background.",
+      "Don't add resting shadows to content (no shadow-2xl on buttons, no hover:shadow-xl lift on cards).",
+      "Don't use pure #000 or #fff as design intent where a tinted neutral will do; lean on Ink, Canvas White, Mist, and Hairline.",
+      "Don't reach for a modal as the first answer; exhaust inline and progressive alternatives."
+    ]
+  }
+}
