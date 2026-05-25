@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: baseUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
     { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/schedule`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    // /schedule removed per ai-infra SYS-011 Q3-R1 Flag #3 follow-up (2026-05-25): scheduling backend (CRM) not yet selected; restore once wired.
     { url: `${baseUrl}/faq`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/reviews`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
 
@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/companies/travel`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
 
     // Tools
-    { url: `${baseUrl}/portal`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
+    // /portal removed per ai-infra SYS-011 Q3-R1 Flag #3 follow-up (2026-05-25): portal backend (auth) not yet selected; restore once wired.
 
     // Resources
     { url: `${baseUrl}/resources`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },

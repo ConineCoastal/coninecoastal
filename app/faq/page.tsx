@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Breadcrumb from "@/components/breadcrumb"
 import FadeIn from "@/components/fade-in"
-import { Phone, Mail, Home, Wrench, TrendingUp, HelpCircle } from "lucide-react"
+import { Mail, Home, Wrench, TrendingUp, HelpCircle } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
@@ -259,19 +259,11 @@ export default function FAQPage() {
             Still Have Questions?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            We're here to help. Schedule a free consultation or give us a call.
+            We're here to help. Reach out and we'll get back to you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              asChild
-              size="lg"
-              className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-4 text-lg"
-            >
-              <Link href="/schedule" className="flex items-center justify-center">
-                <Phone className="mr-2 h-5 w-5" />
-                Schedule Consultation
-              </Link>
-            </Button>
+            {/* /schedule CTA removed per ai-infra SYS-011 Q3-R1 Flag #3 follow-up (2026-05-25):
+                scheduling backend (CRM) not yet selected; restore once wired. */}
             <Button
               asChild
               size="lg"

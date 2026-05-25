@@ -36,8 +36,7 @@ const sitemapLinks = [
     items: [
       { label: "Client Reviews", href: "/reviews" },
       { label: "FAQ", href: "/faq" },
-      { label: "Schedule Consultation", href: "/schedule" },
-      { label: "Client Portal", href: "/portal" },
+      // /schedule + /portal removed per ai-infra SYS-011 Q3-R1 Flag #3 follow-up (2026-05-25): backends (CRM, auth) not yet selected; restore once wired.
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms of Service", href: "/terms-of-service" },
     ],

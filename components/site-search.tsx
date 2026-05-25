@@ -17,7 +17,7 @@ const STATIC_PAGES: SearchResult[] = [
   { title: "Home", description: "Conine Coastal Group - Family of Companies", url: "/", category: "Pages", icon: "page" },
   { title: "About Us", description: "Learn about Conine Coastal Group", url: "/about", category: "Pages", icon: "page" },
   { title: "Contact", description: "Get in touch with our team", url: "/contact", category: "Pages", icon: "page" },
-  { title: "Schedule Consultation", description: "Book a free consultation online", url: "/schedule", category: "Pages", icon: "page" },
+  // /schedule search entry removed per ai-infra SYS-011 Q3-R1 Flag #3 follow-up (2026-05-25): scheduling backend (CRM) not yet selected; restore once wired.
   { title: "FAQ", description: "Frequently asked questions about our companies", url: "/faq", category: "Pages", icon: "page" },
   { title: "Client Reviews", description: "Read what our clients say about us", url: "/reviews", category: "Pages", icon: "page" },
 

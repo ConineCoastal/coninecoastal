@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import FadeIn from "@/components/fade-in"
-import { Phone, Mail, Home, Hammer, HardHat, Wrench, Palmtree, ArrowRight, Building2, Shield } from "lucide-react"
+import { Phone, Home, Hammer, HardHat, Wrench, Palmtree, ArrowRight, Building2, Shield } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -307,9 +307,11 @@ export default function HomePage() {
               size="lg"
               className="w-full sm:w-auto bg-white text-coastal-navy hover:bg-white/90 px-6 sm:px-8 py-4 text-base sm:text-lg min-h-[56px] touch-manipulation"
             >
-              <Link href="/schedule" className="flex items-center justify-center">
-                <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-                <span className="whitespace-nowrap">Schedule a Consultation</span>
+              {/* /schedule CTA repointed to /companies per ai-infra SYS-011 Q3-R1 Flag #3 follow-up (2026-05-25):
+                  scheduling backend (CRM) not yet selected; restore once wired. */}
+              <Link href="/companies" className="flex items-center justify-center">
+                <Building2 className="mr-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+                <span className="whitespace-nowrap">Explore Our Companies</span>
               </Link>
             </Button>
           </div>
