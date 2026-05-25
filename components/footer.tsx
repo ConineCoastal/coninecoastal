@@ -99,7 +99,9 @@ export default function Footer() {
             <ul className="space-y-3 text-white/80">
               <li>
                 <Link
-                  href="/companies/real-estate"
+                  href="https://coninecoastalrealestate.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
                 >
                   Conine Coastal Real Estate
@@ -107,7 +109,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/companies/estates"
+                  href="https://coninecoastalestates.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
                 >
                   Conine Coastal Estates
@@ -115,7 +119,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/companies/development"
+                  href="https://coninecoastaldevelopment.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
                 >
                   Conine Coastal Development
@@ -123,7 +129,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/companies/home-services"
+                  href="https://coninecoastalhomeservices.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
                 >
                   Conine Coastal Home Services
@@ -131,7 +139,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/companies/travel"
+                  href="https://coninecoastaltravel.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
                 >
                   Conine Coastal Travel
