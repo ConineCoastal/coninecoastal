@@ -196,7 +196,7 @@ export default function BlogClientPage() {
                 </Card>
 
                 {/* Newsletter Signup */}
-                <Card className="bg-gradient-to-r from-coastal-blue/5 to-coastal-navy/5 border-2 border-coastal-blue/20">
+                <Card className="bg-gray-50 border border-gray-200">
                   <CardContent className="p-6 text-center">
                     <h3
                       className="text-xl font-bold text-coastal-navy mb-4 font-serif"

@@ -37,7 +37,7 @@ const services = [
 export default function TravelPage() {
   return (
     <div className="min-h-screen bg-white">
-      <section className="py-16 sm:py-24 bg-gradient-to-b from-coastal-blue/10 to-white">
+      <section className="py-16 sm:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <Palmtree className="h-16 w-16 text-coastal-blue mx-auto mb-6" />
@@ -56,7 +56,7 @@ export default function TravelPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((group, index) => (
               <FadeIn key={group.category} delay={index * 100}>
-                <Card className="h-full border-2 border-coastal-blue/10 hover:border-coastal-blue/30 transition-colors">
+                <Card className="h-full border border-gray-200 hover:border-coastal-navy transition-colors">
                   <CardContent className="p-6">
                     <h2 className="text-xl sm:text-2xl font-bold text-coastal-navy mb-4 font-serif">{group.category}</h2>
                     <ul className="space-y-3">
@@ -75,11 +75,11 @@ export default function TravelPage() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 bg-gradient-to-r from-coastal-navy to-coastal-blue">
+      <section className="py-12 sm:py-16 bg-coastal-navy">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-serif">Planning a Visit?</h2>
           <p className="text-lg text-white/90 mb-8">Contact us for vacation rentals, local experiences, or property management services.</p>
-          <Button asChild size="lg" className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-4 text-lg min-h-[56px]">
+          <Button asChild size="lg" className="bg-white text-coastal-navy hover:bg-white/90 px-8 py-4 text-lg min-h-[56px]">
             <Link href="/contact" className="flex items-center">
               <Phone className="mr-2 h-5 w-5" />
               Get in Touch

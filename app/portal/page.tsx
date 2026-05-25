@@ -137,7 +137,7 @@ export default function PortalPage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-coastal-navy to-coastal-blue rounded-2xl p-8 text-white">
+            <div className="bg-coastal-navy rounded-2xl p-8 text-white">
               <h3 className="text-2xl font-serif font-bold mb-6">What You Get</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
@@ -199,7 +199,7 @@ export default function PortalPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-coastal-navy to-coastal-blue">
+      <section className="py-16 bg-coastal-navy">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white mb-4 font-serif">Not a Client Yet?</h2>
           <p className="text-xl text-white/90 mb-8">

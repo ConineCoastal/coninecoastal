@@ -101,14 +101,14 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-12 flex justify-center">
-              <div className="w-32 h-1 bg-gradient-to-r from-coastal-navy via-coastal-blue to-coastal-navy rounded-full"></div>
+              <div className="w-24 h-px bg-coastal-navy/20"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* The Conine Coastal Advantage Section */}
-      <section className="py-16 bg-gradient-to-r from-coastal-navy/5 to-coastal-blue/5">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-coastal-navy mb-4 font-serif">
@@ -249,7 +249,7 @@ export default function AboutPage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 bg-gradient-to-r from-coastal-navy to-coastal-blue">
+      <section className="py-16 bg-coastal-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6 font-serif">
             Ready to Experience the Conine Coastal Difference?
@@ -266,7 +266,7 @@ export default function AboutPage() {
               size="lg"
               className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-4 text-lg"
             >
-              <Link href="/contact">Schedule Consultation</Link>
+              <Link href="/contact">Request a Consultation</Link>
             </Button>
             <Button
               asChild

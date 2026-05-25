@@ -220,7 +220,7 @@ export default function BuyersGuideClientPage() {
             Download our comprehensive homebuyer's checklist and keep this guide handy throughout your home search.
           </p>
 
-          <Card className="p-8 bg-gradient-to-r from-coastal-blue/5 to-coastal-navy/5 border-2 border-coastal-blue/20">
+          <Card className="p-8 bg-gray-50 border border-gray-200">
             <CardContent className="p-0">
               <div className="flex items-center justify-center mb-6">
                 <div className="w-16 h-16 bg-coastal-blue rounded-full flex items-center justify-center">

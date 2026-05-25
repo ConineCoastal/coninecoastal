@@ -33,10 +33,10 @@ const services = [
 export default function DevelopmentPage() {
   return (
     <div className="min-h-screen bg-white">
-      <section className="py-16 sm:py-24 bg-gradient-to-b from-coastal-navy/10 to-white">
+      <section className="py-16 sm:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <HardHat className="h-16 w-16 text-coastal-navy mx-auto mb-6" />
+            <HardHat className="h-16 w-16 text-coastal-blue mx-auto mb-6" />
             <h1 className="text-4xl sm:text-5xl font-bold text-coastal-navy mb-4 font-serif">
               Conine Coastal Development
             </h1>
@@ -52,13 +52,13 @@ export default function DevelopmentPage() {
           <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
             {services.map((group, index) => (
               <FadeIn key={group.category} delay={index * 100}>
-                <Card className="h-full border-2 border-coastal-navy/10 hover:border-coastal-navy/30 transition-colors">
+                <Card className="h-full border border-gray-200 hover:border-coastal-navy transition-colors">
                   <CardContent className="p-6">
                     <h2 className="text-xl sm:text-2xl font-bold text-coastal-navy mb-4 font-serif">{group.category}</h2>
                     <ul className="space-y-3">
                       {group.items.map((item) => (
                         <li key={item} className="flex items-start space-x-3">
-                          <ArrowRight className="h-4 w-4 text-coastal-navy mt-1 flex-shrink-0" />
+                          <ArrowRight className="h-4 w-4 text-coastal-blue mt-1 flex-shrink-0" />
                           <span className="text-coastal-grey text-sm sm:text-base">{item}</span>
                         </li>
                       ))}
@@ -71,11 +71,11 @@ export default function DevelopmentPage() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 bg-gradient-to-r from-coastal-navy to-coastal-blue">
+      <section className="py-12 sm:py-16 bg-coastal-navy">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-serif">Have a Development Project?</h2>
           <p className="text-lg text-white/90 mb-8">Contact us to discuss land acquisition, planning, or development opportunities.</p>
-          <Button asChild size="lg" className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-4 text-lg min-h-[56px]">
+          <Button asChild size="lg" className="bg-white text-coastal-navy hover:bg-white/90 px-8 py-4 text-lg min-h-[56px]">
             <Link href="/contact" className="flex items-center">
               <Phone className="mr-2 h-5 w-5" />
               Get in Touch

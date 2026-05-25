@@ -85,7 +85,7 @@ export default function BlogPage() {
             <Card className="overflow-hidden hover:shadow-xl transition-shadow">
               <Link href={`/resources/blog/${featuredPost.slug}`} className="block">
                 <div className="grid lg:grid-cols-2 gap-0">
-                  <div className="bg-gradient-to-br from-coastal-navy to-coastal-blue p-8 lg:p-12 text-white">
+                  <div className="bg-coastal-navy p-8 lg:p-12 text-white">
                     <div className="flex items-center space-x-4 mb-6">
                       <div className="flex items-center space-x-2 text-sm">
                         <Calendar className="h-4 w-4" />
