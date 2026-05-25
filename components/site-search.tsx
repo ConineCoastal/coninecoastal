@@ -115,13 +115,37 @@ export default function SiteSearch() {
 
   useEffect(() => {
     if (isOpen) {
+      const previouslyFocused = document.activeElement as HTMLElement | null
+      const previousOverflow = document.body.style.overflow
+      document.body.style.overflow = "hidden"
       const timerId = setTimeout(() => inputRef.current?.focus(), 50)
-      return () => clearTimeout(timerId)
+      return () => {
+        clearTimeout(timerId)
+        document.body.style.overflow = previousOverflow
+        previouslyFocused?.focus?.()
+      }
     } else {
       setQuery("")
       setResults([])
     }
   }, [isOpen])
+
+  const trapFocus = (e: React.KeyboardEvent) => {
+    if (e.key !== "Tab") return
+    const focusables = dialogRef.current?.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])'
+    )
+    if (!focusables || focusables.length === 0) return
+    const first = focusables[0]
+    const last = focusables[focusables.length - 1]
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault()
+      last.focus()
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault()
+      first.focus()
+    }
+  }
 
   const navigate = (url: string) => {
     setIsOpen(false)
@@ -161,8 +185,15 @@ export default function SiteSearch() {
           />
           <div
             ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Search site"
+            onKeyDown={trapFocus}
             className="relative bg-white rounded-xl shadow-2xl w-full max-w-lg mx-4 overflow-hidden"
           >
+            <div className="sr-only" role="status" aria-live="polite">
+              {query ? `${results.length} ${results.length === 1 ? "result" : "results"} found` : ""}
+            </div>
             <div className="flex items-center border-b px-4">
               <Search className="h-5 w-5 text-coastal-grey flex-shrink-0" />
               <input
