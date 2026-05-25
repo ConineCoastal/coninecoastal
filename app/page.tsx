@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const companies = [
   {
     name: "Conine Coastal Real Estate",
-    href: "/companies/real-estate",
+    href: "https://coninecoastalrealestate.com",
     icon: <Home className="h-10 w-10 sm:h-12 sm:w-12 text-coastal-navy" />,
     description: "Full-service residential and commercial real estate — sales, leasing, property management, appraisals, and specialized services including waterfront properties and investment acquisitions.",
     highlights: [
@@ -32,7 +32,7 @@ const companies = [
   },
   {
     name: "Conine Coastal Estates",
-    href: "/companies/estates",
+    href: "https://coninecoastalestates.com",
     icon: <Hammer className="h-10 w-10 sm:h-12 sm:w-12 text-coastal-navy" />,
     description: "Custom home building, historic restorations, major renovations, and commercial construction — from design through completion with sustainable building practices.",
     highlights: [
@@ -44,7 +44,7 @@ const companies = [
   },
   {
     name: "Conine Coastal Development",
-    href: "/companies/development",
+    href: "https://coninecoastaldevelopment.com",
     icon: <HardHat className="h-10 w-10 sm:h-12 sm:w-12 text-coastal-navy" />,
     description: "Land acquisition, master planning, entitlement and permitting, site development, and project management — turning raw land into thriving communities.",
     highlights: [
@@ -56,7 +56,7 @@ const companies = [
   },
   {
     name: "Conine Coastal Home Services",
-    href: "/companies/home-services",
+    href: "https://coninecoastalhomeservices.com",
     icon: <Wrench className="h-10 w-10 sm:h-12 sm:w-12 text-coastal-navy" />,
     description: "Comprehensive property maintenance, HVAC, plumbing, electrical, landscaping, pool services, and seasonal maintenance programs to keep your property in top condition.",
     highlights: [
@@ -68,7 +68,7 @@ const companies = [
   },
   {
     name: "Conine Coastal Travel",
-    href: "/companies/travel",
+    href: "https://coninecoastaltravel.com",
     icon: <Palmtree className="h-10 w-10 sm:h-12 sm:w-12 text-coastal-navy" />,
     description: "Vacation rental management, local experiences, equipment rentals, concierge services, and custom travel itineraries for visitors and property owners alike.",
     highlights: [
@@ -203,7 +203,7 @@ export default function HomePage() {
       </section>
 
       {/* Our Companies */}
-      <section className="py-12 sm:py-16 bg-gray-50">
+      <section id="our-companies" className="py-12 sm:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-coastal-navy mb-4 font-serif">
@@ -239,8 +239,8 @@ export default function HomePage() {
                     </div>
 
                     <Button asChild className="w-full bg-coastal-navy hover:bg-coastal-navy/90 text-white py-3 text-sm sm:text-base min-h-[48px] touch-manipulation">
-                      <Link href={company.href} className="flex items-center justify-center">
-                        Learn More
+                      <Link href={company.href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                        Visit Site
                         <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
                       </Link>
                     </Button>
@@ -277,9 +277,7 @@ export default function HomePage() {
               size="lg"
               className="w-full sm:w-auto bg-white text-coastal-navy hover:bg-white/90 px-6 sm:px-8 py-4 text-base sm:text-lg min-h-[56px] touch-manipulation"
             >
-              {/* /schedule CTA repointed to /companies per ai-infra SYS-011 Q3-R1 Flag #3 follow-up (2026-05-25):
-                  scheduling backend (CRM) not yet selected; restore once wired. */}
-              <Link href="/companies" className="flex items-center justify-center">
+              <Link href="#our-companies" className="flex items-center justify-center">
                 <Building2 className="mr-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
                 <span className="whitespace-nowrap">Explore Our Companies</span>
               </Link>
