@@ -907,7 +907,7 @@ export default function ScheduleClientPage() {
             <Button
               asChild
               size="lg"
-              className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8"
+              className="bg-white text-coastal-navy hover:bg-white/90 px-8"
             >
               <a href="tel:+19046241722" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />

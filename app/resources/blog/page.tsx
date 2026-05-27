@@ -283,7 +283,7 @@ export default function BlogPage() {
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Get monthly market updates, renovation tips, and exclusive insights delivered to your inbox.
           </p>
-          <Button asChild size="lg" className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8 py-3">
+          <Button asChild size="lg" className="bg-white text-coastal-navy hover:bg-white/90 px-8 py-3">
             <Link href="/contact?service=newsletter">Subscribe to Newsletter</Link>
           </Button>
           <p className="text-sm mt-4 opacity-80">No spam, unsubscribe anytime. Your email stays private.</p>

@@ -262,7 +262,7 @@ export default function BlogClientPage() {
           <p className="text-xl text-white/90 mb-8">
             Subscribe to our newsletter for the latest First Coast real estate trends and renovation tips.
           </p>
-          <Button asChild className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8 py-3">
+          <Button asChild className="bg-white text-coastal-navy hover:bg-white/90 px-8 py-3">
             <Link href="/contact?service=newsletter">Subscribe to Newsletter</Link>
           </Button>
         </div>

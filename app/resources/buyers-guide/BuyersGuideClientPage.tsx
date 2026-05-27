@@ -252,7 +252,7 @@ export default function BuyersGuideClientPage() {
             Let's find your perfect First Coast home with the confidence that comes from construction expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8 py-3">
+            <Button asChild className="bg-white text-coastal-navy hover:bg-white/90 px-8 py-3">
               <Link href="/contact">Schedule Your Consultation</Link>
             </Button>
             <Button
