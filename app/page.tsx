@@ -95,7 +95,7 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
-          <Badge className="mb-4 bg-coastal-blue text-white px-6 py-3 text-lg shadow-lg">
+          <Badge className="mb-4 bg-coastal-navy text-white px-6 py-3 text-lg">
             A Family of Companies
           </Badge>
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 drop-shadow-2xl font-serif">
@@ -111,7 +111,7 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto bg-coastal-blue hover:bg-coastal-blue/90 text-white px-8 sm:px-10 py-4 text-lg sm:text-xl min-h-[56px] touch-manipulation"
+              className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border border-white/40 hover:bg-white/20 text-white px-8 sm:px-10 py-4 text-lg sm:text-xl min-h-[56px] touch-manipulation"
             >
               <Link href="/about" className="flex items-center justify-center">
                 <Building2 className="mr-2 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" />
@@ -121,7 +121,7 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 sm:px-10 py-4 text-lg sm:text-xl min-h-[56px] touch-manipulation"
+              className="w-full sm:w-auto bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8 sm:px-10 py-4 text-lg sm:text-xl min-h-[56px] touch-manipulation"
             >
               <Link href="/contact" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" />
@@ -265,7 +265,7 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto bg-coastal-orange hover:bg-coastal-orange/90 text-white px-6 sm:px-8 py-4 text-base sm:text-lg min-h-[56px] touch-manipulation"
+              className="w-full sm:w-auto bg-white text-coastal-navy hover:bg-white/90 px-6 sm:px-8 py-4 text-base sm:text-lg min-h-[56px] touch-manipulation"
             >
               <Link href="/contact" className="flex items-center justify-center">
                 <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
@@ -275,7 +275,7 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto bg-white text-coastal-navy hover:bg-white/90 px-6 sm:px-8 py-4 text-base sm:text-lg min-h-[56px] touch-manipulation"
+              className="w-full sm:w-auto bg-transparent border border-white text-white hover:bg-white/10 px-6 sm:px-8 py-4 text-base sm:text-lg min-h-[56px] touch-manipulation"
             >
               <Link href="#our-companies" className="flex items-center justify-center">
                 <Building2 className="mr-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
