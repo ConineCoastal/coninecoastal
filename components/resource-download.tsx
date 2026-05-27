@@ -133,7 +133,7 @@ export default function ResourceDownload({
         <Button
           type="submit"
           disabled={status === "loading"}
-          className="w-full bg-coastal-orange hover:bg-coastal-orange/90 text-white"
+          className="w-full bg-coastal-navy hover:bg-coastal-navy/90 text-white"
         >
           {status === "loading" ? (
             <Loader2 className="h-4 w-4 animate-spin" />

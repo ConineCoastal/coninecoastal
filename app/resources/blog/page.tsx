@@ -23,15 +23,15 @@ export const metadata: Metadata = {
 function categoryColor(category: string): string {
   switch (category) {
     case "Market Update":
-      return "bg-coastal-blue text-white"
+      return "bg-coastal-navy text-white"
     case "Renovation":
-      return "bg-coastal-orange text-white"
+      return "bg-coastal-navy text-white"
     case "Community":
       return "bg-coastal-navy text-white"
     case "Buying Tips":
       return "bg-green-600 text-white"
     case "Investment":
-      return "bg-coastal-yellow text-coastal-navy"
+      return "bg-coastal-navy text-white"
     default:
       return "bg-coastal-grey text-white"
   }
@@ -81,7 +81,7 @@ export default function BlogPage() {
       <section id="featured" className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <Badge className="mb-4 bg-coastal-orange text-white">Featured Article</Badge>
+            <Badge className="mb-4 bg-coastal-navy text-white">Featured Article</Badge>
             <Card className="overflow-hidden hover:shadow-md transition-shadow">
               <Link href={`/resources/blog/${featuredPost.slug}`} className="block">
                 <div className="grid lg:grid-cols-2 gap-0">
@@ -172,8 +172,8 @@ export default function BlogPage() {
 
             <Card className="hover:shadow-lg transition-shadow cursor-pointer">
               <CardHeader>
-                <div className="w-12 h-12 bg-coastal-orange/10 rounded-lg flex items-center justify-center mb-4">
-                  <Wrench className="h-6 w-6 text-coastal-orange" />
+                <div className="w-12 h-12 bg-coastal-blue/10 rounded-lg flex items-center justify-center mb-4">
+                  <Wrench className="h-6 w-6 text-coastal-navy" />
                 </div>
                 <CardTitle className="text-coastal-navy font-serif">Renovation Tips</CardTitle>
                 <CardDescription>Expert construction and improvement advice</CardDescription>
@@ -283,7 +283,7 @@ export default function BlogPage() {
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Get monthly market updates, renovation tips, and exclusive insights delivered to your inbox.
           </p>
-          <Button asChild size="lg" className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3">
+          <Button asChild size="lg" className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8 py-3">
             <Link href="/contact?service=newsletter">Subscribe to Newsletter</Link>
           </Button>
           <p className="text-sm mt-4 opacity-80">No spam, unsubscribe anytime. Your email stays private.</p>

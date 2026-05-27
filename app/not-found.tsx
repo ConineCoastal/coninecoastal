@@ -22,13 +22,13 @@ export default function NotFound() {
         </p>
 
         <div className="grid sm:grid-cols-2 gap-4 max-w-md mx-auto mb-12">
-          <Button asChild className="bg-coastal-blue hover:bg-coastal-blue/90 text-white">
+          <Button asChild className="bg-coastal-navy hover:bg-coastal-navy/90 text-white">
             <Link href="/" className="flex items-center justify-center">
               <Home className="mr-2 h-4 w-4" />
               Go Home
             </Link>
           </Button>
-          <Button asChild className="bg-coastal-orange hover:bg-coastal-orange/90 text-white">
+          <Button asChild className="bg-coastal-navy hover:bg-coastal-navy/90 text-white">
             <Link href="/contact" className="flex items-center justify-center">
               <Phone className="mr-2 h-4 w-4" />
               Contact Us

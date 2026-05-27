@@ -63,7 +63,7 @@ export default function MarketUpdatesPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-coastal-blue text-white">December 2024</Badge>
+            <Badge className="mb-4 bg-coastal-navy text-white">December 2024</Badge>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-coastal-navy mb-4">Current Market Snapshot</h2>
             <p className="text-lg text-coastal-grey max-w-3xl mx-auto">
               Key metrics and trends across the First Coast real estate market
@@ -85,10 +85,10 @@ export default function MarketUpdatesPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center border-l-4 border-coastal-orange">
+            <Card className="text-center border-l-4 border-coastal-navy">
               <CardHeader>
                 <CardTitle className="text-coastal-navy font-serif text-lg">Days on Market</CardTitle>
-                <div className="text-3xl font-bold text-coastal-orange">28</div>
+                <div className="text-3xl font-bold text-coastal-navy">28</div>
                 <div className="flex items-center justify-center space-x-1 text-red-600">
                   <TrendingDown className="h-4 w-4" />
                   <span className="text-sm">-5 days YoY</span>
@@ -113,10 +113,10 @@ export default function MarketUpdatesPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center border-l-4 border-coastal-orange">
+            <Card className="text-center border-l-4 border-coastal-navy">
               <CardHeader>
                 <CardTitle className="text-coastal-navy font-serif text-lg">Price per Sq Ft</CardTitle>
-                <div className="text-3xl font-bold text-coastal-orange">$198</div>
+                <div className="text-3xl font-bold text-coastal-navy">$198</div>
                 <div className="flex items-center justify-center space-x-1 text-green-600">
                   <TrendingUp className="h-4 w-4" />
                   <span className="text-sm">+2.8% YoY</span>
@@ -430,10 +430,10 @@ export default function MarketUpdatesPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-l-4 border-coastal-orange">
+            <Card className="border-l-4 border-coastal-navy">
               <CardHeader>
                 <CardTitle className="text-coastal-navy font-serif flex items-center">
-                  <DollarSign className="mr-2 h-5 w-5 text-coastal-orange" />
+                  <DollarSign className="mr-2 h-5 w-5 text-coastal-navy" />
                   Market Challenges
                 </CardTitle>
               </CardHeader>
@@ -485,7 +485,7 @@ export default function MarketUpdatesPage() {
               <CardHeader>
                 <div className="flex items-center space-x-2 mb-3">
                   <Calendar className="h-5 w-5 text-coastal-blue" />
-                  <Badge className="bg-coastal-blue text-white">Latest</Badge>
+                  <Badge className="bg-coastal-navy text-white">Latest</Badge>
                 </div>
                 <CardTitle className="text-coastal-navy font-serif">December 2024 Report</CardTitle>
                 <CardDescription>Year-end market analysis and 2025 outlook</CardDescription>

@@ -23,9 +23,9 @@ const featuredPost = {
 
 const categories = [
   { name: "Market Analysis", count: 12, icon: <TrendingUp className="h-5 w-5" />, color: "bg-coastal-blue" },
-  { name: "Home Improvement", count: 18, icon: <Wrench className="h-5 w-5" />, color: "bg-coastal-orange" },
+  { name: "Home Improvement", count: 18, icon: <Wrench className="h-5 w-5" />, color: "bg-coastal-navy" },
   { name: "Buying Tips", count: 15, icon: <Home className="h-5 w-5" />, color: "bg-coastal-navy" },
-  { name: "Investment", count: 8, icon: <DollarSign className="h-5 w-5" />, color: "bg-coastal-yellow" },
+  { name: "Investment", count: 8, icon: <DollarSign className="h-5 w-5" />, color: "bg-coastal-navy" },
   { name: "Home Maintenance", count: 10, icon: <Wrench className="h-5 w-5" />, color: "bg-coastal-grey" },
 ]
 
@@ -71,7 +71,7 @@ export default function BlogClientPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-coastal-orange text-white">Featured Article</Badge>
+            <Badge className="mb-4 bg-coastal-navy text-white">Featured Article</Badge>
             <h2
               className="text-3xl md:text-4xl font-bold text-coastal-navy mb-4 font-serif"
             >
@@ -90,7 +90,7 @@ export default function BlogClientPage() {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-4 left-4">
-                  <Badge className="bg-coastal-blue text-white">{featuredPost.category}</Badge>
+                  <Badge className="bg-coastal-navy text-white">{featuredPost.category}</Badge>
                 </div>
               </div>
               <CardContent className="p-8 lg:p-12 flex flex-col justify-center">
@@ -111,7 +111,7 @@ export default function BlogClientPage() {
                   </div>
                   <span>{featuredPost.readTime}</span>
                 </div>
-                <Button asChild className="bg-coastal-blue hover:bg-coastal-blue/90 text-white">
+                <Button asChild className="bg-coastal-navy hover:bg-coastal-navy/90 text-white">
                   <Link href={featuredPost.href} className="flex items-center justify-center">
                     Read Full Article
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -206,7 +206,7 @@ export default function BlogClientPage() {
                     <p className="text-coastal-grey mb-6">
                       Get the latest First Coast real estate insights and renovation tips delivered to your inbox.
                     </p>
-                    <Button asChild className="w-full bg-coastal-blue hover:bg-coastal-blue/90 text-white">
+                    <Button asChild className="w-full bg-coastal-navy hover:bg-coastal-navy/90 text-white">
                       <Link href="/contact?service=newsletter">Sign Up for Updates</Link>
                     </Button>
                   </CardContent>
@@ -262,7 +262,7 @@ export default function BlogClientPage() {
           <p className="text-xl text-white/90 mb-8">
             Subscribe to our newsletter for the latest First Coast real estate trends and renovation tips.
           </p>
-          <Button asChild className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3">
+          <Button asChild className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8 py-3">
             <Link href="/contact?service=newsletter">Subscribe to Newsletter</Link>
           </Button>
         </div>

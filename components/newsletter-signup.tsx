@@ -74,13 +74,13 @@ export default function NewsletterSignup() {
             setEmail(e.target.value)
             if (status === "error") setStatus("idle")
           }}
-          className="pl-9 bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-coastal-orange h-10"
+          className="pl-9 bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-coastal-navy h-10"
         />
       </div>
       <Button
         type="submit"
         disabled={status === "loading"}
-        className="bg-coastal-orange hover:bg-coastal-orange/90 text-white h-10 px-5 whitespace-nowrap"
+        className="bg-coastal-navy hover:bg-coastal-navy/90 text-white h-10 px-5 whitespace-nowrap"
       >
         {status === "loading" ? (
           <Loader2 className="h-4 w-4 animate-spin" />

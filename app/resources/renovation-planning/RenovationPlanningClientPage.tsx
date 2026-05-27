@@ -211,7 +211,7 @@ export default function RenovationPlanningClientPage() {
                       </div>
                       <div className="flex justify-between items-center mb-4">
                         <span className="text-coastal-grey text-sm">Expected ROI:</span>
-                        <Badge className="bg-coastal-blue text-white">{project.roi}</Badge>
+                        <Badge className="bg-coastal-navy text-white">{project.roi}</Badge>
                       </div>
                     </div>
                     <p className="text-coastal-grey text-sm text-center">{project.description}</p>
@@ -256,7 +256,7 @@ export default function RenovationPlanningClientPage() {
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-semibold text-coastal-orange mb-3">Cons:</h4>
+                        <h4 className="text-lg font-semibold text-coastal-navy mb-3">Cons:</h4>
                         <div className="space-y-2">
                           {option.cons.map((con, conIndex) => (
                             <div key={conIndex} className="flex items-start space-x-3">
@@ -300,13 +300,13 @@ export default function RenovationPlanningClientPage() {
                   <p className="text-coastal-grey mb-6">
                     Calculate realistic budgets for different types of renovation projects.
                   </p>
-                  <Button className="bg-coastal-blue hover:bg-coastal-blue/90 text-white">Use Calculator</Button>
+                  <Button className="bg-coastal-navy hover:bg-coastal-navy/90 text-white">Use Calculator</Button>
                 </CardContent>
               </Card>
 
               <Card className="text-center p-8 hover:shadow-lg transition-shadow">
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-coastal-orange rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-coastal-navy rounded-full flex items-center justify-center mx-auto mb-6">
                     <DollarSign className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-coastal-navy mb-4 font-serif">
@@ -315,20 +315,20 @@ export default function RenovationPlanningClientPage() {
                   <p className="text-coastal-grey mb-6">
                     Estimate the return on investment for various home improvement projects.
                   </p>
-                  <Button className="bg-coastal-orange hover:bg-coastal-orange/90 text-white">Estimate ROI</Button>
+                  <Button className="bg-coastal-navy hover:bg-coastal-navy/90 text-white">Estimate ROI</Button>
                 </CardContent>
               </Card>
 
               <Card className="text-center p-8 hover:shadow-lg transition-shadow">
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-coastal-yellow rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-coastal-navy rounded-full flex items-center justify-center mx-auto mb-6">
                     <FileText className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-coastal-navy mb-4 font-serif">
                     Contractor Questions
                   </h3>
                   <p className="text-coastal-grey mb-6">Essential questions to ask potential contractors before hiring.</p>
-                  <Button className="bg-coastal-yellow hover:bg-coastal-yellow/90 text-white">
+                  <Button className="bg-coastal-navy hover:bg-coastal-navy/90 text-white">
                     <Download className="mr-2 h-4 w-4" />
                     Download List
                   </Button>

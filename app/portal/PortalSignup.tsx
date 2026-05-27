@@ -121,7 +121,7 @@ export default function PortalSignup() {
       <Button
         type="submit"
         disabled={status === "loading"}
-        className="w-full bg-coastal-orange hover:bg-coastal-orange/90 text-white h-11 text-base"
+        className="w-full bg-coastal-navy hover:bg-coastal-navy/90 text-white h-11 text-base"
       >
         {status === "loading" ? (
           <Loader2 className="h-5 w-5 animate-spin" />

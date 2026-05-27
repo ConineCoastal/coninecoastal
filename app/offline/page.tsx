@@ -16,7 +16,7 @@ export default function OfflinePage() {
         <div className="space-y-4">
           <button
             onClick={() => window.location.reload()}
-            className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+            className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8 py-3 rounded-lg font-medium transition-colors"
           >
             Try Again
           </button>

@@ -179,7 +179,7 @@ export default function MarketUpdatesClientPage() {
             Comprehensive market analysis and trends for Northeast Florida real estate
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3">
+            <Button className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8 py-3">
               <Download className="mr-2 h-5 w-5" />
               Download Latest Report
             </Button>
@@ -232,8 +232,8 @@ export default function MarketUpdatesClientPage() {
 
             <Card className="text-center p-6 hover:shadow-lg transition-shadow">
               <CardContent className="p-0">
-                <div className="w-16 h-16 bg-coastal-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Calendar className="h-8 w-8 text-coastal-orange" />
+                <div className="w-16 h-16 bg-coastal-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Calendar className="h-8 w-8 text-coastal-navy" />
                 </div>
                 <h3 className="text-2xl font-bold text-coastal-navy mb-2">{currentStats.daysOnMarket}</h3>
                 <p className="text-coastal-grey mb-2">Average Days on Market</p>
@@ -246,8 +246,8 @@ export default function MarketUpdatesClientPage() {
 
             <Card className="text-center p-6 hover:shadow-lg transition-shadow">
               <CardContent className="p-0">
-                <div className="w-16 h-16 bg-coastal-yellow/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Home className="h-8 w-8 text-coastal-yellow" />
+                <div className="w-16 h-16 bg-coastal-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Home className="h-8 w-8 text-coastal-blue" />
                 </div>
                 <h3 className="text-2xl font-bold text-coastal-navy mb-2">{currentStats.inventory}</h3>
                 <p className="text-coastal-grey mb-2">Months of Inventory</p>
@@ -294,7 +294,7 @@ export default function MarketUpdatesClientPage() {
                   <div className="flex flex-col lg:flex-row gap-8">
                     <div className="lg:w-2/3">
                       <div className="flex items-center space-x-4 mb-4">
-                        <Badge className="bg-coastal-blue text-white">{report.month}</Badge>
+                        <Badge className="bg-coastal-navy text-white">{report.month}</Badge>
                         <h3 className="text-2xl font-bold text-coastal-navy font-serif">
                           {report.title}
                         </h3>
@@ -309,7 +309,7 @@ export default function MarketUpdatesClientPage() {
                         ))}
                       </div>
 
-                      <Button className="bg-coastal-orange hover:bg-coastal-orange/90 text-white">
+                      <Button className="bg-coastal-navy hover:bg-coastal-navy/90 text-white">
                         <Download className="mr-2 h-4 w-4" />
                         Download Full Report
                       </Button>
@@ -427,7 +427,7 @@ export default function MarketUpdatesClientPage() {
                     <Badge
                       className={`${
                         trend.impact === "High"
-                          ? "bg-coastal-orange"
+                          ? "bg-coastal-navy"
                           : trend.impact === "Positive"
                             ? "bg-green-500"
                             : "bg-coastal-blue"
@@ -459,7 +459,7 @@ export default function MarketUpdatesClientPage() {
             local market knowledge.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3">
+            <Button asChild className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8 py-3">
               <Link href="/contact" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />
                 Request Market Analysis

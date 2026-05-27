@@ -41,15 +41,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 function categoryColor(category: string): string {
   switch (category) {
     case "Market Update":
-      return "bg-coastal-blue text-white"
+      return "bg-coastal-navy text-white"
     case "Renovation":
-      return "bg-coastal-orange text-white"
+      return "bg-coastal-navy text-white"
     case "Community":
       return "bg-coastal-navy text-white"
     case "Buying Tips":
       return "bg-green-600 text-white"
     case "Investment":
-      return "bg-coastal-yellow text-coastal-navy"
+      return "bg-coastal-navy text-white"
     default:
       return "bg-coastal-grey text-white"
   }
@@ -273,7 +273,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <Button
               asChild
               size="lg"
-              className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-4 text-lg"
+              className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8 py-4 text-lg"
             >
               <Link href="/contact" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />

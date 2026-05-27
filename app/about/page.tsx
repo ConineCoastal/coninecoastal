@@ -42,8 +42,8 @@ export default function AboutPage() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <Badge className="bg-coastal-blue text-white px-4 py-2 text-sm">UNF Construction Management</Badge>
-              <Badge className="bg-coastal-orange text-white px-4 py-2 text-sm">Harvard Real Estate Certificate</Badge>
+              <Badge className="bg-coastal-navy text-white px-4 py-2 text-sm">UNF Construction Management</Badge>
+              <Badge className="bg-coastal-navy text-white px-4 py-2 text-sm">Harvard Real Estate Certificate</Badge>
               <Badge className="bg-coastal-navy text-white px-4 py-2 text-sm">FL Licensed Realtor & Contractor</Badge>
             </div>
           </div>
@@ -59,7 +59,7 @@ export default function AboutPage() {
               <div className="text-sm sm:text-base text-white/80">Years in Construction</div>
             </div>
             <div>
-              <div className="text-3xl sm:text-4xl font-bold text-coastal-orange mb-1">UNF</div>
+              <div className="text-3xl sm:text-4xl font-bold text-coastal-navy mb-1">UNF</div>
               <div className="text-sm sm:text-base text-white/80">Construction Management</div>
             </div>
             <div>
@@ -67,7 +67,7 @@ export default function AboutPage() {
               <div className="text-sm sm:text-base text-white/80">Real Estate Certificate</div>
             </div>
             <div>
-              <div className="text-3xl sm:text-4xl font-bold text-coastal-orange mb-1">FL</div>
+              <div className="text-3xl sm:text-4xl font-bold text-coastal-navy mb-1">FL</div>
               <div className="text-sm sm:text-base text-white/80">Licensed Realtor & Contractor</div>
             </div>
           </div>
@@ -196,8 +196,8 @@ export default function AboutPage() {
 
             <div className="text-center">
               <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 bg-coastal-orange/10 rounded-full flex items-center justify-center">
-                  <Hammer className="h-10 w-10 text-coastal-orange" />
+                <div className="w-20 h-20 bg-coastal-blue/10 rounded-full flex items-center justify-center">
+                  <Hammer className="h-10 w-10 text-coastal-navy" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-coastal-navy mb-4 font-serif">
@@ -210,8 +210,8 @@ export default function AboutPage() {
 
             <div className="text-center">
               <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 bg-coastal-yellow/10 rounded-full flex items-center justify-center">
-                  <CheckCircle className="h-10 w-10 text-coastal-yellow" />
+                <div className="w-20 h-20 bg-coastal-blue/10 rounded-full flex items-center justify-center">
+                  <CheckCircle className="h-10 w-10 text-coastal-blue" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-coastal-navy mb-4 font-serif">
@@ -264,7 +264,7 @@ export default function AboutPage() {
             <Button
               asChild
               size="lg"
-              className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-4 text-lg"
+              className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8 py-4 text-lg"
             >
               <Link href="/contact">Request a Consultation</Link>
             </Button>

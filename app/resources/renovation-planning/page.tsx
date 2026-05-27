@@ -77,8 +77,8 @@ export default function RenovationPlanningPage() {
             {/* Step 1 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-coastal-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-coastal-orange">1</span>
+                <div className="w-16 h-16 bg-coastal-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-navy">1</span>
                 </div>
                 <CardTitle className="text-coastal-navy font-serif text-lg">Define Goals & Budget</CardTitle>
               </CardHeader>
@@ -92,8 +92,8 @@ export default function RenovationPlanningPage() {
             {/* Step 2 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-coastal-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-coastal-orange">2</span>
+                <div className="w-16 h-16 bg-coastal-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-navy">2</span>
                 </div>
                 <CardTitle className="text-coastal-navy font-serif text-lg">Design & Planning</CardTitle>
               </CardHeader>
@@ -107,8 +107,8 @@ export default function RenovationPlanningPage() {
             {/* Step 3 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-coastal-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-coastal-orange">3</span>
+                <div className="w-16 h-16 bg-coastal-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-navy">3</span>
                 </div>
                 <CardTitle className="text-coastal-navy font-serif text-lg">Contractor Selection</CardTitle>
               </CardHeader>
@@ -122,8 +122,8 @@ export default function RenovationPlanningPage() {
             {/* Step 4 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-coastal-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-coastal-orange">4</span>
+                <div className="w-16 h-16 bg-coastal-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-navy">4</span>
                 </div>
                 <CardTitle className="text-coastal-navy font-serif text-lg">Project Management</CardTitle>
               </CardHeader>
@@ -137,8 +137,8 @@ export default function RenovationPlanningPage() {
             {/* Step 5 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-coastal-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-coastal-orange">5</span>
+                <div className="w-16 h-16 bg-coastal-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-navy">5</span>
                 </div>
                 <CardTitle className="text-coastal-navy font-serif text-lg">Quality Inspection</CardTitle>
               </CardHeader>
@@ -152,8 +152,8 @@ export default function RenovationPlanningPage() {
             {/* Step 6 */}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-coastal-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-coastal-orange">6</span>
+                <div className="w-16 h-16 bg-coastal-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-coastal-navy">6</span>
                 </div>
                 <CardTitle className="text-coastal-navy font-serif text-lg">Final Completion</CardTitle>
               </CardHeader>
@@ -300,8 +300,8 @@ export default function RenovationPlanningPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-12 h-12 bg-coastal-orange/10 rounded-lg flex items-center justify-center mb-4">
-                  <Calculator className="h-6 w-6 text-coastal-orange" />
+                <div className="w-12 h-12 bg-coastal-blue/10 rounded-lg flex items-center justify-center mb-4">
+                  <Calculator className="h-6 w-6 text-coastal-navy" />
                 </div>
                 <CardTitle className="text-coastal-navy font-serif">Budget Calculator</CardTitle>
                 <CardDescription>Estimate costs for different renovation types</CardDescription>
@@ -326,8 +326,8 @@ export default function RenovationPlanningPage() {
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-12 h-12 bg-coastal-orange/10 rounded-lg flex items-center justify-center mb-4">
-                  <FileText className="h-6 w-6 text-coastal-orange" />
+                <div className="w-12 h-12 bg-coastal-blue/10 rounded-lg flex items-center justify-center mb-4">
+                  <FileText className="h-6 w-6 text-coastal-navy" />
                 </div>
                 <CardTitle className="text-coastal-navy font-serif">Project Timeline</CardTitle>
                 <CardDescription>Plan realistic schedules for your renovation</CardDescription>
@@ -352,8 +352,8 @@ export default function RenovationPlanningPage() {
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-12 h-12 bg-coastal-orange/10 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-coastal-orange" />
+                <div className="w-12 h-12 bg-coastal-blue/10 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-coastal-navy" />
                 </div>
                 <CardTitle className="text-coastal-navy font-serif">Contractor Interview</CardTitle>
                 <CardDescription>Essential questions for vetting contractors</CardDescription>

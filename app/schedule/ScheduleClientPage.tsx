@@ -48,8 +48,8 @@ const SERVICE_CATEGORIES = [
     id: "renovation",
     label: "Renovation",
     icon: <Wrench className="h-6 w-6" />,
-    color: "border-coastal-orange hover:border-coastal-orange bg-coastal-orange/5",
-    activeColor: "border-coastal-orange bg-coastal-orange/10 ring-2 ring-coastal-orange",
+    color: "border-coastal-navy hover:border-coastal-navy bg-coastal-navy/5",
+    activeColor: "border-coastal-navy bg-coastal-blue/10 ring-2 ring-coastal-orange",
     services: [
       { value: "kitchen-remodeling", label: "Kitchen Remodeling", duration: "45 min" },
       { value: "bathroom-renovation", label: "Bathroom Renovation", duration: "45 min" },
@@ -329,7 +329,7 @@ export default function ScheduleClientPage() {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-coastal-orange hover:bg-coastal-orange/90 text-white">
+              <Button asChild className="bg-coastal-navy hover:bg-coastal-navy/90 text-white">
                 <Link href="/">Return Home</Link>
               </Button>
               <Button asChild variant="outline" className="border-coastal-blue text-coastal-blue hover:bg-coastal-blue hover:text-white bg-transparent">
@@ -358,7 +358,7 @@ export default function ScheduleClientPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <Badge className="mb-4 bg-coastal-orange text-white px-6 py-2 text-base">
+          <Badge className="mb-4 bg-coastal-navy text-white px-6 py-2 text-base">
             Free Consultation
           </Badge>
           <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 font-serif">
@@ -385,7 +385,7 @@ export default function ScheduleClientPage() {
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
                       step >= s.num
-                        ? "bg-coastal-orange text-white"
+                        ? "bg-coastal-navy text-white"
                         : "bg-gray-200 text-gray-500"
                     }`}
                   >
@@ -402,7 +402,7 @@ export default function ScheduleClientPage() {
                 {i < 3 && (
                   <div
                     className={`w-12 sm:w-24 h-0.5 mx-2 ${
-                      step > s.num ? "bg-coastal-orange" : "bg-gray-200"
+                      step > s.num ? "bg-coastal-navy" : "bg-gray-200"
                     }`}
                   />
                 )}
@@ -460,7 +460,7 @@ export default function ScheduleClientPage() {
                         onClick={() => setSelectedService(service.value)}
                         className={`p-4 rounded-lg border text-left transition-all ${
                           selectedService === service.value
-                            ? "border-coastal-orange bg-coastal-orange/5 ring-2 ring-coastal-orange"
+                            ? "border-coastal-navy bg-coastal-navy/5 ring-2 ring-coastal-orange"
                             : "border-gray-200 hover:border-gray-300"
                         }`}
                       >
@@ -481,7 +481,7 @@ export default function ScheduleClientPage() {
                 <Button
                   onClick={() => setStep(2)}
                   disabled={!canProceedStep1}
-                  className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8"
+                  className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8"
                 >
                   Continue
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -536,7 +536,7 @@ export default function ScheduleClientPage() {
                       onClick={() => setSelectedDate(date)}
                       className={`p-3 rounded-lg border text-center transition-all ${
                         isSelected
-                          ? "border-coastal-orange bg-coastal-orange/10 ring-2 ring-coastal-orange"
+                          ? "border-coastal-navy bg-coastal-blue/10 ring-2 ring-coastal-orange"
                           : "border-gray-200 hover:border-gray-300"
                       }`}
                     >
@@ -565,7 +565,7 @@ export default function ScheduleClientPage() {
                     onClick={() => setSelectedTime(time)}
                     className={`py-2.5 px-2 rounded-lg border text-sm font-medium transition-all ${
                       selectedTime === time
-                        ? "border-coastal-orange bg-coastal-orange text-white"
+                        ? "border-coastal-navy bg-coastal-navy text-white"
                         : "border-gray-200 text-coastal-grey hover:border-gray-300"
                     }`}
                   >
@@ -586,7 +586,7 @@ export default function ScheduleClientPage() {
                 <Button
                   onClick={() => setStep(3)}
                   disabled={!canProceedStep2}
-                  className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8"
+                  className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8"
                 >
                   Continue
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -705,7 +705,7 @@ export default function ScheduleClientPage() {
                 <Button
                   onClick={() => setStep(4)}
                   disabled={!canProceedStep3}
-                  className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8"
+                  className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8"
                 >
                   Review & Confirm
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -733,7 +733,7 @@ export default function ScheduleClientPage() {
                       </h3>
                       <div className="space-y-3">
                         <div className="flex items-start">
-                          <Wrench className="h-4 w-4 text-coastal-orange mr-3 mt-0.5 flex-shrink-0" />
+                          <Wrench className="h-4 w-4 text-coastal-navy mr-3 mt-0.5 flex-shrink-0" />
                           <div>
                             <div className="text-sm text-coastal-grey">Service</div>
                             <div className="font-medium text-coastal-navy">
@@ -836,7 +836,7 @@ export default function ScheduleClientPage() {
                 <Button
                   onClick={handleSubmit}
                   disabled={isSubmitting}
-                  className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-10 py-3 text-lg"
+                  className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-10 py-3 text-lg"
                 >
                   {isSubmitting ? "Submitting..." : "Confirm Consultation"}
                   {!isSubmitting && <CheckCircle className="ml-2 h-5 w-5" />}
@@ -856,8 +856,8 @@ export default function ScheduleClientPage() {
           <div className="grid md:grid-cols-3 gap-6">
             <Card>
               <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-coastal-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-6 w-6 text-coastal-orange" />
+                <div className="w-12 h-12 bg-coastal-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-6 w-6 text-coastal-navy" />
                 </div>
                 <h3 className="font-semibold text-coastal-navy mb-2">No Pressure</h3>
                 <p className="text-sm text-coastal-grey">
@@ -907,7 +907,7 @@ export default function ScheduleClientPage() {
             <Button
               asChild
               size="lg"
-              className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8"
+              className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8"
             >
               <a href="tel:+19046241722" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />

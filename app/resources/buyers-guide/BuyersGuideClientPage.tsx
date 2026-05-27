@@ -103,7 +103,7 @@ export default function BuyersGuideClientPage() {
             Your step-by-step guide to buying your dream home on the First Coast, backed by construction expertise
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3">
+            <Button className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8 py-3">
               <Download className="mr-2 h-5 w-5" />
               Download PDF Guide
             </Button>
@@ -190,7 +190,7 @@ export default function BuyersGuideClientPage() {
                   ))}
                 </div>
                 <div className="mt-8">
-                  <Button asChild className="bg-coastal-blue hover:bg-coastal-blue/90 text-white px-8 py-3">
+                  <Button asChild className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8 py-3">
                     <Link href="/contact">Get Expert Guidance</Link>
                   </Button>
                 </div>
@@ -233,7 +233,7 @@ export default function BuyersGuideClientPage() {
               <p className="text-coastal-grey mb-6">
                 Complete checklist with timelines, important questions to ask, and red flags to watch for.
               </p>
-              <Button className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3">
+              <Button className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8 py-3">
                 <Download className="mr-2 h-5 w-5" />
                 Download Free Checklist
               </Button>
@@ -252,7 +252,7 @@ export default function BuyersGuideClientPage() {
             Let's find your perfect First Coast home with the confidence that comes from construction expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-8 py-3">
+            <Button asChild className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-8 py-3">
               <Link href="/contact">Schedule Your Consultation</Link>
             </Button>
             <Button

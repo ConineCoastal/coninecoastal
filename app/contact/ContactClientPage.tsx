@@ -173,7 +173,7 @@ export default function ContactClientPage() {
             <Button
               asChild
               size="lg"
-              className="bg-coastal-orange hover:bg-coastal-orange/90 text-white px-10 py-4 text-xl shadow-lg"
+              className="bg-coastal-navy hover:bg-coastal-navy/90 text-white px-10 py-4 text-xl shadow-lg"
             >
               <a href="#contact-form">Send a Message</a>
             </Button>
@@ -193,7 +193,7 @@ export default function ContactClientPage() {
 
               <div className="space-y-6">
                 <div className="flex items-center">
-                  <Phone className="h-6 w-6 text-coastal-orange mr-4" />
+                  <Phone className="h-6 w-6 text-coastal-navy mr-4" />
                   <div>
                     <p className="font-semibold text-coastal-navy">Phone</p>
                     <a href="tel:+19046241722" className="text-coastal-grey hover:text-coastal-navy transition-colors">
@@ -203,7 +203,7 @@ export default function ContactClientPage() {
                 </div>
 
                 <div className="flex items-center">
-                  <Mail className="h-6 w-6 text-coastal-orange mr-4" />
+                  <Mail className="h-6 w-6 text-coastal-navy mr-4" />
                   <div>
                     <p className="font-semibold text-coastal-navy">Email</p>
                     <p className="text-coastal-grey">info@coninecoastal.com</p>
@@ -211,7 +211,7 @@ export default function ContactClientPage() {
                 </div>
 
                 <div className="flex items-center">
-                  <MapPin className="h-6 w-6 text-coastal-orange mr-4" />
+                  <MapPin className="h-6 w-6 text-coastal-navy mr-4" />
                   <div>
                     <p className="font-semibold text-coastal-navy">Location</p>
                     <p className="text-coastal-grey">Serving Northeast Florida</p>
@@ -328,7 +328,7 @@ export default function ContactClientPage() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-coastal-orange hover:bg-coastal-orange/90 text-white py-3"
+                    className="w-full bg-coastal-navy hover:bg-coastal-navy/90 text-white py-3"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}

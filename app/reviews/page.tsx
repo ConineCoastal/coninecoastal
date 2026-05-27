@@ -34,7 +34,7 @@ export default function ReviewsPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <FadeIn>
             <div className="text-center">
-              <Star className="h-12 w-12 mx-auto text-coastal-orange mb-6" aria-hidden="true" />
+              <Star className="h-12 w-12 mx-auto text-coastal-navy mb-6" aria-hidden="true" />
               <h1 className="font-serif text-4xl sm:text-5xl font-bold text-coastal-navy mb-4">
                 Client Reviews — Coming Soon
               </h1>
@@ -93,7 +93,7 @@ export default function ReviewsPage() {
                 Looking to engage one of the subsidiaries today? Reach out — we&rsquo;ll match your
                 inquiry to the right team.
               </p>
-              <Button asChild className="bg-coastal-orange hover:bg-coastal-orange/90 text-white">
+              <Button asChild className="bg-coastal-navy hover:bg-coastal-navy/90 text-white">
                 <Link href="/contact" className="inline-flex items-center">
                   <Mail className="h-4 w-4 mr-2" aria-hidden="true" />
                   Contact Conine Coastal

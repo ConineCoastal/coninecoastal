@@ -118,8 +118,8 @@ export default function ResourcesPage() {
             {/* For Renovators */}
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="w-12 h-12 bg-coastal-orange/10 rounded-lg flex items-center justify-center mb-4">
-                  <Wrench className="h-6 w-6 text-coastal-orange" />
+                <div className="w-12 h-12 bg-coastal-blue/10 rounded-lg flex items-center justify-center mb-4">
+                  <Wrench className="h-6 w-6 text-coastal-navy" />
                 </div>
                 <CardTitle className="text-coastal-navy font-serif">For Renovators</CardTitle>
                 <CardDescription>
@@ -192,8 +192,8 @@ export default function ResourcesPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-coastal-orange/10 rounded-lg flex items-center justify-center">
-                    <Calculator className="h-6 w-6 text-coastal-orange" />
+                  <div className="w-12 h-12 bg-coastal-blue/10 rounded-lg flex items-center justify-center">
+                    <Calculator className="h-6 w-6 text-coastal-navy" />
                   </div>
                   <div>
                     <CardTitle className="text-coastal-navy font-serif">Tools & Calculators</CardTitle>

@@ -68,7 +68,7 @@ const faqCategories: FAQCategory[] = [
   {
     title: "Renovations & Construction",
     icon: <Wrench className="h-6 w-6" />,
-    color: "text-coastal-orange",
+    color: "text-coastal-navy",
     faqs: [
       {
         question: "How long does a typical kitchen renovation take?",
@@ -183,7 +183,7 @@ export default function FAQPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 z-[1]" />
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <Badge className="mb-4 bg-coastal-orange text-white px-6 py-2 text-base">FAQ</Badge>
+          <Badge className="mb-4 bg-coastal-navy text-white px-6 py-2 text-base">FAQ</Badge>
           <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 font-serif">
             Frequently Asked Questions
           </h1>

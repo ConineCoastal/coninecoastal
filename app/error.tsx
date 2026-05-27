@@ -19,7 +19,7 @@ export default function Error({
   return (
     <div className="min-h-[70vh] flex items-center justify-center bg-white">
       <div className="max-w-lg mx-auto px-4 text-center">
-        <div className="text-6xl font-bold text-coastal-orange/30 mb-4 font-serif">Oops</div>
+        <div className="text-6xl font-bold text-coastal-navy/30 mb-4 font-serif">Oops</div>
         <h1 className="text-3xl font-bold text-coastal-navy mb-4 font-serif">
           Something Went Wrong
         </h1>
@@ -30,7 +30,7 @@ export default function Error({
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
             onClick={reset}
-            className="bg-coastal-blue hover:bg-coastal-blue/90 text-white"
+            className="bg-coastal-navy hover:bg-coastal-navy/90 text-white"
           >
             <RefreshCw className="mr-2 h-4 w-4" />
             Try Again
