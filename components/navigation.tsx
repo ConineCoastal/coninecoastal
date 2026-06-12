@@ -64,6 +64,24 @@ export default function Navigation() {
               About
             </Link>
 
+            <Link
+              href="/services"
+              className={`font-serif font-medium transition-colors text-sm xl:text-base ${
+                isActive("/services") ? "text-coastal-blue" : "text-coastal-navy hover:text-coastal-blue"
+              }`}
+            >
+              Services
+            </Link>
+
+            <Link
+              href="/markets"
+              className={`font-serif font-medium transition-colors text-sm xl:text-base ${
+                isActive("/markets") ? "text-coastal-blue" : "text-coastal-navy hover:text-coastal-blue"
+              }`}
+            >
+              Markets
+            </Link>
+
             {/* Companies Dropdown */}
             <div
               className="relative"
@@ -253,6 +271,30 @@ export default function Navigation() {
                 }`}
               >
                 About
+              </Link>
+
+              <Link
+                href="/services"
+                onClick={closeMenu}
+                className={`block font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
+                  isActive("/services")
+                    ? "text-coastal-blue bg-blue-50"
+                    : "text-coastal-navy hover:text-coastal-blue hover:bg-gray-50"
+                }`}
+              >
+                Services
+              </Link>
+
+              <Link
+                href="/markets"
+                onClick={closeMenu}
+                className={`block font-serif font-medium py-3 px-2 rounded-md transition-colors touch-manipulation ${
+                  isActive("/markets")
+                    ? "text-coastal-blue bg-blue-50"
+                    : "text-coastal-navy hover:text-coastal-blue hover:bg-gray-50"
+                }`}
+              >
+                Markets
               </Link>
 
               {/* Companies - Mobile Dropdown */}

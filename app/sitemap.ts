@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 import { blogPosts } from "@/lib/blog-data"
+import { markets } from "@/lib/markets-data"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.coninecoastal.com"
@@ -11,6 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
+  const marketUrls: MetadataRoute.Sitemap = markets.map((market) => ({
+    url: `${baseUrl}/markets/${market.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }))
+
   return [
     // Main pages
     { url: baseUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
@@ -19,6 +27,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // /schedule removed per ai-infra SYS-011 Q3-R1 Flag #3 follow-up (2026-05-25): scheduling backend (CRM) not yet selected; restore once wired.
     { url: `${baseUrl}/faq`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/reviews`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+
+    // Services & Markets (AEO surfaces)
+    { url: `${baseUrl}/services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/markets`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    ...marketUrls,
 
     // Companies — each /companies/* path 301/308-redirects to its child site (see next.config.mjs);
     // excluded from the sitemap to avoid competing with the child sites for the same content.
