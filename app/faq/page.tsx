@@ -32,15 +32,21 @@ interface FAQCategory {
   faqs: FAQItem[]
 }
 
-// NOTE FOR DAVID — verify before launch. The AEO answers below use evergreen,
-// nationally/state-grounded facts and conservative ranges, but four touch local
-// figures that move with the market and should be confirmed:
-//   • "St. Augustine market" — median-price-vs-state-average claim.
-//   • "Amelia Island" — current short-term-rental ordinances (City of Fernandina
-//     Beach vs. unincorporated Nassau differ).
-//   • "Construction costs per square foot" — the $150–$300+/sqft ranges.
-//   • "Permits for new construction in Nassau County" — exact submittal list/fees.
-// Wording already hedges or tells the reader to confirm; tighten with your numbers.
+// NOTE FOR DAVID — the four local-data answers below were tightened against
+// public sources (June 2026) and now carry a date stamp where they cite figures.
+// Residual items still worth a periodic refresh (all currently hedged honestly):
+//   • "St. Augustine market" — VERIFIED dir. via Redfin/Zillow (St. Johns County
+//     median ~$450K vs. FL ~$400K, early 2026). Swap in exact MLS figures if/when
+//     you have them; numbers are volatile, so the "as of early 2026" stamp stays.
+//   • "Amelia Island" — City of Fernandina Beach RRDP/zoning/state-license detail
+//     VERIFIED via fbfl.us. Unincorporated Nassau specifics still left to "verify
+//     with the county" (not cleanly published online — do not fabricate).
+//   • "Construction costs per square foot" — ranges VERIFIED for the First Coast
+//     (Jacksonville production ~$150–250, custom/coastal $350+), 2026-stamped.
+//   • "Permits for new construction in Nassau County" — submittal flow, wind-zone,
+//     and interdepartmental sign-off VERIFIED via county/PermitFlow. Exact impact-
+//     fee dollar amounts not published cleanly — "verify current checklist" hedge
+//     intentionally retained. Refresh figures periodically; market data moves.
 
 const faqCategories: FAQCategory[] = [
   {
@@ -51,12 +57,12 @@ const faqCategories: FAQCategory[] = [
       {
         question: "What is the real estate market like in St. Augustine, Florida?",
         answer:
-          "St. Augustine, in St. Johns County, is a tourism-anchored market with strong underlying fundamentals. St. Johns County is consistently one of Florida's fastest-growing and highest-income counties, with top-rated public schools that drive steady relocation demand. The historic downtown and nearby beaches support year-round vacation-rental activity, and limited inventory in the historic core keeps well-located homes competitive. Median prices generally run above the Florida state average. The market favors buyers who can read a property's true condition and renovation cost — especially among the area's many older and historic homes — rather than price alone.",
+          "St. Augustine, in St. Johns County, is a tourism-anchored market with strong underlying fundamentals. St. Johns County is consistently one of Florida's fastest-growing and highest-income counties, with top-rated public schools that drive steady relocation demand. The historic downtown and nearby beaches support year-round vacation-rental activity, and limited inventory in the historic core keeps well-located homes competitive. As of early 2026, the St. Johns County median sale price (roughly $450,000) runs well above the Florida statewide median (roughly $400,000) — a premium that reflects the county's top-rated schools and coastal access. The market favors buyers who can read a property's true condition and renovation cost — especially among the area's many older and historic homes — rather than price alone.",
       },
       {
         question: "Is Amelia Island a good place to invest in rental property?",
         answer:
-          "Amelia Island, in Nassau County, is a resort and tourism destination centered on historic Fernandina Beach, which makes it one of the stronger short-term vacation-rental markets in Northeast Florida. Demand is seasonal but consistent, supported by beaches, golf, and heritage tourism. Entry prices are higher than the Nassau County mainland, so cash-on-cash returns depend heavily on nightly rate, occupancy, and expense control — including Florida's elevated property-insurance costs near the coast. Before buying, confirm the current short-term-rental rules for your specific parcel, since they differ between the City of Fernandina Beach and unincorporated Nassau County. For investors who underwrite conservatively it can be a strong rental market; for those who overpay or underestimate operating costs, it is unforgiving.",
+          "Amelia Island, in Nassau County, is a resort and tourism destination centered on historic Fernandina Beach, which makes it one of the stronger short-term vacation-rental markets in Northeast Florida. Demand is seasonal but consistent, supported by beaches, golf, and heritage tourism. Entry prices are higher than the Nassau County mainland, so cash-on-cash returns depend heavily on nightly rate, occupancy, and expense control — including Florida's elevated property-insurance costs near the coast. Before buying, confirm the current short-term-rental rules for your specific parcel, since they differ between the City of Fernandina Beach and unincorporated Nassau County. Inside Fernandina Beach, short-term (resort) rentals require a city-issued Resort Rental Dwelling Permit (RRDP) — generally limited to R-3-zoned properties or grandfathered R-1/R-2 ones — on top of a state DBPR public-lodging license and Nassau County tourist-development-tax registration; outside the city limits, verify the current rules directly with Nassau County. For investors who underwrite conservatively it can be a strong rental market; for those who overpay or underestimate operating costs, it is unforgiving.",
       },
       {
         question: "What is the BRRRR strategy and does it work in Northeast Florida?",
@@ -81,12 +87,12 @@ const faqCategories: FAQCategory[] = [
       {
         question: "What are construction costs per square foot in Northeast Florida?",
         answer:
-          "Construction cost per square foot in Northeast Florida varies widely by quality, site, and finish level, so treat any single number with caution. As a general planning range, standard new residential construction has recently run roughly $150–$250 per square foot, with custom, coastal, and luxury builds reaching $300 per square foot and above. Renovation costs are even more variable — a cosmetic refresh costs a fraction of a gut remodel with layout changes. Coastal requirements (impact-rated windows, elevated foundations, salt-resistant materials) and county-specific impact fees push First Coast costs above inland Florida. Because material and labor pricing moves with the market, confirm current per-square-foot numbers for your specific scope and location before you budget.",
+          "Construction cost per square foot in Northeast Florida varies widely by quality, site, and finish level, so treat any single number with caution. As a general planning range in 2026, standard new residential construction on the First Coast has run roughly $150–$250 per square foot (production and semi-custom homes at the lower end), with custom, coastal, and luxury builds reaching $350 per square foot and above. Renovation costs are even more variable — a cosmetic refresh costs a fraction of a gut remodel with layout changes. Coastal requirements (impact-rated windows, elevated foundations, salt-resistant materials) and county-specific impact fees push First Coast costs above inland Florida. Because material and labor pricing moves with the market, confirm current per-square-foot numbers for your specific scope and location before you budget.",
       },
       {
         question: "What permits are required for new construction in Nassau County?",
         answer:
-          "New construction in Nassau County requires a building permit from the authority having jurisdiction — the Nassau County Building Department for unincorporated areas, or the City of Fernandina Beach (or the town offices of Callahan or Hilliard) for property inside those municipalities. A typical new home also needs separate trade permits for electrical, plumbing, mechanical/HVAC, and roofing, plus site-related approvals such as driveway/right-of-way, stormwater, and either a septic permit (through the health department) or a sewer connection, and a well permit or utility connection for water. Impact fees and a final certificate of occupancy apply. Exact submittal requirements, fees, and setbacks differ by jurisdiction and parcel, so verify the current checklist directly with the governing building department before designing or budgeting.",
+          "New construction in Nassau County requires a building permit from the authority having jurisdiction — the Nassau County Building Department for unincorporated areas, or the City of Fernandina Beach (or the town offices of Callahan or Hilliard) for property inside those municipalities. A typical new home also needs separate trade permits for electrical, plumbing, mechanical/HVAC, and roofing, plus site-related approvals such as driveway/right-of-way, stormwater, and either a septic permit (through the health department) or a sewer connection, and a well permit or utility connection for water. In unincorporated Nassau County, plan review begins only after the application clears interdepartmental sign-off — Planning/Development Services, stormwater, and Fire Rescue — and plans must be signed and sealed by a registered design professional and engineered to the Florida Building Code's wind-load requirements for the county's coastal wind zone. Impact fees and a final certificate of occupancy apply. Exact submittal requirements, fees, and setbacks differ by jurisdiction and parcel, so verify the current checklist directly with the governing building department before designing or budgeting.",
       },
       {
         question: "How does a construction background help in real estate investing?",
