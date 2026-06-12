@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, Star, Shield, Hammer, Target, Award } from "lucide-react"
+import { CheckCircle, Shield, Hammer, Target, Award } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -225,28 +225,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Testimonial Quote */}
-      <section className="py-16 bg-coastal-navy">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex justify-center mb-6">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-8 w-8 text-coastal-yellow fill-current" />
-            ))}
-          </div>
-
-          <blockquote
-            className="text-2xl lg:text-3xl text-white mb-8 italic leading-relaxed font-serif"
-          >
-            "David's unique combination of real estate knowledge and construction expertise saved us thousands. He
-            spotted issues other agents missed and helped us negotiate a fair price."
-          </blockquote>
-
-          <div className="text-white/80">
-            <p className="font-semibold text-lg">Jennifer & Mark Thompson</p>
-            <p>First-time Homebuyers, Neptune Beach</p>
-          </div>
-        </div>
-      </section>
+      {/*
+        Fabricated testimonial removed (AEO honesty pass, 2026-06): the
+        "Jennifer & Mark Thompson" quote and 5-star rating were sample content
+        while the group is pre-launch with no clients. This is consistent with
+        /reviews (honest coming-soon) and PRODUCT.md's pre-launch-honesty rule
+        ("Empty-until-real beats impressive-but-false"). Restore real
+        testimonials only once verifiable clients exist.
+      */}
 
       {/* Call to Action Section */}
       <section className="py-16 bg-coastal-navy">
