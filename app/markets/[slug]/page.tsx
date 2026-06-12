@@ -135,24 +135,80 @@ export default async function MarketDetailPage({ params }: PageProps) {
                   <h2 className="text-xl font-bold text-coastal-navy font-serif mb-2">
                     {market.name} Market Data
                   </h2>
-                  <p className="text-coastal-grey leading-relaxed mb-3">
-                    Current {market.name} market statistics will be published here. To keep this page accurate,
-                    live figures are sourced rather than estimated.
-                  </p>
                   {/*
-                    PLACEHOLDER — David to supply. Do not fabricate. Suggested fields:
-                      • Median sale price & 12-month trend
-                      • Active inventory & average days on market
-                      • Median price per square foot
-                      • Typical rent / short-term-rental performance (where relevant)
-                      • Conine Coastal active or recent projects in this market
+                    Populated per-market from lib/markets-data.ts `marketData` (public
+                    listing-portal figures, not proprietary MLS). Any market or field
+                    left unset falls back to the labeled "to be supplied" placeholder
+                    below — do not fabricate figures to fill it.
                   */}
-                  <ul className="text-sm text-coastal-grey/80 space-y-1">
-                    <li>• Median sale price and recent trend</li>
-                    <li>• Active inventory and average days on market</li>
-                    <li>• Median price per square foot</li>
-                    <li>• Typical rental / short-term-rental performance</li>
-                  </ul>
+                  {market.marketData ? (
+                    <>
+                      <p className="text-coastal-grey leading-relaxed mb-4">
+                        Current {market.name} market statistics, drawn from public listing data and
+                        refreshed periodically. Figures are indicative, not an appraisal.
+                      </p>
+                      <dl className="grid sm:grid-cols-2 gap-x-6 gap-y-3 mb-4">
+                        {market.marketData.medianSalePrice && (
+                          <div>
+                            <dt className="text-xs uppercase tracking-wide text-coastal-grey/70">
+                              Median sale price
+                            </dt>
+                            <dd className="text-lg font-semibold text-coastal-navy">
+                              {market.marketData.medianSalePrice}
+                            </dd>
+                          </div>
+                        )}
+                        {market.marketData.medianPricePerSqFt && (
+                          <div>
+                            <dt className="text-xs uppercase tracking-wide text-coastal-grey/70">
+                              Median price / sq ft
+                            </dt>
+                            <dd className="text-lg font-semibold text-coastal-navy">
+                              {market.marketData.medianPricePerSqFt}
+                            </dd>
+                          </div>
+                        )}
+                        {market.marketData.daysOnMarket && (
+                          <div>
+                            <dt className="text-xs uppercase tracking-wide text-coastal-grey/70">
+                              Median days on market
+                            </dt>
+                            <dd className="text-lg font-semibold text-coastal-navy">
+                              {market.marketData.daysOnMarket}
+                            </dd>
+                          </div>
+                        )}
+                        {market.marketData.rentNote && (
+                          <div>
+                            <dt className="text-xs uppercase tracking-wide text-coastal-grey/70">
+                              Rental performance
+                            </dt>
+                            <dd className="text-base text-coastal-navy">{market.marketData.rentNote}</dd>
+                          </div>
+                        )}
+                      </dl>
+                      {market.marketData.trendNote && (
+                        <p className="text-sm text-coastal-grey mb-2">{market.marketData.trendNote}</p>
+                      )}
+                      <p className="text-xs text-coastal-grey/70">
+                        As of {market.marketData.asOf} · Source: {market.marketData.source}. Public-record
+                        estimates that move with the market — confirm current figures before relying on them.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="text-coastal-grey leading-relaxed mb-3">
+                        Current {market.name} market statistics will be published here. To keep this page
+                        accurate, live figures are sourced rather than estimated.
+                      </p>
+                      <ul className="text-sm text-coastal-grey/80 space-y-1">
+                        <li>• Median sale price and recent trend</li>
+                        <li>• Active inventory and average days on market</li>
+                        <li>• Median price per square foot</li>
+                        <li>• Typical rental / short-term-rental performance</li>
+                      </ul>
+                    </>
+                  )}
                 </div>
               </div>
             </CardContent>
