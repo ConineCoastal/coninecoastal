@@ -39,11 +39,11 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      { source: "/companies/real-estate", destination: "https://coninecoastalrealestate.com", permanent: true },
-      { source: "/companies/estates", destination: "https://coninecoastalestates.com", permanent: true },
-      { source: "/companies/development", destination: "https://coninecoastaldevelopment.com", permanent: true },
-      { source: "/companies/home-services", destination: "https://coninecoastalhomeservices.com", permanent: true },
-      { source: "/companies/travel", destination: "https://coninecoastaltravel.com", permanent: true },
+      { source: "/companies/real-estate", destination: "https://www.coninecoastalrealestate.com", permanent: true },
+      { source: "/companies/estates", destination: "https://www.coninecoastalestates.com", permanent: true },
+      { source: "/companies/development", destination: "https://www.coninecoastaldevelopment.com", permanent: true },
+      { source: "/companies/home-services", destination: "https://www.coninecoastalhomeservices.com", permanent: true },
+      { source: "/companies/travel", destination: "https://www.coninecoastaltravel.com", permanent: true },
     ]
   },
 }
