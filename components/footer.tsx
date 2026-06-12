@@ -203,6 +203,22 @@ export default function Footer() {
                   scheduling + portal backends (CRM, auth) not yet selected; routes return by sitenav once wired. */}
               <li>
                 <Link
+                  href="/services"
+                  className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
+                >
+                  Services & Specialties
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/markets"
+                  className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
+                >
+                  Markets We Serve
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/resources"
                   className="hover:text-white transition-colors text-sm sm:text-base block py-1 touch-manipulation"
                 >

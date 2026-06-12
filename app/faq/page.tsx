@@ -32,7 +32,74 @@ interface FAQCategory {
   faqs: FAQItem[]
 }
 
+// NOTE FOR DAVID — verify before launch. The AEO answers below use evergreen,
+// nationally/state-grounded facts and conservative ranges, but four touch local
+// figures that move with the market and should be confirmed:
+//   • "St. Augustine market" — median-price-vs-state-average claim.
+//   • "Amelia Island" — current short-term-rental ordinances (City of Fernandina
+//     Beach vs. unincorporated Nassau differ).
+//   • "Construction costs per square foot" — the $150–$300+/sqft ranges.
+//   • "Permits for new construction in Nassau County" — exact submittal list/fees.
+// Wording already hedges or tells the reader to confirm; tighten with your numbers.
+
 const faqCategories: FAQCategory[] = [
+  {
+    title: "Northeast Florida Investing and Building",
+    icon: <TrendingUp className="h-6 w-6" />,
+    color: "text-coastal-blue",
+    faqs: [
+      {
+        question: "What is the real estate market like in St. Augustine, Florida?",
+        answer:
+          "St. Augustine, in St. Johns County, is a tourism-anchored market with strong underlying fundamentals. St. Johns County is consistently one of Florida's fastest-growing and highest-income counties, with top-rated public schools that drive steady relocation demand. The historic downtown and nearby beaches support year-round vacation-rental activity, and limited inventory in the historic core keeps well-located homes competitive. Median prices generally run above the Florida state average. The market favors buyers who can read a property's true condition and renovation cost — especially among the area's many older and historic homes — rather than price alone.",
+      },
+      {
+        question: "Is Amelia Island a good place to invest in rental property?",
+        answer:
+          "Amelia Island, in Nassau County, is a resort and tourism destination centered on historic Fernandina Beach, which makes it one of the stronger short-term vacation-rental markets in Northeast Florida. Demand is seasonal but consistent, supported by beaches, golf, and heritage tourism. Entry prices are higher than the Nassau County mainland, so cash-on-cash returns depend heavily on nightly rate, occupancy, and expense control — including Florida's elevated property-insurance costs near the coast. Before buying, confirm the current short-term-rental rules for your specific parcel, since they differ between the City of Fernandina Beach and unincorporated Nassau County. For investors who underwrite conservatively it can be a strong rental market; for those who overpay or underestimate operating costs, it is unforgiving.",
+      },
+      {
+        question: "What is the BRRRR strategy and does it work in Northeast Florida?",
+        answer:
+          "BRRRR stands for Buy, Rehab, Rent, Refinance, Repeat. You buy a property below market value, renovate it to force appreciation and command market rent, rent it to a qualified tenant, then refinance based on the higher after-repair value (ARV) to recover most or all of your invested capital — and repeat with the same funds. It works in Northeast Florida where you can still buy below market and add value: parts of Duval County and the Nassau County mainland (Callahan, Hilliard, Yulee) tend to fit better than high-priced coastal areas like Amelia Island or Ponte Vedra, where buying below market is harder. The strategy lives or dies on two numbers — accurate rehab cost and a realistic ARV — plus current interest rates, which determine how much capital you can actually pull out at refinance. Accurate construction estimating is the single biggest risk control.",
+      },
+      {
+        question: "How do I find off-market properties in Nassau County, Florida?",
+        answer:
+          "Off-market properties in Nassau County are found through direct outreach and local relationships rather than the MLS. The most reliable methods are: direct mail and calls to absentee, distressed, or long-tenured owners; building lists from public records such as tax-delinquent, code-violation, pre-foreclosure, and probate filings; 'driving for dollars' through Callahan, Hilliard, Yulee, and Fernandina to spot neglected properties; and networking with local agents, wholesalers, contractors, and attorneys who hear about sales before they list. The Nassau County Property Appraiser's records let you identify and contact owners directly. Consistency matters more than any single tactic — off-market deals come from steady, repeated outreach.",
+      },
+      {
+        question: "What is an owner-builder and what are the risks?",
+        answer:
+          "An owner-builder is a property owner who pulls the building permit in their own name and acts as their own general contractor instead of hiring a licensed one. Florida allows this on property you own, within limits — generally for your own use, with a signed owner-builder disclosure acknowledging your responsibilities, and with restrictions on building to sell within a year. The risks are real: you assume full liability for safety and code compliance, you lose the protections and warranty a licensed contractor carries, financing and insurance can be harder to obtain, and you are responsible for permitting, scheduling, and supervising every subcontractor. Errors in sequencing, code, or subcontractor selection can cost far more than the contractor fee you saved. Owner-building can work for an organized owner with the right guidance, but it is not a shortcut.",
+      },
+      {
+        question: "How do I evaluate a duplex investment in Northeast Florida?",
+        answer:
+          "Evaluate a Northeast Florida duplex on its numbers, not its appearance. Start with the combined rent from both units, then subtract realistic operating expenses — property taxes, insurance (notably high in Florida, especially near the coast), maintenance, vacancy, and management — to get net operating income (NOI). From there, calculate cap rate (NOI ÷ price), cash-on-cash return (annual cash flow ÷ cash invested), and debt-service coverage. Screen quickly with the 1% rule (monthly rent near 1% of price), then verify against real local rent comps. Physically, check whether the units are separately metered, the roof and HVAC age, and the structural condition. Locally, weigh flood zone and insurability — both materially affect Florida returns. A duplex that looks fine but doesn't cover its true expenses is not an investment.",
+      },
+      {
+        question: "What are construction costs per square foot in Northeast Florida?",
+        answer:
+          "Construction cost per square foot in Northeast Florida varies widely by quality, site, and finish level, so treat any single number with caution. As a general planning range, standard new residential construction has recently run roughly $150–$250 per square foot, with custom, coastal, and luxury builds reaching $300 per square foot and above. Renovation costs are even more variable — a cosmetic refresh costs a fraction of a gut remodel with layout changes. Coastal requirements (impact-rated windows, elevated foundations, salt-resistant materials) and county-specific impact fees push First Coast costs above inland Florida. Because material and labor pricing moves with the market, confirm current per-square-foot numbers for your specific scope and location before you budget.",
+      },
+      {
+        question: "What permits are required for new construction in Nassau County?",
+        answer:
+          "New construction in Nassau County requires a building permit from the authority having jurisdiction — the Nassau County Building Department for unincorporated areas, or the City of Fernandina Beach (or the town offices of Callahan or Hilliard) for property inside those municipalities. A typical new home also needs separate trade permits for electrical, plumbing, mechanical/HVAC, and roofing, plus site-related approvals such as driveway/right-of-way, stormwater, and either a septic permit (through the health department) or a sewer connection, and a well permit or utility connection for water. Impact fees and a final certificate of occupancy apply. Exact submittal requirements, fees, and setbacks differ by jurisdiction and parcel, so verify the current checklist directly with the governing building department before designing or budgeting.",
+      },
+      {
+        question: "How does a construction background help in real estate investing?",
+        answer:
+          "A construction background is one of the biggest edges an investor can have, because the most common way investors lose money is underestimating renovation cost. Someone who has built and managed projects can estimate rehab budgets accurately, spot expensive structural, roof, electrical, or plumbing problems during due diligence that others miss, and identify value-add opportunities that don't show up in the comps. It also means running renovations on realistic schedules with trusted subcontractors, and projecting after-repair value more reliably. In short, it lets you underwrite both sides of a deal — the market value and the true cost to create it — instead of guessing on the cost side and hoping.",
+      },
+      {
+        question: "What should I look for when buying a distressed property in Florida?",
+        answer:
+          "When buying a distressed property in Florida, inspect for the issues that are both common and expensive here. Structurally, check the foundation, roof age and condition, and any signs of water intrusion or mold — Florida's heat and humidity make moisture damage and wood-destroying organisms (termites) a top concern. Verify the HVAC, electrical panel (older or recalled panels are costly), and plumbing (cast-iron or polybutylene lines are red flags). Confirm whether past work was permitted, and check title for liens or code violations. Critically, evaluate the flood zone and whether the property is insurable at a reasonable cost — Florida's property-insurance market is tight, and an uninsurable house is hard to finance or resell. Order a 4-point inspection and wind-mitigation report, which insurers typically require. Distressed pricing only makes sense once you know the full cost to make the property safe, financeable, and rentable or resalable.",
+      },
+    ],
+  },
   {
     title: "Real Estate",
     icon: <Home className="h-6 w-6" />,
