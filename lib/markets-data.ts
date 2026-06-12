@@ -102,6 +102,14 @@ export const markets: Market[] = [
       "Amelia Island competes on tourism demand and scarce coastal supply. The investment case is strongest for conservatively underwritten short-term rentals where the operator controls expenses; the risk is overpaying for trophy coastal property and underestimating insurance and upkeep. Conine Coastal focuses on underwriting these properties on real operating numbers and coastal-durable renovation.",
     metaDescription:
       "Amelia Island, FL rental property investment: a Nassau County resort market with strong short-term-rental demand and coastal-cost discipline required.",
+    marketData: {
+      asOf: "early 2026",
+      source: "Movoto (public listing data)",
+      medianSalePrice: "~$975,000",
+      medianPricePerSqFt: "~$570",
+      rentNote: "Among Northeast Florida's strongest short-term-rental markets, though high entry prices demand disciplined underwriting.",
+      trendNote: "A thin, high-end coastal segment: prices sit well above the Nassau mainland, and luxury inventory often carries long marketing times. Figures here are single-source listing data — treat as indicative only.",
+    },
   },
   {
     slug: "fernandina-beach",
