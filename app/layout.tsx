@@ -7,6 +7,8 @@ import BackToTop from "@/components/back-to-top"
 import Analytics from "@/components/analytics"
 import { ThemeProvider } from "@/components/theme-provider"
 import PWARegister from "@/components/pwa-register"
+import JsonLd from "@/components/json-ld"
+import { siteGraph } from "@/lib/schema"
 import { font, serifFont } from "@/styles/fonts"
 
 export const metadata: Metadata = {
@@ -74,54 +76,6 @@ export const metadata: Metadata = {
   },
 }
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Conine Coastal Group",
-  description:
-    "A family of companies serving Northeast Florida across real estate, construction, land development, home services, and travel & hospitality.",
-  url: "https://www.coninecoastal.com",
-  telephone: "+1-904-624-1722",
-  email: "info@coninecoastal.com",
-  areaServed: {
-    "@type": "GeoCircle",
-    geoMidpoint: { "@type": "GeoCoordinates", latitude: 30.3322, longitude: -81.6557 },
-    geoRadius: "80000",
-  },
-  address: {
-    "@type": "PostalAddress",
-    addressRegion: "FL",
-    addressCountry: "US",
-  },
-  founder: {
-    "@type": "Person",
-    name: "David Conine",
-  },
-  knowsAbout: [
-    "Real Estate",
-    "Construction",
-    "Land Development",
-    "Home Services",
-    "Travel & Hospitality",
-    "Property Management",
-  ],
-  subOrganization: [
-    { "@type": "Organization", name: "Conine Coastal Real Estate" },
-    { "@type": "Organization", name: "Conine Coastal Estates" },
-    { "@type": "Organization", name: "Conine Coastal Development" },
-    { "@type": "Organization", name: "Conine Coastal Home Services" },
-    { "@type": "Organization", name: "Conine Coastal Travel" },
-  ],
-  serviceArea: [
-    "Jacksonville, FL",
-    "St. Augustine, FL",
-    "Ponte Vedra Beach, FL",
-    "Amelia Island, FL",
-    "Fernandina Beach, FL",
-    "Jacksonville Beach, FL",
-  ],
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -139,10 +93,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#18457C" />
         <meta name="msapplication-TileColor" content="#18457C" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={siteGraph} />
       </head>
       <body className={`${font.className} ${serifFont.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
