@@ -7,6 +7,18 @@
 // "Market data — to be supplied" block for David to populate, rather than
 // fabricated here.
 
+export interface MarketStat {
+  /** Month/year the figures reflect, e.g. "March 2026". */
+  asOf: string
+  /** Public source — never proprietary MLS, e.g. "Redfin (public listing data)". */
+  source: string
+  medianSalePrice?: string
+  medianPricePerSqFt?: string
+  daysOnMarket?: string
+  rentNote?: string
+  trendNote?: string
+}
+
 export interface Market {
   slug: string
   name: string
@@ -27,6 +39,13 @@ export interface Market {
   thesis: string
   /** Short schema/meta description (<155 chars where used as meta). */
   metaDescription: string
+  /**
+   * Live market statistics — public listing-portal data (not proprietary MLS),
+   * refreshed periodically and shown with an "as of / source" stamp. Omit any
+   * field that can't be cleanly sourced; the card falls back to the labeled
+   * "to be supplied" placeholder when marketData is absent.
+   */
+  marketData?: MarketStat
 }
 
 export const markets: Market[] = [
@@ -52,6 +71,14 @@ export const markets: Market[] = [
       "St. Johns County's sustained population and income growth supports long-run demand, while St. Augustine's tourism core sustains vacation-rental income. The edge here is construction-informed buying: older and historic inventory hides both risk and value that price alone won't reveal. Conine Coastal focuses on evaluating that inventory accurately — pairing market analysis with a contractor's read on true cost of ownership.",
     metaDescription:
       "St. Augustine, FL real estate market: a tourism-anchored, fast-growing St. Johns County market where construction-informed buying wins.",
+    marketData: {
+      asOf: "March 2026",
+      source: "Redfin (public listing data)",
+      medianSalePrice: "~$420,000",
+      medianPricePerSqFt: "~$267",
+      daysOnMarket: "~110 days",
+      trendNote: "Median price down roughly 13% year-over-year — a softening from prior peaks.",
+    },
   },
   {
     slug: "amelia-island",
@@ -98,6 +125,14 @@ export const markets: Market[] = [
       "Fernandina Beach pairs scarce historic and coastal inventory with steady tourism. Value-add is concentrated in restoring older homes correctly under historic-district guidelines; the key constraints are city permitting and short-term-rental regulation. Conine Coastal focuses on renovation that respects historic guidelines while meeting coastal durability and insurability standards.",
     metaDescription:
       "Fernandina Beach, FL real estate: historic Amelia Island city with scarce coastal and Victorian inventory and its own permitting rules.",
+    marketData: {
+      asOf: "March 2026",
+      source: "Redfin (public listing data)",
+      medianSalePrice: "~$635,000",
+      medianPricePerSqFt: "~$352",
+      daysOnMarket: "~45 days",
+      trendNote: "Median price down roughly 18% year-over-year as the coastal market cooled from its peak.",
+    },
   },
   {
     slug: "nassau-county",
@@ -122,6 +157,14 @@ export const markets: Market[] = [
       "Nassau County offers the region's clearest spread between coastal pricing and affordable mainland inventory. The mainland — Callahan, Hilliard, and Yulee — is where buy-below-market and renovate-to-value strategies are most achievable; the coast is a separate, tourism-driven market. Conine Coastal focuses on the mainland value-add opportunity and on construction-led evaluation across both submarkets.",
     metaDescription:
       "Nassau County, FL real estate: coastal Amelia Island plus affordable Callahan and Hilliard mainland inventory suited to value-add investing.",
+    marketData: {
+      asOf: "March 2026",
+      source: "NEFAR & Redfin (public data)",
+      medianSalePrice: "~$460,000",
+      medianPricePerSqFt: "~$250",
+      daysOnMarket: "~51 days",
+      trendNote: "A strong seller's market in early 2026 — closed sales up roughly 20% year-over-year, with the affordable mainland (Callahan, Hilliard, Yulee) pulling the county median well below the Amelia coast.",
+    },
   },
 ]
 
