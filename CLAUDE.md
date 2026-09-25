@@ -2,18 +2,18 @@
 
 > **Governance Contract** (Phase 4 — do not modify without PR review)
 >
-> Instantiated from `ai-infrastructure/shared/templates/website-claude-md-template.md`. Governs Claude Code sessions in this repo. Changes to this block require a PR; operational documentation below the separator is routine.
+> Instantiated from `ai-infrastructure/conventions/templates/website-claude-md-template.md`. Governs Claude Code sessions in this repo. Changes to this block require a PR; operational documentation below the separator is routine.
 
 **Canonical scope ID:** `conine-coastal-holding`
 **GitHub remote:** `ConineCoastal/coninecoastal`
-**Pinned gh account:** `ConineCoastal` (applied via `ai-infrastructure/shared/scripts/pin-credential.sh`)
-**Governed by:** `ai-infrastructure/GOVERNANCE.md` + `ai-infrastructure/guides/skills/web-design-firm/_system.md` + this file.
+**Pinned gh account:** `ConineCoastal` (applied via `ai-infrastructure/tools/scripts/pin-credential.sh`)
+**Governed by:** `ai-infrastructure/AGENTS.md` + `ai-infrastructure/conventions/constraints.md` + `ai-infrastructure/capabilities/product/web-design-firm/web-design-firm.md` + this file.
 
 ### 1. Venture scope declaration
 
 This repo is venture-scoped to **`conine-coastal-holding`** — the main Conine Coastal holding-company marketing site. Five sub-site ventures (`conine-coastal-development`, `-estates`, `-home-services`, `-real-estate`, `-travel`) have separate repos and separate scope IDs.
 
-**Do not read or reference other ventures (including sibling CC sub-sites) unless David explicitly requests cross-venture work.** Scope leaks are a governance violation per `ai-infrastructure/GOVERNANCE.md §3`. The `c-suite/` office is cross-venture by design; every other ai-infrastructure read is scope-bound.
+**Do not read or reference other ventures (including sibling CC sub-sites) unless David explicitly requests cross-venture work.** Scope leaks are a governance violation per `ai-infrastructure/conventions/constraints.md` *Scope isolation* (#4, #5). The `c-suite/` office is cross-venture by design; every other ai-infrastructure read is scope-bound.
 
 ### 2. Tech stack (summary)
 
@@ -34,8 +34,8 @@ Vercel auto-deploys on push to `main`.
 
 ### 4. AI Infrastructure references
 
-- **`ai-infrastructure/guides/skills/web-design-firm/`** — primary. Marketing website work (brand surface, public pages, conversion). Client file at `guides/skills/web-design-firm/clients/conine-coastal-holding.md`.
-- **`ai-infrastructure/guides/skills/c-suite/`** — for strategic/executive cross-venture questions only.
+- **`ai-infrastructure/capabilities/product/web-design-firm/`** — primary. Marketing website work (brand surface, public pages, conversion). Enter through `web-design-firm.md`; roles in `roles/`, knowledge in `knowledge/`. Client file is content: the office resolves `entity.context` for `1 - Conine Coastal Holding Company` (`Hub/Ventures/1 - Conine Coastal Holding Company/_context.md`), with the web-design client file `conine-coastal-holding.md` beside it.
+- **`ai-infrastructure/capabilities/strategy/c-suite/`** — for strategic/executive cross-venture questions only. Enter through `c-suite.md`.
 
 **Scheduled routines touching this venture:** none currently.
 
@@ -47,7 +47,7 @@ Vercel auto-deploys on push to `main`.
 - **Expose internal content.** Do not paste ai-infrastructure internal content into this repo's files.
 - **Read or modify sibling Conine Coastal sub-site repos** in the same session. Each sub-site is a separate scope; cross-sub-site changes require explicit authorization.
 - **Run looped writes across sibling ventures.**
-- **Bypass push-discipline.** Re-apply via `bash /path/to/ai-infrastructure/shared/scripts/pin-credential.sh ConineCoastal` if the config needs reset.
+- **Bypass push-discipline.** Re-apply via `bash /path/to/ai-infrastructure/tools/scripts/pin-credential.sh ConineCoastal` if the config needs reset.
 
 ### 6. Venture-specific notes
 
@@ -73,8 +73,8 @@ If uncertain whether a change counts as regression: STOP and ask.
 At session start:
 
 1. Confirm the session is scoped to `conine-coastal-holding` — state this explicitly.
-2. Read `ai-infrastructure/GOVERNANCE.md §3, §4` and §5 above.
-3. If the session touches site content: load `ai-infrastructure/guides/skills/web-design-firm/clients/conine-coastal-holding.md`.
+2. Read `ai-infrastructure/AGENTS.md`, `ai-infrastructure/conventions/constraints.md` (*Scope isolation*, *Authorization and execution*) and §5 above.
+3. If the session touches site content: resolve `entity.context` for `1 - Conine Coastal Holding Company` per the office definition's *First action*, and load the client file `Hub/Ventures/1 - Conine Coastal Holding Company/conine-coastal-holding.md`. If it does not resolve, stop and say so.
 4. Before any push: `git config --local --get credential.username` → must return `ConineCoastal`.
 
 At session end:
