@@ -59,7 +59,7 @@ Vercel auto-deploys on push to `main`.
 
 ### 7. Frozen-folders compliance
 
-This repo lives under `C:\Users\david\Documents\Projects\Websites\Conine Coastal\`, governed by David's frozen-folders rule:
+This repo lives under `C:\Users\david\Documents\Hub\Websites\Conine Coastal\`, governed by David's frozen-folders rule:
 
 - Additive changes allowed.
 - Reorganization that improves the stack allowed.
