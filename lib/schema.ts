@@ -15,7 +15,7 @@
 export const SITE_URL = "https://www.coninecoastal.com"
 export const ORG_NAME = "Conine Coastal"
 export const ORG_LEGAL_NAME = "Conine Coastal Group"
-export const TELEPHONE = "+1-904-624-1722"
+export const TELEPHONE = "+1-904-515-2378"
 export const EMAIL = "info@coninecoastal.com"
 export const LOGO_URL = `${SITE_URL}/conine-coastal-logo.png`
 

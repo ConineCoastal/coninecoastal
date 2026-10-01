@@ -221,12 +221,12 @@ export default function Navigation() {
           {/* Right Side - Phone + Schedule */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="tel:+19046241722"
+              href="tel:+19045152378"
               onClick={() => trackEvent("phone_click", { location: "nav_desktop" })}
               className="flex items-center text-coastal-navy hover:text-coastal-blue transition-colors touch-manipulation"
             >
               <Phone className="h-3 w-3 xl:h-4 xl:w-4 mr-2" />
-              <span className="font-serif font-medium text-sm xl:text-base">(904) 624-1722</span>
+              <span className="font-serif font-medium text-sm xl:text-base">(904) 515-2378</span>
             </a>
             {/* /schedule CTA removed per ai-infra SYS-011 Q3-R1 Flag #3 (2026-05-17):
                 scheduling backend (CRM) not yet selected; route returns by sitenav once wired. */}
@@ -251,12 +251,12 @@ export default function Navigation() {
           <div className="px-4 py-4 space-y-2">
             <div className="pb-4 border-b border-gray-100">
               <a
-                href="tel:+19046241722"
+                href="tel:+19045152378"
                 onClick={() => trackEvent("phone_click", { location: "nav_mobile" })}
                 className="flex items-center justify-center text-coastal-navy text-lg font-serif font-medium py-3 touch-manipulation"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                (904) 624-1722
+                (904) 515-2378
               </a>
             </div>
 

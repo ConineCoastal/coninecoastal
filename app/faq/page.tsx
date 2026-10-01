@@ -230,7 +230,7 @@ const faqCategories: FAQCategory[] = [
       {
         question: "How do I get started?",
         answer:
-          "The easiest way is to schedule a free consultation through our website or call us directly at (904) 624-1722. Tell us about your goals — whether that's buying your first home, selling for maximum value, planning a renovation, or building an investment portfolio. We'll take it from there.",
+          "The easiest way is to schedule a free consultation through our website or call us directly at (904) 515-2378. Tell us about your goals — whether that's buying your first home, selling for maximum value, planning a renovation, or building an investment portfolio. We'll take it from there.",
       },
     ],
   },

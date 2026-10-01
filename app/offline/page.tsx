@@ -22,8 +22,8 @@ export default function OfflinePage() {
           </button>
           <div className="flex items-center justify-center text-coastal-grey">
             <Phone className="h-4 w-4 mr-2" />
-            <a href="tel:+19046241722" className="hover:text-coastal-navy transition-colors">
-              (904) 624-1722
+            <a href="tel:+19045152378" className="hover:text-coastal-navy transition-colors">
+              (904) 515-2378
             </a>
           </div>
         </div>
