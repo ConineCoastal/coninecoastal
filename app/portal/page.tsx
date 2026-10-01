@@ -129,8 +129,8 @@ export default function PortalPage() {
                   <strong className="text-coastal-navy dark:text-white">Already have access?</strong>{" "}
                   Your portal login link was sent to your email when your project started. Check your inbox
                   or contact us at{" "}
-                  <a href="tel:+19046241722" className="text-coastal-blue hover:underline">
-                    (904) 624-1722
+                  <a href="tel:+19045152378" className="text-coastal-blue hover:underline">
+                    (904) 515-2378
                   </a>{" "}
                   for help.
                 </p>

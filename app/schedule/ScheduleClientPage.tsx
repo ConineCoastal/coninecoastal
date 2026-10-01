@@ -276,7 +276,7 @@ export default function ScheduleClientPage() {
       setFormMessage(
         error instanceof Error
           ? error.message
-          : "Something went wrong. Please try again or call us at (904) 624-1722."
+          : "Something went wrong. Please try again or call us at (904) 515-2378."
       )
     } finally {
       setIsSubmitting(false)
@@ -909,9 +909,9 @@ export default function ScheduleClientPage() {
               size="lg"
               className="bg-white text-coastal-navy hover:bg-white/90 px-8"
             >
-              <a href="tel:+19046241722" className="flex items-center justify-center">
+              <a href="tel:+19045152378" className="flex items-center justify-center">
                 <Phone className="mr-2 h-5 w-5" />
-                (904) 624-1722
+                (904) 515-2378
               </a>
             </Button>
             <Button

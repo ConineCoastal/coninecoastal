@@ -72,8 +72,8 @@ export default function TermsOfServicePage() {
               info@coninecoastal.com
             </a>
             , call
-            <a href="tel:+19046241722" className="text-coastal-blue hover:underline ml-1">
-              (904) 624-1722
+            <a href="tel:+19045152378" className="text-coastal-blue hover:underline ml-1">
+              (904) 515-2378
             </a>
             , or
             <Link href="/contact" className="text-coastal-blue hover:underline ml-1">

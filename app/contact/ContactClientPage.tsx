@@ -196,8 +196,8 @@ export default function ContactClientPage() {
                   <Phone className="h-6 w-6 text-coastal-navy mr-4" />
                   <div>
                     <p className="font-semibold text-coastal-navy">Phone</p>
-                    <a href="tel:+19046241722" className="text-coastal-grey hover:text-coastal-navy transition-colors">
-                      (904) 624-1722
+                    <a href="tel:+19045152378" className="text-coastal-grey hover:text-coastal-navy transition-colors">
+                      (904) 515-2378
                     </a>
                   </div>
                 </div>
