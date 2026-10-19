@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Conine Coastal Group",
   },
   description:
-    "Conine Coastal Group is a family of companies serving Northeast Florida across real estate, construction, land development, home services, and travel & hospitality.",
+    "Conine Coastal Group is a family of companies serving Northeast Florida across real estate, construction, land development, home services, and luxury travel.",
   keywords:
     "Conine Coastal Group, Northeast Florida, Jacksonville, St. Augustine, real estate, construction, land development, home services, travel, holding company",
   authors: [{ name: "Conine Coastal" }],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Conine Coastal Group - Northeast Florida's Premier Family of Companies",
     description:
-      "A family of companies serving Northeast Florida across real estate, construction, land development, home services, and travel & hospitality.",
+      "A family of companies serving Northeast Florida across real estate, construction, land development, home services, and luxury travel.",
     url: "https://www.coninecoastal.com",
     siteName: "Conine Coastal",
     images: [
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Conine Coastal Group - Northeast Florida's Premier Family of Companies",
     description:
-      "A family of companies serving Northeast Florida across real estate, construction, land development, home services, and travel & hospitality.",
+      "A family of companies serving Northeast Florida across real estate, construction, land development, home services, and luxury travel.",
     images: ["/conine-coastal-logo.png"],
     creator: "@coninecoastal",
   },

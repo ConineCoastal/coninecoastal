@@ -26,7 +26,7 @@ const STATIC_PAGES: SearchResult[] = [
   { title: "Conine Coastal Estates", description: "Construction and design-build services", url: "https://coninecoastalestates.com", category: "Companies", icon: "company" },
   { title: "Conine Coastal Development", description: "Land development and planning", url: "https://coninecoastaldevelopment.com", category: "Companies", icon: "company" },
   { title: "Conine Coastal Home Services", description: "Property maintenance and repairs", url: "https://coninecoastalhomeservices.com", category: "Companies", icon: "company" },
-  { title: "Conine Coastal Travel", description: "Vacation rentals and experiences", url: "https://coninecoastaltravel.com", category: "Companies", icon: "company" },
+  { title: "Conine Coastal Travel", description: "Luxury travel planning and concierge advisory", url: "https://coninecoastaltravel.com", category: "Companies", icon: "company" },
 
   // Resources
   { title: "Resources", description: "Guides, tools, and educational content", url: "/resources", category: "Resources", icon: "resource" },
