@@ -104,7 +104,7 @@ export const organizationNode = {
     "Construction",
     "Land Development",
     "Home Services",
-    "Travel & Hospitality",
+    "Luxury Travel Planning",
     "Property Management",
   ],
   subOrganization: [

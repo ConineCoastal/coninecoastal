@@ -9,11 +9,11 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Conine Coastal Group - Northeast Florida's Premier Holding Company",
-  description: "Conine Coastal Group is a family of companies serving Northeast Florida across real estate, construction, land development, home services, and travel & hospitality.",
+  description: "Conine Coastal Group is a family of companies serving Northeast Florida across real estate, construction, land development, home services, and luxury travel.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Conine Coastal Group - Northeast Florida's Premier Holding Company",
-    description: "Conine Coastal Group is a family of companies serving Northeast Florida across real estate, construction, land development, home services, and travel & hospitality.",
+    description: "Conine Coastal Group is a family of companies serving Northeast Florida across real estate, construction, land development, home services, and luxury travel.",
   },
 }
 
@@ -70,12 +70,12 @@ const companies = [
     name: "Conine Coastal Travel",
     href: "https://coninecoastaltravel.com",
     icon: <Palmtree className="h-10 w-10 sm:h-12 sm:w-12 text-coastal-navy" />,
-    description: "Vacation rental management, local experiences, equipment rentals, concierge services, and custom travel itineraries for visitors and property owners alike.",
+    description: "Bespoke luxury travel planning and concierge advisory: custom itineraries, curated experiences, and private villa and resort sourcing for journeys worldwide and inbound travel to Northeast Florida.",
     highlights: [
-      "Vacation property management and bookings",
-      "Water activities, fishing charters, and eco-tours",
-      "Beach and watercraft equipment rentals",
-      "Concierge, event planning, and corporate travel",
+      "Bespoke trip planning and custom itineraries",
+      "Curated destination experiences",
+      "Private villa and resort sourcing",
+      "Concierge services and in-trip support",
     ],
   },
 ]

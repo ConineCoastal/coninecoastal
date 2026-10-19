@@ -37,7 +37,7 @@ export default function Navigation() {
     { name: "Conine Coastal Estates", href: "https://coninecoastalestates.com", description: "Construction & Design-Build" },
     { name: "Conine Coastal Development", href: "https://coninecoastaldevelopment.com", description: "Land Development & Planning" },
     { name: "Conine Coastal Home Services", href: "https://coninecoastalhomeservices.com", description: "Property Maintenance & Repairs" },
-    { name: "Conine Coastal Travel", href: "https://coninecoastaltravel.com", description: "Vacation Rentals & Experiences" },
+    { name: "Conine Coastal Travel", href: "https://coninecoastaltravel.com", description: "Luxury Travel & Concierge Advisory" },
   ]
 
   return (
