@@ -1,212 +1,67 @@
-# CLAUDE.md
+# Conine Coastal — CLAUDE.md
 
-> **Governance Contract** (Phase 4 — do not modify without PR review)
->
-> Instantiated from `ai-infrastructure/conventions/templates/website-claude-md-template.md`. Governs Claude Code sessions in this repo. Changes to this block require a PR; operational documentation below the separator is routine.
+Instantiated from `ai-infrastructure/conventions/templates/website-claude-md-template.md`.
+The plane's `AGENTS.md` and `conventions/constraints.md` govern this repo; this file adds
+only what is true here.
 
-**Canonical scope ID:** `conine-coastal-holding`
-**GitHub remote:** `ConineCoastal/coninecoastal`
-**Pinned gh account:** `ConineCoastal` (applied via `ai-infrastructure/tools/scripts/pin-credential.sh`)
-**Governed by:** `ai-infrastructure/AGENTS.md` + `ai-infrastructure/conventions/constraints.md` + `ai-infrastructure/capabilities/product/web-design-firm/web-design-firm.md` + this file.
+| | |
+|---|---|
+| Entity | `1 - Conine Coastal Holding Company` |
+| Remote | `ConineCoastal/coninecoastal` |
+| gh account | `ConineCoastal` |
+| Lead office | `ai-infrastructure/capabilities/product/web-design-firm/web-design-firm.md` |
 
-### 1. Venture scope declaration
+## 1. Venture scope
 
-This repo is venture-scoped to **`conine-coastal-holding`** — the main Conine Coastal holding-company marketing site. Five sub-site ventures (`conine-coastal-development`, `-estates`, `-home-services`, `-real-estate`, `-travel`) have separate repos and separate scope IDs.
+Scoped to the entity above. A session reads this repo and the capability plane, nothing
+else. Cross-venture work needs David's explicit request (`constraints.md` *Scope isolation*).
+This is the group's umbrella site, the only one that describes the group; it links to the
+five sub-sites.
 
-**Do not read or reference other ventures (including sibling CC sub-sites) unless David explicitly requests cross-venture work.** Scope leaks are a governance violation per `ai-infrastructure/conventions/constraints.md` *Scope isolation* (#4, #5). The `c-suite/` office is cross-venture by design; every other ai-infrastructure read is scope-bound.
+## 2. Stack
 
-### 2. Tech stack (summary)
+Next.js 16 (App Router), React 19, TypeScript, pnpm. Tailwind with the family palette in
+`tailwind.config.ts`; shadcn/ui in `components/ui/`. Static content in `lib/`, no database or
+CMS; updates are code changes. A page with interactivity is a server `page.tsx` that renders
+a `*ClientPage.tsx`. Security headers live in `next.config.mjs`.
 
-Next.js 16 (App Router) + React 19 + TypeScript on Vercel. Originally v0-scaffolded. pnpm package manager. Tailwind CSS with coastal brand palette. shadcn/ui components. Static content (no DB/CMS). Email via Resend → Nodemailer/SMTP fallback chain.
-
-Full breakdown in Product Documentation below. `package.json` + `pnpm-lock.yaml` are authoritative.
-
-### 3. Build / deploy / test commands (summary)
-
-```bash
-pnpm dev          # Dev server
-pnpm build        # Production build
-pnpm start        # Start production server
-pnpm lint         # ESLint
-```
-
-Vercel auto-deploys on push to `main`.
-
-### 4. AI Infrastructure references
-
-- **`ai-infrastructure/capabilities/product/web-design-firm/`** — primary. Marketing website work (brand surface, public pages, conversion). Enter through `web-design-firm.md`; roles in `roles/`, knowledge in `knowledge/`. Client file is content: the office resolves `entity.context` for `1 - Conine Coastal Holding Company` (`Hub/Ventures/1 - Conine Coastal Holding Company/_context.md`), with the web-design client file `conine-coastal-holding.md` beside it.
-- **`ai-infrastructure/capabilities/strategy/c-suite/`** — for strategic/executive cross-venture questions only. Enter through `c-suite.md`.
-
-**Scheduled routines touching this venture:** none currently.
-
-### 5. Prohibited actions
-
-- **Direct-commit to `main`.** All changes route through PRs.
-- **Force-push to `main`** without David's explicit approval.
-- **Commit secrets.** If a session encounters a credential, API key, or `.env` file: STOP and report. Email credentials (`RESEND_API_KEY`, `SMTP_*`, `GMAIL_*`) live only in Vercel dashboard.
-- **Expose internal content.** Do not paste ai-infrastructure internal content into this repo's files.
-- **Read or modify sibling Conine Coastal sub-site repos** in the same session. Each sub-site is a separate scope; cross-sub-site changes require explicit authorization.
-- **Run looped writes across sibling ventures.**
-- **Bypass push-discipline.** Re-apply via `bash /path/to/ai-infrastructure/tools/scripts/pin-credential.sh ConineCoastal` if the config needs reset.
-
-### 6. Venture-specific notes
-
-- **v0-authored scaffold** — originated from v0.dev. Package name in package.json is the v0 default (`my-v0-project`); this is cosmetic, not a rename target.
-- **Holding-company site** — this is the umbrella/parent marketing surface. Sub-site ventures have their own repos and their own CLAUDE.md files.
-- **Static content model** — blog posts in `lib/blog-data.ts`, testimonials in `lib/testimonials-data.ts`. No CMS, no admin UI; updates are code changes.
-- **Email delivery chain** — Resend primary, Nodemailer/SMTP fallback, then logging. All via Vercel-dashboard env vars.
-- **Brand palette** — `coastal-navy`, `coastal-blue`, `coastal-orange`, `coastal-yellow`, `coastal-grey` defined in `tailwind.config.ts`.
-
-### 7. Frozen-folders compliance
-
-This repo lives under `C:\Users\david\Documents\Hub\Websites\Conine Coastal\`, governed by David's frozen-folders rule:
-
-- Additive changes allowed.
-- Reorganization that improves the stack allowed.
-- Destructive or regressive changes NOT allowed without explicit sign-off.
-- All changes route through draft PRs.
-
-If uncertain whether a change counts as regression: STOP and ask.
-
-### 8. Session checklist
-
-At session start:
-
-1. Confirm the session is scoped to `conine-coastal-holding` — state this explicitly.
-2. Read `ai-infrastructure/AGENTS.md`, `ai-infrastructure/conventions/constraints.md` (*Scope isolation*, *Authorization and execution*) and §5 above.
-3. If the session touches site content: resolve `entity.context` for `1 - Conine Coastal Holding Company` per the office definition's *First action*, and load the client file `Hub/Ventures/1 - Conine Coastal Holding Company/conine-coastal-holding.md`. If it does not resolve, stop and say so.
-4. Before any push: `git config --local --get credential.username` → must return `ConineCoastal`.
-
-At session end:
-- Update the client file with a session log entry.
-- Confirm any PR raised is **draft** unless David explicitly approved marking it ready.
-
----
-
-## Product Documentation
-
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
-## Project Overview
-
-Conine Coastal is the parent holding company and brand umbrella for the Conine Coastal family of Northeast Florida property businesses — a single directory and front door routing visitors to **Real Estate, Estates, Development, Home Services, and Travel**. This site is the production Next.js 16 holding-company marketing surface; the five sibling sub-sites live in their own repos and are linked from this site's `app/companies/` aggregator. Originally built with v0.dev and deployed on Vercel. App Router, React 19, TypeScript, Tailwind CSS.
-
-### Audience (not buyer-facing)
-
-This is not a transactional surface. The audience is:
-
-1. **Prospective clients of any subsidiary** verifying the legitimacy of the group before engaging a sub-site.
-2. **Referral partners** (brokers, attorneys, wealth managers, family offices) evaluating the ecosystem.
-3. **Press / vendors.**
-
-Effectively a credibility layer behind the five operating brands. No CTAs that imply transactional intent.
-
-### Differentiator vs. the five sub-sites
-
-This is the only site that talks about the *group*: integrated land-through-maintenance lifecycle, intercompany cross-referral protocol, shared brand. Sub-sites should never describe the holding co; they link up to it.
-
-## Pre-Launch State
-
-**The Conine Coastal group is pre-launch. No subsidiary entities have been formed.** All five companies (Development, Estates, Home Services, Real Estate, Travel) are planning frameworks awaiting attorney review.
-
-Hard rules for any content edits to this site:
-
-- **Do not imply** that subsidiaries are "operating," holding revenue, serving clients, or carrying testimonials. None of these are true yet.
-- The `reviews` route exists structurally but is **empty content territory** until launch. Do not populate it with fabricated testimonials.
-- "By appointment / inquiry" framing applies by default. Avoid "book now" CTAs.
-- CRM platform for cross-referral tracking is **still unselected** (open decision). Don't reference a specific CRM as if it's wired in.
-
-## Brand Positioning
-
-- **Palette:** Per Brand Guidelines (5.25.26): **Primary** Navy Blue `#18457C` + Blue `#229FD9`; **Secondary** Orange `#F16622` / Yellow `#FFCA05` / Grey `#707070`. Navy/blue lead; secondary colors are rationed and never a page's primary identity. See `DESIGN.md` + `tailwind.config.ts`.
-- **Type:** Goldenbook display + Times body is the brand intent (pending Goldenbook font licensing). Shipped/canonical implementation: Playfair Display (display) + Inter (body) as working stand-ins. Recommendation: keep Inter for body even after licensing Goldenbook (Times reads dated as a web body font).
-- **Voice:** institutional, integrated, lifecycle-of-property. Never frame as a single service provider — always *"a family of companies."*
-- **Geography:** Always **Northeast Florida / First Coast / St. Augustine to Amelia Island.** Never "Charleston," never generic "the coast," never other FL regions.
-
-> **Updated 2026-05-17 per ai-infrastructure SYS-011 Q3-R1 (David's questionnaire).** Supersedes the prior 4-sentence summary.
-
-## Commands
+## 3. Build / deploy / test
 
 ```bash
-pnpm dev          # Start dev server
-pnpm build        # Production build
-pnpm start        # Start production server
-pnpm lint         # Run ESLint
+pnpm dev     # dev server
+pnpm build   # production build
+pnpm lint    # ESLint
+pnpm start   # serve the production build
 ```
 
-Package manager is **pnpm** (not npm or yarn).
+Vercel deploys on push to `main`. The contact form (`app/api/contact/route.ts`) sends via
+Resend, then SMTP, then logs. Env vars, set in Vercel only: `RESEND_API_KEY`, `SMTP_*`,
+`GMAIL_SMTP_*`, `CONTACT_*`, `NEXT_PUBLIC_GA_MEASUREMENT_ID`, `NEXT_PUBLIC_FB_PIXEL_ID`.
 
-## Architecture
+## 4. Prohibited actions
 
-### Rendering Strategy
+- Committing to `main` or force-pushing it. Every change is a branch and a PR.
+- Committing, logging or quoting a secret, or committing a `.env` file. Stop and report
+  one you find. Secrets live in the Vercel dashboard.
+- Copying content-plane material (venture context, engagement records) into this repo.
+- Writing to a sibling repo in the same session or loop.
+- Removing or breaking shipped functionality without David's sign-off.
+- Adding a dependency without checking that its licence permits commercial use.
+- Implying any subsidiary is operating, earning, serving clients or carrying testimonials.
+  The group is pre-launch; `reviews` stays empty and CTAs are "by appointment / inquiry".
+- Naming a CRM as if one is wired in. The cross-referral CRM is still unselected.
 
-Pages use a server/client split pattern: `page.tsx` files are Server Components that render a `*ClientPage.tsx` client component for interactive sections. This is the established pattern — follow it when adding new pages with interactivity.
+## 5. Venture notes
 
-### Routing
+- `PRODUCT.md` (audience, pre-launch reality, voice, geography) and `DESIGN.md` (visual
+  system) hold the design context; `.impeccable/design.json` is the token sidecar.
+- Playfair Display and Inter (`styles/fonts.ts`) stand in for the licensed Goldenbook and
+  Times brand faces until the Goldenbook licence is bought.
 
-App Router with nested file-based routing. Top-level routes:
-- `/companies/` — sub-site aggregator linking to Development, Estates, Home Services, Real Estate, Travel
-- `/about/`, `/contact/`, `/faq/`, `/reviews/`, `/schedule/` — marketing + contact flow
-- `/portal/` — client-portal entry
-- `/resources/blog/[slug]/` — dynamic blog routes from static data in `lib/blog-data.ts`
-- `/api/contact/` — contact-form POST endpoint (Resend → SMTP fallback)
-- `/offline/`, `/sitemap/`, `/privacy-policy/`, `/terms-of-service/` — PWA + legal
+## 6. Session checklist
 
-### Data
-
-All content is static (no database or CMS):
-- Blog posts: `lib/blog-data.ts` (markdown format)
-- Testimonials: `lib/testimonials-data.ts` (60+ reviews)
-
-### Styling & Brand
-
-Tailwind CSS with brand colors defined in `tailwind.config.ts`:
-- `coastal-navy: #18457C`, `coastal-blue: #229FD9`, `coastal-orange: #F16622`, `coastal-yellow: #FFCA05`, `coastal-grey: #707070`
-
-Fonts are loaded locally from `styles/` (Inter for body, Playfair Display for headings). Font declarations in `styles/fonts.ts`. Dark mode via `next-themes` (class-based).
-
-### UI Components
-
-shadcn/ui components in `components/ui/`. Config in `components.json`. Path aliases: `@/components`, `@/lib`, `@/hooks`.
-
-### Key Shared Components
-
-Standalone components in `components/` (13 files):
-- `navigation.tsx` — main nav with dropdown menus
-- `footer.tsx` — site footer
-- `fade-in.tsx` — Intersection Observer animation wrapper (used extensively)
-- `analytics.tsx` — GA4 + Facebook Pixel
-- `breadcrumb.tsx` — structured-data breadcrumb trail
-- `back-to-top.tsx` — scroll-to-top button
-- `newsletter-signup.tsx` — email capture form
-- `loading-skeleton.tsx` — suspense fallback skeleton
-- `pwa-register.tsx` — service worker registration
-- `resource-download.tsx` — gated-asset download trigger
-- `site-search.tsx` — client-side site search
-- `theme-provider.tsx` / `theme-toggle.tsx` — next-themes integration
-
-Plus `components/icons/` (linkedin-logo, x-logo) and `components/ui/` (13 shadcn/Radix primitives).
-
-Helpers:
-- `lib/track-event.ts` — event tracking helper
-- `lib/utils.ts` — `cn()` class merger
-- `lib/utm-tracker.ts` — UTM capture
-
-### API Routes
-
-`app/api/contact/route.ts` — Contact form POST endpoint with:
-- Zod validation, rate limiting (10/hr per IP)
-- Email delivery chain: Resend → Nodemailer/SMTP → fallback logging
-- HTML escaping for XSS prevention
-
-### Environment Variables
-
-Email config managed via Vercel dashboard (no `.env` in repo). Key vars: `RESEND_API_KEY`, `SMTP_HOST/PORT/USER/PASS`, `GMAIL_SMTP_USER`, `GMAIL_SMTP_APP_PASSWORD`, `CONTACT_FORWARD_TO`.
-
-## Important Patterns
-
-- Security headers are configured in `next.config.mjs` (CSP, HSTS, X-Frame-Options)
-- Images use Next.js `<Image>` with Unsplash remote pattern configured
-- PWA support: service worker registration in `components/pwa-register.tsx`, manifest at `public/site.webmanifest`
-- SEO: every page exports metadata, uses JSON-LD structured data, and has Open Graph tags
-- Accessibility: skip-to-content link, focus-visible styles, semantic HTML, ARIA labels
+1. State the scope in the first response. For site, UI or content work, open with
+   `ai-infrastructure/playbooks/session-kickoff-website.md`.
+2. Before a push, `git config --local --get credential.username` returns `ConineCoastal`; if not,
+   re-apply `ai-infrastructure/tools/scripts/pin-credential.sh ConineCoastal`. Never hand-edit the pin.
+3. Close with `ai-infrastructure/playbooks/session-wrap.md`.
