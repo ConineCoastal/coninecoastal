@@ -13,11 +13,10 @@ only what is true here.
 
 ## 1. Venture scope
 
-Scoped to `1 - Conine Coastal Holding Company`, the group's umbrella site. A session reads this
-repo and the capability plane, nothing else; venture content comes from `entity.context` for
-`1 - Conine Coastal Holding Company`. Cross-venture work needs David's explicit request
-(`constraints.md` *Scope isolation*). The five sub-sites are separate repos and scopes; this
-site links to them and is the only one that describes the group.
+Scoped to the entity above. A session reads this repo and the capability plane, nothing
+else. Cross-venture work needs David's explicit request (`constraints.md` *Scope isolation*).
+This is the group's umbrella site, the only one that describes the group; it links to the
+five sub-sites.
 
 ## 2. Stack
 
@@ -25,8 +24,6 @@ Next.js 16 (App Router), React 19, TypeScript, pnpm. Tailwind with the family pa
 `tailwind.config.ts`; shadcn/ui in `components/ui/`. Static content in `lib/`, no database or
 CMS; updates are code changes. A page with interactivity is a server `page.tsx` that renders
 a `*ClientPage.tsx`. Security headers live in `next.config.mjs`.
-
-`package.json` and the lockfile are authoritative.
 
 ## 3. Build / deploy / test
 
@@ -47,8 +44,6 @@ Resend, then SMTP, then logs. Env vars, set in Vercel only: `RESEND_API_KEY`, `S
 - Committing a secret or a `.env` file. They live in the Vercel dashboard.
 - Copying content-plane material (venture context, engagement records) into this repo.
 - Writing to a sibling repo in the same session or loop.
-- Hand-editing the credential pin. Re-apply it with
-  `ai-infrastructure/tools/scripts/pin-credential.sh ConineCoastal`.
 - Removing or breaking shipped functionality without David's sign-off.
 - Implying any subsidiary is operating, earning, serving clients or carrying testimonials.
   The group is pre-launch; `reviews` stays empty and CTAs are "by appointment / inquiry".
@@ -63,9 +58,8 @@ Resend, then SMTP, then logs. Env vars, set in Vercel only: `RESEND_API_KEY`, `S
 
 ## 6. Session checklist
 
-1. State the scope, `1 - Conine Coastal Holding Company`, in the first response.
-2. Open with `ai-infrastructure/playbooks/session-kickoff-website.md`. If site content is in
-   scope, resolve `entity.context`; if it does not resolve, stop and say so.
-3. Before a push: `git config --local --get credential.username` returns `ConineCoastal`.
-4. Close with `ai-infrastructure/playbooks/session-wrap.md`. Code meets
-   `conventions/code-quality.md`; prose meets `conventions/house-style.md`.
+1. For site, UI or content work, open with
+   `ai-infrastructure/playbooks/session-kickoff-website.md`.
+2. Before a push, `git config --local --get credential.username` returns `ConineCoastal`; if not,
+   re-apply `ai-infrastructure/tools/scripts/pin-credential.sh ConineCoastal`. Never hand-edit the pin.
+3. Close with `ai-infrastructure/playbooks/session-wrap.md`.
