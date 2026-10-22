@@ -9,7 +9,7 @@ only what is true here.
 | Entity | `1 - Conine Coastal Holding Company` |
 | Remote | `ConineCoastal/coninecoastal` |
 | gh account | `ConineCoastal` |
-| Lead office | `capabilities/product/web-design-firm/web-design-firm.md` |
+| Lead office | `ai-infrastructure/capabilities/product/web-design-firm/web-design-firm.md` |
 
 ## 1. Venture scope
 
@@ -41,10 +41,12 @@ Resend, then SMTP, then logs. Env vars, set in Vercel only: `RESEND_API_KEY`, `S
 ## 4. Prohibited actions
 
 - Committing to `main` or force-pushing it. Every change is a branch and a PR.
-- Committing a secret or a `.env` file. They live in the Vercel dashboard.
+- Committing, logging or quoting a secret, or committing a `.env` file. Stop and report
+  one you find. Secrets live in the Vercel dashboard.
 - Copying content-plane material (venture context, engagement records) into this repo.
 - Writing to a sibling repo in the same session or loop.
 - Removing or breaking shipped functionality without David's sign-off.
+- Adding a dependency without checking that its licence permits commercial use.
 - Implying any subsidiary is operating, earning, serving clients or carrying testimonials.
   The group is pre-launch; `reviews` stays empty and CTAs are "by appointment / inquiry".
 - Naming a CRM as if one is wired in. The cross-referral CRM is still unselected.
@@ -58,7 +60,7 @@ Resend, then SMTP, then logs. Env vars, set in Vercel only: `RESEND_API_KEY`, `S
 
 ## 6. Session checklist
 
-1. For site, UI or content work, open with
+1. State the scope in the first response. For site, UI or content work, open with
    `ai-infrastructure/playbooks/session-kickoff-website.md`.
 2. Before a push, `git config --local --get credential.username` returns `ConineCoastal`; if not,
    re-apply `ai-infrastructure/tools/scripts/pin-credential.sh ConineCoastal`. Never hand-edit the pin.
