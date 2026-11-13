@@ -63,7 +63,7 @@ CARDS_PASSPHRASE=<new passphrase> node scripts/cards-passphrase.mjs
 
 Paste the two digests into `CARDS_HASHES` in `lib/cards-gate.ts` and merge.
 Every device is then signed out. The current passphrase is in the Hub secret
-store (`Websites\contact-cards\.claude\settings.local.json`, key
+store (this repo's gitignored `.claude/settings.local.json`, key
 `CARDS_PASSPHRASE`).
 
 Why not the alternatives:
