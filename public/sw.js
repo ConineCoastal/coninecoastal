@@ -1,4 +1,5 @@
-const CACHE_NAME = "conine-coastal-v1"
+// Deletes only its own caches: /cards runs a second worker with its own.
+const CACHE_NAME = "conine-coastal-v2"
 const OFFLINE_URL = "/offline"
 
 const PRECACHE_URLS = [
@@ -17,13 +18,17 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))
+      Promise.all(keys.filter((key) => key.startsWith("conine-coastal-") && key !== CACHE_NAME).map((key) => caches.delete(key)))
     )
   )
   self.clients.claim()
 })
 
 self.addEventListener("fetch", (event) => {
+  // /cards is a separate private app with its own worker; never cache it here.
+  const path = new URL(event.request.url).pathname
+  if (path === "/cards" || path.startsWith("/cards/")) return
+
   if (event.request.mode === "navigate") {
     event.respondWith(
       fetch(event.request).catch(() =>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#111418">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Cards">
+  <title>Cards</title>
+  <link rel="manifest" href="/cards/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/cards/apple-touch-icon.png">
+  <link rel="icon" href="/cards/icons/icon-192.png">
+  <link rel="stylesheet" href="/cards/styles.css">
+  <script type="module" src="/cards/app.js"></script>
+</head>
+<body>
+  <main class="home" id="home">
+    <header class="top">
+      <h1>Cards</h1>
+      <span class="net" id="net" aria-live="polite"></span>
+    </header>
+
+    <section class="event" id="event-panel" aria-labelledby="event-h">
+      <h2 id="event-h">Today's event</h2>
+      <p class="event-now" id="event-now"></p>
+      <form id="event-form" autocomplete="off">
+        <label class="sr" for="event-input">Event name</label>
+        <input id="event-input" name="event" type="text" inputmode="text" enterkeyhint="done"
+               placeholder="e.g. HEFF 2026" maxlength="80" autocapitalize="words">
+        <button type="submit">Set</button>
+      </form>
+      <p class="tag-preview" id="tag-preview" aria-live="polite"></p>
+      <div class="recent" id="recent" aria-label="Recent events"></div>
+      <button type="button" class="link" id="no-event">No event today</button>
+    </section>
+
+    <section aria-label="Brands">
+      <ul class="tiles" id="tiles"></ul>
+    </section>
+
+    <section class="later">
+      <button type="button" class="snap" disabled aria-describedby="snap-note">
+        Snap badge
+        <span class="badge">Step 5</span>
+      </button>
+      <p class="fine" id="snap-note">Badge capture is not built yet. It arrives in step 5 of the build.</p>
+      <p class="fine">Brightness: iPhone web apps cannot change screen brightness. Turn it up yourself before showing a code. The screen is kept awake while a code is open.</p>
+    </section>
+  </main>
+
+  <div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="QR code" hidden>
+    <div class="track" id="track"></div>
+    <div class="viewer-bar">
+      <button type="button" class="close" id="close" aria-label="Close">Done</button>
+      <span class="wake" id="wake" aria-live="polite"></span>
+    </div>
+    <div class="dots" id="dots" aria-hidden="true"></div>
+  </div>
+</body>
+</html>
