@@ -35,6 +35,36 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: "/cards/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          { key: "Cache-Control", value: "no-cache" },
+          { key: "Referrer-Policy", value: "no-referrer" },
+        ],
+      },
+      {
+        source: "/cards",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          { key: "Cache-Control", value: "no-cache" },
+          { key: "Referrer-Policy", value: "no-referrer" },
+        ],
+      },
+      {
+        // Lets /cards/sw.js take the scope "/cards", so the app's own URL
+        // (no trailing slash) is inside it.
+        source: "/cards/sw.js",
+        headers: [{ key: "Service-Worker-Allowed", value: "/cards" }],
+      },
+    ]
+  },
+  async rewrites() {
+    // The private Cards switcher is static files under public/cards; these
+    // give it clean URLs. proxy.ts gates every /cards request first.
+    return [
+      { source: "/cards", destination: "/cards/index.html" },
+      { source: "/cards/unlock", destination: "/cards/unlock.html" },
     ]
   },
   async redirects() {
