@@ -6,7 +6,7 @@
 // Scope is "/cards" (set by Service-Worker-Allowed in next.config.mjs), which
 // is narrower than the site's own root worker, so this one wins for /cards*.
 
-const VERSION = "cards-2026-11-13d";
+const VERSION = "cards-2026-11-13e";
 const SHELL = [
   "/cards",
   "/cards/app.js",
@@ -16,6 +16,9 @@ const SHELL = [
   "/cards/manifest.webmanifest",
   "/cards/icons/icon-192.png",
   "/cards/apple-touch-icon.png",
+  "/cards/logos/landmark.png",
+  "/cards/logos/ownerlogix.png",
+  "/cards/logos/conine-coastal.png",
 ];
 
 self.addEventListener("install", (event) => {

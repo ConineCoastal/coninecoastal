@@ -84,7 +84,10 @@ function render() {
     return (
       `<section class="slide" aria-label="${esc(b.name)}">` +
       // Brand name and code only (David, 2026-11-13); the day's event shows on the home screen.
-      `<h2>${esc(b.name)}</h2>${qrSvg(url)}</section>`
+      `${b.logo
+        ? `<img class="slide-logo" src="${b.logo}" alt="${esc(b.name)}">`
+        : `<h2 class="slide-wordmark" style="color:${b.color}">${esc(b.wordmark)}</h2>`}` +
+      `${qrSvg(url)}</section>`
     );
   }).join("");
   $("dots").innerHTML = BRANDS.map(() => "<i></i>").join("");
@@ -101,21 +104,16 @@ function updatePreview() {
 let lock = null;
 let viewerOpen = false;
 
+// Keeps the screen on while a code shows, silently (David, 2026-11-13: no status text).
 async function keepAwake() {
-  const out = $("wake");
-  if (!("wakeLock" in navigator)) {
-    out.textContent = "This browser can't keep the screen awake";
-    return;
-  }
+  if (!("wakeLock" in navigator)) return;
   try {
     lock = await navigator.wakeLock.request("screen");
-    out.textContent = "Screen kept awake";
     lock.addEventListener("release", () => {
       lock = null;
-      if (viewerOpen) out.textContent = "Screen may sleep";
     });
-  } catch (e) {
-    out.textContent = "Screen may sleep (" + (e && e.name ? e.name : "wake lock refused") + ")";
+  } catch {
+    /* refused (battery saver, page not focused): the screen may sleep */
   }
 }
 function letSleep() {

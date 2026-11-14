@@ -126,7 +126,8 @@ h1 { font-size: 28px; margin: 4px 0 12px; letter-spacing: -0.01em; }
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   padding: calc(env(safe-area-inset-top) + 56px) 16px calc(env(safe-area-inset-bottom) + 48px);
 }
-.slide h2 { margin: 0 0 12px; font-size: 22px; color: #111; }
+.slide-logo { display: block; height: 72px; width: auto; max-width: 80vw; margin: 0 0 18px; object-fit: contain; }
+.slide-wordmark { margin: 0 0 18px; font: 600 28px/1.1 Georgia, "Times New Roman", serif; letter-spacing: -0.01em; }
 .qr { width: min(92vw, 62vh, 520px); height: auto; display: block; }
 .viewer-bar {
   position: absolute; left: 0; right: 0; top: 0;
@@ -134,7 +135,6 @@ h1 { font-size: 28px; margin: 4px 0 12px; letter-spacing: -0.01em; }
   display: flex; align-items: center; justify-content: space-between;
 }
 .close { border: 0; background: #111; color: #fff; border-radius: 999px; padding: 8px 16px; font-weight: 600; }
-.wake { font-size: 12px; color: #666; }
 .dots { position: absolute; left: 0; right: 0; bottom: calc(env(safe-area-inset-bottom) + 16px); display: flex; justify-content: center; gap: 8px; }
 .dots i { width: 7px; height: 7px; border-radius: 50%; background: #ccc; }
 .dots i.on { background: #111; }
