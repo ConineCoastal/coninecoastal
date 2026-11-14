@@ -84,18 +84,20 @@ h1 { font-size: 28px; margin: 4px 0 12px; letter-spacing: -0.01em; }
   width: 100%; min-height: 96px;
   display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 2px;
   text-align: left; padding: 14px;
-  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-  border-top: 5px solid var(--tile, var(--accent));
+  background: var(--tile, var(--accent)); color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12); border-radius: var(--radius);
 }
 .tile:active { transform: scale(0.98); }
 .tile-name { font-size: 18px; font-weight: 650; }
-.tile-note { font-size: 13px; color: var(--muted); }
-.tile-tag { font-size: 12px; color: var(--muted); font-family: ui-monospace, Menlo, Consolas, monospace; }
-.tile-personal { --tile: #4a5563; }
-.tile-landmark { --tile: #1f5fbf; }
-.tile-niner-advisors { --tile: #2f7d5b; }
-.tile-niner-health { --tile: #0f8a8a; }
-.tile-ownerlogix { --tile: #b4532a; }
+.tile-note { font-size: 13px; color: rgba(255, 255, 255, 0.78); }
+.tile-tag { font-size: 12px; color: rgba(255, 255, 255, 0.78); font-family: ui-monospace, Menlo, Consolas, monospace; }
+/* Each venture's primary colour, read from the "Save my contact" button on
+   its live /card page (2026-11-13). Both Niner brands share one palette. */
+.tile-personal { --tile: #18457c; }
+.tile-landmark { --tile: #030927; }
+.tile-niner-advisors { --tile: #1a3a4a; }
+.tile-niner-health { --tile: #1a3a4a; }
+.tile-ownerlogix { --tile: #125582; }
 
 .later { margin-top: 20px; }
 .snap {
