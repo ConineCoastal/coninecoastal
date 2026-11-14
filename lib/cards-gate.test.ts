@@ -28,12 +28,13 @@ describe("cards gate", () => {
 
   it("sets a 400-day HttpOnly cookie on the right passphrase, and the cookie opens the app", async () => {
     const r = (await cardsGate(req("/cards/unlock", { method: "POST", body: new URLSearchParams({ passphrase: PP }) }), await opts()))!
-    expect(r.status).toBe(303)
-    expect(new URL(r.headers.get("location")!).pathname).toBe("/cards")
+    // A normal page (not a redirect) carries the cookie, then moves on to /cards.
+    expect(r.status).toBe(200)
+    expect(await r.text()).toContain('url=/cards"')
     const sc = r.headers.get("set-cookie")!
     expect(sc).toMatch(/HttpOnly/)
     expect(sc).toMatch(/Secure/)
-    expect(sc).toMatch(/Path=\/cards/)
+    expect(sc).toMatch(/Path=\/;/)
     expect(sc).toMatch(/Max-Age=34560000/)
     const cookie = sc.split(";")[0]
     expect(await cardsGate(req("/cards", { headers: { ...nav, cookie } }), await opts())).toBeNull()
@@ -53,6 +54,14 @@ describe("cards gate", () => {
       const r = (await cardsGate(req("/cards", { headers: { ...nav, cookie: `${COOKIE}=${v}` } }), await opts()))!
       expect(r.status).toBe(303)
     }
+  })
+
+  it("/cards/status reports missing, invalid or valid without revealing the cookie", async () => {
+    const st = async (cookie?: string) =>
+      JSON.parse(await (await cardsGate(req("/cards/status", { headers: cookie ? { cookie } : {} }), await opts()))!.text()).cookie
+    expect(await st()).toBe("missing")
+    expect(await st(`${COOKIE}=nope`)).toBe("invalid")
+    expect(await st(`${COOKIE}=${await cookieFor(PP)}`)).toBe("valid")
   })
 
   it("commits only digests: 64 hex characters each", () => {

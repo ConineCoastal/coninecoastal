@@ -1,7 +1,7 @@
 // Gate for the private Cards switcher at /cards (see docs/cards-switcher.md).
 //
 // One passphrase, typed once per device, kept as a 400-day HttpOnly cookie
-// scoped to /cards. This repo is public, so it holds only two SHA-256 digests:
+// (Path=/, set on a 200 page). This repo is public, so it holds only two SHA-256 digests:
 // one of the passphrase and one of the cookie value the passphrase produces.
 // Neither can be turned back into the passphrase (about 94 bits of random
 // letters) or into a working cookie. To rotate: run
@@ -103,8 +103,40 @@ async function unlock(request: Request, hashes: Hashes, delay: (ms: number) => P
     await delay(WRONG_DELAY_MS)
     return redirect("/cards/unlock?wrong=1", request)
   }
-  const cookie = `${COOKIE}=${await cookieFor(candidate)}; Max-Age=${MAX_AGE}; Path=/cards; HttpOnly; Secure; SameSite=Lax`
-  return redirect("/cards", request, { "set-cookie": cookie })
+  // Path=/ rather than /cards, and set on a normal 200 page rather than on the redirect: an
+  // Android Chrome unlock on 2026-11-13 accepted the passphrase but never sent the cookie back,
+  // so the gate looped. A cookie on a 200 response is the case every browser handles.
+  const cookie = `${COOKIE}=${await cookieFor(candidate)}; Max-Age=${MAX_AGE}; Path=/; HttpOnly; Secure; SameSite=Lax`
+  return new Response(UNLOCKED_PAGE, {
+    status: 200,
+    headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store", "set-cookie": cookie },
+  })
+}
+
+const UNLOCKED_PAGE = `<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="1;url=/cards"><meta name="robots" content="noindex, nofollow">
+<title>Cards</title></head>
+<body style="font:16px system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0">
+<p>Unlocked. <a href="/cards">Open Cards</a></p></body></html>`
+
+/**
+ * GET /cards/status: says only whether this browser sent the unlock cookie and whether it is
+ * valid. Public, so it can be opened when the gate loops. It reveals nothing about the value.
+ */
+async function status(request: Request, hashes: Hashes): Promise<Response> {
+  const have = readCookie(request.headers.get("cookie"), COOKIE)
+  const state = !have ? "missing" : safeEqual(await sha256Hex(have), hashes.cookie) ? "valid" : "invalid"
+  const text =
+    state === "valid"
+      ? "Unlocked: this browser sends a valid Cards cookie."
+      : state === "invalid"
+        ? "Locked: this browser sends a Cards cookie, but it is not valid (old passphrase?). Unlock again."
+        : "Locked: this browser sends no Cards cookie. It was not saved, or cookies are blocked for this site."
+  return new Response(JSON.stringify({ cookie: state, message: text }, null, 2), {
+    status: 200,
+    headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store", "x-robots-tag": "noindex" },
+  })
 }
 
 // Returns a Response to send instead of the asset, or null to let it through.
@@ -112,6 +144,7 @@ export async function cardsGate(request: Request, opts: Opts = {}): Promise<Resp
   const hashes = opts.hashes ?? CARDS_HASHES
   const url = new URL(request.url)
   if (url.pathname === "/cards/unlock" && request.method === "POST") return unlock(request, hashes, opts.delay ?? sleep)
+  if (url.pathname === "/cards/status") return status(request, hashes)
   if (isPublicPath(url.pathname)) return null
 
   const have = readCookie(request.headers.get("cookie"), COOKIE)

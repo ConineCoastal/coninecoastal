@@ -49,7 +49,7 @@ can set brightness, so the app says so and does not try.
 ## The gate, and why this one
 
 **One passphrase, typed once per device, kept as a 400-day HttpOnly cookie
-scoped to `/cards`.** A page load without the cookie goes to `/cards/unlock`.
+(path `/`, set on a plain 200 page).** If the gate ever loops, open `/cards/status`: it says whether the browser sent the cookie and whether it is valid. A page load without the cookie goes to `/cards/unlock`.
 Any other request gets a 401, so the service worker can never cache the
 unlock page in place of the app.
 
