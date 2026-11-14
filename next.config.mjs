@@ -52,6 +52,15 @@ const nextConfig = {
         ],
       },
       {
+        // The QR contact cards: never indexed.
+        source: "/(card|david)/:path*",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
+      {
+        source: "/(card|david)",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
+      {
         // Lets /cards/sw.js take the scope "/cards", so the app's own URL
         // (no trailing slash) is inside it.
         source: "/cards/sw.js",

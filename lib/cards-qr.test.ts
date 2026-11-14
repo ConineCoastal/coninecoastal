@@ -24,11 +24,12 @@ const EXPECTED: Record<string, string> = {
   "niner-advisors": "https://nineradvisors.com/card",
   "niner-health": "https://ninerhealth.com/card",
   ownerlogix: "https://www.ownerlogix.com/card",
+  "conine-coastal": "https://coninecoastal.com/card",
 }
 interface Brand { id: string; url: string }
 
 describe("cards QR codes", () => {
-  it("has five brands, each pointing at its own card", () => {
+  it("has six brands, each pointing at its own card", () => {
     expect(Object.fromEntries((BRANDS as Brand[]).map((b) => [b.id, b.url]))).toEqual(EXPECTED)
   })
 
