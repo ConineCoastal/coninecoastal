@@ -87,6 +87,8 @@ function render() {
       `${b.logo
         ? `<img class="slide-logo" src="${b.logo}" alt="${esc(b.name)}">`
         : `<h2 class="slide-wordmark" style="color:${b.color}">${esc(b.wordmark)}</h2>`}` +
+      // David's name between the brand and the code; the personal card's heading already is it.
+      `${b.id === "personal" ? "" : `<p class="slide-name">David Conine</p>`}` +
       `${qrSvg(url)}</section>`
     );
   }).join("");
