@@ -60,12 +60,6 @@ function esc(s) {
   return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 }
 
-function eventLine(tag) {
-  if (tag === null) return "No event set today: codes carry no event tag";
-  if (tag === "") return "No event today: codes carry no event tag";
-  return `Event tag: ${tag}`;
-}
-
 function render() {
   const tag = todayTag();
   const now = $("event-now");
@@ -89,9 +83,8 @@ function render() {
     const url = cardUrl(b, tag);
     return (
       `<section class="slide" aria-label="${esc(b.name)}">` +
-      `<h2>${esc(b.name)}</h2>${qrSvg(url)}` +
-      `<p class="slide-event${tag ? "" : " unset"}">${esc(eventLine(tag))}</p>` +
-      `<p class="slide-url">${esc(url.replace(/^https:\/\//, ""))}</p></section>`
+      // Brand name and code only (David, 2026-11-13); the day's event shows on the home screen.
+      `<h2>${esc(b.name)}</h2>${qrSvg(url)}</section>`
     );
   }).join("");
   $("dots").innerHTML = BRANDS.map(() => "<i></i>").join("");
