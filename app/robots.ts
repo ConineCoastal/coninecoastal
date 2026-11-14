@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/cards"],
+        disallow: ["/api/", "/card", "/david"],
       },
     ],
     sitemap: "https://www.coninecoastal.com/sitemap.xml",

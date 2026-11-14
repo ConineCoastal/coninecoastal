@@ -40,6 +40,10 @@ export interface PersonalCard {
   linkedin: string | null
   /** JPEG bytes, embedded inline. Null until a headshot is added. */
   photo: Buffer | null
+  /** Company cards (/card) only: organisation, title and website; the email is then WORK. */
+  org?: string
+  title?: string
+  url?: string
 }
 
 export function buildVCard(card: PersonalCard): string {
@@ -51,8 +55,11 @@ export function buildVCard(card: PersonalCard): string {
     `N:${escapeText(family)};${escapeText(given)};${escapeText(rest.join(" "))};;`,
     `FN:${escapeText(card.name)}`,
   ]
-  if (card.email) lines.push(`EMAIL;TYPE=INTERNET,HOME,PREF:${card.email}`)
+  if (card.org) lines.push(`ORG:${escapeText(card.org)}`)
+  if (card.title) lines.push(`TITLE:${escapeText(card.title)}`)
+  if (card.email) lines.push(`EMAIL;TYPE=INTERNET,${card.org ? "WORK" : "HOME"},PREF:${card.email}`)
   if (card.phone) lines.push(`TEL;TYPE=CELL,VOICE:${card.phone}`)
+  if (card.url) lines.push(`URL;TYPE=WORK:${card.url}`)
   if (card.linkedin) {
     lines.push(`URL:${card.linkedin}`)
     lines.push(`X-SOCIALPROFILE;TYPE=linkedin:${card.linkedin}`)

@@ -9,6 +9,7 @@ export const BRANDS = [
   { id: "niner-advisors", name: "Niner Advisors", note: "nineradvisors.com", url: "https://nineradvisors.com/card" },
   { id: "niner-health", name: "Niner Health", note: "ninerhealth.com", url: "https://ninerhealth.com/card" },
   { id: "ownerlogix", name: "OwnerLogix", note: "ownerlogix.com", url: "https://www.ownerlogix.com/card" },
+  { id: "conine-coastal", name: "Conine Coastal", note: "coninecoastal.com", url: "https://coninecoastal.com/card" },
 ];
 
 // Same rule the venture /card pages apply (lib/card/entry.ts EVENT_RE). A tag

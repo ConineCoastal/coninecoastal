@@ -7,6 +7,7 @@ import BackToTop from "@/components/back-to-top"
 import Analytics from "@/components/analytics"
 import { ThemeProvider } from "@/components/theme-provider"
 import PWARegister from "@/components/pwa-register"
+import { SiteChrome } from "@/components/site-chrome"
 import JsonLd from "@/components/json-ld"
 import { siteGraph } from "@/lib/schema"
 import { font, serifFont } from "@/styles/fonts"
@@ -103,14 +104,22 @@ export default function RootLayout({
           >
             Skip to main content
           </a>
-          <Navigation />
+          <SiteChrome>
+            <Navigation />
+          </SiteChrome>
           <div className="flex min-h-screen flex-col">
-            <div className="h-16 sm:h-20" aria-hidden="true" />
+            <SiteChrome>
+              <div className="h-16 sm:h-20" aria-hidden="true" />
+            </SiteChrome>
             <main id="main-content" className="flex-1">{children}</main>
-            <Footer />
+            <SiteChrome>
+              <Footer />
+            </SiteChrome>
           </div>
-          <BackToTop />
-          <Analytics />
+          <SiteChrome>
+            <BackToTop />
+            <Analytics />
+          </SiteChrome>
           <PWARegister />
         </ThemeProvider>
       </body>

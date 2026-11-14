@@ -4,7 +4,7 @@ import { PERSONAL_CARD_LINKEDIN, PERSONAL_CARD_NAME, PERSONAL_CARD_PHOTO, hasPho
 
 // David's personal contact card, reached by QR code. Not in the sitemap or the nav.
 export const metadata: Metadata = {
-  title: PERSONAL_CARD_NAME,
+  title: { absolute: PERSONAL_CARD_NAME }, // no "| Conine Coastal Group" suffix: a personal card
   description: "Save David Conine's contact.",
   robots: { index: false, follow: false },
 }
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function PersonalCardPage() {
   const photo = hasPhoto()
   return (
-    <section className="mx-auto flex w-full max-w-md flex-col items-center px-4 py-12 text-center sm:py-16">
+    <section className="mx-auto flex min-h-dvh w-full max-w-md flex-col items-center justify-center px-4 py-12 text-center sm:py-16">
       {photo ? (
         <Image
           src={PERSONAL_CARD_PHOTO}

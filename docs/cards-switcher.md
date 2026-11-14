@@ -12,6 +12,7 @@ Each QR encodes `<card URL>?e=<event-tag>`:
 | Niner Advisors | `https://nineradvisors.com/card` |
 | Niner Health | `https://ninerhealth.com/card` |
 | OwnerLogix | `https://www.ownerlogix.com/card` (the apex 307s to www; encoding www saves a hop) |
+| Conine Coastal | `https://coninecoastal.com/card` |
 
 The tag follows the venture pages' own rule, `^[a-z0-9][a-z0-9-]{0,63}$`, so
 the switcher never prints a tag a page would drop. A tag lasts for the local
