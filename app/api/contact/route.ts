@@ -187,6 +187,17 @@ if (!resendClient && !smtpTransporter) {
   )
 }
 
+/** IANA zone for the timestamp in inquiry emails; an invalid override falls back to Florida time. */
+const CONTACT_TIME_ZONE = (() => {
+  const zone = process.env.CONTACT_TIME_ZONE?.trim() || "America/New_York"
+  try {
+    new Intl.DateTimeFormat("en-US", { timeZone: zone })
+    return zone
+  } catch {
+    return "America/New_York"
+  }
+})()
+
 const fallbackSuccessMessage =
   "We received your message, but email delivery isn't fully configured yet. Our team will follow up shortly."
 const defaultSuccessMessage = "Thanks for reaching out! We'll be in touch soon."
@@ -212,8 +223,11 @@ export async function POST(request: Request) {
     const json = await request.json()
     const data = contactSchema.parse(json)
 
+    // Not process.env.TZ: Vercel sets it to ":UTC", which Intl rejects with a RangeError,
+    // and that error failed every submission. The business runs on Florida time.
     const submittedAt = new Date().toLocaleString("en-US", {
-      timeZone: process.env.TZ ?? "UTC",
+      timeZone: CONTACT_TIME_ZONE,
+      timeZoneName: "short",
     })
 
     const recipients = CONTACT_TO_EMAILS
