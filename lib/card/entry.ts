@@ -33,6 +33,11 @@ export function parseEvent(raw: string | string[] | null | undefined): string | 
   return v && EVENT_RE.test(v) ? v : null
 }
 
+/** The event badge on the card: `heff-2026` -> `HEFF 2026`. Null when there is no event. */
+export function formatEventBadge(event: string | null): string | null {
+  return event ? event.replace(/-+/g, " ").trim().toUpperCase() || null : null
+}
+
 const optionalText = (max: number, label: string) =>
   z
     .string()
