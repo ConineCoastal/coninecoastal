@@ -88,7 +88,7 @@ describe("Conine Coastal card vCard", () => {
     expect(checkVCard3(vcf)).toEqual([])
     const lines = unfold(vcf)
     expect(lines).toContain("ORG:Conine Coastal")
-    expect(lines).toContain("TITLE:Founder")
+    expect(lines).toContain("TITLE:Project Executive")
     expect(lines).toContain("EMAIL;TYPE=INTERNET,WORK,PREF:info@coninecoastal.com")
     expect(lines).toContain("URL;TYPE=WORK:https://coninecoastal.com")
     expect(lines.some((l) => l.startsWith("TEL"))).toBe(false)

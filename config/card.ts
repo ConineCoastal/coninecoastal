@@ -30,7 +30,7 @@ export const card = {
   logo: { src: "/conine-coastal-logo.png", width: 432, height: 204 },
   person: {
     name: "David Conine",
-    title: "Founder",
+    title: "Project Executive",
     /** The group's public inbox; no personal Conine Coastal address exists. */
     email: "info@coninecoastal.com",
   },
