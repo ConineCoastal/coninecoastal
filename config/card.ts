@@ -34,10 +34,16 @@ export const card = {
     /** The group's public inbox; no personal Conine Coastal address exists. */
     email: "info@coninecoastal.com",
   },
+  /** David's public LinkedIn profile, linked from the card's contact block. */
+  linkedin: "https://www.linkedin.com/in/davidaconine/",
   copy: {
-    intro: "Save my contact and leave your email. I'll follow up.",
+    headline: "Let's stay in touch.",
+    // From the home page's positioning; Real Estate stays unnamed for the reason above.
+    intro:
+      "Conine Coastal is a family of companies building, developing and serving Northeast Florida, from construction and land development to home services and luxury travel. Leave your email and I'll follow up personally.",
     saveLabel: "Save my contact",
-    formHeading: "Stay in touch",
+    formHeading: "Where should I follow up?",
+    connectLabel: "Connect with me",
     interestLabel: "Interested in",
     submitLabel: "Send",
     thanksHeading: "Thank you",

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 import { card, CARD_INTERESTS } from "@/config/card"
-import { buildCardEntry, cardInput, cardMailConfig, composeCardEntryMail, parseEvent, sendCardEntry } from "./card/entry"
+import { buildCardEntry, cardInput, cardMailConfig, composeCardEntryMail, formatEventBadge, parseEvent, sendCardEntry } from "./card/entry"
 import { isBarePath } from "./bare-paths"
 import { buildVCard, checkVCard3, unfold } from "./vcard"
 
@@ -38,6 +38,13 @@ describe("Conine Coastal card entry (marketing-os docs/card-entries.md v1)", () 
   it("drops an event tag that is not a slug", () => {
     expect(parseEvent("<script>")).toBeNull()
     expect(parseEvent(["a-1", "b"])).toBe("a-1")
+  })
+
+  it("formats the event badge from the tag, and shows none without one", () => {
+    expect(formatEventBadge("heff-2026")).toBe("HEFF 2026")
+    expect(formatEventBadge(parseEvent(" ULI-Fall-2026 "))).toBe("ULI FALL 2026")
+    expect(formatEventBadge(null)).toBeNull()
+    expect(formatEventBadge(parseEvent("<script>"))).toBeNull()
   })
 
   it("emails the JSON attachment with the contract header", () => {

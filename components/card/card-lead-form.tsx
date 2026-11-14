@@ -9,6 +9,7 @@ const initial: CardFormState = { status: "idle" }
 const inputClass =
   "h-12 w-full rounded-md border border-gray-300 bg-white px-3 text-base text-gray-900 focus-visible:border-coastal-navy focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-coastal-blue/40"
 const labelClass = "text-sm font-medium text-gray-900"
+const panelClass = "mt-8 rounded-xl border border-gray-200 bg-gray-50 px-5 py-6"
 
 export function CardLeadForm({ event, copy }: { event: string | null; copy: CardConfig["copy"] }) {
   const [state, action, pending] = useActionState(submitCardEntry, initial)
@@ -17,9 +18,9 @@ export function CardLeadForm({ event, copy }: { event: string | null; copy: Card
 
   if (state.status === "ok") {
     return (
-      <section role="status" aria-live="polite" className="mx-4 mt-8 rounded-md border border-gray-200 bg-gray-50 px-5 py-6 text-center">
-        <h2 className="font-serif text-2xl text-coastal-navy">{copy.thanksHeading}</h2>
-        <p className="mt-2 text-base text-gray-800">{copy.thanksBody}</p>
+      <section role="status" aria-live="polite" className={`${panelClass} text-center`}>
+        <h2 className="font-serif text-2xl font-bold text-coastal-navy">{copy.thanksHeading}</h2>
+        <p className="mt-2 text-base text-gray-700">{copy.thanksBody}</p>
       </section>
     )
   }
@@ -29,8 +30,8 @@ export function CardLeadForm({ event, copy }: { event: string | null; copy: Card
   const v = isError ? state.values : undefined
 
   return (
-    <section aria-labelledby={`${id}-heading`} className="mx-4 mt-8 border-t border-gray-200 pt-6">
-      <h2 id={`${id}-heading`} className="font-serif text-2xl text-coastal-navy">
+    <section aria-labelledby={`${id}-heading`} className={panelClass}>
+      <h2 id={`${id}-heading`} className="text-lg font-semibold text-gray-900">
         {copy.formHeading}
       </h2>
       {/* The key remounts the form on each error so defaultValue restores what was typed. */}
@@ -119,7 +120,7 @@ export function CardLeadForm({ event, copy }: { event: string | null; copy: Card
         <button
           type="submit"
           disabled={pending}
-          className="h-12 rounded-md bg-coastal-navy text-base font-semibold text-white transition-colors hover:bg-coastal-navy/90 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-coastal-blue/50 focus-visible:ring-offset-2 disabled:opacity-70"
+          className="mt-1 h-12 w-full rounded-md bg-[#BF4E17] text-base font-semibold text-white transition-colors hover:bg-[#A3410F] focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-coastal-blue/50 focus-visible:ring-offset-2 disabled:opacity-70"
         >
           {pending ? "Sending…" : copy.submitLabel}
         </button>
