@@ -6,11 +6,12 @@
 // Scope is "/cards" (set by Service-Worker-Allowed in next.config.mjs), which
 // is narrower than the site's own root worker, so this one wins for /cards*.
 
-const VERSION = "cards-2026-11-13f";
+const VERSION = "cards-2026-11-17a";
 const SHELL = [
   "/cards",
   "/cards/app.js",
   "/cards/brands.js",
+  "/cards/badge.js",
   "/cards/styles.css",
   "/cards/vendor/uqr.mjs",
   "/cards/manifest.webmanifest",
