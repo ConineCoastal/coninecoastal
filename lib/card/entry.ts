@@ -178,9 +178,9 @@ export class CardMailConfigError extends Error {
   }
 }
 
-type MakeTransport = (auth: { user: string; pass: string }) => Pick<Transporter, "sendMail">
+export type MakeTransport = (auth: { user: string; pass: string }) => Pick<Transporter, "sendMail">
 
-const gmailTransport: MakeTransport = (auth) => nodemailer.createTransport({ service: "gmail", auth })
+export const gmailTransport: MakeTransport = (auth) => nodemailer.createTransport({ service: "gmail", auth })
 
 const firstAddress = (v: string | undefined) => {
   const first = (v ?? "").split(/[\n,;]+/).map((s) => s.trim()).find(Boolean) ?? ""

@@ -15,6 +15,7 @@
   <link rel="icon" href="/cards/icons/icon-192.png">
   <link rel="stylesheet" href="/cards/styles.css">
   <script type="module" src="/cards/app.js"></script>
+  <script type="module" src="/cards/badge.js"></script>
 </head>
 <body>
   <main class="home" id="home">
@@ -41,12 +42,13 @@
       <ul class="tiles" id="tiles"></ul>
     </section>
 
-    <section class="later">
-      <button type="button" class="snap" disabled aria-describedby="snap-note">
-        Snap badge
-        <span class="badge">Step 5</span>
-      </button>
-      <p class="fine" id="snap-note">Badge capture is not built yet. It arrives in step 5 of the build.</p>
+    <section class="later badge-panel" aria-labelledby="badge-h">
+      <h2 id="badge-h">Badge photo</h2>
+      <p class="fine">For someone who hands you a badge instead of scanning. Pick their company, then snap. The photo goes to your inbox only.</p>
+      <div class="recent" id="badge-brands" role="group" aria-label="Company for the badge"></div>
+      <button type="button" class="snap" id="snap" disabled>Snap badge</button>
+      <input type="file" id="badge-file" accept="image/*" capture="environment" hidden>
+      <p class="fine" id="badge-status" aria-live="polite"></p>
       <p class="fine">Brightness: iPhone web apps cannot change screen brightness. Turn it up yourself before showing a code. The screen is kept awake while a code is open.</p>
     </section>
   </main>

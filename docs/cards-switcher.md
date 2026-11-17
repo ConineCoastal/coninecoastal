@@ -31,6 +31,29 @@ again (one tap on a recent chip) or chooses "No event today".
   only its own caches. Before this change its `activate` deleted every cache
   on the origin, which would have wiped the switcher's offline copy.
 
+## Badge photos (step 5)
+
+For someone who hands David a badge instead of scanning a code. Below the tiles,
+"Badge photo" holds five company chips (the choice is remembered) and **Snap
+badge**, which opens the phone camera through a file input (`capture`).
+`public/cards/badge.js`:
+
+- downsizes to 1600 px on the long edge, JPEG 0.8 (about 300 KB);
+- queues the photo in IndexedDB (`cards-badges`), so a booth with no signal loses
+  nothing; the queue is retried when the phone comes back online or the app is
+  reopened, and an item leaves the phone only after the server says it was sent;
+- posts it with the day's event tag to `POST /cards/api/badge` (`app/cards/api/badge/route.ts`).
+
+The route is behind the gate like every `/cards` path. It emails the photo to
+the Conine Coastal sending account (`lib/cards-badge.ts`, header
+`X-Hub-Card-Badge: v1`, attachments `badge.jpg` and `card-badge.json`) and
+**stores nothing**: no blob store, no public path, no logged image. The mailbox
+is the only copy. On the PC the pull turns it into a badge waiting for David to
+type the person in (marketing-os `docs/card-entries.md`, "Badge photos").
+
+`next.config.mjs` grants `camera=(self)` in `Permissions-Policy` for `/cards`
+and `/cards/:path*` only; the rest of the site keeps `camera=()`.
+
 ## Offline
 
 `/cards/sw.js` precaches the shell on first load and serves it cache-first,
@@ -77,8 +100,7 @@ Why not the alternatives:
 - **Passkeys.** Strongest, but they need a server-side credential store and a
   registration flow. That is too much for a page whose QR targets are already
   public. Revisit when step 5 adds badge photos, which are not public. Step 5
-  will also need `camera=(self)` in `Permissions-Policy` for `/cards`, which is
-  `camera=()` site-wide today.
+  has `camera=(self)` in `Permissions-Policy` for `/cards` (see "Badge photos").
 
 An iPhone home-screen app keeps its own cookie jar, apart from Safari. Unlock
 **inside the installed app** the first time it opens. The form declares a

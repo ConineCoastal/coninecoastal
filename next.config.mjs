@@ -41,6 +41,8 @@ const nextConfig = {
           { key: "X-Robots-Tag", value: "noindex, nofollow" },
           { key: "Cache-Control", value: "no-cache" },
           { key: "Referrer-Policy", value: "no-referrer" },
+          // Badge capture (step 5): the switcher may use the camera. Site-wide stays camera=().
+          { key: "Permissions-Policy", value: "camera=(self), microphone=(), geolocation=()" },
         ],
       },
       {
@@ -49,6 +51,8 @@ const nextConfig = {
           { key: "X-Robots-Tag", value: "noindex, nofollow" },
           { key: "Cache-Control", value: "no-cache" },
           { key: "Referrer-Policy", value: "no-referrer" },
+          // Badge capture (step 5): the switcher may use the camera. Site-wide stays camera=().
+          { key: "Permissions-Policy", value: "camera=(self), microphone=(), geolocation=()" },
         ],
       },
       {
