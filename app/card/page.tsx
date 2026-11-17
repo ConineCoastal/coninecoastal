@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import { UserPlus } from "lucide-react"
 import { card, VCARD_PATH } from "@/config/card"
-import { formatEventBadge, parseEvent } from "@/lib/card/entry"
+import { formatEventBadge, parseEvent, parseRef } from "@/lib/card/entry"
 import { CardLeadForm } from "@/components/card/card-lead-form"
 
 /**
@@ -22,7 +22,10 @@ export const metadata: Metadata = {
 interface Props { searchParams: Promise<Record<string, string | string[] | undefined>> }
 
 export default async function CardPage({ searchParams }: Props) {
-  const event = parseEvent((await searchParams).e)
+  const params = await searchParams
+  const event = parseEvent(params.e)
+  // The forwarding entry's id from a "Send this card to a colleague" link; carried like the event.
+  const ref = parseRef(params.ref)
   const badge = formatEventBadge(event)
   const p = card.person
   const [taglineLead, ...taglineRest] = card.descriptor.split(" ")
@@ -62,7 +65,7 @@ export default async function CardPage({ searchParams }: Props) {
       </h1>
       <p className="mt-4 text-lg leading-relaxed text-gray-600">{card.copy.intro}</p>
 
-      <CardLeadForm event={event} copy={card.copy} />
+      <CardLeadForm event={event} refId={ref} copy={card.copy} />
 
       <a
         href={VCARD_PATH}

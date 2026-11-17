@@ -6,7 +6,8 @@ export interface CardFormValues { email: string; name: string; organization: str
 
 export type CardFormState =
   | { status: "idle" }
-  | { status: "ok" }
+  /** `entryId` is the sent entry's id, for the forward link; absent when nothing was sent. */
+  | { status: "ok"; entryId?: string }
   /** `values` is echoed back because React 19 resets a form after its action runs. */
   | { status: "error"; message: string; field?: "email"; values: CardFormValues }
 
@@ -49,12 +50,12 @@ export async function submitCardEntry(_prev: CardFormState, form: FormData): Pro
     }
   }
 
-  const entry = buildCardEntry(parsed.data, field(form, "event") || null)
+  const entry = buildCardEntry(parsed.data, field(form, "event") || null, undefined, undefined, field(form, "ref") || null)
   try {
     await sendCardEntry(entry)
   } catch (error) {
     console.error(`[card] entry ${entry.id} not sent:`, describeError(error))
     return { status: "error", message: "Something went wrong sending your details. Please try again.", values }
   }
-  return { status: "ok" }
+  return { status: "ok", entryId: entry.id }
 }

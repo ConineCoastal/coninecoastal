@@ -1,8 +1,10 @@
 "use client"
 
-import { useActionState, useId } from "react"
+import { useActionState, useId, type MouseEvent } from "react"
+import { Share2 } from "lucide-react"
 import { submitCardEntry, type CardFormState } from "@/app/actions/card"
 import { CARD_INTERESTS, type CardConfig } from "@/config/card"
+import { cardShareMailto, cardShareTitle, cardShareUrl } from "@/lib/card/share"
 
 const initial: CardFormState = { status: "idle" }
 
@@ -10,8 +12,31 @@ const inputClass =
   "h-12 w-full rounded-md border border-gray-300 bg-white px-3 text-base text-gray-900 focus-visible:border-coastal-navy focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-coastal-blue/40"
 const labelClass = "text-sm font-medium text-gray-900"
 const panelClass = "mt-8 rounded-xl border border-gray-200 bg-gray-50 px-5 py-6"
+// The page's secondary button (the "Save my contact" style).
+const secondaryButtonClass =
+  "inline-flex h-12 w-full items-center justify-center gap-2 rounded-md border border-gray-300 bg-white px-6 text-base font-semibold text-coastal-navy transition-colors hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-coastal-blue/50 focus-visible:ring-offset-2"
 
-export function CardLeadForm({ event, copy }: { event: string | null; copy: CardConfig["copy"] }) {
+/**
+ * "Send this card to a colleague": the share sheet where there is one, else a mailto with no
+ * recipient. The link carries this entry's id as `ref`. The site sends nothing.
+ */
+function ForwardCardLink({ entryId, event }: { entryId: string; event: string | null }) {
+  const url = cardShareUrl(entryId, event)
+  const onClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (typeof navigator === "undefined" || typeof navigator.share !== "function") return
+    e.preventDefault()
+    // A dismissed share sheet rejects with AbortError; nothing to do either way.
+    navigator.share({ title: cardShareTitle, url }).catch(() => undefined)
+  }
+  return (
+    <a href={cardShareMailto(url)} onClick={onClick} className={`mt-6 ${secondaryButtonClass}`}>
+      <Share2 aria-hidden="true" className="size-5" />
+      Send this card to a colleague
+    </a>
+  )
+}
+
+export function CardLeadForm({ event, refId, copy }: { event: string | null; refId: string | null; copy: CardConfig["copy"] }) {
   const [state, action, pending] = useActionState(submitCardEntry, initial)
   const id = useId()
   const errId = `${id}-error`
@@ -21,6 +46,7 @@ export function CardLeadForm({ event, copy }: { event: string | null; copy: Card
       <section role="status" aria-live="polite" className={`${panelClass} text-center`}>
         <h2 className="font-serif text-2xl font-bold text-coastal-navy">{copy.thanksHeading}</h2>
         <p className="mt-2 text-base text-gray-700">{copy.thanksBody}</p>
+        {state.entryId && <ForwardCardLink entryId={state.entryId} event={event} />}
       </section>
     )
   }
@@ -37,6 +63,7 @@ export function CardLeadForm({ event, copy }: { event: string | null; copy: Card
       {/* The key remounts the form on each error so defaultValue restores what was typed. */}
       <form key={isError ? state.message + JSON.stringify(v) : "form"} action={action} noValidate className="mt-4 flex flex-col gap-4">
         <input type="hidden" name="event" value={event ?? ""} />
+        <input type="hidden" name="ref" value={refId ?? ""} />
 
         <div className="flex flex-col gap-2">
           <label htmlFor={`${id}-email`} className={labelClass}>
