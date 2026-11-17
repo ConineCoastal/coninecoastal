@@ -91,7 +91,42 @@ export function cardEntrySubject(entry: CardEntry): string {
   return `Card entry: ${who} (${card.organization})${entry.event ? ` at ${entry.event}` : ""}`
 }
 
-export function cardEntryText(entry: CardEntry): string {
+/**
+ * David's note links (contract: marketing-os docs/card-entries.md, "Card notes"). Each is a
+ * mailto addressed to the site's own SENDING account (the transport's auth user, the account the
+ * PC pull reads). Never the visitor: the entry email's Reply-To is the visitor, so a plain Reply
+ * would email them.
+ */
+export const CARD_NOTE_TAGS = ["hot", "partner", "peer"] as const
+
+export function cardNoteLinks(entry: CardEntry, sendingAccount: string): { label: string; href: string }[] {
+  const link = (label: string, tag: string | null) => ({
+    label,
+    href: `mailto:${sendingAccount}?subject=${encodeURIComponent(`Card note ${entry.id}${tag ? ` [${tag}]` : ""}`)}`,
+  })
+  return [...CARD_NOTE_TAGS.map((t) => link(t[0].toUpperCase() + t.slice(1), t)), link("Note", null)]
+}
+
+const escapeHtml = (v: string) =>
+  v.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
+
+function cardEntryHtml(entry: CardEntry, sendingAccount: string): string {
+  const buttons = cardNoteLinks(entry, sendingAccount)
+    .map(
+      (l) =>
+        `<a href="${escapeHtml(l.href)}" style="display:inline-block;margin:0 8px 8px 0;padding:10px 16px;border-radius:6px;background:#18457c;color:#ffffff;text-decoration:none;font-weight:600">${l.label}</a>`,
+    )
+    .join("")
+  return [
+    `<div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;color:#1a1a1a">`,
+    `<p style="margin:0 0 8px">Tag or add a note (it goes to you, not to them):</p>`,
+    `<p style="margin:0 0 16px">${buttons}</p>`,
+    `<pre style="font-family:inherit;white-space:pre-wrap;margin:0">${escapeHtml(cardEntryText(entry, sendingAccount))}</pre>`,
+    `</div>`,
+  ].join("")
+}
+
+export function cardEntryText(entry: CardEntry, sendingAccount?: string): string {
   const row = (label: string, v: string | null) => `${label}: ${v ?? "(not given)"}`
   return [
     `New card entry from the ${card.organization} conference card (${card.domain}/card).`,
@@ -104,18 +139,27 @@ export function cardEntryText(entry: CardEntry): string {
     row("Event", entry.event),
     row("Time", entry.submitted_at),
     "",
+    ...(sendingAccount
+      ? [
+          "Tag or add a note (goes to you, not to them):",
+          ...cardNoteLinks(entry, sendingAccount).map((l) => `${l.label}: ${l.href}`),
+          "",
+        ]
+      : []),
     "The attached card-entry.json is the record the CRM ingest reads.",
     "",
   ].join("\n")
 }
 
+/** `from` is the sending account: the transport's auth user (cardMailConfig().user), which the note links also target. */
 export function composeCardEntryMail(entry: CardEntry, from: string, to: string): SendMailOptions {
   return {
     from: `"${card.organization} Website" <${from}>`,
     to,
     replyTo: entry.email,
     subject: cardEntrySubject(entry),
-    text: cardEntryText(entry),
+    text: cardEntryText(entry, from),
+    html: cardEntryHtml(entry, from),
     headers: { "X-Hub-Card-Entry": "v1" },
     attachments: [
       {

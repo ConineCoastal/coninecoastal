@@ -1,6 +1,15 @@
 import { describe, expect, it } from "vitest"
 import { card, CARD_INTERESTS } from "@/config/card"
-import { buildCardEntry, cardInput, cardMailConfig, composeCardEntryMail, formatEventBadge, parseEvent, sendCardEntry } from "./card/entry"
+import {
+  buildCardEntry,
+  cardInput,
+  cardMailConfig,
+  cardNoteLinks,
+  composeCardEntryMail,
+  formatEventBadge,
+  parseEvent,
+  sendCardEntry,
+} from "./card/entry"
 import { isBarePath } from "./bare-paths"
 import { buildVCard, checkVCard3, unfold } from "./vcard"
 
@@ -56,6 +65,30 @@ describe("Conine Coastal card entry (marketing-os docs/card-entries.md v1)", () 
     const att = (mail.attachments as { filename: string; content: string }[])[0]
     expect(att.filename).toBe("card-entry.json")
     expect(JSON.parse(att.content).interest).toBe("estates")
+  })
+
+  it("carries Hot / Partner / Peer / Note links to the sending account, never the visitor", () => {
+    const entry = buildCardEntry(cardInput.parse({ email: "pat@example.org", name: "Pat" }), null, NOW, ID)
+    const mail = composeCardEntryMail(entry, "sender@example.test", "desk@example.test")
+    const links = cardNoteLinks(entry, "sender@example.test")
+    expect(links.map((l) => l.label)).toEqual(["Hot", "Partner", "Peer", "Note"])
+    expect(links[0].href).toBe(`mailto:sender@example.test?subject=${encodeURIComponent(`Card note ${ID} [hot]`)}`)
+    expect(links[3].href).toBe(`mailto:sender@example.test?subject=${encodeURIComponent(`Card note ${ID}`)}`)
+    for (const l of links) {
+      expect(mail.text).toContain(l.href)
+      expect(mail.html).toContain(l.href)
+      expect(l.href).not.toContain("pat@example.org")
+    }
+    expect(mail.html).not.toContain("mailto:pat@example.org")
+    expect(mail.replyTo).toBe("pat@example.org")
+  })
+
+  it("escapes visitor input in the HTML body", () => {
+    const evil = buildCardEntry(cardInput.parse({ email: "x@example.org", name: "<b>Pat</b>", organization: "A&B" }), null, NOW, ID)
+    const html = composeCardEntryMail(evil, "sender@example.test", "desk@example.test").html as string
+    expect(html).toContain("&lt;b&gt;Pat&lt;/b&gt;")
+    expect(html).toContain("A&amp;B")
+    expect(html).not.toContain("<b>Pat</b>")
   })
 
   it("uses the contact form's Gmail account and recipient", () => {
