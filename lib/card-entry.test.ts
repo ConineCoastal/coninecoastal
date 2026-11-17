@@ -8,8 +8,10 @@ import {
   composeCardEntryMail,
   formatEventBadge,
   parseEvent,
+  parseRef,
   sendCardEntry,
 } from "./card/entry"
+import { cardShareMailto, cardShareTitle, cardShareUrl } from "./card/share"
 import { isBarePath } from "./bare-paths"
 import { buildVCard, checkVCard3, unfold } from "./vcard"
 
@@ -110,6 +112,63 @@ describe("Conine Coastal card entry (marketing-os docs/card-entries.md v1)", () 
       },
     }))
     expect(sent).toHaveLength(1)
+  })
+})
+
+describe("Conine Coastal card forward link (marketing-os docs/card-entries.md `ref`)", () => {
+  const REF = "0a1b2c3d-4e5f-4a6b-8c7d-9e0f1a2b3c4d"
+
+  it("accepts a UUID ref, lower-cased, and drops anything else", () => {
+    expect(parseRef(REF)).toBe(REF)
+    expect(parseRef(` ${REF.toUpperCase()} `)).toBe(REF)
+    expect(parseRef([REF, "x"])).toBe(REF)
+    for (const bad of ["", "abc", "<script>", `${REF}0`, REF.replace(/-/g, ""), "0a1b2c3d-4e5f-4a6b-8c7d-9e0f1a2b3c4g", null, undefined]) {
+      expect(parseRef(bad), String(bad)).toBeNull()
+    }
+  })
+
+  it("carries ref in the entry only when it is valid and not the entry's own id", () => {
+    const input = cardInput.parse({ email: "a@b.co" })
+    const withRef = buildCardEntry(input, "heff-2026", NOW, ID, REF.toUpperCase())
+    expect(withRef.ref).toBe(REF)
+    expect(Object.keys(withRef)).toEqual([
+      "v", "id", "brand", "crm_company", "event", "email", "name", "organization", "title", "interest", "ref", "submitted_at",
+    ])
+    for (const r of [null, "not-a-uuid", ID, ID.toUpperCase()]) {
+      const entry = buildCardEntry(input, null, NOW, ID, r)
+      expect("ref" in entry, String(r)).toBe(false)
+      expect(JSON.parse(JSON.stringify(entry))).not.toHaveProperty("ref")
+    }
+  })
+
+  it("puts ref in the JSON and a Forwarded from line in the text, and changes nothing else", () => {
+    const input = cardInput.parse({ email: "a@b.co", interest: "travel" })
+    const plain = composeCardEntryMail(buildCardEntry(input, "heff-2026", NOW, ID), "s@x.co", "d@x.co")
+    const fwd = composeCardEntryMail(buildCardEntry(input, "heff-2026", NOW, ID, REF), "s@x.co", "d@x.co")
+    const json = (m: typeof fwd) => JSON.parse((m.attachments as { content: string }[])[0].content)
+    expect(json(fwd)).toEqual({ ...json(plain), ref: REF })
+    expect(fwd.subject).toBe(plain.subject)
+    expect(fwd.headers).toEqual(plain.headers)
+    expect(fwd.text).toContain(`Forwarded from: ${REF}`)
+    expect(plain.text).not.toContain("Forwarded from")
+    expect((fwd.text as string).replace(`Forwarded from: ${REF}
+`, "")).toBe(plain.text)
+  })
+
+  it("builds the share URL with and without an event", () => {
+    expect(cardShareUrl(ID, "heff-2026")).toBe(`https://coninecoastal.com/card?e=heff-2026&ref=${ID}`)
+    expect(cardShareUrl(ID, null)).toBe(`https://coninecoastal.com/card?ref=${ID}`)
+    const url = new URL(cardShareUrl(ID, "heff-2026"))
+    expect(parseEvent(url.searchParams.get("e"))).toBe("heff-2026")
+    expect(parseRef(url.searchParams.get("ref"))).toBe(ID)
+  })
+
+  it("shares with the brand title, or a mailto with no recipient", () => {
+    expect(cardShareTitle).toBe("Conine Coastal · David Conine")
+    const url = cardShareUrl(ID, null)
+    expect(cardShareMailto(url)).toBe(
+      `mailto:?subject=${encodeURIComponent("Conine Coastal: David Conine's contact card")}&body=${encodeURIComponent(url)}`,
+    )
   })
 })
 

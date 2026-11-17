@@ -22,6 +22,8 @@ export interface CardEntry {
   organization: string | null
   title: string | null
   interest: CardInterest | null
+  /** The entry whose thank-you screen this visitor's link came from. Present only when valid. */
+  ref?: string
   submitted_at: string
 }
 
@@ -31,6 +33,14 @@ const EVENT_RE = /^[a-z0-9][a-z0-9-]{0,63}$/
 export function parseEvent(raw: string | string[] | null | undefined): string | null {
   const v = (Array.isArray(raw) ? raw[0] : raw)?.trim().toLowerCase()
   return v && EVENT_RE.test(v) ? v : null
+}
+
+const REF_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
+
+/** The `?ref=` entry id: trimmed and lower-cased; anything that is not a UUID becomes null. */
+export function parseRef(raw: string | string[] | null | undefined): string | null {
+  const v = (Array.isArray(raw) ? raw[0] : raw)?.trim().toLowerCase()
+  return v && REF_RE.test(v) ? v : null
 }
 
 /** The event badge on the card: `heff-2026` -> `HEFF 2026`. Null when there is no event. */
@@ -67,7 +77,10 @@ export function buildCardEntry(
   event: string | null,
   now: Date = new Date(),
   id: string = randomUUID(),
+  ref: string | null = null,
 ): CardEntry {
+  // The key is omitted, not null, unless it names another entry.
+  const referrer = parseRef(ref)
   return {
     v: 1,
     id,
@@ -79,6 +92,7 @@ export function buildCardEntry(
     organization: input.organization,
     title: input.title,
     interest: input.interest,
+    ...(referrer && referrer !== id.toLowerCase() ? { ref: referrer } : {}),
     submitted_at: now.toISOString(),
   }
 }
@@ -137,6 +151,7 @@ export function cardEntryText(entry: CardEntry, sendingAccount?: string): string
     row("Title", entry.title),
     row("Interested in", interestLabel(entry.interest)),
     row("Event", entry.event),
+    ...(entry.ref ? [`Forwarded from: ${entry.ref}`] : []),
     row("Time", entry.submitted_at),
     "",
     ...(sendingAccount
