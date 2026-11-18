@@ -65,6 +65,11 @@ const nextConfig = {
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
       {
+        // The card give-away, linked from the day-0 follow-up email: never indexed.
+        source: "/guides/coastal-home-care-calendar",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
+      {
         // Lets /cards/sw.js take the scope "/cards", so the app's own URL
         // (no trailing slash) is inside it.
         source: "/cards/sw.js",
