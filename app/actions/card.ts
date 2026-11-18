@@ -1,30 +1,22 @@
 "use server"
 
-import { buildCardEntry, cardInput, sendCardEntry } from "@/lib/card/entry"
+import { buildCardEntry, cardInput, describeError, sendCardEntry } from "@/lib/card/entry"
 
 export interface CardFormValues { email: string; name: string; organization: string; title: string; interest: string }
 
 export type CardFormState =
   | { status: "idle" }
-  /** `entryId` is the sent entry's id, for the forward link; absent when nothing was sent. */
-  | { status: "ok"; entryId?: string }
+  /**
+   * `entryId` is the sent entry's id, for the forward link; absent when nothing was sent.
+   * `email` and `name` are what was submitted, for the booking link's prefill.
+   */
+  | { status: "ok"; entryId?: string; email?: string; name?: string | null }
   /** `values` is echoed back because React 19 resets a form after its action runs. */
   | { status: "error"; message: string; field?: "email"; values: CardFormValues }
 
 const field = (f: FormData, k: string) => {
   const v = f.get(k)
   return typeof v === "string" ? v : ""
-}
-
-/** Logs the cause (nodemailer code, SMTP response code) without any form values. */
-function describeError(error: unknown): string {
-  if (error && typeof error === "object") {
-    const e = error as { code?: string | number; responseCode?: number; message?: string; name?: string }
-    return [e.name, e.code !== undefined && `code=${e.code}`, e.responseCode !== undefined && `smtp=${e.responseCode}`, e.message]
-      .filter(Boolean)
-      .join(" ")
-  }
-  return String(error)
 }
 
 export async function submitCardEntry(_prev: CardFormState, form: FormData): Promise<CardFormState> {
@@ -57,5 +49,5 @@ export async function submitCardEntry(_prev: CardFormState, form: FormData): Pro
     console.error(`[card] entry ${entry.id} not sent:`, describeError(error))
     return { status: "error", message: "Something went wrong sending your details. Please try again.", values }
   }
-  return { status: "ok", entryId: entry.id }
+  return { status: "ok", entryId: entry.id, email: entry.email, name: entry.name }
 }

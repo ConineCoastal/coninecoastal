@@ -5,6 +5,7 @@ import { Share2 } from "lucide-react"
 import { submitCardEntry, type CardFormState } from "@/app/actions/card"
 import { CARD_INTERESTS, type CardConfig } from "@/config/card"
 import { cardShareMailto, cardShareTitle, cardShareUrl } from "@/lib/card/share"
+import { BookCallLink } from "@/components/card/book-call-link"
 
 const initial: CardFormState = { status: "idle" }
 
@@ -36,7 +37,18 @@ function ForwardCardLink({ entryId, event }: { entryId: string; event: string | 
   )
 }
 
-export function CardLeadForm({ event, refId, copy }: { event: string | null; refId: string | null; copy: CardConfig["copy"] }) {
+export function CardLeadForm({
+  event,
+  refId,
+  copy,
+  bookingUrl = null,
+}: {
+  event: string | null
+  refId: string | null
+  copy: CardConfig["copy"]
+  /** The validated CARD_BOOKING_URL, from the server page; null hides the booking button. */
+  bookingUrl?: string | null
+}) {
   const [state, action, pending] = useActionState(submitCardEntry, initial)
   const id = useId()
   const errId = `${id}-error`
@@ -46,6 +58,7 @@ export function CardLeadForm({ event, refId, copy }: { event: string | null; ref
       <section role="status" aria-live="polite" className={`${panelClass} text-center`}>
         <h2 className="font-serif text-2xl font-bold text-coastal-navy">{copy.thanksHeading}</h2>
         <p className="mt-2 text-base text-gray-700">{copy.thanksBody}</p>
+        <BookCallLink bookingUrl={bookingUrl} email={state.email} name={state.name} className="mt-6" />
         {state.entryId && <ForwardCardLink entryId={state.entryId} event={event} />}
       </section>
     )
