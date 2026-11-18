@@ -29,6 +29,9 @@ describe("Conine Coastal card booking record (marketing-os docs/card-entries.md 
       start: "2026-11-20T14:00:00.000Z",
       end: "2026-11-20T14:20:00.000Z",
       received_at: "2026-11-17T15:00:00.000Z",
+      status: "booked",
+      previous_uid: null,
+      reason: null,
     })
   })
 
