@@ -8,7 +8,13 @@ import { CardMailConfigError, cardInput, cardMailConfig, gmailTransport, type Ma
  * booking" lands on /card/booked with the booking's params; the page POSTs them once to
  * recordCardBooking, which emails one record through the SAME transport, sender and recipient as
  * the card entries, with card-booking.json attached for the PC pull.
+ *
+ * Step 9b adds the Cal.com webhook (app/api/card/booking-event): the same record, plus `status`,
+ * `previous_uid` and `reason`, so a cancellation or a reschedule reaches the CRM too. The redirect
+ * path always records `status: "booked"`.
  */
+
+export type CardBookingStatus = "booked" | "cancelled" | "rescheduled"
 
 export interface CardBooking {
   v: 1
@@ -20,9 +26,14 @@ export interface CardBooking {
   start: string
   end: string | null
   received_at: string
+  status: CardBookingStatus
+  /** On a reschedule, the old booking's uid; otherwise null. */
+  previous_uid: string | null
+  /** The visitor's cancellation reason, trimmed and capped at 300 characters; otherwise null. */
+  reason: string | null
 }
 
-const UID_RE = /^[A-Za-z0-9_-]{6,64}$/
+export const UID_RE = /^[A-Za-z0-9_-]{6,64}$/
 // ISO 8601 date-time with an explicit zone, as Cal.com forwards it.
 const ISO_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d{1,9})?)?(Z|[+-]\d{2}:?\d{2})$/
 const DAY_MS = 24 * 60 * 60 * 1000
@@ -63,11 +74,16 @@ export interface CardBookingParams {
 /**
  * Validates what Cal.com forwarded. Null when anything is off: a bad uid or email, a start that is
  * not an ISO date between now minus 1 day and now plus 120 days, or an end that is not after it.
+ * `startWindow: false` (a cancellation) drops the window: the start need only be a valid date.
  */
 export function parseCardBooking(
   raw: Record<string, unknown> | null | undefined,
   now: Date = new Date(),
-): { params: CardBookingParams; booking: Omit<CardBooking, "received_at"> } | null {
+  { startWindow = true }: { startWindow?: boolean } = {},
+): {
+  params: CardBookingParams
+  booking: Omit<CardBooking, "received_at" | "status" | "previous_uid" | "reason">
+} | null {
   if (!raw || typeof raw !== "object") return null
   const endRaw = first(raw.endTime)
   const parsed = bookingRaw.safeParse({
@@ -81,7 +97,7 @@ export function parseCardBooking(
   const start = isoDate(parsed.data.startTime)
   if (!start) return null
   const t = start.getTime()
-  if (t < now.getTime() - DAY_MS || t > now.getTime() + 120 * DAY_MS) return null
+  if (startWindow && (t < now.getTime() - DAY_MS || t > now.getTime() + 120 * DAY_MS)) return null
   let end: Date | null = null
   if (parsed.data.endTime !== undefined) {
     end = isoDate(parsed.data.endTime)
@@ -110,25 +126,41 @@ export function parseCardBooking(
 
 export function buildCardBooking(raw: Record<string, unknown> | null | undefined, now: Date = new Date()): CardBooking | null {
   const parsed = parseCardBooking(raw, now)
-  return parsed ? { ...parsed.booking, received_at: now.toISOString() } : null
+  return parsed ? { ...parsed.booking, received_at: now.toISOString(), status: "booked", previous_uid: null, reason: null } : null
 }
 
 const oneLine = (s: string) => s.replace(/[\r\n\t]+/g, " ")
 
+const SUBJECT_PREFIX: Record<CardBookingStatus, string> = {
+  booked: "Card booking",
+  cancelled: "Card booking cancelled",
+  rescheduled: "Card booking moved",
+}
+
+/** On a reschedule `start` is the new start. */
 export function cardBookingSubject(b: CardBooking): string {
-  return `Card booking: ${oneLine(b.name ?? b.email)} (${card.organization}) ${b.start}`
+  return `${SUBJECT_PREFIX[b.status]}: ${oneLine(b.name ?? b.email)} (${card.organization}) ${b.start}`
+}
+
+const TEXT_LEAD: Record<CardBookingStatus, string> = {
+  booked: "New 20-minute booking",
+  cancelled: "Cancelled 20-minute booking",
+  rescheduled: "Moved 20-minute booking",
 }
 
 export function cardBookingText(b: CardBooking): string {
   const row = (label: string, v: string | null) => `${label}: ${v ?? "(not given)"}`
   return [
-    `New 20-minute booking from the ${card.organization} conference card (${card.domain}/card).`,
+    `${TEXT_LEAD[b.status]} from the ${card.organization} conference card (${card.domain}/card).`,
     "",
     row("Name", b.name),
     row("Email", b.email),
     row("Start", b.start),
     row("End", b.end),
     row("Booking", b.booking_uid),
+    row("Status", b.status),
+    ...(b.previous_uid ? [row("Replaces booking", b.previous_uid)] : []),
+    ...(b.reason ? [row("Reason", oneLine(b.reason))] : []),
     row("Received", b.received_at),
     "",
     "The attached card-booking.json is the record the CRM ingest reads.",
