@@ -186,6 +186,17 @@ export function composeCardEntryMail(entry: CardEntry, from: string, to: string)
   }
 }
 
+/** Logs the cause (nodemailer code, SMTP response code) without any form values. */
+export function describeError(error: unknown): string {
+  if (error && typeof error === "object") {
+    const e = error as { code?: string | number; responseCode?: number; message?: string; name?: string }
+    return [e.name, e.code !== undefined && `code=${e.code}`, e.responseCode !== undefined && `smtp=${e.responseCode}`, e.message]
+      .filter(Boolean)
+      .join(" ")
+  }
+  return String(error)
+}
+
 export class CardMailConfigError extends Error {
   constructor() {
     super("card entry email not configured: no Gmail SMTP account (GMAIL_SMTP_USER / GMAIL_EMAIL / SMTP_USER and its app password)")

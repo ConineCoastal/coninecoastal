@@ -3,6 +3,7 @@ import Image from "next/image"
 import { UserPlus } from "lucide-react"
 import { card, VCARD_PATH } from "@/config/card"
 import { formatEventBadge, parseEvent, parseRef } from "@/lib/card/entry"
+import { parseBookingUrl } from "@/lib/card/booking"
 import { CardLeadForm } from "@/components/card/card-lead-form"
 
 /**
@@ -27,6 +28,8 @@ export default async function CardPage({ searchParams }: Props) {
   // The forwarding entry's id from a "Send this card to a colleague" link; carried like the event.
   const ref = parseRef(params.ref)
   const badge = formatEventBadge(event)
+  // Server-only (never NEXT_PUBLIC_): unset, empty or not a Cal.com https URL hides the button.
+  const bookingUrl = parseBookingUrl(process.env.CARD_BOOKING_URL)
   const p = card.person
   const [taglineLead, ...taglineRest] = card.descriptor.split(" ")
 
@@ -65,7 +68,7 @@ export default async function CardPage({ searchParams }: Props) {
       </h1>
       <p className="mt-4 text-lg leading-relaxed text-gray-600">{card.copy.intro}</p>
 
-      <CardLeadForm event={event} refId={ref} copy={card.copy} />
+      <CardLeadForm event={event} refId={ref} copy={card.copy} bookingUrl={bookingUrl} />
 
       <a
         href={VCARD_PATH}
